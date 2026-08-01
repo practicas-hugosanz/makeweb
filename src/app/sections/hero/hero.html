@@ -1,0 +1,103 @@
+<section class="hero" id="inicio" #root>
+  <div class="hero__aura" aria-hidden="true">
+    <span class="hero__blob hero__blob--a" data-speed="0.82"></span>
+    <span class="hero__blob hero__blob--b" data-speed="1.16"></span>
+    <span class="hero__grid"></span>
+  </div>
+
+  <div class="hero__inner shell">
+    <!-- Dos bloques y no uno: en vertical la demostración se cuela entre
+         ellos, porque es el argumento y tiene que verse sin desplazarse. En
+         horizontal vuelven a ser una sola columna a la izquierda. -->
+    <div class="hero__copy" data-hero-copy>
+      <div class="hero__headline">
+        <p class="hero__eyebrow" data-hero-eyebrow data-anim>
+          <span>Estudio web en remoto · Toda España</span>
+        </p>
+
+        <h1 class="hero__title" data-hero-title data-anim>Que te encuentren primero.</h1>
+      </div>
+
+      <div class="hero__pitch">
+        <p class="hero__lead" data-hero-lead data-anim>
+          Diseñamos la web de tu negocio para que salga arriba cuando alguien busca cerca y
+          convierta esa visita en una reserva.
+        </p>
+
+        <div class="hero__actions">
+        <a
+          class="btn btn--primary"
+          href="#contacto"
+          data-hero-action
+          data-anim
+          [mwMagnetic]="22"
+          (click)="jumpTo($event, 'contacto')"
+        >
+          <span class="btn__label" data-magnetic-inner>
+            Pide presupuesto
+            <svg class="btn__arrow" viewBox="0 0 12 12" aria-hidden="true">
+              <path d="M2 10 10 2M4 2h6v6" fill="none" stroke="currentColor" stroke-width="1.6" />
+            </svg>
+          </span>
+        </a>
+
+        <a
+          class="btn btn--ghost"
+          href="#esta-web"
+          data-hero-action
+          data-anim
+          (click)="jumpTo($event, 'esta-web')"
+        >
+          <span class="btn__label">Ver los números</span>
+        </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__demo">
+      <figure class="finder" data-finder data-anim>
+        <div class="finder__phone">
+          <div class="finder__search">
+            <svg class="finder__icon" viewBox="0 0 16 16" aria-hidden="true">
+              <circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.5" />
+              <path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <span class="finder__query" data-finder-query></span>
+            <span class="finder__caret" aria-hidden="true"></span>
+          </div>
+
+          <p class="finder__label">Resultados cerca de ti</p>
+
+          <div class="finder__results">
+            <span class="finder__rank" style="grid-row: 1">01</span>
+            <span class="finder__rank" style="grid-row: 2">02</span>
+            <span class="finder__rank" style="grid-row: 3">03</span>
+
+            <article class="finder__row" style="grid-row: 1" data-row>
+              <span class="finder__name">Bar La Parada</span>
+              <span class="finder__meta">3,8 ★ (24) · Sin web</span>
+            </article>
+
+            <article class="finder__row" style="grid-row: 2" data-row>
+              <span class="finder__name">Cafetería Duna</span>
+              <span class="finder__meta">4,1 ★ (58) · Web lenta</span>
+            </article>
+
+            <article class="finder__row finder__row--you" style="grid-row: 3" data-row data-row-you>
+              <span class="finder__name">Tu negocio</span>
+              <span class="finder__meta">4,8 ★ (312) · Abierto ahora · Reservar</span>
+              <span class="finder__badge">Web MakeWeb</span>
+            </article>
+          </div>
+
+          <p class="finder__flag" data-finder-flag>Primera posición · 0,8 s de carga</p>
+        </div>
+
+        <figcaption class="hero__caption">
+          Así te ve un cliente desde el móvil.
+          <span class="hero__caption-cue">Desplázate y mira qué pasa.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>

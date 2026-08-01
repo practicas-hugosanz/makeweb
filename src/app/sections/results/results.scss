@@ -1,0 +1,164 @@
+@use 'mixins' as *;
+
+.res__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: clamp(3rem, 6vw, 4.5rem) 0 0;
+  border-top: 1px solid var(--line);
+
+  @include below(900) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include below(520) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.res__cell {
+  display: grid;
+  // Etiqueta y cifra en pistas propias para que las cuatro columnas se alineen
+  // aunque las notas ocupen distinto número de líneas.
+  grid-template-rows: auto 1fr;
+  gap: 0.6rem;
+  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.25rem, 2.2vw, 2.25rem);
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  @include below(900) {
+    &:nth-child(odd) {
+      padding-left: 0;
+    }
+
+    &:nth-child(even) {
+      padding-right: 0;
+      border-right: 0;
+    }
+  }
+
+  @include below(520) {
+    padding-inline: 0;
+    border-right: 0;
+  }
+}
+
+.res__label {
+  @include label;
+}
+
+.res__value {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 1rem + 2.9vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+
+  > span:first-child {
+    background: linear-gradient(160deg, #fff 30%, var(--violet-lift));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+// Vive dentro del <dd> a propósito: un <dl> solo admite <dt>, <dd> y <div>,
+// y un <p> suelto rompía la validación de la lista de definiciones.
+.res__note {
+  max-width: 26ch;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+  color: var(--text-mute);
+}
+
+.res__source {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-mute);
+
+  a {
+    color: var(--violet-lift);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}
+
+// --- cómo está hecha ---------------------------------------------------------
+.res__build {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+}
+
+.res__build-title {
+  @include label;
+
+  color: var(--text);
+}
+
+.res__facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 1.5rem 0 0;
+  border-top: 1px solid var(--line);
+
+  @include below(760) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.res__fact {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem 1.5rem 1rem 0;
+  border-bottom: 1px solid var(--line);
+
+  dt {
+    @include label;
+
+    font-size: 0.62rem;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-soft);
+  }
+}
+
+// --- llamada final ------------------------------------------------------------
+.res__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid var(--violet-40);
+  border-radius: var(--radius-l);
+  background: var(--violet-08);
+}
+
+.res__cta-text {
+  max-width: 52ch;
+  font-size: var(--step-0);
+  line-height: 1.55;
+  color: var(--text-soft);
+}

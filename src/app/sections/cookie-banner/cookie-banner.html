@@ -1,0 +1,66 @@
+@if (asking()) {
+  <div
+    class="ck"
+    role="dialog"
+    aria-modal="false"
+    aria-labelledby="ck-title"
+    aria-describedby="ck-body"
+  >
+    <div class="ck__main">
+      <h2 class="ck__title" id="ck-title">Cookies</h2>
+      <p class="ck__body" id="ck-body">
+        Usamos cookies técnicas para que la web funcione. Las analíticas y las publicitarias solo
+        se activan si tú lo dices, y puedes cambiar de idea cuando quieras.
+        <a routerLink="/cookies">Ver el detalle</a>.
+      </p>
+
+      <div class="ck__actions">
+        <button class="btn btn--primary ck__btn" type="button" (click)="acceptAll()">
+          <span class="btn__label">Aceptar todas</span>
+        </button>
+        <button class="btn btn--ghost ck__btn" type="button" (click)="rejectAll()">
+          <span class="btn__label">Rechazar todas</span>
+        </button>
+        <button
+          class="btn btn--quiet ck__config"
+          type="button"
+          (click)="toggleDetail()"
+          [attr.aria-expanded]="detailOpen()"
+          aria-controls="ck-detail"
+        >
+          {{ detailOpen() ? 'Ocultar opciones' : 'Configurar' }}
+        </button>
+      </div>
+    </div>
+
+    @if (detailOpen()) {
+      <div class="ck__detail" id="ck-detail">
+        <ul class="ck__list">
+          @for (category of categories; track category.id) {
+            <li class="ck__item">
+              <div class="ck__item-text">
+                <p class="ck__item-name">{{ category.name }}</p>
+                <p class="ck__item-summary">{{ category.summary }}</p>
+              </div>
+
+              <mat-slide-toggle
+                [checked]="isOn(category.id)"
+                [disabled]="category.required"
+                (change)="setCategory(category.id, $event.checked)"
+                [attr.aria-label]="'Cookies ' + category.name"
+              >
+                <span class="ck__state">
+                  {{ category.required ? 'Siempre' : isOn(category.id) ? 'Sí' : 'No' }}
+                </span>
+              </mat-slide-toggle>
+            </li>
+          }
+        </ul>
+
+        <button class="btn btn--primary ck__save" type="button" (click)="saveDraft()">
+          <span class="btn__label">Guardar mi elección</span>
+        </button>
+      </div>
+    }
+  </div>
+}

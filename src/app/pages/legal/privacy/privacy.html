@@ -1,0 +1,158 @@
+<mw-legal-layout title="Política de privacidad">
+  <p>
+    Aquí se explica qué datos personales recogemos en {{ legal.domain }}, para qué los usamos,
+    cuánto tiempo los guardamos y qué puedes exigirnos. Está redactada conforme al Reglamento (UE)
+    2016/679 (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD).
+  </p>
+
+  <div class="prose__note">
+    <strong>Pendiente antes de publicar:</strong> rellena los datos del responsable en
+    <code>src/app/data/legal.ts</code> y revisa el apartado 5: si contratas analítica, hosting o
+    una herramienta de correo, cada proveedor debe aparecer ahí por su nombre.
+  </div>
+
+  <h2 id="responsable">1. Quién trata tus datos</h2>
+  <dl>
+    <dt>Responsable</dt>
+    <dd>{{ legal.company }} ({{ legal.brand }})</dd>
+
+    <dt>NIF</dt>
+    <dd>{{ legal.nif }}</dd>
+
+    <dt>Domicilio</dt>
+    <dd>{{ legal.address }}</dd>
+
+    <dt>Contacto para privacidad</dt>
+    <dd><a [href]="'mailto:' + legal.privacyEmail">{{ legal.privacyEmail }}</a></dd>
+  </dl>
+
+  <h2 id="datos">2. Qué datos recogemos</h2>
+  <p>Solo los que tú nos das, y solo donde hay un formulario o un enlace de contacto:</p>
+  <ul>
+    <li>
+      <strong>Formulario de contacto:</strong> nombre, nombre del negocio, correo electrónico,
+      teléfono (opcional), el servicio que te interesa, la horquilla de presupuesto y lo que
+      escribas en el mensaje.
+    </li>
+    <li>
+      <strong>Si nos escribes por correo o nos llamas:</strong> los datos que aparezcan en esa
+      comunicación.
+    </li>
+    <li>
+      <strong>Datos de navegación:</strong> solo si aceptas las cookies analíticas. Se explican en
+      la <a href="/cookies">política de cookies</a>.
+    </li>
+  </ul>
+  <p>
+    No pedimos datos de categorías especiales (salud, ideología, religión, afiliación sindical…).
+    Te agradecemos que no los incluyas en el mensaje libre.
+  </p>
+  <p>
+    Esta web no está dirigida a menores de 14 años y no recogemos sus datos de forma consciente.
+  </p>
+
+  <h2 id="finalidades">3. Para qué los usamos y con qué base legal</h2>
+  <dl>
+    <dt>Responder a tu consulta y prepararte una propuesta</dt>
+    <dd>
+      Base jurídica: aplicación de medidas precontractuales a petición tuya
+      (art. 6.1.b RGPD). Sin estos datos no podemos contestarte.
+    </dd>
+
+    <dt>Gestionar la relación si acabamos trabajando juntos</dt>
+    <dd>Base jurídica: ejecución del contrato (art. 6.1.b RGPD).</dd>
+
+    <dt>Cumplir obligaciones fiscales y contables</dt>
+    <dd>Base jurídica: obligación legal (art. 6.1.c RGPD).</dd>
+
+    <dt>Medir de forma agregada cómo se usa la web</dt>
+    <dd>
+      Base jurídica: tu consentimiento (art. 6.1.a RGPD), que puedes retirar cuando quieras desde
+      la <a href="/cookies">política de cookies</a>.
+    </dd>
+  </dl>
+  <p>
+    <strong>No hacemos envíos comerciales</strong> a quien no los haya pedido, ni cedemos tus datos
+    para que otros lo hagan.
+  </p>
+
+  <h2 id="conservacion">4. Cuánto tiempo los guardamos</h2>
+  <ul>
+    <li>
+      <strong>Consultas que no llegan a nada:</strong> hasta 12 meses desde el último contacto, por
+      si retomas el proyecto. Después se borran.
+    </li>
+    <li>
+      <strong>Clientes:</strong> mientras dure la relación y, después, durante los plazos de
+      prescripción de las obligaciones legales (6 años en materia mercantil y 4 en materia fiscal,
+      con carácter general).
+    </li>
+    <li><strong>Datos de analítica:</strong> el plazo indicado para cada cookie.</li>
+  </ul>
+
+  <h2 id="destinatarios">5. Quién más ve tus datos</h2>
+  <p>
+    No vendemos ni cedemos datos personales. Sí trabajamos con proveedores que los tratan por
+    cuenta nuestra, con un contrato de encargo de tratamiento firmado (art. 28 RGPD):
+  </p>
+  <ul>
+    <li><strong>Alojamiento web:</strong> {{ legal.host.name }} ({{ legal.host.location }}).</li>
+    <li><strong>Correo electrónico:</strong> PROVEEDOR DE CORREO.</li>
+    <li><strong>Analítica web:</strong> PROVEEDOR DE ANALÍTICA, solo si aceptas esas cookies.</li>
+    <li><strong>Gestoría:</strong> para las obligaciones contables y fiscales.</li>
+  </ul>
+  <p>
+    También podemos comunicar datos a la Administración cuando una norma lo exija.
+  </p>
+
+  <h2 id="transferencias">6. Transferencias fuera de la UE</h2>
+  <p>
+    Procuramos que todos los proveedores traten los datos dentro del Espacio Económico Europeo. Si
+    alguno operase fuera, la transferencia se ampararía en una decisión de adecuación de la
+    Comisión Europea o en cláusulas contractuales tipo, y se indicará en el apartado anterior.
+  </p>
+
+  <h2 id="derechos">7. Tus derechos</h2>
+  <p>Puedes ejercer en cualquier momento estos derechos:</p>
+  <ul>
+    <li><strong>Acceso:</strong> saber qué datos tuyos tenemos.</li>
+    <li><strong>Rectificación:</strong> corregir los que sean inexactos.</li>
+    <li><strong>Supresión:</strong> pedir que los borremos cuando ya no sean necesarios.</li>
+    <li><strong>Oposición:</strong> oponerte a un tratamiento concreto.</li>
+    <li><strong>Limitación:</strong> pedir que los conservemos pero no los usemos.</li>
+    <li><strong>Portabilidad:</strong> recibirlos en un formato estructurado y de uso común.</li>
+    <li>
+      <strong>Retirar el consentimiento</strong> en cualquier momento, sin que ello afecte a la
+      licitud del tratamiento anterior.
+    </li>
+  </ul>
+  <p>
+    Escríbenos a <a [href]="'mailto:' + legal.privacyEmail">{{ legal.privacyEmail }}</a> indicando
+    qué derecho quieres ejercer. Te responderemos en el plazo máximo de un mes. Puede que te
+    pidamos acreditar tu identidad si no podemos identificarte con seguridad.
+  </p>
+  <p>
+    Si crees que no hemos atendido bien tu solicitud, puedes reclamar ante la Agencia Española de
+    Protección de Datos:
+    <a href="https://www.aepd.es" rel="noopener noreferrer" target="_blank">www.aepd.es</a>.
+  </p>
+
+  <h2 id="seguridad">8. Seguridad</h2>
+  <p>
+    Aplicamos medidas técnicas y organizativas razonables para proteger tus datos: conexión cifrada
+    (HTTPS) en toda la web, acceso restringido a quien lo necesita, copias de seguridad y revisión
+    periódica de los accesos. Ningún sistema es infalible; si se produjera una brecha con riesgo
+    para tus derechos, te lo comunicaríamos y lo notificaríamos a la autoridad de control en los
+    plazos legales.
+  </p>
+
+  <h2 id="decisiones">9. Decisiones automatizadas</h2>
+  <p>No tomamos decisiones automatizadas ni elaboramos perfiles con efectos jurídicos sobre ti.</p>
+
+  <h2 id="cambios">10. Cambios en esta política</h2>
+  <p>
+    Si cambia la forma en que tratamos los datos, actualizaremos esta página y la fecha que aparece
+    arriba. Cuando el cambio sea sustancial y afecte a tratamientos basados en tu consentimiento,
+    te lo pediremos de nuevo.
+  </p>
+</mw-legal-layout>

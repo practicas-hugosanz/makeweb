@@ -1,0 +1,98 @@
+@use 'mixins' as *;
+
+.faq__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 5vw, 5rem);
+
+  @include below(960) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.faq__aside {
+  align-self: start;
+  position: sticky;
+  top: clamp(6rem, 22vh, 12rem);
+
+  @include below(960) {
+    position: static;
+  }
+}
+
+.faq__list {
+  display: block;
+  border-top: 1px solid var(--line);
+}
+
+.faq__q {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-right: 1.5rem;
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.faq__index {
+  flex: none;
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--violet-lift);
+}
+
+.faq__sign {
+  position: relative;
+  flex: none;
+  width: 0.95rem;
+  height: 0.95rem;
+  margin-left: auto;
+  align-self: center;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 50% 0 auto;
+    height: 1.5px;
+    background: var(--text-soft);
+    transition:
+      rotate 0.4s var(--ease-out),
+      background-color 0.4s var(--ease-out);
+  }
+
+  &::after {
+    rotate: 90deg;
+  }
+
+  &.is-open::after {
+    rotate: 0deg;
+  }
+
+  &.is-open::before,
+  &.is-open::after {
+    background: var(--violet-lift);
+  }
+}
+
+.faq__a {
+  max-width: 62ch;
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
+:host ::ng-deep .mat-expansion-panel-header-title {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+:host ::ng-deep .mat-expansion-panel-header {
+  padding-block: 1.6rem !important;
+}

@@ -1,0 +1,72 @@
+// ---------------------------------------------------------------------------
+// Shared layout + surface mixins
+// ---------------------------------------------------------------------------
+
+@mixin shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@mixin section {
+  position: relative;
+  padding-block: var(--section-y);
+}
+
+/// Editorial hairline used to separate major movements of the page.
+@mixin rule($opacity: 1) {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line-strong) 18%, var(--line-strong) 82%, transparent);
+  opacity: $opacity;
+}
+
+@mixin panel {
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 4%), rgb(255 255 255 / 0%) 42%),
+    var(--ink-700);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-card);
+}
+
+/// The utility voice: Mollen Regular set small and wide. The family has no
+/// monospace cut, so the label role is carried by tracking alone.
+@mixin label {
+  font-family: var(--font-label);
+  font-size: var(--step--1);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+@mixin display($step: var(--step-4)) {
+  font-family: var(--font-display);
+  font-size: $step;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+@mixin focus-ring {
+  outline: 2px solid var(--violet-lift);
+  outline-offset: 3px;
+  border-radius: var(--radius-s);
+}
+
+@mixin below($px) {
+  @media (max-width: #{$px}px) {
+    @content;
+  }
+}
+
+@mixin above($px) {
+  @media (min-width: #{$px + 1}px) {
+    @content;
+  }
+}

@@ -1,0 +1,29 @@
+// ---------------------------------------------------------------------------
+// Mollen — self-hosted, converted to WOFF2 (≈16 kB each instead of 28 kB OTF).
+//
+// Self-hosting also removes the render-blocking requests to a font CDN, which
+// is the single biggest first-paint win on this page.
+//
+// The family ships two cuts, Regular and Bold. Everything on the page is set
+// from those two: the display voice is Bold tightened up, the reading voice is
+// Regular, and the label voice is Regular set small with wide tracking.
+//
+// NOTE: the files in /mollen are the PERSONAL USE cut. A commercial licence
+// (myfonts.com/fonts/eko-bimantara/mollen) is required before going live.
+// ---------------------------------------------------------------------------
+
+@font-face {
+  font-family: 'Mollen';
+  src: url('/fonts/mollen-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mollen';
+  src: url('/fonts/mollen-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

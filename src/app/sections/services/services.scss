@@ -1,0 +1,151 @@
+@use 'mixins' as *;
+
+.svc {
+  padding-block: 0;
+  overflow: clip;
+
+  &::before {
+    display: none;
+  }
+}
+
+.svc__pin {
+  display: grid;
+  align-content: center;
+  gap: clamp(2rem, 5vh, 4rem);
+  min-height: 100svh;
+  padding-block: clamp(5rem, 10vh, 8rem);
+
+  @include below(900) {
+    min-height: 0;
+  }
+}
+
+.svc__head {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.svc__meter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @include below(900) {
+    display: none;
+  }
+}
+
+.svc__count {
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--violet-lift);
+  font-variant-numeric: tabular-nums;
+}
+
+.svc__hint {
+  @include label;
+
+  font-size: 0.62rem;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 2.5em;
+    height: 1px;
+    margin-right: 0.9em;
+    vertical-align: middle;
+    background: var(--line-strong);
+  }
+}
+
+.svc__viewport {
+  overflow: hidden;
+
+  @include below(900) {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.svc__track {
+  display: flex;
+  gap: clamp(1rem, 1.6vw, 1.75rem);
+  width: max-content;
+  padding-inline: var(--gutter);
+  margin: 0;
+  list-style: none;
+  will-change: transform;
+}
+
+.svc__card {
+  @include panel;
+
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  // ~2.5 cards visible at a time. Five of them then add up to roughly two and
+  // a half screens, which is what gives the horizontal run something to do —
+  // at the old width they nearly fitted on screen and barely moved.
+  width: clamp(20rem, 38vw, 40rem);
+  padding: clamp(1.75rem, 2.6vw, 2.75rem);
+
+  @include below(900) {
+    width: min(21rem, 82vw);
+    scroll-snap-align: center;
+  }
+}
+
+.svc__kicker {
+  @include label;
+
+  color: var(--violet-lift);
+}
+
+.svc__title {
+  font-size: var(--step-2);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.svc__summary {
+  color: var(--text-soft);
+  font-size: var(--step-0);
+  line-height: 1.55;
+}
+
+.svc__includes {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.4rem;
+  padding: 1.2rem 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 1.35rem;
+    font-family: var(--font-label);
+    font-size: 0.74rem;
+    letter-spacing: 0.01em;
+    color: var(--text-mute);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.5em;
+      left: 0;
+      width: 0.55rem;
+      height: 1px;
+      background: var(--violet);
+    }
+  }
+}

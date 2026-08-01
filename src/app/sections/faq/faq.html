@@ -1,0 +1,35 @@
+<section class="faq sec" id="preguntas">
+  <div class="shell faq__inner">
+    <div class="faq__aside">
+      <div class="sec-head" mwReveal="rise" [revealStagger]="0.08">
+        <p class="sec-eyebrow" data-reveal-item>Preguntas</p>
+        <h2 class="sec-title" data-reveal-item>Lo que <em>siempre</em> preguntáis.</h2>
+        <p class="sec-lead" data-reveal-item>
+          Si falta la tuya, escríbenos y te contestamos el mismo día laborable.
+        </p>
+      </div>
+    </div>
+
+    <mat-accordion class="faq__list" [multi]="false" mwReveal="fade">
+      @for (item of faqs; track item.q; let i = $index) {
+        <mat-expansion-panel
+          [expanded]="open() === i"
+          (opened)="open.set(i)"
+          (closed)="onClosed(i)"
+          hideToggle
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span class="faq__q">
+                <span class="faq__index">{{ i + 1 }}</span>
+                {{ item.q }}
+              </span>
+              <span class="faq__sign" [class.is-open]="open() === i" aria-hidden="true"></span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="faq__a">{{ item.a }}</p>
+        </mat-expansion-panel>
+      }
+    </mat-accordion>
+  </div>
+</section>

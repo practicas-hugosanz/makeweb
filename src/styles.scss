@@ -1,0 +1,251 @@
+@use '@angular/material' as mat;
+@use './styles/fonts';
+@use './styles/tokens' as *;
+@use './styles/mixins' as *;
+@use './styles/buttons';
+@use './styles/sections';
+@use './styles/prose';
+
+// ---------------------------------------------------------------------------
+// Angular Material (M3) — dark theme, brand violet
+// ---------------------------------------------------------------------------
+html {
+  color-scheme: dark;
+
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$violet-palette,
+        tertiary: mat.$violet-palette,
+        theme-type: dark,
+      ),
+      typography: (
+        plain-family: 'Mollen',
+        brand-family: 'Mollen',
+        bold-weight: 700,
+        medium-weight: 400,
+        regular-weight: 400,
+      ),
+      density: 0,
+    )
+  );
+
+  // Pin the generated M3 palette to the exact brand values.
+  --mat-sys-primary: #6b60e7;
+  --mat-sys-on-primary: #ffffff;
+  --mat-sys-primary-container: #2a2461;
+  --mat-sys-on-primary-container: #d9d5ff;
+  --mat-sys-surface: #111111;
+  --mat-sys-surface-container: #1e1d26;
+  --mat-sys-surface-container-high: #262532;
+  --mat-sys-surface-container-highest: #2e2d3c;
+  --mat-sys-on-surface: #ffffff;
+  --mat-sys-on-surface-variant: #b6b4c6;
+  --mat-sys-outline: #4b4959;
+  --mat-sys-outline-variant: #2b2a36;
+  --mat-sys-background: #111111;
+  --mat-sys-error: #ff8f8f;
+}
+
+// ---------------------------------------------------------------------------
+// Reset + base
+// ---------------------------------------------------------------------------
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto; // GSAP ScrollSmoother owns scrolling
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+body.is-locked {
+  overflow: hidden;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+::selection {
+  background: var(--violet);
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+// Custom scrollbar (native fallback when ScrollSmoother is off)
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0c0c;
+}
+::-webkit-scrollbar-thumb {
+  background: #2c2b38;
+  border-radius: 99px;
+  border: 3px solid #0c0c0c;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--violet-deep);
+}
+
+// ---------------------------------------------------------------------------
+// GSAP ScrollSmoother scaffolding
+// ---------------------------------------------------------------------------
+#smooth-wrapper {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+// Elements animated on load start hidden, but only while JS is booting.
+.js-loading [data-anim] {
+  visibility: hidden;
+}
+
+// ---------------------------------------------------------------------------
+// Utilities
+// ---------------------------------------------------------------------------
+.shell {
+  @include shell;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 9999;
+  translate: -50% -120%;
+  padding: 0.75rem 1.25rem;
+  background: var(--violet);
+  color: #fff;
+  border-radius: 0 0 12px 12px;
+  font-weight: 700;
+  transition: translate var(--dur-fast) var(--ease-out);
+
+  &:focus-visible {
+    translate: -50% 0;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Material component tuning
+// ---------------------------------------------------------------------------
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  font-family: var(--font-label);
+  font-size: 0.74rem;
+  letter-spacing: 0.01em;
+}
+
+.mat-expansion-panel {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid var(--line);
+}
+
+.mat-expansion-panel-header {
+  padding-inline: 0 !important;
+  height: auto !important;
+  min-height: 5rem;
+
+  &:hover {
+    background: transparent !important;
+  }
+}
+
+.mat-expansion-panel-body {
+  padding: 0 clamp(2rem, 6vw, 6rem) 2rem 0 !important;
+}
+
+.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: #1e1d26;
+  --mdc-snackbar-supporting-text-color: #ffffff;
+  --mat-snack-bar-button-color: #8d84ff;
+}
+
+// ---------------------------------------------------------------------------
+// Reduced motion — the page must be fully readable without any animation.
+// ---------------------------------------------------------------------------
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .js-loading [data-anim] {
+    visibility: visible;
+  }
+}

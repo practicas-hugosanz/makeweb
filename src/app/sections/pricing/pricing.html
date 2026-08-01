@@ -1,0 +1,73 @@
+<section class="prz sec" id="precios" #root>
+  <div class="shell">
+    <div class="sec-head sec-head--split">
+      <div class="sec-head__stack" mwReveal="rise" [revealStagger]="0.09">
+        <p class="sec-eyebrow" data-reveal-item>Precios</p>
+        <h2 class="sec-title" data-reveal-item>Sin <em>letra pequeña</em>.</h2>
+      </div>
+
+      <div class="prz__switch" mwReveal="fade">
+        <p class="prz__switch-label">Ver</p>
+        <mat-button-toggle-group
+          [value]="term()"
+          (change)="setTerm($event.value)"
+          aria-label="Qué precio mostrar"
+          hideSingleSelectionIndicator
+        >
+          <mat-button-toggle value="once">Proyecto</mat-button-toggle>
+          <mat-button-toggle value="monthly">Mantenimiento</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+
+    <p class="prz__swipe" aria-hidden="true">Desliza para comparar los tres</p>
+
+    <ul class="prz__plans" data-plans>
+      @for (plan of plans; track plan.id) {
+        <li
+          class="prz__plan"
+          [class.is-best]="plan.best"
+          [mwReveal]="plan.best ? 'scale' : 'rise'"
+          [revealDelay]="$index * 0.06"
+        >
+          @if (plan.best) {
+            <span class="prz__flag">La que elige casi todo el mundo</span>
+          }
+
+          <h3 class="prz__name">{{ plan.name }}</h3>
+          <p class="prz__pitch">{{ plan.pitch }}</p>
+
+          <p class="prz__price">
+            <span class="prz__currency">€</span>
+            <span class="prz__amount" [attr.data-price]="plan.id">{{
+              formatPrice(priceFor(plan.id, term()))
+            }}</span>
+            <span class="prz__term">{{ term() === 'once' ? 'IVA no incluido' : 'al mes' }}</span>
+          </p>
+
+          <ul class="prz__features">
+            @for (feature of plan.features; track feature) {
+              <li>{{ feature }}</li>
+            }
+          </ul>
+
+          <a
+            class="btn"
+            [class.btn--primary]="plan.best"
+            [class.btn--ghost]="!plan.best"
+            href="#contacto"
+            [mwMagnetic]="14"
+          >
+            <span class="btn__label" data-magnetic-inner>{{ plan.cta }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+
+    <p class="prz__foot" mwReveal="fade">
+      Todos los planes incluyen dominio, certificado de seguridad, aviso legal y política de
+      cookies. Se paga 50 % al empezar y 50 % al publicar. Si a los 30 días no estás conforme,
+      devolvemos la primera mitad.
+    </p>
+  </div>
+</section>

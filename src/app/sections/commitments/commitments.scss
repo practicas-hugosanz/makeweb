@@ -1,0 +1,80 @@
+@use 'mixins' as *;
+
+.cmt__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: clamp(3rem, 6vw, 4.5rem) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+
+  @include below(900) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include below(600) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cmt__item {
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.25rem, 2.2vw, 2.25rem);
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+
+  // La primera columna de cada fila queda a ras del margen de la página.
+  &:nth-child(3n + 1) {
+    padding-left: 0;
+  }
+
+  &:nth-child(3n) {
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  @include below(900) {
+    &:nth-child(3n + 1),
+    &:nth-child(3n) {
+      padding-inline: clamp(1.25rem, 2.2vw, 2.25rem);
+      border-right: 1px solid var(--line);
+    }
+
+    &:nth-child(odd) {
+      padding-left: 0;
+    }
+
+    &:nth-child(even) {
+      padding-right: 0;
+      border-right: 0;
+    }
+  }
+
+  @include below(600) {
+    padding-inline: 0 !important;
+    border-right: 0 !important;
+  }
+}
+
+.cmt__index {
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--violet-lift);
+}
+
+.cmt__title {
+  font-size: var(--step-1);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.cmt__body {
+  max-width: 34ch;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--text-soft);
+}

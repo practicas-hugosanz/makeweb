@@ -1,0 +1,153 @@
+<section class="cnt sec" id="contacto" #root>
+  <div class="shell cnt__inner">
+    <div class="cnt__aside">
+      <div class="sec-head" mwReveal="rise" [revealStagger]="0.08">
+        <p class="sec-eyebrow" data-reveal-item>Contacto</p>
+        <h2 class="sec-title" data-reveal-item>Te respondemos <em>en 24 h</em>.</h2>
+        <p class="sec-lead" data-reveal-item>
+          Con lo que nos escribas preparamos una propuesta con alcance, precio cerrado y fecha de
+          entrega. Sin compromiso y sin llamadas de seguimiento.
+        </p>
+      </div>
+
+      <ul class="cnt__direct" mwReveal="fade">
+        <li>
+          <span class="cnt__direct-label">Correo</span>
+          <a href="mailto:hola@makeweb.es">hola&#64;makeweb.es</a>
+        </li>
+        <li>
+          <span class="cnt__direct-label">Teléfono</span>
+          <a href="tel:+34600000000">+34 600 00 00 00</a>
+        </li>
+        <li>
+          <span class="cnt__direct-label">Horario</span>
+          <span>Lunes a viernes, 9:00 – 18:00</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cnt__panel">
+      <header class="cnt__panel-head">
+        <span class="cnt__panel-title">Datos del negocio</span>
+        <span class="cnt__panel-note">Dos minutos</span>
+      </header>
+
+      @if (sent()) {
+        <div class="cnt__done" data-done role="status">
+          <span class="cnt__done-mark" aria-hidden="true"></span>
+          <h3 class="cnt__done-title">Recibido. Te escribimos en menos de 24 h.</h3>
+          <p class="cnt__done-body">
+            Guarda esta referencia por si quieres darnos prisa:
+            <strong>{{ reference() }}</strong>
+          </p>
+          <button class="btn btn--quiet" type="button" (click)="reset()">
+            Enviar otra consulta
+          </button>
+        </div>
+      } @else {
+        <form class="cnt__form" data-form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+          <div class="cnt__row">
+            <mat-form-field appearance="outline" subscriptSizing="dynamic">
+              <mat-label>Tu nombre</mat-label>
+              <input matInput formControlName="name" autocomplete="name" />
+              @if (form.controls.name.touched && form.controls.name.invalid) {
+                <mat-error>Escribe tu nombre.</mat-error>
+              }
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" subscriptSizing="dynamic">
+              <mat-label>Nombre del negocio</mat-label>
+              <input matInput formControlName="business" autocomplete="organization" />
+              @if (form.controls.business.touched && form.controls.business.invalid) {
+                <mat-error>Dinos cómo se llama el negocio.</mat-error>
+              }
+            </mat-form-field>
+          </div>
+
+          <div class="cnt__row">
+            <mat-form-field appearance="outline" subscriptSizing="dynamic">
+              <mat-label>Correo</mat-label>
+              <input matInput type="email" formControlName="email" autocomplete="email" />
+              @if (form.controls.email.touched && form.controls.email.invalid) {
+                <mat-error>Necesitamos un correo válido para responderte.</mat-error>
+              }
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" subscriptSizing="dynamic">
+              <mat-label>Teléfono (opcional)</mat-label>
+              <input matInput type="tel" formControlName="phone" autocomplete="tel" />
+              @if (form.controls.phone.touched && form.controls.phone.invalid) {
+                <mat-error>Ese número no nos cuadra. Revísalo o déjalo vacío.</mat-error>
+              }
+            </mat-form-field>
+          </div>
+
+          <div class="cnt__row">
+            <mat-form-field appearance="outline" subscriptSizing="dynamic">
+              <mat-label>Qué necesitas</mat-label>
+              <mat-select formControlName="service">
+                @for (service of services; track service.id) {
+                  <mat-option [value]="service.id">{{ service.index }}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" subscriptSizing="dynamic">
+              <mat-label>Presupuesto</mat-label>
+              <mat-select formControlName="budget">
+                @for (budget of budgets; track budget.id) {
+                  <mat-option [value]="budget.id">{{ budget.label }}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Cuéntanos un poco más</mat-label>
+            <textarea
+              matInput
+              rows="4"
+              formControlName="message"
+              placeholder="Qué vendes, a quién y qué te gustaría conseguir con la web."
+            ></textarea>
+            @if (form.controls.message.touched && form.controls.message.invalid) {
+              <mat-error>Con dos frases nos vale, pero necesitamos algo.</mat-error>
+            }
+          </mat-form-field>
+
+          <!-- El consentimiento solo vale si la política es accesible desde aquí. -->
+          <mat-checkbox formControlName="consent" class="cnt__consent">
+            He leído y acepto la
+            <a routerLink="/privacidad" target="_blank" (click)="$event.stopPropagation()"
+              >política de privacidad</a
+            >. Solo usaremos estos datos para responderte.
+          </mat-checkbox>
+          @if (form.controls.consent.touched && form.controls.consent.invalid) {
+            <p class="cnt__consent-error">Marca la casilla para que podamos escribirte.</p>
+          }
+
+          @if (error()) {
+            <p class="cnt__error" role="alert">{{ error() }}</p>
+          }
+
+          <div class="cnt__submit">
+            <button
+              class="btn btn--primary btn--lg"
+              type="submit"
+              [disabled]="sending()"
+              [mwMagnetic]="18"
+            >
+              <span class="btn__label" data-magnetic-inner>
+                {{ sending() ? 'Enviando…' : 'Enviar y pedir propuesta' }}
+                @if (sending()) {
+                  <span class="cnt__spinner" aria-hidden="true"></span>
+                }
+              </span>
+            </button>
+            <p class="cnt__submit-note">Sin newsletters. Sin llamadas frías.</p>
+          </div>
+        </form>
+      }
+    </div>
+  </div>
+</section>

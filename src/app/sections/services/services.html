@@ -1,0 +1,38 @@
+<section class="svc sec sec--flush" id="servicios" #root>
+  <div class="svc__pin" data-pin>
+    <div class="svc__head shell">
+      <div class="sec-head sec-head--split">
+        <div class="sec-head__stack" mwReveal="rise" [revealStagger]="0.09">
+          <p class="sec-eyebrow" data-reveal-item>Lo que hacemos</p>
+          <h2 class="sec-title" data-reveal-item>Cinco piezas, <em>una sola web</em>.</h2>
+        </div>
+        <p class="sec-lead" mwReveal="fade">
+          No vendemos paquetes sueltos. Todo lo de abajo entra en el mismo proyecto porque, por
+          separado, ninguna de las cinco cosas sirve de mucho.
+        </p>
+      </div>
+
+      <div class="svc__meter" aria-hidden="true">
+        <span class="svc__count">{{ current() }} / {{ services.length }}</span>
+        <span class="svc__hint">Desplaza para avanzar</span>
+      </div>
+    </div>
+
+    <div class="svc__viewport" data-viewport>
+      <ol class="svc__track" data-track>
+        @for (service of services; track service.id) {
+          <li class="svc__card" data-card>
+            <p class="svc__kicker">{{ service.index }}</p>
+            <h3 class="svc__title">{{ service.title }}</h3>
+            <p class="svc__summary">{{ service.summary }}</p>
+            <ul class="svc__includes">
+              @for (item of service.includes; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+          </li>
+        }
+      </ol>
+    </div>
+  </div>
+</section>

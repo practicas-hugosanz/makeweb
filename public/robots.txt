@@ -1,0 +1,7 @@
+# MakeWeb
+# Cambia el dominio de la línea Sitemap cuando lo tengas contratado.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://makeweb.es/sitemap.xml

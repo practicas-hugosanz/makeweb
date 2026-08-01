@@ -1,0 +1,153 @@
+@use 'mixins' as *;
+
+.ftr {
+  position: relative;
+  padding-top: clamp(4rem, 9vw, 7rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, transparent, var(--violet-08));
+  overflow: clip;
+}
+
+.ftr__cta {
+  display: grid;
+  gap: 0.5rem;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.ftr__cta-kicker {
+  @include label;
+}
+
+.ftr__cta-link {
+  @include display(var(--step-4));
+
+  width: fit-content;
+  color: var(--text);
+  transition: color var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    color: var(--violet-lift);
+  }
+}
+
+.ftr__cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
+  gap: clamp(1.75rem, 3vw, 3rem);
+  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--line);
+
+  @include below(880) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include below(520) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ftr__col {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+
+  ul {
+    display: grid;
+    gap: 0.15rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  a,
+  .ftr__prefs {
+    display: flex;
+    align-items: center;
+    // 44 px de alto: en móvil estos enlaces iban a 24 y se fallaba al pulsar.
+    min-height: 44px;
+    font-size: 0.94rem;
+    color: var(--text-soft);
+    transition: color var(--dur-fast) var(--ease-out);
+
+    &:hover {
+      color: var(--violet-lift);
+    }
+  }
+}
+
+.ftr__col--brand {
+  gap: 1.25rem;
+  max-width: 34ch;
+}
+
+.ftr__logo {
+  width: auto;
+  height: 2rem;
+}
+
+// Reabrir el panel de cookies es una acción, no un enlace: botón con aspecto
+// de enlace para que no desentone en la columna.
+.ftr__prefs {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 0.94rem;
+  text-align: left;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    color: var(--violet-lift);
+  }
+}
+
+.ftr__blurb {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--text-mute);
+}
+
+.ftr__col-title {
+  @include label;
+
+  font-family: var(--font-label);
+  font-weight: 400;
+}
+
+.ftr__base {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.ftr__top {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 0.5em;
+  transition: color var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    color: var(--violet-lift);
+  }
+
+  span {
+    transition: translate var(--dur-fast) var(--ease-out);
+  }
+
+  &:hover span {
+    translate: 0 -0.25em;
+  }
+}

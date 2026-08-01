@@ -1,0 +1,79 @@
+@use 'mixins' as *;
+
+// ---------------------------------------------------------------------------
+// Shared section furniture: the eyebrow / title / lead block that opens each
+// movement of the page, plus the hairline that separates them.
+// ---------------------------------------------------------------------------
+
+.sec {
+  @include section;
+
+  &::before {
+    @include rule(0.7);
+    top: 0;
+  }
+}
+
+.sec--flush::before {
+  display: none;
+}
+
+.sec-head {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  max-width: 60ch;
+}
+
+.sec-head--wide {
+  max-width: none;
+}
+
+.sec-eyebrow {
+  @include label;
+
+  display: flex;
+  align-items: center;
+  gap: 0.85em;
+
+  &::before {
+    content: '';
+    width: 1.9em;
+    height: 1px;
+    background: var(--violet);
+  }
+}
+
+.sec-title {
+  @include display(var(--step-4));
+}
+
+.sec-title em {
+  font-style: normal;
+  color: var(--violet-lift);
+}
+
+.sec-lead {
+  max-width: 52ch;
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+/// Two-column section header: title left, supporting copy right.
+.sec-head--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: end;
+  gap: clamp(1.5rem, 4vw, 5rem);
+  max-width: none;
+
+  @include below(900) {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+.sec-head__stack {
+  display: grid;
+  gap: clamp(1.1rem, 2vw, 1.75rem);
+}

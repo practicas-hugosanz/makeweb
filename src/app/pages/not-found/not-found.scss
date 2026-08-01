@@ -1,0 +1,40 @@
+@use 'mixins' as *;
+
+.nf {
+  display: grid;
+  align-items: center;
+  min-height: 78svh;
+  padding-block: clamp(8rem, 18vh, 12rem) clamp(4rem, 9vw, 7rem);
+}
+
+.nf__inner {
+  display: grid;
+  justify-items: start;
+  gap: 1.1rem;
+}
+
+.nf__code {
+  @include label;
+
+  color: var(--violet-lift);
+}
+
+.nf__title {
+  @include display(var(--step-4));
+
+  max-width: 14ch;
+}
+
+.nf__body {
+  max-width: 44ch;
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.nf__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}

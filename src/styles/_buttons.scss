@@ -1,0 +1,136 @@
+@use 'mixins' as *;
+
+// ---------------------------------------------------------------------------
+// Buttons live in the global sheet: they appear inside a dozen components and
+// must stay pixel-identical everywhere.
+// ---------------------------------------------------------------------------
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  padding: 1.05em 1.9em;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+
+  // The wipe that fills the pill from the bottom on hover.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--violet-lift);
+    translate: 0 101%;
+    border-radius: inherit;
+    transition: translate 0.55s var(--ease-out);
+  }
+
+  &:hover::before,
+  &:focus-visible::before {
+    translate: 0 0;
+  }
+
+  &[disabled] {
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .btn__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+  }
+
+  .btn__arrow {
+    width: 0.85em;
+    height: 0.85em;
+    transition: translate var(--dur-fast) var(--ease-out);
+  }
+
+  &:hover .btn__arrow {
+    translate: 0.25em -0.25em;
+  }
+}
+
+.btn--primary {
+  background: var(--violet);
+  color: #fff;
+  box-shadow: var(--shadow-violet);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--ink);
+  }
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--line-strong);
+  color: var(--text);
+
+  &::before {
+    background: #fff;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--ink);
+    border-color: #fff;
+  }
+}
+
+.btn--quiet {
+  // Sin padding vertical medía 17 px de alto: imposible de acertar con el dedo.
+  // El área táctil crece sin que cambie nada de lo que se ve.
+  padding: 0.7em 0;
+  border-radius: 0;
+  background: none;
+  color: var(--text-soft);
+  font-weight: 400;
+  overflow: visible;
+
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0.45em;
+    height: 1px;
+    background: currentcolor;
+    scale: 0 1;
+    transform-origin: right;
+    transition: scale 0.45s var(--ease-out);
+  }
+
+  &:hover {
+    color: var(--text);
+
+    &::after {
+      scale: 1 1;
+      transform-origin: left;
+    }
+  }
+}
+
+.btn--lg {
+  padding: 1.25em 2.4em;
+  font-size: var(--step-1);
+}

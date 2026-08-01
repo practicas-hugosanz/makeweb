@@ -1,0 +1,134 @@
+@use 'mixins' as *;
+
+.ck {
+  position: fixed;
+  z-index: 850;
+  left: var(--gutter);
+  bottom: clamp(1rem, 2.5vw, 1.75rem);
+  width: min(30rem, calc(100vw - var(--gutter) * 2));
+  max-height: min(80vh, 44rem);
+  overflow-y: auto;
+  padding: clamp(1.25rem, 2.4vw, 1.75rem);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-l);
+  background:
+    radial-gradient(120% 70% at 20% 0%, var(--violet-14), transparent 62%),
+    #16151f;
+  box-shadow: 0 40px 90px -40px #000;
+  // Entrada en CSS: el estado por defecto es visible, así que si la animación
+  // no llega a correr nunca el banner sigue estando ahí.
+  animation: ck-in 0.6s var(--ease-out) 0.35s backwards;
+
+  @include below(560) {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: auto;
+    // En una pantalla de 390 px el aviso ocupaba casi un tercio del alto. Se
+    // aprieta un poco: sigue leyéndose y deja ver la página que hay detrás.
+    padding: 1.1rem 1.15rem;
+    max-height: 72svh;
+  }
+}
+
+@keyframes ck-in {
+  from {
+    opacity: 0;
+    translate: 0 32px;
+  }
+}
+
+.ck__title {
+  font-size: var(--step-1);
+  letter-spacing: -0.02em;
+}
+
+.ck__body {
+  margin-top: 0.5rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-soft);
+
+  @include below(560) {
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+
+  a {
+    color: var(--violet-lift);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}
+
+.ck__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.15rem;
+}
+
+// Aceptar y rechazar tienen el mismo tamaño a propósito.
+.ck__btn {
+  flex: 1 1 9rem;
+  padding: 0.85em 1.2em;
+  font-size: 0.92rem;
+}
+
+.ck__config {
+  flex: 0 0 auto;
+  margin-left: 0.35rem;
+  font-size: 0.88rem;
+}
+
+// --- detalle por categorías --------------------------------------------------
+.ck__detail {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.ck__list {
+  display: grid;
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ck__item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ck__item-name {
+  font-weight: 700;
+  font-size: 0.94rem;
+}
+
+.ck__item-summary {
+  margin-top: 0.2rem;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text-mute);
+}
+
+.ck__state {
+  @include label;
+
+  font-size: 0.62rem;
+}
+
+.ck__save {
+  width: 100%;
+  margin-top: 1.35rem;
+  padding: 0.9em 1.2em;
+  font-size: 0.92rem;
+}
+
+:host ::ng-deep .mat-mdc-slide-toggle {
+  flex: none;
+}

@@ -1,0 +1,93 @@
+<header class="bar" #bar [class.is-condensed]="condensed()">
+  <div class="bar__inner">
+    <a class="bar__brand" href="#inicio" (click)="go($event, 'inicio')" aria-label="MakeWeb, ir al inicio">
+      <img
+        class="bar__logo"
+        src="/brand/logotipo-entero.png"
+        alt="MakeWeb"
+        width="900"
+        height="228"
+      />
+    </a>
+
+    <nav class="bar__nav" aria-label="Secciones">
+      <ul>
+        @for (link of links; track link.id) {
+          <li>
+            <a
+              [href]="'#' + link.id"
+              [class.is-active]="active() === link.id"
+              [attr.aria-current]="active() === link.id ? 'true' : null"
+              (click)="go($event, link.id)"
+            >
+              {{ link.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="bar__end">
+      <a
+        class="btn btn--primary bar__cta"
+        href="#contacto"
+        (click)="go($event, 'contacto')"
+        [mwMagnetic]="16"
+      >
+        <span class="btn__label" data-magnetic-inner>
+          <span class="bar__cta-long">Pide presupuesto</span>
+          <span class="bar__cta-short">Presupuesto</span>
+        </span>
+      </a>
+
+      <button
+        class="bar__burger"
+        type="button"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="menu-principal"
+      >
+        <span class="visually-hidden">{{ menuOpen() ? 'Cerrar menú' : 'Abrir menú' }}</span>
+        <span class="bar__burger-lines" [class.is-open]="menuOpen()" aria-hidden="true">
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <span class="bar__progress" [style.scale]="progress() + ' 1'" aria-hidden="true"></span>
+</header>
+
+<div class="menu" id="menu-principal" #panel [attr.inert]="menuOpen() ? null : ''">
+  <div class="menu__sheet" data-menu-sheet>
+    <nav class="menu__nav" aria-label="Menú principal">
+      <ul>
+        @for (link of links; track link.id; let i = $index) {
+          <li>
+            <a [href]="'#' + link.id" (click)="go($event, link.id)">
+              <span data-menu-item>
+                <em>{{ pad(i + 1) }}</em>
+                {{ link.label }}
+              </span>
+            </a>
+          </li>
+        }
+        <li>
+          <a href="#contacto" (click)="go($event, 'contacto')">
+            <span data-menu-item>
+              <em>{{ pad(links.length + 1) }}</em>
+              Contacto
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="menu__meta" data-menu-meta>
+      <a href="mailto:hola@makeweb.es">hola&#64;makeweb.es</a>
+      <a href="tel:+34600000000">+34 600 00 00 00</a>
+      <p>Lunes a viernes, 9:00 – 18:00</p>
+    </div>
+  </div>
+</div>

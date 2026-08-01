@@ -1,0 +1,131 @@
+<mw-legal-layout title="Aviso legal">
+  <p>
+    Este aviso regula el acceso y el uso de la web <strong>{{ legal.domain }}</strong>. Navegar por
+    ella te convierte en usuario e implica que aceptas lo que se explica aquí abajo.
+  </p>
+
+  <div class="prose__note">
+    <strong>Pendiente antes de publicar:</strong> los datos identificativos que aparecen en
+    mayúsculas son huecos por rellenar. Están todos en un único archivo,
+    <code>src/app/data/legal.ts</code>. Sin ellos, esta página no cumple el artículo 10 de la
+    LSSI-CE.
+  </div>
+
+  <h2 id="titular">1. Quién está detrás de esta web</h2>
+  <p>
+    En cumplimiento del artículo 10 de la Ley 34/2002, de servicios de la sociedad de la
+    información y de comercio electrónico (LSSI-CE):
+  </p>
+  <dl>
+    <dt>Titular</dt>
+    <dd>{{ legal.company }}, que opera bajo la marca {{ legal.brand }}.</dd>
+
+    <dt>NIF</dt>
+    <dd>{{ legal.nif }}</dd>
+
+    <dt>Domicilio</dt>
+    <dd>
+      {{ legal.address }}. El estudio trabaja en remoto y no atiende al público en esta dirección;
+      figura por exigencia del artículo 10 de la LSSI-CE.
+    </dd>
+
+    <dt>Correo electrónico</dt>
+    <dd><a [href]="'mailto:' + legal.email">{{ legal.email }}</a></dd>
+
+    <dt>Teléfono</dt>
+    <dd><a [href]="'tel:' + legal.phone.split(' ').join('')">{{ legal.phone }}</a></dd>
+
+    <dt>Datos registrales</dt>
+    <dd>{{ legal.registry }}</dd>
+
+    <dt>Alojamiento</dt>
+    <dd>{{ legal.host.name }}, con servidores en {{ legal.host.location }}.</dd>
+  </dl>
+
+  <h2 id="objeto">2. Para qué sirve esta web</h2>
+  <p>
+    {{ legal.brand }} es un estudio de diseño y desarrollo web para negocios locales. Esta web
+    tiene una finalidad informativa y comercial: presentar nuestros servicios, mostrar trabajos
+    realizados y ofrecer un formulario para que puedas pedirnos una propuesta.
+  </p>
+  <p>
+    A través de ella no se venden productos ni se contratan servicios en línea. Cualquier encargo
+    se formaliza después, mediante presupuesto aceptado por escrito.
+  </p>
+
+  <h2 id="uso">3. Condiciones de uso</h2>
+  <p>Al usar esta web te comprometes a:</p>
+  <ul>
+    <li>Hacer un uso conforme a la ley, a este aviso y a la buena fe.</li>
+    <li>
+      No introducir ni difundir contenidos que sean ilícitos, difamatorios, discriminatorios o que
+      vulneren derechos de terceros.
+    </li>
+    <li>
+      No intentar acceder a áreas restringidas, ni alterar, dañar o inutilizar los sistemas que
+      soportan la web.
+    </li>
+    <li>Facilitar información veraz en el formulario de contacto.</li>
+  </ul>
+  <p>
+    Nos reservamos el derecho de retirar el acceso a quien incumpla estas condiciones, sin previo
+    aviso.
+  </p>
+
+  <h2 id="propiedad">4. Propiedad intelectual e industrial</h2>
+  <p>
+    El diseño, el código, los textos, la selección y disposición de contenidos, la marca
+    {{ legal.brand }} y el logotipo son titularidad de {{ legal.company }} o de terceros que han
+    autorizado su uso. Quedan protegidos por la normativa de propiedad intelectual e industrial.
+  </p>
+  <p>
+    Puedes ver y descargar contenido para tu uso personal. Lo que no puedes hacer sin permiso por
+    escrito es reproducirlo, distribuirlo, transformarlo o comunicarlo públicamente con fines
+    comerciales.
+  </p>
+  <p>
+    Los nombres de negocio, marcas y trabajos de terceros que aparecen en la sección de proyectos
+    pertenecen a sus respectivos titulares y se muestran únicamente a título ilustrativo.
+  </p>
+
+  <h2 id="responsabilidad">5. Responsabilidad</h2>
+  <p>
+    Cuidamos que la información publicada sea correcta y esté actualizada, pero no podemos
+    garantizar que esté libre de errores ni que se mantenga vigente indefinidamente. Los plazos,
+    precios y resultados que se citan son orientativos y no constituyen una oferta vinculante:
+    solo lo es el presupuesto firmado.
+  </p>
+  <p>
+    Tampoco respondemos de las interrupciones del servicio, de los fallos de la red o de los daños
+    que puedan derivarse de un uso indebido de la web, salvo en aquello que la ley no permita
+    excluir.
+  </p>
+
+  <h2 id="enlaces">6. Enlaces a otras webs</h2>
+  <p>
+    Esta web puede enlazar a sitios de terceros (por ejemplo, redes sociales). Esos enlaces se
+    ofrecen solo como referencia: no controlamos su contenido ni sus políticas, y no asumimos
+    responsabilidad por ellos. Al seguirlos, sales de {{ legal.domain }} y pasas a regirte por las
+    condiciones del sitio de destino.
+  </p>
+
+  <h2 id="privacidad">7. Protección de datos y cookies</h2>
+  <p>
+    El tratamiento de los datos personales que nos facilites se explica en la
+    <a href="/privacidad">política de privacidad</a>, y el uso de cookies en la
+    <a href="/cookies">política de cookies</a>.
+  </p>
+
+  <h2 id="modificaciones">8. Cambios en este aviso</h2>
+  <p>
+    Podemos actualizar este aviso cuando cambie la normativa o la propia web. La versión vigente es
+    siempre la publicada aquí, con la fecha de actualización que figura arriba.
+  </p>
+
+  <h2 id="ley">9. Legislación aplicable</h2>
+  <p>
+    Este aviso se rige por la legislación española. Para cualquier controversia, las partes se
+    someten a los juzgados y tribunales del domicilio del titular, salvo cuando la persona usuaria
+    tenga la condición de consumidor: en ese caso serán competentes los de su propio domicilio.
+  </p>
+</mw-legal-layout>

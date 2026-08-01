@@ -1,0 +1,280 @@
+@use 'mixins' as *;
+
+:host {
+  --bar-h: 4.5rem;
+}
+
+// ---------------------------------------------------------------------------
+// Top bar
+// ---------------------------------------------------------------------------
+.bar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 800;
+  will-change: transform;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgb(17 17 17 / 86%);
+    border-bottom: 1px solid transparent;
+    opacity: 0;
+    transition:
+      opacity var(--dur) var(--ease-out),
+      border-color var(--dur) var(--ease-out);
+  }
+
+  // The backdrop blur only exists while the bar is actually over content.
+  // Declaring it unconditionally keeps a full-width blur layer alive — and
+  // recomposited — for the whole scroll, even while the bar is transparent.
+  &.is-condensed::before {
+    opacity: 1;
+    border-bottom-color: var(--line);
+    backdrop-filter: blur(14px);
+  }
+}
+
+.bar__inner {
+  @include shell;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: var(--bar-h);
+}
+
+.bar__brand {
+  display: inline-flex;
+  align-items: center;
+  // El logotipo mide 26 px de alto; el enlace necesita 44 para el dedo.
+  min-height: 44px;
+  transition: opacity var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.bar__logo {
+  width: auto;
+  height: 1.6rem;
+}
+
+.bar__nav {
+  @include below(1080) {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2.1rem);
+    list-style: none;
+    padding: 0;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    padding-block: 0.4rem;
+    font-size: 0.94rem;
+    font-weight: 400;
+    color: var(--text-soft);
+    transition: color var(--dur-fast) var(--ease-out);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      height: 1px;
+      background: var(--violet-lift);
+      scale: 0 1;
+      transform-origin: right;
+      transition: scale 0.4s var(--ease-out);
+    }
+
+    &:hover,
+    &.is-active {
+      color: var(--text);
+    }
+
+    &.is-active::after,
+    &:hover::after {
+      scale: 1 1;
+      transform-origin: left;
+    }
+  }
+}
+
+.bar__end {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+// En móvil el botón de la portada queda por debajo de la demostración, así que
+// este es el único que se ve siempre: antes se ocultaba por debajo de 640 px y
+// la primera pantalla se quedaba sin ninguna llamada a la acción.
+.bar__cta {
+  padding: 0.85em 1.5em;
+  font-size: 0.92rem;
+
+  @include below(640) {
+    padding: 0.8em 1.1em;
+    font-size: 0.82rem;
+  }
+}
+
+.bar__cta-short {
+  display: none;
+}
+
+@include below(640) {
+  .bar__cta-long {
+    display: none;
+  }
+
+  .bar__cta-short {
+    display: inline;
+  }
+}
+
+.bar__burger {
+  display: none;
+  place-items: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+
+  @include below(1080) {
+    display: grid;
+  }
+}
+
+.bar__burger-lines {
+  display: grid;
+  gap: 5px;
+  width: 1.1rem;
+
+  span {
+    display: block;
+    height: 1.5px;
+    background: currentcolor;
+    transition:
+      translate 0.35s var(--ease-out),
+      rotate 0.35s var(--ease-out);
+  }
+
+  &.is-open span:first-child {
+    translate: 0 3.25px;
+    rotate: 45deg;
+  }
+
+  &.is-open span:last-child {
+    translate: 0 -3.25px;
+    rotate: -45deg;
+  }
+}
+
+.bar__progress {
+  position: absolute;
+  inset: auto 0 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--violet), var(--violet-lift));
+  transform-origin: left;
+  scale: 0 1;
+}
+
+// ---------------------------------------------------------------------------
+// Full-screen menu (mobile / tablet)
+// ---------------------------------------------------------------------------
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 790;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.menu__sheet {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  padding: calc(var(--bar-h) + 2rem) var(--gutter) 2.5rem;
+  background: var(--ink-800);
+  background-image: radial-gradient(120% 80% at 85% 0%, var(--violet-14), transparent 60%);
+  overflow-y: auto;
+}
+
+.menu__nav {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  a {
+    display: block;
+    padding-block: 0.15em;
+    overflow: hidden;
+  }
+
+  span {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7em;
+    font-family: var(--font-display);
+    font-size: clamp(2.1rem, 9vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.16;
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+
+  em {
+    font-family: var(--font-label);
+    font-size: 0.72rem;
+    font-style: normal;
+    letter-spacing: 0.08em;
+    color: var(--violet-lift);
+  }
+
+  a:hover span {
+    color: var(--violet-lift);
+  }
+}
+
+.menu__meta {
+  display: grid;
+  gap: 0.35rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+  color: var(--text-soft);
+
+  // Este panel es exclusivo de móvil: los enlaces tienen que ser del tamaño
+  // de un dedo, no de una línea de texto.
+  a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  a:hover {
+    color: var(--violet-lift);
+  }
+
+  p {
+    font-family: var(--font-label);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+  }
+}

@@ -1,0 +1,123 @@
+<mw-legal-layout title="Política de cookies">
+  <p>
+    Una cookie es un archivo pequeño que una web guarda en tu navegador para recordar algo entre
+    una visita y la siguiente. Aquí tienes exactamente cuáles usa {{ legal.domain }}, para qué, y
+    cómo cambiar tu decisión en cualquier momento.
+  </p>
+
+  <h2 id="tu-eleccion">Tu elección</h2>
+  <p>{{ current() }}</p>
+  <p>
+    <button class="btn btn--primary" type="button" (click)="reopen()">
+      <span class="btn__label">Cambiar mis preferencias</span>
+    </button>
+  </p>
+
+  <h2 id="tipos">Qué tipos usamos</h2>
+  @for (category of categories; track category.id) {
+    <h3>{{ category.name }}</h3>
+    <p>{{ category.summary }}</p>
+    @if (category.required) {
+      <p>
+        Se instalan sin pedirte permiso porque son estrictamente necesarias para prestarte el
+        servicio, según el artículo 22.2 de la LSSI-CE.
+      </p>
+    } @else {
+      <p>Solo se instalan si las activas, y puedes desactivarlas cuando quieras.</p>
+    }
+  }
+
+  <h2 id="inventario">Cookies que hay ahora mismo</h2>
+  <div class="prose__table">
+    <table>
+      <caption class="visually-hidden">
+        Cookies utilizadas en {{ legal.domain }}
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Titular</th>
+          <th scope="col">Finalidad</th>
+          <th scope="col">Duración</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of inventory; track row.name) {
+          <tr>
+            <td><code>{{ row.name }}</code></td>
+            <td>{{ row.owner }}</td>
+            <td>{{ row.purpose }}</td>
+            <td>{{ row.duration }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="prose__note">
+    <strong>Este inventario tiene que reflejar la realidad.</strong> Hoy la web solo guarda tu
+    decisión sobre el banner, y por eso la tabla tiene una sola fila. En cuanto conectes analítica,
+    un píxel publicitario o vídeos incrustados, añade una fila por cookie en
+    <code>COOKIE_INVENTORY</code> (<code>src/app/data/legal.ts</code>) con su nombre, titular,
+    finalidad y plazo reales, y sube <code>CONSENT_VERSION</code> para volver a preguntar.
+  </div>
+
+  <h2 id="terceros">Cookies de terceros</h2>
+  <p>
+    Las cookies analíticas y publicitarias, cuando estén activas, las instalan proveedores
+    externos, que actúan como responsables o encargados según el caso. Sus condiciones y sus plazos
+    los fija cada proveedor: los tienes identificados en la tabla anterior y en el apartado 5 de la
+    <a href="/privacidad">política de privacidad</a>.
+  </p>
+
+  <h2 id="gestionar">Cómo gestionarlas desde tu navegador</h2>
+  <p>
+    Además del panel de esta web, puedes borrar o bloquear cookies desde la configuración de tu
+    navegador. Ten en cuenta que bloquear las técnicas puede impedir que algunas partes de la web
+    funcionen.
+  </p>
+  <ul>
+    <li>
+      <a
+        href="https://support.google.com/chrome/answer/95647"
+        rel="noopener noreferrer"
+        target="_blank"
+        >Google Chrome</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://support.mozilla.org/es/kb/Borrar%20cookies"
+        rel="noopener noreferrer"
+        target="_blank"
+        >Mozilla Firefox</a
+      >
+    </li>
+    <li>
+      <a href="https://support.apple.com/es-es/HT201265" rel="noopener noreferrer" target="_blank"
+        >Safari</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://support.microsoft.com/es-es/microsoft-edge"
+        rel="noopener noreferrer"
+        target="_blank"
+        >Microsoft Edge</a
+      >
+    </li>
+  </ul>
+
+  <h2 id="retirar">Retirar el consentimiento</h2>
+  <p>
+    Retirarlo es tan fácil como darlo: pulsa «Cambiar mis preferencias» al principio de esta página
+    o el enlace «Cookies» del pie. El cambio surte efecto de inmediato y no afecta a la licitud de
+    lo tratado antes de retirarlo.
+  </p>
+
+  <h2 id="cambios">Cambios en esta política</h2>
+  <p>
+    Actualizaremos esta página siempre que cambien las cookies que usamos. Si el cambio afecta a
+    cookies que requieren consentimiento, te volveremos a preguntar.
+  </p>
+</mw-legal-layout>
