@@ -1,0 +1,65 @@
+# Compila la web y la publica en GitHub Pages en cada push.
+#
+# Sustituye al constructor clásico de Pages, que era el que se quedaba colgado
+# en "building" con duración 0 y había que despertar a mano por API. Este flujo
+# no lo usa: compila aquí y sube el resultado ya hecho.
+name: Publicar en GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+      - rediseno-y-pagina-de-precios
+  # Permite lanzarlo a mano desde la pestaña Actions sin tocar el código.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Si se empuja dos veces seguidas, la segunda cancela a la primera: no tiene
+# sentido publicar una versión que ya está obsoleta antes de terminar.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  compilar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # La misma que en local: Angular 20 exige 20.19+ o 22.12+.
+          node-version: '22.12'
+          cache: npm
+
+      - run: npm ci
+
+      # El baseHref /makeweb/ ya va en angular.json, así que no hace falta
+      # pasarlo aquí. Si algún día hay dominio propio, se cambia allí.
+      - run: npm run build
+
+      # Pages sirve /404.html cuando no encuentra una ruta; el prerenderizado
+      # genera 404/index.html. Y .nojekyll evita que Jekyll se coma los
+      # archivos que empiezan por guion bajo.
+      - name: Preparar 404 y desactivar Jekyll
+        run: |
+          cp dist/makeweb/browser/404/index.html dist/makeweb/browser/404.html
+          touch dist/makeweb/browser/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/makeweb/browser
+
+  publicar:
+    needs: compilar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
