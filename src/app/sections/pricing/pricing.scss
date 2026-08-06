@@ -1,53 +1,21 @@
 @use 'mixins' as *;
 
-.prz__switch {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  justify-self: end;
-
-  @include below(900) {
-    justify-self: start;
-  }
-}
-
-.prz__switch-label {
-  @include label;
-}
-
-:host ::ng-deep .mat-button-toggle-group {
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  overflow: hidden;
-  background: rgb(255 255 255 / 3%);
-}
-
-:host ::ng-deep .mat-button-toggle {
-  border: 0;
-  background: transparent;
-  color: var(--text-mute);
-  font-family: var(--font-body);
-  font-size: 0.86rem;
-  font-weight: 400;
-}
-
-:host ::ng-deep .mat-button-toggle-checked {
-  background: var(--violet);
-  color: #fff;
-}
-
-:host ::ng-deep .mat-button-toggle-label-content {
-  line-height: 2.5rem;
-  padding-inline: 1.1rem;
+// La cabecera va en la página, así que la sección arranca ya en las tarjetas.
+.prz.sec {
+  padding-top: clamp(2.5rem, 5vw, 4rem);
 }
 
 // --- plans ------------------------------------------------------------------
+// Tres columnas exactamente iguales dicen que las tres opciones valen lo mismo,
+// que es justo lo contrario de lo que quiere una página de precios. La
+// recomendada es más ancha y sobresale por arriba; las otras dos arrancan más
+// abajo. El ojo cae en la del medio sin necesidad de la etiqueta.
 .prz__plans {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.16fr) minmax(0, 0.92fr);
   gap: clamp(1rem, 1.8vw, 1.75rem);
   align-items: start;
-  margin: clamp(3rem, 6vw, 4.5rem) 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 
@@ -89,6 +57,14 @@
   gap: 1rem;
   padding: clamp(1.6rem, 2.4vw, 2.35rem);
   height: 100%;
+  // Referencia para las unidades `cqi` del precio: la cifra se dimensiona con
+  // el ancho de su tarjeta, que es lo que la tiene que contener.
+  container-type: inline-size;
+
+  // Las dos de los lados bajan; la del medio se queda arriba y respira más.
+  @include above(960) {
+    margin-top: 1.75rem;
+  }
 
   @include below(960) {
     flex: 0 0 auto;
@@ -103,11 +79,17 @@
   border-color: var(--violet-40);
   background:
     radial-gradient(120% 80% at 50% 0%, var(--violet-14), transparent 60%),
-    linear-gradient(180deg, rgb(255 255 255 / 5%), rgb(255 255 255 / 0%) 42%),
+    linear-gradient(180deg, var(--veil-05), transparent 42%),
     var(--ink-700);
-  box-shadow:
-    var(--shadow-card),
-    0 40px 90px -60px var(--violet);
+  // La tarjeta recomendada destaca por superficie más clara y borde violeta,
+  // no por un halo de color a su alrededor.
+  box-shadow: var(--shadow-card);
+
+  // Rompe la línea de arriba: es la única que no baja, y lleva más aire dentro.
+  @include above(960) {
+    margin-top: 0;
+    padding-block: clamp(2.1rem, 3.2vw, 3rem);
+  }
 }
 
 .prz__flag {
@@ -124,12 +106,21 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
-  color: #fff;
+  color: var(--text);
 }
 
 .prz__name {
   font-size: var(--step-2);
   letter-spacing: -0.035em;
+}
+
+// El nombre da categoría; esta línea dice qué es, para que nadie tenga que
+// deducir qué compra por el nombre.
+.prz__kind {
+  @include label;
+
+  margin-top: -0.4rem;
+  color: var(--violet-lift);
 }
 
 .prz__pitch {
@@ -140,30 +131,42 @@
 }
 
 .prz__price {
-  display: flex;
-  align-items: baseline;
-  gap: 0.25rem;
+  display: grid;
+  gap: 0.5rem;
   padding-block: 0.6rem 1.2rem;
   border-bottom: 1px solid var(--line);
 }
 
 .prz__currency {
-  font-family: var(--font-display);
-  font-size: var(--step-2);
+  font-size: 0.62em;
   color: var(--text-mute);
 }
 
+// La cifra es una horquilla y tiene que caber entera en una línea: partida en
+// dos se leen dos precios en vez de un rango. El tamaño va en `cqi` —uno por
+// ciento del ancho de la tarjeta— y no en `vw`, porque el problema no era el
+// ancho de la pantalla sino el de la tarjeta: la de «1000 — 1100» es la más
+// estrecha y la que más dígitos tiene, así que se desbordaba justo ahí.
 .prz__amount {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  gap: 0.1em;
   font-family: var(--font-display);
-  font-size: var(--step-4);
+  font-size: clamp(1.45rem, 10cqi, 2.6rem);
   font-weight: 700;
-  letter-spacing: -0.05em;
-  line-height: 0.9;
+  letter-spacing: -0.045em;
+  line-height: 1;
   font-variant-numeric: tabular-nums;
 }
 
+.prz__dash {
+  margin-inline: 0.12em;
+  color: var(--text-mute);
+}
+
 .prz__term {
-  margin-left: 0.45rem;
   font-family: var(--font-label);
   font-size: 0.66rem;
   letter-spacing: 0.08em;
@@ -211,7 +214,6 @@
   display: none;
   align-items: center;
   gap: 0.7em;
-  margin-top: clamp(2.5rem, 5vw, 3.5rem);
   font-size: 0.64rem;
 
   &::after {

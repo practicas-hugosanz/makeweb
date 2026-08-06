@@ -6,7 +6,7 @@
   gap: clamp(2.5rem, 6vw, 6rem);
 
   @include below(960) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
 }
@@ -25,6 +25,7 @@
 }
 
 .prc__link {
+  min-height: 44px;
   justify-self: start;
 }
 

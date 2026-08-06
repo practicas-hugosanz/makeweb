@@ -14,8 +14,6 @@ export class MotionService {
 
   private smoother: ScrollSmoother | null = null;
 
-  /** Global scroll progress, 0 → 1. Used by the progress spine. */
-  readonly progress = signal(0);
   /** Section id currently under the viewport centre. */
   readonly activeSection = signal<string>('inicio');
   /** True when the OS asks for reduced motion — all decorative motion opts out. */
@@ -52,7 +50,6 @@ export class MotionService {
         // heavy. The browser's own scrolling is smoother here.
         normalizeScroll: false,
         ignoreMobileResize: true,
-        onUpdate: (self) => this.progress.set(self.progress),
       });
 
       this.watchHeight(content);

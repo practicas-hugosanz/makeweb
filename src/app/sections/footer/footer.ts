@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { MotionService } from '../../core/animation/motion.service';
-import { NAV_LINKS } from '../../data/content';
 import { LEGAL_PAGES } from '../../data/legal';
 import { ConsentActions } from '../../state/consent/consent.actions';
 
@@ -18,7 +17,6 @@ export class Footer {
   private readonly router = inject(Router);
   private readonly store = inject(Store);
 
-  protected readonly links = NAV_LINKS;
   protected readonly legalPages = LEGAL_PAGES;
   protected readonly year = new Date().getFullYear();
 

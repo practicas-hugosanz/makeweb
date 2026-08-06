@@ -17,7 +17,7 @@
   gap: clamp(2rem, 5vw, 5rem);
 
   @include below(1024) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -72,6 +72,20 @@
   }
 }
 
+.cnt__offer {
+  padding: clamp(1rem, 2vw, 1.35rem) clamp(1.1rem, 2.2vw, 1.5rem);
+  border: 1px solid var(--violet-40);
+  border-radius: var(--radius-m);
+  background: var(--violet-08);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-soft);
+
+  strong {
+    color: var(--text);
+  }
+}
+
 .cnt__direct-label {
   @include label;
 
@@ -86,8 +100,8 @@
   border-radius: var(--radius-l);
   background:
     radial-gradient(120% 60% at 50% 0%, var(--violet-14), transparent 62%),
-    linear-gradient(180deg, #1c1b25 0%, #151420 100%);
-  box-shadow: 0 40px 90px -60px #000;
+    linear-gradient(180deg, var(--ink-700) 0%, var(--ink-800) 100%);
+  box-shadow: var(--shadow-panel);
   overflow: hidden;
 
   // A single violet filament across the top edge, brightest in the middle.
@@ -135,6 +149,12 @@
 // select in the next row; now it pushes the row down instead.
 .cnt__form {
   display: grid;
+  // La columna implícita de una rejilla es `auto`, y `auto` no baja del
+  // min-content de lo que hay dentro. Los campos de Material traen un
+  // min-content ancho (la etiqueta del hueco del borde), así que a 320 px el
+  // formulario entero se salía por la derecha. `minmax(0, 1fr)` le permite
+  // encogerse con el panel.
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.9rem;
 
   @include below(620) {
@@ -150,7 +170,22 @@
   gap: 0.9rem;
 
   @include below(620) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+// Los campos de Material traen un ancho mínimo propio que en una pantalla de
+// 320 px es mayor que el panel: la fila se salía 11 px por la derecha aunque
+// ya estuviese en una sola columna. Con esto se encogen con su contenedor.
+.cnt__panel .mat-mdc-form-field {
+  width: 100%;
+  min-width: 0;
+}
+
+// A 320 px el relleno del panel se come el ancho útil del campo.
+@include below(360) {
+  .cnt__panel {
+    padding-inline: 1rem;
   }
 }
 
@@ -159,7 +194,7 @@
 // competing with the panel surface and only the border carries state.
 :host ::ng-deep {
   .cnt__panel .mat-mdc-text-field-wrapper {
-    background: rgb(255 255 255 / 2%);
+    background: var(--veil-02);
     border-radius: var(--radius-s);
   }
 
@@ -208,6 +243,15 @@
   .cnt__panel .mat-mdc-form-field-error {
     line-height: 1.35;
   }
+
+  // Red de seguridad para el texto del desplegable: en una pantalla de 320 px
+  // una opción larga se salía 4 px por la derecha. Antes de recortar, encoge.
+  .cnt__panel .mat-mdc-select-value-text {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 .cnt__consent {
@@ -228,7 +272,7 @@
   font-family: var(--font-label);
   font-size: 0.72rem;
   letter-spacing: 0.02em;
-  color: #ff8f8f;
+  color: var(--error);
 }
 
 .cnt__submit {
@@ -283,8 +327,8 @@
     content: '';
     width: 1rem;
     height: 0.55rem;
-    border-left: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-left: 2px solid var(--text);
+    border-bottom: 2px solid var(--text);
     rotate: -45deg;
     translate: 0 -0.12rem;
   }

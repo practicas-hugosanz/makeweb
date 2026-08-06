@@ -19,8 +19,8 @@ export const LEGAL = {
   address: 'DOMICILIO FISCAL COMPLETO, CÓDIGO POSTAL, LOCALIDAD (PROVINCIA), España',
   /** Solo si es una sociedad; si eres autónomo, borra esta línea de la página. */
   registry: 'Registro Mercantil de PROVINCIA, tomo TOMO, folio FOLIO, hoja HOJA',
-  email: 'hola@makeweb.es',
-  privacyEmail: 'privacidad@makeweb.es',
+  email: 'contacto@makeweb.es',
+  privacyEmail: 'contacto@makeweb.es',
   phone: '+34 600 00 00 00',
   domain: 'makeweb.es',
   site: 'https://makeweb.es',

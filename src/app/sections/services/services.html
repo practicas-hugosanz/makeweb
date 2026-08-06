@@ -1,21 +1,27 @@
 <section class="svc sec sec--flush" id="servicios" #root>
-  <div class="svc__pin" data-pin>
-    <div class="svc__head shell">
-      <div class="sec-head sec-head--split">
-        <div class="sec-head__stack" mwReveal="rise" [revealStagger]="0.09">
-          <p class="sec-eyebrow" data-reveal-item>Lo que hacemos</p>
-          <h2 class="sec-title" data-reveal-item>Cinco piezas, <em>una sola web</em>.</h2>
-        </div>
-        <p class="sec-lead" mwReveal="fade">
-          No vendemos paquetes sueltos. Todo lo de abajo entra en el mismo proyecto porque, por
-          separado, ninguna de las cinco cosas sirve de mucho.
-        </p>
+  <!-- El titular va fuera del bloque anclado: dentro del pin quedaba centrado a
+       media pantalla y no aparecía hasta que la sección ya estaba enganchada
+       arriba. Aquí se lee mientras entra. -->
+  <div class="svc__head shell">
+    <div class="sec-head sec-head--split" mwReveal="rise" [revealStagger]="0.12">
+      <div class="sec-head__stack">
+        <h2 class="sec-title" data-reveal-item>
+          No vendemos una web. <em>Vendemos un sistema que funciona</em>.
+        </h2>
       </div>
+      <p class="sec-lead" data-reveal-item>
+        Diseño, velocidad, SEO, reservas y mantenimiento, todo en un mismo proyecto, listo para
+        traerte clientes desde el día uno.
+      </p>
+    </div>
+  </div>
 
-      <div class="svc__meter" aria-hidden="true">
-        <span class="svc__count">{{ current() }} / {{ services.length }}</span>
-        <span class="svc__hint">Desplaza para avanzar</span>
-      </div>
+  <div class="svc__pin" data-pin>
+    <!-- El contador sí va dentro del anclaje: mientras las tarjetas corren es
+         lo único que dice por dónde vas y cuántas quedan. -->
+    <div class="svc__meter shell" aria-hidden="true">
+      <span class="svc__count">{{ current() }} / {{ services.length }}</span>
+      <span class="svc__hint">Desplaza para avanzar</span>
     </div>
 
     <div class="svc__viewport" data-viewport>

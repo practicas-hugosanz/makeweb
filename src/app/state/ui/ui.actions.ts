@@ -7,6 +7,5 @@ export const UiActions = createActionGroup({
     'Menu Toggled': emptyProps(),
     'Menu Closed': emptyProps(),
     'Section Entered': props<{ id: string }>(),
-    'Pricing Term Changed': props<{ term: 'once' | 'monthly' }>(),
   },
 });

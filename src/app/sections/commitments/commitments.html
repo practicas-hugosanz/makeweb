@@ -1,24 +1,30 @@
-<section class="cmt sec" id="compromisos">
+<section class="cmt sec sec--open" id="compromisos" #root>
   <div class="shell">
-    <div class="sec-head sec-head--split">
-      <div class="sec-head__stack" mwReveal="rise" [revealStagger]="0.09">
-        <p class="sec-eyebrow" data-reveal-item>Compromisos</p>
+    <!-- Una sola entrada para toda la cabecera: el titular y la entradilla
+         llegaban antes con dos animaciones distintas, y eso es lo que hace que
+         una página no se asiente nunca. -->
+    <div class="sec-head sec-head--split" mwReveal="rise" [revealStagger]="0.12">
+      <div class="sec-head__stack">
         <h2 class="sec-title" data-reveal-item>Lo que <em>firmamos</em>.</h2>
       </div>
-      <p class="sec-lead" mwReveal="fade">
+      <p class="sec-lead" data-reveal-item>
         Todavía no tenemos una pared de reseñas, y no vamos a inventárnoslas. Lo que sí podemos
         darte por escrito es esto.
       </p>
     </div>
 
-    <ol class="cmt__list">
-      @for (item of commitments; track item.title; let i = $index) {
-        <li class="cmt__item" mwReveal="rise" [revealDelay]="(i % 3) * 0.07">
-          <span class="cmt__index" aria-hidden="true">{{ i + 1 }}</span>
-          <h3 class="cmt__title">{{ item.title }}</h3>
-          <p class="cmt__body">{{ item.body }}</p>
-        </li>
-      }
-    </ol>
+    <div class="cmt__grid" data-list>
+      <span class="cmt__rule" data-rule aria-hidden="true"></span>
+
+      <ol class="cmt__list">
+        @for (item of commitments; track item.title; let i = $index) {
+          <li class="cmt__item" data-item data-anim>
+            <span class="cmt__index" aria-hidden="true">{{ i + 1 }}</span>
+            <h3 class="cmt__title">{{ item.title }}</h3>
+            <p class="cmt__body">{{ item.body }}</p>
+          </li>
+        }
+      </ol>
+    </div>
   </div>
 </section>

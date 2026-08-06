@@ -8,6 +8,11 @@ export const routes: Routes = [
     title: 'MakeWeb — Webs para negocios locales que aparecen primero',
   },
   {
+    path: 'precios',
+    loadComponent: () => import('./pages/pricing/pricing-page').then((m) => m.PricingPage),
+    title: 'Precios — MakeWeb',
+  },
+  {
     path: 'aviso-legal',
     // Las páginas legales se visitan poco: no tienen por qué viajar en el
     // bundle inicial junto con la portada.

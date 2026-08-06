@@ -2,7 +2,6 @@
   <div class="shell cnt__inner">
     <div class="cnt__aside">
       <div class="sec-head" mwReveal="rise" [revealStagger]="0.08">
-        <p class="sec-eyebrow" data-reveal-item>Contacto</p>
         <h2 class="sec-title" data-reveal-item>Te respondemos <em>en 24 h</em>.</h2>
         <p class="sec-lead" data-reveal-item>
           Con lo que nos escribas preparamos una propuesta con alcance, precio cerrado y fecha de
@@ -10,10 +9,19 @@
         </p>
       </div>
 
-      <ul class="cnt__direct" mwReveal="fade">
+      <!-- Rescatado de la sección "Esta web" al retirarla: era lo único de
+           aquel bloque que abría una conversación, y aquí cae justo al lado
+           del formulario donde se pide. -->
+      <p class="cnt__offer">
+        <strong>¿Ya tienes web?</strong> Dinos la dirección en el mensaje y te la analizamos gratis:
+        qué la frena, qué cambiaríamos y qué no tocaríamos. Sin compromiso y sin que tengas que
+        contratarnos nada.
+      </p>
+
+      <ul class="cnt__direct">
         <li>
           <span class="cnt__direct-label">Correo</span>
-          <a href="mailto:hola@makeweb.es">hola&#64;makeweb.es</a>
+          <a href="mailto:contacto@makeweb.es">contacto&#64;makeweb.es</a>
         </li>
         <li>
           <span class="cnt__direct-label">Teléfono</span>
@@ -82,21 +90,25 @@
             </mat-form-field>
           </div>
 
+          <!-- Estas dos preguntas sustituyen a "qué necesitas" y "presupuesto".
+               La primera preguntaba por servicios sueltos cuando lo que se
+               vende es un proyecto entero, y la segunda ofrecía horquillas de
+               hasta 6.000 € para una web de 350 €. -->
           <div class="cnt__row">
             <mat-form-field appearance="outline" subscriptSizing="dynamic">
-              <mat-label>Qué necesitas</mat-label>
-              <mat-select formControlName="service">
-                @for (service of services; track service.id) {
-                  <mat-option [value]="service.id">{{ service.index }}</mat-option>
+              <mat-label>Qué plan te encaja</mat-label>
+              <mat-select formControlName="plan">
+                @for (option of planOptions; track option.id) {
+                  <mat-option [value]="option.id">{{ option.label }}</mat-option>
                 }
               </mat-select>
             </mat-form-field>
 
             <mat-form-field appearance="outline" subscriptSizing="dynamic">
-              <mat-label>Presupuesto</mat-label>
-              <mat-select formControlName="budget">
-                @for (budget of budgets; track budget.id) {
-                  <mat-option [value]="budget.id">{{ budget.label }}</mat-option>
+              <mat-label>Qué tienes ahora</mat-label>
+              <mat-select formControlName="current">
+                @for (option of startingPoints; track option.id) {
+                  <mat-option [value]="option.id">{{ option.label }}</mat-option>
                 }
               </mat-select>
             </mat-form-field>

@@ -6,14 +6,12 @@ export interface UiState {
   booted: boolean;
   menuOpen: boolean;
   activeSection: string;
-  pricingTerm: 'once' | 'monthly';
 }
 
 const initialState: UiState = {
   booted: false,
   menuOpen: false,
   activeSection: 'inicio',
-  pricingTerm: 'once',
 };
 
 export const uiFeature = createFeature({
@@ -24,7 +22,6 @@ export const uiFeature = createFeature({
     on(UiActions.menuToggled, (state) => ({ ...state, menuOpen: !state.menuOpen })),
     on(UiActions.menuClosed, (state) => ({ ...state, menuOpen: false })),
     on(UiActions.sectionEntered, (state, { id }) => ({ ...state, activeSection: id })),
-    on(UiActions.pricingTermChanged, (state, { term }) => ({ ...state, pricingTerm: term })),
   ),
 });
 
@@ -34,5 +31,4 @@ export const {
   selectBooted,
   selectMenuOpen,
   selectActiveSection,
-  selectPricingTerm,
 } = uiFeature;

@@ -16,11 +16,27 @@ $violet-deep: #372f8f; // depth, shadows, gradient tail
 :root {
   // --- surfaces -------------------------------------------------------------
   --ink: #{$brand-ink};
+  --ink-950: #0c0c0c; // canal de la barra de desplazamiento, por debajo del fondo
   --ink-800: #17161d; // raised panels
   --ink-700: #1e1d26; // cards
   --ink-600: #262532; // hovered cards
+  --ink-550: #2e2d3c; // superficie más alta (menús de Material)
   --line: rgb(255 255 255 / 9%);
   --line-strong: rgb(255 255 255 / 18%);
+  --line-solid: #4b4959; // borde opaco: el de los campos de formulario
+  --line-solid-soft: #2b2a36;
+
+  // Velos blancos sobre superficie oscura. Son los cuatro que usa la página;
+  // tenerlos con nombre evita que aparezca un quinto al 3,5 % sin querer.
+  --veil-02: rgb(255 255 255 / 2%);
+  --veil-03: rgb(255 255 255 / 3%);
+  --veil-04: rgb(255 255 255 / 4%);
+  --veil-05: rgb(255 255 255 / 5%);
+
+  // El fondo de la píldora de navegación: translúcido para que el desenfoque
+  // tenga algo que hacer, y más cerrado en cuanto se empieza a desplazar.
+  --bar-veil: rgb(20 19 26 / 72%);
+  --bar-veil-strong: rgb(20 19 26 / 88%);
 
   // --- brand ---------------------------------------------------------------
   --violet: #{$brand-violet};
@@ -30,6 +46,11 @@ $violet-deep: #372f8f; // depth, shadows, gradient tail
   --violet-14: rgb(107 96 231 / 14%);
   --violet-24: rgb(107 96 231 / 24%);
   --violet-40: rgb(107 96 231 / 40%);
+  --violet-sunk: #2a2461; // relleno de los contenedores de Material
+  --violet-wash: #d9d5ff; // texto sobre ese relleno
+
+  // --- estado ---------------------------------------------------------------
+  --error: #ff8f8f;
 
   // --- text ----------------------------------------------------------------
   --text: #{$brand-white};
@@ -37,12 +58,12 @@ $violet-deep: #372f8f; // depth, shadows, gradient tail
   --text-mute: #7d7a90;
 
   // --- type ----------------------------------------------------------------
-  // One family, two cuts, three roles: Bold tightened up carries the display
-  // work, Regular carries the reading, and Regular set small with wide tracking
-  // does the job a monospace used to do — labels, eyebrows, data readouts.
+  // Dos familias, tres papeles. Mollen Bold, muy apretado, es la voz que grita:
+  // titulares y cifras. Instrument Sans es la que se lee sin darte cuenta, y la
+  // misma puesta pequeña y espaciada hace de etiqueta.
   --font-display: 'Mollen', system-ui, sans-serif;
-  --font-body: 'Mollen', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-label: 'Mollen', system-ui, sans-serif;
+  --font-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-label: 'Instrument Sans', system-ui, sans-serif;
 
   // Fluid scale — 360px → 1600px viewport
   --step--1: clamp(0.78rem, 0.75rem + 0.15vw, 0.875rem);
@@ -64,6 +85,15 @@ $violet-deep: #372f8f; // depth, shadows, gradient tail
   --radius-l: 28px;
   --radius-xl: 40px;
 
+  // --- apilado --------------------------------------------------------------
+  // Escala con nombre, de abajo arriba. Un 9999 suelto no dice contra qué está
+  // compitiendo; estos cinco sí, y se lee de un vistazo qué tapa a qué.
+  --z-below: -1; // relleno decorativo detrás de un botón
+  --z-menu: 790; // panel de navegación a pantalla completa
+  --z-bar: 800; // la píldora de navegación, por encima del panel
+  --z-banner: 850; // aviso de cookies
+  --z-skip: 900; // salto al contenido: tiene que estar por encima de todo
+
   // --- motion ---------------------------------------------------------------
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
@@ -73,5 +103,11 @@ $violet-deep: #372f8f; // depth, shadows, gradient tail
 
   // --- elevation ------------------------------------------------------------
   --shadow-card: 0 1px 0 rgb(255 255 255 / 6%) inset, 0 24px 60px -30px rgb(0 0 0 / 90%);
-  --shadow-violet: 0 20px 60px -22px rgb(107 96 231 / 55%);
+  // Sobre fondo oscuro se eleva subiendo la luminosidad de la superficie, no
+  // rodeándola de un halo de color: el halo violeta era el mismo recurso
+  // repetido en botones, tarjetas y mandos, y se leía como efecto de plantilla.
+  --shadow-lift: 0 14px 34px -18px rgb(0 0 0 / 85%);
+  // La misma sombra estaba escrita tres veces, con tres opacidades distintas,
+  // en el panel del formulario, el aviso de cookies y la demostración del hero.
+  --shadow-panel: 0 40px 90px -40px rgb(0 0 0 / 90%);
 }

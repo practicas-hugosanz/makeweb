@@ -9,59 +9,66 @@
   overflow: clip;
 }
 
-.ftr__cta {
-  display: grid;
-  gap: 0.5rem;
+// La frase que cierra la página. Es lo único grande del pie: manda ella y todo
+// lo demás baja a letra pequeña.
+.ftr__line {
   padding-bottom: clamp(3rem, 6vw, 5rem);
-}
 
-.ftr__cta-kicker {
-  @include label;
-}
+  a {
+    // Escala atada al ancho de pantalla: la frase es larga y a 390 px hay que
+    // dejarla caer en varias líneas sin que se salga del bloque.
+    @include display(clamp(1.9rem, 6vw, 4.2rem));
 
-.ftr__cta-link {
-  @include display(var(--step-4));
+    display: block;
+    max-width: 20ch;
+    color: var(--text);
+    text-wrap: balance;
+    transition: color var(--dur-fast) var(--ease-out);
 
-  width: fit-content;
-  color: var(--text);
-  transition: color var(--dur-fast) var(--ease-out);
-
-  &:hover {
-    color: var(--violet-lift);
+    &:hover {
+      color: var(--violet-lift);
+    }
   }
 }
 
-.ftr__cols {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
-  gap: clamp(1.75rem, 3vw, 3rem);
+.ftr__meta {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: clamp(1.75rem, 4vw, 4rem);
   padding-block: clamp(2.5rem, 5vw, 3.5rem);
   border-top: 1px solid var(--line);
-
-  @include below(880) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @include below(520) {
-    grid-template-columns: 1fr;
-  }
 }
 
-.ftr__col {
+.ftr__id {
   display: grid;
-  align-content: start;
-  gap: 1rem;
+  gap: 1.1rem;
+  max-width: 38ch;
+}
 
-  ul {
-    display: grid;
-    gap: 0.15rem;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
+.ftr__logo {
+  width: auto;
+  height: 1.9rem;
+}
 
-  a,
-  .ftr__prefs {
+.ftr__blurb {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--text-mute);
+}
+
+// Contacto en una sola fila, no en columna con encabezado: son cuatro enlaces,
+// no una sección del sitio.
+.ftr__direct {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem clamp(1.25rem, 2.5vw, 2.25rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  a {
     display: flex;
     align-items: center;
     // 44 px de alto: en móvil estos enlaces iban a 24 y se fallaba al pulsar.
@@ -76,51 +83,11 @@
   }
 }
 
-.ftr__col--brand {
-  gap: 1.25rem;
-  max-width: 34ch;
-}
-
-.ftr__logo {
-  width: auto;
-  height: 2rem;
-}
-
-// Reabrir el panel de cookies es una acción, no un enlace: botón con aspecto
-// de enlace para que no desentone en la columna.
-.ftr__prefs {
-  padding: 0;
-  border: 0;
-  background: none;
-  font-size: 0.94rem;
-  text-align: left;
-  color: var(--text-soft);
-  cursor: pointer;
-  transition: color var(--dur-fast) var(--ease-out);
-
-  &:hover {
-    color: var(--violet-lift);
-  }
-}
-
-.ftr__blurb {
-  font-size: 0.94rem;
-  line-height: 1.6;
-  color: var(--text-mute);
-}
-
-.ftr__col-title {
-  @include label;
-
-  font-family: var(--font-label);
-  font-weight: 400;
-}
-
 .ftr__base {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.5rem 1.5rem;
   flex-wrap: wrap;
   margin-top: clamp(1rem, 2vw, 1.5rem);
   padding-top: 1.5rem;
@@ -130,6 +97,43 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-mute);
+}
+
+.ftr__legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  a,
+  .ftr__prefs {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: var(--text-mute);
+    transition: color var(--dur-fast) var(--ease-out);
+
+    &:hover {
+      color: var(--violet-lift);
+    }
+  }
+}
+
+// Reabrir el panel de cookies es una acción, no un enlace: botón con aspecto de
+// enlace para que no desentone en la fila.
+.ftr__prefs {
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
 }
 
 .ftr__top {

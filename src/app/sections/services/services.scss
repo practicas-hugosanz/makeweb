@@ -12,18 +12,19 @@
 .svc__pin {
   display: grid;
   align-content: center;
-  gap: clamp(2rem, 5vh, 4rem);
+  gap: clamp(1.5rem, 4vh, 2.5rem);
   min-height: 100svh;
-  padding-block: clamp(5rem, 10vh, 8rem);
+  padding-block: clamp(2rem, 6vh, 5rem);
 
   @include below(900) {
     min-height: 0;
+    padding-block: 0 clamp(2rem, 6vh, 4rem);
   }
 }
 
 .svc__head {
-  display: grid;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
+  padding-top: var(--section-y);
+  padding-bottom: clamp(1rem, 3vw, 2rem);
 }
 
 .svc__meter {

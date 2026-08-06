@@ -6,7 +6,7 @@
   gap: clamp(2rem, 5vw, 5rem);
 
   @include below(960) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -22,7 +22,14 @@
 
 .faq__list {
   display: block;
-  border-top: 1px solid var(--line);
+}
+
+// Igual que en compromisos: la línea es un elemento para poder dibujarla.
+.faq__rule {
+  display: block;
+  height: 1px;
+  background: var(--line);
+  transform-origin: left;
 }
 
 .faq__q {

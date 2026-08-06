@@ -59,14 +59,20 @@ export class Services {
             // travel, and pinning would just freeze the page for no reason.
             if (distance() < 120) return;
 
+            const pin = el.querySelector<HTMLElement>('[data-pin]')!;
+
             const tween = gsap.to(track, {
               x: () => -distance(),
               ease: 'none',
               scrollTrigger: {
-                trigger: el,
+                // El disparador es el bloque anclado, no la sección: ahora el
+                // titular vive fuera del pin, y con la sección como disparador
+                // el anclaje saltaría cuando llega arriba el titular, dejando
+                // las tarjetas por debajo del pliegue todo el recorrido.
+                trigger: pin,
                 start: 'top top',
                 end: () => `+=${distance()}`,
-                pin: el.querySelector<HTMLElement>('[data-pin]')!,
+                pin,
                 scrub: 0.6,
                 anticipatePin: 1,
                 invalidateOnRefresh: true,

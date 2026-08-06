@@ -1,49 +1,72 @@
 @use 'mixins' as *;
 
 :host {
-  --bar-h: 4.5rem;
+  // Más baja que la barra de antes: una píldora flotante de 72 px de alto pesa
+  // como un bloque, no como un mando.
+  --bar-h: 3.4rem;
 }
 
 // ---------------------------------------------------------------------------
 // Top bar
 // ---------------------------------------------------------------------------
+// Píldora flotante, no barra a todo el ancho. La barra de ancho completo con
+// filete de 1 px abajo es la forma de navegación más repetida de internet: sirve
+// igual para una panadería que para un ERP, y por eso no dice nada. La píldora
+// va despegada de los bordes, se dimensiona con su contenido y deja ver la
+// página por debajo, que es lo que aprovecha el desenfoque.
 .bar {
   position: fixed;
-  inset: 0 0 auto;
-  z-index: 800;
+  inset: 0.9rem 0 auto;
+  z-index: var(--z-bar);
+  display: flex;
+  justify-content: center;
+  pointer-events: none; // el hueco a los lados de la píldora no intercepta clics
   will-change: transform;
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgb(17 17 17 / 86%);
-    border-bottom: 1px solid transparent;
-    opacity: 0;
-    transition:
-      opacity var(--dur) var(--ease-out),
-      border-color var(--dur) var(--ease-out);
-  }
-
-  // The backdrop blur only exists while the bar is actually over content.
-  // Declaring it unconditionally keeps a full-width blur layer alive — and
-  // recomposited — for the whole scroll, even while the bar is transparent.
-  &.is-condensed::before {
-    opacity: 1;
-    border-bottom-color: var(--line);
-    backdrop-filter: blur(14px);
+  @include below(560) {
+    inset-block-start: 0.6rem;
   }
 }
 
 .bar__inner {
-  @include shell;
-
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  gap: clamp(1rem, 2.1vw, 2.1rem);
+  max-width: calc(100% - var(--gutter) * 2);
   height: var(--bar-h);
+  padding-inline: 1.15rem 0.75rem;
+  pointer-events: auto;
+}
+
+// La superficie de la píldora. Va detrás del contenido y es la que GSAP encoge
+// hasta el tamaño del botón de cerrar al abrir el menú.
+.bar__shell {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bar-veil);
+  backdrop-filter: blur(16px) saturate(120%);
+  box-shadow: var(--shadow-lift);
+  transition: background-color var(--dur) var(--ease-out);
+}
+
+// Al desplazarse solo se cierra el fondo un poco más; el desenfoque ya está
+// puesto desde el principio porque la píldora siempre flota sobre contenido.
+.bar.is-condensed .bar__shell {
+  background: var(--bar-veil-strong);
+}
+
+// El contenido va por encima de la superficie.
+.bar__brand,
+.bar__nav,
+.bar__end {
+  position: relative;
+  z-index: 1;
 }
 
 .bar__brand {
@@ -71,7 +94,7 @@
   ul {
     display: flex;
     align-items: center;
-    gap: clamp(1rem, 2vw, 2.1rem);
+    gap: clamp(1.2rem, 2vw, 2.15rem);
     list-style: none;
     padding: 0;
   }
@@ -113,19 +136,28 @@
 .bar__end {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 0.75rem;
 }
 
 // En móvil el botón de la portada queda por debajo de la demostración, así que
 // este es el único que se ve siempre: antes se ocultaba por debajo de 640 px y
 // la primera pantalla se quedaba sin ninguna llamada a la acción.
 .bar__cta {
-  padding: 0.85em 1.5em;
-  font-size: 0.92rem;
+  padding: 0.72em 1.25em;
+  font-size: 0.86rem;
+  // Dentro de la píldora la sombra sobra: ya la lleva el contenedor.
+  box-shadow: none;
+
+  // Al bajar el alto de la barra para que fuese una píldora, el botón se quedó
+  // en 33 px. En una pantalla táctil eso es un objetivo que se falla: por
+  // debajo de 1080 px vuelve a los 44 px de un dedo.
+  @include below(1080) {
+    min-height: 44px;
+  }
 
   @include below(640) {
-    padding: 0.8em 1.1em;
-    font-size: 0.82rem;
+    padding: 0.7em 1em;
+    font-size: 0.8rem;
   }
 }
 
@@ -146,16 +178,24 @@
 .bar__burger {
   display: none;
   place-items: center;
-  width: 2.9rem;
-  height: 2.9rem;
+  // 44 px: es un botón que solo existe en táctil, así que va al tamaño del dedo.
+  width: 2.75rem;
+  height: 2.75rem;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   background: transparent;
   cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out);
 
   @include below(1080) {
     display: grid;
   }
+}
+
+// Con el menú abierto, el círculo que rodea el aspa lo pone la superficie de la
+// píldora ya encogida. El borde propio del botón sobra: se solaparían dos.
+.bar.is-open .bar__burger {
+  border-color: transparent;
 }
 
 .bar__burger-lines {
@@ -183,22 +223,13 @@
   }
 }
 
-.bar__progress {
-  position: absolute;
-  inset: auto 0 0;
-  height: 1.5px;
-  background: linear-gradient(90deg, var(--violet), var(--violet-lift));
-  transform-origin: left;
-  scale: 0 1;
-}
-
 // ---------------------------------------------------------------------------
 // Full-screen menu (mobile / tablet)
 // ---------------------------------------------------------------------------
 .menu {
   position: fixed;
   inset: 0;
-  z-index: 790;
+  z-index: var(--z-menu);
   visibility: hidden;
   opacity: 0;
 }
@@ -247,6 +278,29 @@
 
   a:hover span {
     color: var(--violet-lift);
+  }
+}
+
+// Última opción de la lista: el botón que en la barra estaba a la derecha. No
+// lleva número porque no es un destino más, es la acción.
+.menu__cta-item {
+  margin-top: clamp(1.25rem, 4vw, 2rem);
+}
+
+.menu__nav .menu__cta {
+  display: inline-flex;
+  padding: 0.95em 1.9em;
+  font-size: 1rem;
+
+  span {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  &:hover span {
+    color: inherit;
   }
 }
 

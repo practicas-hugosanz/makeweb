@@ -16,40 +16,23 @@
   pointer-events: none;
 }
 
-// A radial gradient is already soft, so no `filter: blur()` is used here.
-// Blurring a 700px element and then parallaxing it forces the compositor to
-// re-run the blur on every scroll frame, which was the main source of jank.
-.hero__blob {
+// Una sola rampa de dos paradas, del tinte de marca al fondo. Sustituye a las
+// dos manchas violetas: da la misma sensación de que arriba hay algo sin el
+// círculo borroso, que es lo que delataba la plantilla.
+.hero__aura::before {
+  content: '';
   position: absolute;
-  border-radius: 50%;
-  opacity: 0.5;
+  inset: 0;
+  background: linear-gradient(168deg, var(--violet-14) 0%, transparent 58%);
 }
 
-.hero__blob--a {
-  top: 4%;
-  left: -6%;
-  width: min(46rem, 70vw);
-  aspect-ratio: 1.2;
-  background: radial-gradient(
-    closest-side,
-    rgb(107 96 231 / 85%) 0%,
-    rgb(107 96 231 / 30%) 42%,
-    transparent 74%
-  );
-}
-
-.hero__blob--b {
-  right: -12%;
-  bottom: -18%;
-  width: min(38rem, 62vw);
-  aspect-ratio: 1;
-  background: radial-gradient(
-    closest-side,
-    rgb(55 47 143 / 90%) 0%,
-    rgb(55 47 143 / 35%) 45%,
-    transparent 76%
-  );
-  opacity: 0.8;
+// Grano fino en SVG incrustado: no es una petición más (va en el propio CSS) y
+// rompe la planitud del color liso sin recurrir a un degradado de colores.
+.hero__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .hero__grid {
@@ -59,6 +42,8 @@
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: 5.5rem 5.5rem;
+  // El #000 de aquí no es un color: en una máscara marca "opaco del todo", y es
+  // la forma convencional de escribirlo. No pasa por token a propósito.
   mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 100%);
   opacity: 0.5;
 }
@@ -72,7 +57,7 @@
   gap: clamp(2.5rem, 6vw, 6rem);
 
   @include below(1024) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: clamp(1.5rem, 4vw, 2.5rem);
   }
 }
@@ -136,11 +121,13 @@
 }
 
 .hero__title {
-  @include display(clamp(2.5rem, 1.3rem + 4vw, 4.4rem));
+  @include display(clamp(2rem, 1.1rem + 3vw, 3.5rem));
 
-  // ~15 characters a line keeps the headline at three lines from 480px up.
-  max-width: 15ch;
-  letter-spacing: -0.042em;
+  // El titular es una frase larga: a ~20 caracteres por línea se lee en tres o
+  // cuatro líneas desde 480 px, que es donde el bloque sigue cabiendo sin
+  // empujar la demostración fuera de la primera pantalla.
+  max-width: 20ch;
+  letter-spacing: -0.04em;
 }
 
 // Created by SplitText; needed so the mask clips each line.
@@ -185,8 +172,8 @@
   padding: 1.15rem;
   border: 1px solid var(--violet-24);
   border-radius: var(--radius-l);
-  background: linear-gradient(180deg, #191823, #131219);
-  box-shadow: 0 40px 90px -40px rgb(0 0 0 / 90%);
+  background: linear-gradient(180deg, var(--ink-800), var(--ink));
+  box-shadow: var(--shadow-panel);
 
   @include below(1024) {
     gap: 0.6rem;
@@ -202,7 +189,7 @@
   padding: 0 1rem;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
-  background: rgb(255 255 255 / 4%);
+  background: var(--veil-04);
 }
 
 .finder__icon {
@@ -274,15 +261,15 @@
   padding: 0.7rem 0.95rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-s);
-  background: rgb(255 255 255 / 3%);
+  background: var(--veil-03);
   will-change: transform;
 }
 
 .finder__row--you {
   position: relative;
   border-color: var(--violet);
-  background: linear-gradient(135deg, var(--violet-24), rgb(255 255 255 / 3%));
-  box-shadow: 0 12px 40px -18px var(--violet);
+  background: linear-gradient(135deg, var(--violet-24), var(--veil-03));
+  box-shadow: var(--shadow-lift);
 }
 
 .finder__name {
@@ -315,7 +302,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--text);
 }
 
 .finder__flag {

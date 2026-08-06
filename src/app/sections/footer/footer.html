@@ -1,14 +1,17 @@
+<!-- Pie de declaración, no índice. Cuatro columnas de enlaces (Producto ·
+     Empresa · Recursos · Legal) es el pie que llevan miles de webs iguales, y
+     además cataloga un mapa del sitio que aquí ya está entero en la navegación.
+     Este cierra con una frase y deja debajo lo que la ley obliga a tener. -->
 <footer class="ftr">
   <div class="shell">
-    <div class="ftr__cta">
-      <p class="ftr__cta-kicker">¿Empezamos?</p>
-      <a class="ftr__cta-link" href="#contacto" (click)="go($event, 'contacto')">
-        hola&#64;makeweb.es
+    <p class="ftr__line">
+      <a href="#contacto" (click)="go($event, 'contacto')">
+        Empecemos por tu primera impresión.
       </a>
-    </div>
+    </p>
 
-    <div class="ftr__cols">
-      <div class="ftr__col ftr__col--brand">
+    <div class="ftr__meta">
+      <div class="ftr__id">
         <img
           class="ftr__logo"
           src="/brand/logotipo-entero.png"
@@ -18,48 +21,40 @@
           loading="lazy"
         />
         <p class="ftr__blurb">
-          Estudio de diseño y desarrollo web para negocios locales. Hacemos webs que se cargan
-          rápido, se entienden a la primera y traen clientes.
+          Estudio de diseño y desarrollo web para negocios locales. En remoto, para toda España.
         </p>
       </div>
 
-      <nav class="ftr__col" aria-label="Secciones">
-        <h2 class="ftr__col-title">Web</h2>
-        <ul>
-          @for (link of links; track link.id) {
-            <li><a [href]="'#' + link.id" (click)="go($event, link.id)">{{ link.label }}</a></li>
-          }
-          <li><a href="#contacto" (click)="go($event, 'contacto')">Contacto</a></li>
-        </ul>
-      </nav>
-
-      <div class="ftr__col">
-        <h2 class="ftr__col-title">Contacto</h2>
-        <ul>
-          <li><a href="mailto:hola@makeweb.es">hola&#64;makeweb.es</a></li>
-          <li><a href="tel:+34600000000">+34 600 00 00 00</a></li>
-          <li><a href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank">Instagram</a></li>
-          <li><a href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
-        </ul>
-      </div>
-
-      <div class="ftr__col">
-        <h2 class="ftr__col-title">Legal</h2>
-        <ul>
-          @for (page of legalPages; track page.path) {
-            <li><a [routerLink]="page.path">{{ page.label }}</a></li>
-          }
-          <li>
-            <button class="ftr__prefs" type="button" (click)="openCookiePrefs()">
-              Preferencias de cookies
-            </button>
-          </li>
-        </ul>
-      </div>
+      <ul class="ftr__direct">
+        <li><a href="mailto:contacto@makeweb.es">contacto&#64;makeweb.es</a></li>
+        <li><a href="tel:+34600000000">+34 600 00 00 00</a></li>
+        <li>
+          <a href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank">
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank">
+            LinkedIn
+          </a>
+        </li>
+      </ul>
     </div>
 
     <div class="ftr__base">
       <p>© {{ year }} MakeWeb. Hecho en España.</p>
+
+      <ul class="ftr__legal">
+        @for (page of legalPages; track page.path) {
+          <li><a [routerLink]="page.path">{{ page.label }}</a></li>
+        }
+        <li>
+          <button class="ftr__prefs" type="button" (click)="openCookiePrefs()">
+            Preferencias de cookies
+          </button>
+        </li>
+      </ul>
+
       <a class="ftr__top" href="#inicio" (click)="toTop($event)">
         Volver arriba
         <span aria-hidden="true">↑</span>

@@ -41,3 +41,10 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Herramientas del agente. `.agents/` son casi 1 MB de skills de terceros
+# instaladas con `npx skills add`, y `.claude/` lleva ajustes personales de la
+# máquina. Ninguna de las dos es la web. `skills-lock.json` sí se versiona: con
+# él se reinstala lo mismo en otro equipo.
+/.agents
+/.claude

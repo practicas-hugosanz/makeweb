@@ -20,7 +20,7 @@
     <meta property="og:title" content="MakeWeb — Webs para negocios locales que aparecen primero" />
     <meta
       property="og:description"
-      content="Diseñamos y desarrollamos la web de tu negocio local en 21 días. Rápida, accesible y hecha para convertir visitas en clientes."
+      content="Diseñamos y desarrollamos la web de tu negocio local en una semana. Rápida, accesible y hecha para convertir visitas en clientes."
     />
     <meta property="og:image" content="/brand/logotipo-entero.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -35,15 +35,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Mollen is self-hosted; both cuts are needed on the first screen. -->
+    <!-- Las dos que se usan en la primera pantalla: Mollen Bold para el titular
+         e Instrument Sans para el texto. Mollen Regular sigue declarada pero ya
+         no la pide nadie (todos los titulares van a 700), así que no se precarga
+         ni se descarga. -->
+    <link rel="preload" href="/fonts/mollen-bold.woff2" as="font" type="font/woff2" crossorigin />
     <link
       rel="preload"
-      href="/fonts/mollen-regular.woff2"
+      href="/fonts/instrument-sans.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
-    <link rel="preload" href="/fonts/mollen-bold.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Organization y no LocalBusiness: el estudio trabaja en remoto y no
          tiene local al que ir, así que declarar dirección o geolocalización
@@ -57,7 +60,7 @@
         "description": "Estudio de diseño y desarrollo web para negocios locales. En remoto, para toda España.",
         "url": "https://makeweb.es/",
         "logo": "https://makeweb.es/brand/logotipo-entero.png",
-        "email": "hola@makeweb.es",
+        "email": "contacto@makeweb.es",
         "areaServed": { "@type": "Country", "name": "España" },
         "knowsLanguage": ["es"],
         "makesOffer": [
@@ -75,7 +78,7 @@
         <h1>MakeWeb</h1>
         <p>
           Diseñamos webs para negocios locales. Activa JavaScript para ver la experiencia completa o
-          escríbenos a <a style="color: #8d84ff" href="mailto:hola&#64;makeweb.es">hola&#64;makeweb.es</a>.
+          escríbenos a <a style="color: #8d84ff" href="mailto:contacto&#64;makeweb.es">contacto&#64;makeweb.es</a>.
         </p>
       </div>
     </noscript>

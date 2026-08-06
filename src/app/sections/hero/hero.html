@@ -1,8 +1,11 @@
 <section class="hero" id="inicio" #root>
+  <!-- Sin manchas violetas difuminadas: dos círculos borrosos detrás del
+       titular son el fondo generado por IA de 2022-2023, y aquí no aportaban
+       nada que no aporte una superficie con textura. Queda la retícula y un
+       grano finísimo, que dan profundidad sin decir "plantilla". -->
   <div class="hero__aura" aria-hidden="true">
-    <span class="hero__blob hero__blob--a" data-speed="0.82"></span>
-    <span class="hero__blob hero__blob--b" data-speed="1.16"></span>
     <span class="hero__grid"></span>
+    <span class="hero__grain"></span>
   </div>
 
   <div class="hero__inner shell">
@@ -15,13 +18,16 @@
           <span>Estudio web en remoto · Toda España</span>
         </p>
 
-        <h1 class="hero__title" data-hero-title data-anim>Que te encuentren primero.</h1>
+        <h1 class="hero__title" data-hero-title data-anim>
+          No hay dos oportunidades para causar una primera impresión.
+        </h1>
       </div>
 
       <div class="hero__pitch">
         <p class="hero__lead" data-hero-lead data-anim>
-          Diseñamos la web de tu negocio para que salga arriba cuando alguien busca cerca y
-          convierta esa visita en una reserva.
+          Tu web es tu tarjeta de presentación frente a tus clientes. La pregunta no es si necesitas
+          o no una web, sino cuántos clientes más estás dispuesto a perder por descuidar tu
+          presencia en internet.
         </p>
 
         <div class="hero__actions">
@@ -41,14 +47,16 @@
           </span>
         </a>
 
+        <!-- Antes decía "Ver los números" y bajaba a la sección de métricas.
+             Sin ella, el segundo botón lleva a lo que de verdad hay que ver
+             antes de escribir: cuánto cuesta. -->
         <a
           class="btn btn--ghost"
-          href="#esta-web"
+          routerLink="/precios"
           data-hero-action
           data-anim
-          (click)="jumpTo($event, 'esta-web')"
         >
-          <span class="btn__label">Ver los números</span>
+          <span class="btn__label">Ver precios</span>
         </a>
         </div>
       </div>

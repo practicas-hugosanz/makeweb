@@ -96,7 +96,7 @@
     padding: 0.15em 0.45em;
     border: 1px solid var(--line);
     border-radius: 5px;
-    background: rgb(255 255 255 / 4%);
+    background: var(--veil-04);
     font-size: 0.88em;
     letter-spacing: 0.02em;
   }
@@ -129,7 +129,7 @@
 
     font-size: 0.66rem;
     white-space: nowrap;
-    background: rgb(255 255 255 / 3%);
+    background: var(--veil-03);
   }
 
   tr:last-child td {

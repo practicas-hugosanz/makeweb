@@ -33,7 +33,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    z-index: -1;
+    z-index: var(--z-below);
     background: var(--violet-lift);
     translate: 0 101%;
     border-radius: inherit;
@@ -69,8 +69,8 @@
 
 .btn--primary {
   background: var(--violet);
-  color: #fff;
-  box-shadow: var(--shadow-violet);
+  color: var(--text);
+  box-shadow: var(--shadow-lift);
 
   &:hover,
   &:focus-visible {
@@ -84,13 +84,13 @@
   color: var(--text);
 
   &::before {
-    background: #fff;
+    background: var(--text);
   }
 
   &:hover,
   &:focus-visible {
     color: var(--ink);
-    border-color: #fff;
+    border-color: var(--text);
   }
 }
 

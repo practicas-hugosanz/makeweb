@@ -18,6 +18,18 @@
   display: none;
 }
 
+// El ritmo vertical no es constante a propósito. Con el mismo aire arriba y
+// abajo en las siete secciones, la página avanza como un metrónomo y todo pesa
+// lo mismo. La banda de cifras se comprime —son datos, se leen de un golpe— y
+// los compromisos se abren, porque es donde conviene que el lector frene.
+.sec--tight {
+  padding-block: calc(var(--section-y) * 0.68);
+}
+
+.sec--open {
+  padding-block: calc(var(--section-y) * 1.3);
+}
+
 .sec-head {
   display: grid;
   gap: clamp(1.25rem, 2.5vw, 2rem);
@@ -28,21 +40,10 @@
   max-width: none;
 }
 
-.sec-eyebrow {
-  @include label;
-
-  display: flex;
-  align-items: center;
-  gap: 0.85em;
-
-  &::before {
-    content: '';
-    width: 1.9em;
-    height: 1px;
-    background: var(--violet);
-  }
-}
-
+// Aquí vivía `.sec-eyebrow`, el antetítulo en versalitas que abría cada
+// sección. Siete secciones con su etiqueta encima no crean jerarquía: la
+// deshacen, porque cuando todo va "capitulado" no destaca ningún capítulo. El
+// titular abre la sección solo.
 .sec-title {
   @include display(var(--step-4));
 }
@@ -68,7 +69,7 @@
   max-width: none;
 
   @include below(900) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     align-items: start;
   }
 }

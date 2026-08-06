@@ -1,64 +1,121 @@
 @use 'mixins' as *;
 
+.cmt__grid {
+  // El sangrado que llevan por dentro todas las fichas. Sacando la rejilla esa
+  // misma medida hacia fuera, el texto de la primera columna vuelve a caer
+  // sobre el margen de la página.
+  --cmt-pad: clamp(1.1rem, 2.2vw, 2.25rem);
+
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  margin-inline: calc(var(--cmt-pad) * -1);
+
+  // En una sola columna no hay nada de qué separar las fichas: el sangrado
+  // interno solo conseguía que el texto quedase desalineado respecto al titular
+  // de la sección. A partir de aquí las fichas van a ras de margen y la rejilla
+  // deja de compensar.
+  @include below(600) {
+    --cmt-pad: 0rem;
+
+    margin-inline: 0;
+  }
+}
+
+// La línea de arriba es un elemento y no un `border-top`: así se puede dibujar
+// de izquierda a derecha al entrar la sección.
+.cmt__rule {
+  display: block;
+  height: 1px;
+  background: var(--line);
+  transform-origin: left;
+}
+
+// Seis fichas iguales en 3×2 es la retícula de tres columnas que llevan miles
+// de webs: ordenada y muda. Sobre seis carriles, las dos primeras ocupan tres
+// cada una, las tres del medio dos, y la última arranca desplazada dejando el
+// hueco a su izquierda. Se leen en el mismo orden, pero la página deja de ser
+// una tabla.
 .cmt__list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0;
-  margin: clamp(3rem, 6vw, 4.5rem) 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid var(--line);
+
+  > :nth-child(1),
+  > :nth-child(2) {
+    grid-column: span 3;
+  }
+
+  > :nth-child(3),
+  > :nth-child(4),
+  > :nth-child(5) {
+    grid-column: span 2;
+  }
+
+  > :nth-child(6) {
+    grid-column: 4 / span 3;
+  }
 
   @include below(900) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    > :nth-child(n) {
+      grid-column: auto;
+    }
   }
 
   @include below(600) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
 .cmt__item {
+  position: relative;
   display: grid;
   align-content: start;
   gap: 0.6rem;
-  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.25rem, 2.2vw, 2.25rem);
+  padding: clamp(1.75rem, 3vw, 2.5rem) var(--cmt-pad);
   border-bottom: 1px solid var(--line);
   border-right: 1px solid var(--line);
+  transition: background-color var(--dur) var(--ease-out);
 
-  // La primera columna de cada fila queda a ras del margen de la página.
-  &:nth-child(3n + 1) {
-    padding-left: 0;
+  &:hover {
+    background: var(--veil-02);
   }
 
-  &:nth-child(3n) {
-    padding-right: 0;
+  // Todas llevan el mismo sangrado y la rejilla se compensa hacia fuera esa
+  // misma medida, así que el texto de la columna izquierda sigue cayendo sobre
+  // el margen de la página sin que ninguna ficha quede pegada al borde.
+  //
+  // Sin filete a la derecha en las que cierran fila: la 2 (fin de la primera),
+  // la 5 (fin de la segunda) y la 6 (sola en la tercera).
+  &:nth-child(2),
+  &:nth-child(5),
+  &:nth-child(6) {
     border-right: 0;
   }
 
   @include below(900) {
-    &:nth-child(3n + 1),
-    &:nth-child(3n) {
-      padding-inline: clamp(1.25rem, 2.2vw, 2.25rem);
+    &:nth-child(2),
+    &:nth-child(5),
+    &:nth-child(6) {
       border-right: 1px solid var(--line);
     }
 
-    &:nth-child(odd) {
-      padding-left: 0;
-    }
-
     &:nth-child(even) {
-      padding-right: 0;
       border-right: 0;
     }
   }
 
   @include below(600) {
-    padding-inline: 0 !important;
-    border-right: 0 !important;
+    border-right: 0;
   }
 }
 
+// El acento de cada ficha es su número, no un filo de color en el borde: una
+// franja gruesa y asimétrica en un lado es de las formas más reconocibles del
+// SaaS de plantilla. Los filetes de la rejilla ya delimitan la ficha.
 .cmt__index {
   font-family: var(--font-label);
   font-size: 0.72rem;

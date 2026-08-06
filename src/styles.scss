@@ -31,20 +31,20 @@ html {
   );
 
   // Pin the generated M3 palette to the exact brand values.
-  --mat-sys-primary: #6b60e7;
-  --mat-sys-on-primary: #ffffff;
-  --mat-sys-primary-container: #2a2461;
-  --mat-sys-on-primary-container: #d9d5ff;
-  --mat-sys-surface: #111111;
-  --mat-sys-surface-container: #1e1d26;
-  --mat-sys-surface-container-high: #262532;
-  --mat-sys-surface-container-highest: #2e2d3c;
-  --mat-sys-on-surface: #ffffff;
-  --mat-sys-on-surface-variant: #b6b4c6;
-  --mat-sys-outline: #4b4959;
-  --mat-sys-outline-variant: #2b2a36;
-  --mat-sys-background: #111111;
-  --mat-sys-error: #ff8f8f;
+  --mat-sys-primary: var(--violet);
+  --mat-sys-on-primary: var(--text);
+  --mat-sys-primary-container: var(--violet-sunk);
+  --mat-sys-on-primary-container: var(--violet-wash);
+  --mat-sys-surface: var(--ink);
+  --mat-sys-surface-container: var(--ink-700);
+  --mat-sys-surface-container-high: var(--ink-600);
+  --mat-sys-surface-container-highest: var(--ink-550);
+  --mat-sys-on-surface: var(--text);
+  --mat-sys-on-surface-variant: var(--text-soft);
+  --mat-sys-outline: var(--line-solid);
+  --mat-sys-outline-variant: var(--line-solid-soft);
+  --mat-sys-background: var(--ink);
+  --mat-sys-error: var(--error);
 }
 
 // ---------------------------------------------------------------------------
@@ -63,6 +63,11 @@ html {
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: auto; // GSAP ScrollSmoother owns scrolling
+  // `clip` y no `hidden`: `hidden` convierte el elemento en un contenedor de
+  // scroll, y eso rompe cualquier `position: sticky` que cuelgue por dentro
+  // (aquí, la columna de las preguntas frecuentes). `clip` recorta igual sin
+  // crear el contenedor.
+  overflow-x: clip;
 }
 
 body {
@@ -76,7 +81,7 @@ body {
   letter-spacing: -0.005em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body.is-locked {
@@ -109,7 +114,7 @@ select {
 
 ::selection {
   background: var(--violet);
-  color: #fff;
+  color: var(--text);
 }
 
 h1,
@@ -132,12 +137,12 @@ p {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0c0c0c;
+  background: var(--ink-950);
 }
 ::-webkit-scrollbar-thumb {
-  background: #2c2b38;
+  background: var(--ink-600);
   border-radius: 99px;
-  border: 3px solid #0c0c0c;
+  border: 3px solid var(--ink-950);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--violet-deep);
@@ -179,11 +184,11 @@ p {
   position: fixed;
   top: 0;
   left: 50%;
-  z-index: 9999;
+  z-index: var(--z-skip);
   translate: -50% -120%;
   padding: 0.75rem 1.25rem;
   background: var(--violet);
-  color: #fff;
+  color: var(--text);
   border-radius: 0 0 12px 12px;
   font-weight: 700;
   transition: translate var(--dur-fast) var(--ease-out);
@@ -228,9 +233,9 @@ p {
 }
 
 .mat-mdc-snack-bar-container {
-  --mdc-snackbar-container-color: #1e1d26;
-  --mdc-snackbar-supporting-text-color: #ffffff;
-  --mat-snack-bar-button-color: #8d84ff;
+  --mdc-snackbar-container-color: var(--ink-700);
+  --mdc-snackbar-supporting-text-color: var(--text);
+  --mat-snack-bar-button-color: var(--violet-lift);
 }
 
 // ---------------------------------------------------------------------------

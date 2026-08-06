@@ -2,14 +2,11 @@ import { ChangeDetectionStrategy, Component, afterNextRender, inject } from '@an
 import { ActivatedRoute } from '@angular/router';
 import { MotionService } from '../../core/animation/motion.service';
 import { Commitments } from '../../sections/commitments/commitments';
-import { Compare } from '../../sections/compare/compare';
 import { Contact } from '../../sections/contact/contact';
 import { Faq } from '../../sections/faq/faq';
 import { Footer } from '../../sections/footer/footer';
 import { Hero } from '../../sections/hero/hero';
-import { Pricing } from '../../sections/pricing/pricing';
 import { Process } from '../../sections/process/process';
-import { Results } from '../../sections/results/results';
 import { Services } from '../../sections/services/services';
 
 @Component({
@@ -18,10 +15,7 @@ import { Services } from '../../sections/services/services';
   imports: [
     Hero,
     Services,
-    Compare,
     Process,
-    Results,
-    Pricing,
     Commitments,
     Faq,
     Contact,
@@ -31,10 +25,7 @@ import { Services } from '../../sections/services/services';
     <main id="contenido">
       <mw-hero />
       <mw-services />
-      <mw-compare />
       <mw-process />
-      <mw-results />
-      <mw-pricing />
       <mw-commitments />
       <mw-faq />
       <mw-contact />

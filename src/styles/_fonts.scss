@@ -1,15 +1,14 @@
 // ---------------------------------------------------------------------------
-// Mollen — self-hosted, converted to WOFF2 (≈16 kB each instead of 28 kB OTF).
+// Dos familias, dos papeles. Una web escrita entera con una sola tipografía se
+// lee como una plantilla: no hay contraste entre lo que grita y lo que se lee.
 //
-// Self-hosting also removes the render-blocking requests to a font CDN, which
-// is the single biggest first-paint win on this page.
+// Mollen Bold pone la voz de los titulares —es la marca— e Instrument Sans
+// pone la de lectura y la de las etiquetas. Ambas autoalojadas: cero peticiones
+// a un CDN de fuentes, que es la mayor ganancia de la primera pintada.
 //
-// The family ships two cuts, Regular and Bold. Everything on the page is set
-// from those two: the display voice is Bold tightened up, the reading voice is
-// Regular, and the label voice is Regular set small with wide tracking.
-//
-// NOTE: the files in /mollen are the PERSONAL USE cut. A commercial licence
-// (myfonts.com/fonts/eko-bimantara/mollen) is required before going live.
+// NOTE: los archivos de /mollen son la versión de USO PERSONAL. Hace falta una
+// licencia comercial (myfonts.com/fonts/eko-bimantara/mollen) antes de publicar.
+// Instrument Sans es SIL Open Font License 1.1, sin restricciones.
 // ---------------------------------------------------------------------------
 
 @font-face {
@@ -24,6 +23,16 @@
   font-family: 'Mollen';
   src: url('/fonts/mollen-bold.woff2') format('woff2');
   font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Variable de 400 a 600 en un solo archivo, subconjunto latino (incluye ñ, las
+// vocales acentuadas y los signos de apertura ¿ ¡).
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/fonts/instrument-sans.woff2') format('woff2');
+  font-weight: 400 600;
   font-style: normal;
   font-display: swap;
 }

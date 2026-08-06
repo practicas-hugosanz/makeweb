@@ -8,6 +8,7 @@ import {
   inject,
   viewChild,
 } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { SplitText, gsap } from '../../core/animation/gsap';
 import { MagneticDirective } from '../../core/animation/magnetic.directive';
@@ -26,7 +27,7 @@ import { selectBooted } from '../../state/ui/ui.feature';
 @Component({
   selector: 'mw-hero',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MagneticDirective],
+  imports: [MagneticDirective, RouterLink],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })

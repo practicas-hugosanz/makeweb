@@ -19,10 +19,10 @@ import { gsap } from '../../core/animation/gsap';
 import { MagneticDirective } from '../../core/animation/magnetic.directive';
 import { MotionService } from '../../core/animation/motion.service';
 import { RevealDirective } from '../../core/animation/reveal.directive';
-import { SERVICES } from '../../data/content';
+import { PLANS } from '../../data/content';
 import { LeadActions } from '../../state/lead/lead.actions';
 import { selectError, selectReference, selectStatus } from '../../state/lead/lead.feature';
-import { BUDGETS } from '../../state/lead/lead.model';
+import { STARTING_POINTS, UNDECIDED_PLAN } from '../../state/lead/lead.model';
 
 @Component({
   selector: 'mw-contact',
@@ -46,8 +46,12 @@ export class Contact {
   private readonly store = inject(Store);
   private readonly motion = inject(MotionService);
 
-  protected readonly services = SERVICES;
-  protected readonly budgets = BUDGETS;
+  /** Los tres planes tal y como se venden, más "aún no lo sé". */
+  protected readonly planOptions = [
+    ...PLANS.map((plan) => ({ id: plan.id, label: `${plan.name} — ${plan.kind.toLowerCase()}` })),
+    UNDECIDED_PLAN,
+  ];
+  protected readonly startingPoints = STARTING_POINTS;
 
   protected readonly status = this.store.selectSignal(selectStatus);
   protected readonly reference = this.store.selectSignal(selectReference);
@@ -60,8 +64,8 @@ export class Contact {
     business: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
     phone: ['', [Validators.pattern(/^[+0-9 ()-]{9,20}$/)]],
-    service: [SERVICES[0].id, Validators.required],
-    budget: [BUDGETS[1].id, Validators.required],
+    plan: [UNDECIDED_PLAN.id, Validators.required],
+    current: [STARTING_POINTS[0].id, Validators.required],
     message: ['', [Validators.required, Validators.minLength(12)]],
     consent: [false, Validators.requiredTrue],
   });
@@ -93,7 +97,7 @@ export class Contact {
 
   protected reset(): void {
     this.store.dispatch(LeadActions.reset());
-    this.form.reset({ service: SERVICES[0].id, budget: BUDGETS[1].id, consent: false });
+    this.form.reset({ plan: UNDECIDED_PLAN.id, current: STARTING_POINTS[0].id, consent: false });
   }
 
   /** A short, physical nudge — enough to notice, not enough to punish. */

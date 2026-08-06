@@ -1,22 +1,21 @@
 /**
  * Todo el texto de la portada.
  *
- * Regla de la casa: aquí no entra ningún dato que no se pueda demostrar. Las
- * cifras de la sección "Esta web" salen de una medición real con Lighthouse
- * (ver MEASURED.date) y cualquiera puede repetirla.
+ * Regla de la casa: aquí no entra ningún dato que no se pueda demostrar. Si un
+ * número no se puede medir y repetir, no se escribe.
  */
 
 export interface NavLink {
   id: string;
   label: string;
+  /** Presente solo si el enlace lleva a otra página en vez de a una sección. */
+  route?: string;
 }
 
 export const NAV_LINKS: readonly NavLink[] = [
   { id: 'servicios', label: 'Servicios' },
-  { id: 'comparativa', label: 'Antes / después' },
   { id: 'proceso', label: 'Proceso' },
-  { id: 'esta-web', label: 'Esta web' },
-  { id: 'precios', label: 'Precios' },
+  { id: 'precios', label: 'Precios', route: '/precios' },
   { id: 'preguntas', label: 'Preguntas' },
 ];
 
@@ -45,33 +44,42 @@ export const SERVICES: readonly Service[] = [
   {
     id: 'diseno',
     index: 'Diseño',
-    title: 'Una web que se parece a tu negocio',
+    title: 'La primera impresión que te gana clientes',
     summary:
-      'Nada de plantillas recicladas. Partimos de tu local, tu carta, tu forma de atender, y de ahí sale la identidad digital.',
+      'No diseñamos webs. Diseñamos la primera impresión que te va a ganar clientes. Cada color, cada detalle, pensado para tu negocio, no copiado de una plantilla.',
     includes: ['Dirección de arte', 'Diseño en Figma', 'Sistema de componentes', 'Textos incluidos'],
   },
   {
     id: 'desarrollo',
     index: 'Desarrollo',
-    title: 'Rápida en el móvil de tu cliente',
+    title: 'Rápida de verdad, no rápida en el portátil del diseñador',
     summary:
-      'La construimos en Angular, se publica como HTML ya generado y medimos Core Web Vitals reales, no en el portátil del diseñador.',
-    includes: ['Angular 20 + TypeScript', 'HTML prerenderizado', 'Accesible AA', 'Hosting configurado'],
+      'Construimos tu web para que cargue rápido de verdad en todos los dispositivos, comprobado en condiciones reales, tal y como lo va a usar tu cliente.',
+    // La pila que se entrega al cliente, dicha sin rodeos: HTML, CSS y
+    // JavaScript escritos a mano, y PHP con MySQL solo cuando el negocio
+    // necesita guardar datos. Ni plantillas ni gestores que engordan la web.
+    includes: [
+      'HTML, CSS y JavaScript',
+      'PHP, MySQL y phpMyAdmin si lleva base de datos',
+      'Sin plantillas ni WordPress',
+      'Accesible AA',
+      'Hosting configurado',
+    ],
   },
   {
     id: 'seo-local',
-    index: 'SEO local',
-    title: 'Que te encuentren al buscar “cerca de mí”',
+    index: 'SEO',
+    title: 'Ser el mejor no sirve de nada si no te encuentran',
     summary:
-      'Ficha de Google, datos estructurados, páginas por servicio y por barrio. Lo que hace que aparezcas en el mapa.',
+      'Nos encargamos de que aparezcas primero cuando alguien busca cerca: ficha de Google, datos estructurados y páginas por zona.',
     includes: ['Google Business', 'Schema local', 'Páginas por zona', 'Reseñas integradas'],
   },
   {
     id: 'conversion',
     index: 'Reservas',
-    title: 'Reservas, pedidos y llamadas',
+    title: 'Convertimos visitas en clientes',
     summary:
-      'Conectamos la web con la herramienta que ya usas para que la visita termine en una mesa reservada o una cita cerrada.',
+      'Montamos y cuidamos todo el sistema de reservas, citas y pedidos de tu web, conectado con las herramientas que ya usas, para que cada visita tenga un camino claro hasta convertirse en cliente.',
     includes: ['Reserva online', 'WhatsApp Business', 'Pedidos y pagos', 'Avisos automáticos'],
   },
   {
@@ -96,94 +104,29 @@ export interface ProcessPhase {
 /** Una secuencia real con duraciones reales: por eso va numerada por días. */
 export const PROCESS: readonly ProcessPhase[] = [
   {
-    window: 'Días 1 – 2',
+    window: 'Día 1',
     title: 'Escuchamos',
-    body: 'Una videollamada larga contigo. Salimos sabiendo a quién quieres atraer y qué te está frenando ahora.',
+    body: 'Una videollamada contigo. Salimos sabiendo a quién quieres atraer y qué te está frenando ahora.',
     outputs: ['Sesión de arranque', 'Mapa de clientes', 'Auditoría de la web actual'],
   },
   {
-    window: 'Días 3 – 7',
+    window: 'Días 2 – 4',
     title: 'Diseñamos',
     body: 'Ves la web antes de que exista: pantallas reales, con tus fotos y tus textos. Ajustamos hasta que la reconoces como tuya.',
     outputs: ['Diseño en Figma', 'Textos redactados', 'Dos rondas de cambios'],
   },
   {
-    window: 'Días 8 – 17',
+    window: 'Días 5 – 6',
     title: 'Desarrollamos',
     body: 'Programamos, conectamos reservas y analítica, y lo probamos en móviles de verdad antes de enseñártelo.',
-    outputs: ['Web en Angular', 'Reservas conectadas', 'Analítica y eventos'],
+    outputs: ['Web a medida', 'Reservas conectadas', 'Analítica y eventos'],
   },
   {
-    window: 'Días 18 – 21',
+    window: 'Día 7',
     title: 'Lanzamos',
-    body: 'Publicamos, avisamos a Google y te enseñamos a moverla. A los 30 días revisamos juntos los primeros números.',
-    outputs: ['Puesta en marcha', 'Formación en vídeo', 'Revisión a 30 días'],
+    body: 'Publicamos, avisamos a Google y te enseñamos a moverla.',
+    outputs: ['Puesta en marcha', 'Formación en vídeo', 'Alta en Google'],
   },
-];
-
-// --- "esta web" -------------------------------------------------------------
-
-export interface Measurement {
-  value: number;
-  decimals?: number;
-  suffix?: string;
-  label: string;
-  note: string;
-}
-
-/**
- * Medido con Lighthouse 12 sobre el build de producción servido comprimido,
- * que es como lo sirve cualquier hosting. Repetible: `npm run build` y pasarle
- * PageSpeed Insights al dominio.
- */
-export const MEASURED = {
-  date: '1 de agosto de 2026',
-  tool: 'Lighthouse 12, build de producción',
-} as const;
-
-export const METRICS: readonly Measurement[] = [
-  {
-    value: 100,
-    suffix: '/100',
-    label: 'PageSpeed escritorio',
-    note: 'Y 100 también en accesibilidad, buenas prácticas y SEO.',
-  },
-  {
-    value: 95,
-    suffix: '/100',
-    label: 'PageSpeed móvil',
-    note: 'Con 4G lento y CPU limitada, que es el escenario del test.',
-  },
-  {
-    value: 2,
-    decimals: 1,
-    suffix: ' s',
-    label: 'LCP en móvil',
-    note: 'Lo que tarda en verse lo principal. Google pide menos de 2,5 s.',
-  },
-  {
-    // Más claro que un CLS de 0,003: cualquiera puede abrir la pestaña de red
-    // del navegador y contar. Y explica por qué la página va rápida.
-    value: 0,
-    suffix: '',
-    label: 'Peticiones a terceros',
-    note: 'Ni fuentes de Google, ni rastreadores, ni scripts de fuera.',
-  },
-];
-
-export interface BuildFact {
-  label: string;
-  value: string;
-}
-
-/** Cómo está hecha esta misma página. Es el portfolio que sí podemos enseñar. */
-export const BUILD_FACTS: readonly BuildFact[] = [
-  { label: 'Framework', value: 'Angular 20, sin zone.js' },
-  { label: 'Entrega', value: 'HTML generado en el build, no montado en el navegador' },
-  { label: 'Tipografía', value: 'Autoalojada, 2 archivos de 16 kB' },
-  { label: 'Peticiones a terceros', value: 'Cero' },
-  { label: 'Cookies de terceros', value: 'Cero' },
-  { label: 'Sin JavaScript', value: 'La página se lee entera igual' },
 ];
 
 // --- pricing ----------------------------------------------------------------
@@ -191,8 +134,13 @@ export const BUILD_FACTS: readonly BuildFact[] = [
 export interface Plan {
   id: string;
   name: string;
-  price: number;
-  care: number;
+  /** Qué es en román paladino: el nombre da categoría, esto da claridad. */
+  kind: string;
+  /** Horquilla real: el precio final depende del alcance, y se cierra antes de empezar. */
+  from: number;
+  to: number;
+  /** Matiz que va pegado al precio, si lo hay. */
+  note?: string;
   pitch: string;
   best: boolean;
   features: readonly string[];
@@ -201,51 +149,54 @@ export interface Plan {
 
 export const PLANS: readonly Plan[] = [
   {
-    id: 'esencial',
+    id: 'estatica',
     name: 'Esencial',
-    price: 1190,
-    care: 39,
-    pitch: 'Para el negocio que hoy solo tiene un perfil de Instagram.',
+    kind: 'Web estática',
+    from: 350,
+    to: 400,
+    note: 'Negociable',
+    pitch: 'Para el negocio que hoy solo tiene un perfil de Instagram y necesita estar en internet ya.',
     best: false,
     features: [
       'Web de una página, larga y bien contada',
       'Diseño a medida, no plantilla',
       'Ficha de Google optimizada',
       'Botón de WhatsApp y llamada',
-      'Entrega en 14 días',
+      'Lista en una semana',
     ],
     cta: 'Empezar por aquí',
   },
   {
-    id: 'negocio',
-    name: 'Negocio',
-    price: 2490,
-    care: 69,
-    pitch: 'Web completa y lista para captar, con todo lo que hace falta para aparecer.',
+    id: 'animaciones',
+    name: 'Profesional',
+    kind: 'Web con animaciones',
+    from: 450,
+    to: 700,
+    pitch: 'La web que se recuerda: movimiento con criterio, sin sacrificar velocidad.',
     best: true,
     features: [
-      'Hasta 6 páginas + blog',
-      'Reservas o pedidos conectados',
-      'SEO local por servicio y por barrio',
-      'Textos y sesión de fotos guiada',
+      'Todo lo del plan Esencial',
+      'Animaciones al desplazarte, como esta página',
+      'Varias páginas o secciones',
+      'SEO local por servicio y por zona',
       'Analítica con objetivos medibles',
-      'Entrega en 21 días',
     ],
     cta: 'Quiero esta',
   },
   {
-    id: 'medida',
-    name: 'A medida',
-    price: 4900,
-    care: 129,
-    pitch: 'Varios locales, catálogo grande o integraciones con tu software.',
+    id: 'citas',
+    name: 'Integral',
+    kind: 'Animaciones y sistema de citas',
+    from: 1000,
+    to: 1100,
+    pitch: 'Para quien vive de la agenda: peluquerías, clínicas, talleres, restaurantes.',
     best: false,
     features: [
-      'Arquitectura y diseño a medida',
-      'Tienda online o portal de reservas',
-      'Integración con tu TPV o CRM',
-      'Multiidioma y multisede',
-      'Acompañamiento durante 6 meses',
+      'Todo lo del plan Profesional',
+      'Sistema de reservas y citas integrado',
+      'Avisos automáticos al cliente y a ti',
+      'Conectado con tus herramientas',
+      'Panel para gestionar la agenda',
     ],
     cta: 'Hablemos del proyecto',
   },
@@ -278,8 +229,8 @@ export const COMMITMENTS: readonly Commitment[] = [
     body: 'Te damos día de entrega desde el principio. Si se mueve por nuestra culpa, descontamos; si se mueve porque faltan tus fotos, te avisamos el mismo día.',
   },
   {
-    title: 'Devolución a los 30 días',
-    body: 'Si a los 30 días de publicarla no estás conforme, devolvemos el primer pago. Sin discutir y sin quedarnos con el trabajo.',
+    title: 'Te enseñamos a manejarla',
+    body: 'Al publicar te grabamos vídeos cortos con lo que vas a tocar tú, y durante el primer mes nos escribes por WhatsApp cuando te atasques. No dependes de nadie para cambiar un horario.',
   },
   {
     title: 'Lo medimos y te lo enseñamos',
@@ -301,7 +252,15 @@ export interface Faq {
 export const FAQS: readonly Faq[] = [
   {
     q: '¿Cuánto se tarda en tener la web funcionando?',
-    a: 'Tres semanas desde que nos das el visto bueno al diseño. El plan Esencial suele estar en dos. El plazo solo se alarga si faltan fotos o textos por tu parte, y te avisamos en cuanto ocurre.',
+    a: 'Una semana. El día 1 hablamos, del 2 al 4 diseñamos, el 5 y el 6 desarrollamos y el día 7 se publica. El plazo solo se alarga si faltan fotos o textos por tu parte, y te avisamos en cuanto ocurre.',
+  },
+  {
+    q: '¿Cuánto cuesta y de qué depende el precio?',
+    a: 'Una web estática va de 350 € a 400 € y es negociable. Con animaciones, de 450 € a 700 €. Con animaciones y sistema de citas, de 1.000 € a 1.100 €. Dentro de cada horquilla el precio depende del número de páginas y de las integraciones, y se cierra por escrito antes de empezar: el presupuesto que firmas es el que pagas.',
+  },
+  {
+    q: '¿Cómo se paga?',
+    a: 'La mitad al empezar y la mitad al publicar. Sin cuotas escondidas: el mantenimiento es aparte, opcional, y solo si lo quieres.',
   },
   {
     q: 'Trabajáis en remoto. ¿Eso me afecta en algo?',
@@ -314,6 +273,10 @@ export const FAQS: readonly Faq[] = [
   {
     q: '¿La web es mía o me quedo atado a vosotros?',
     a: 'Es tuya. El dominio se registra a tu nombre, te entregamos el código y los accesos, y puedes llevártela cuando quieras. El mantenimiento es opcional y se cancela con un mes de aviso.',
+  },
+  {
+    q: '¿Y si a mitad del proyecto quiero cambiar cosas?',
+    a: 'Durante el diseño hay dos rondas de cambios incluidas, que es donde salen casi todos. Si el cambio llega después y toca el alcance, te decimos qué cuesta y decides tú; nunca aparece de sorpresa en la factura.',
   },
   {
     q: '¿Podré cambiar textos o precios yo mismo?',
