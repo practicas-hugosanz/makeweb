@@ -9,12 +9,11 @@
   margin-top: clamp(3rem, 6vw, 4.5rem);
   margin-inline: calc(var(--cmt-pad) * -1);
 
-  // En una sola columna no hay nada de qué separar las fichas: el sangrado
-  // interno solo conseguía que el texto quedase desalineado respecto al titular
-  // de la sección. A partir de aquí las fichas van a ras de margen y la rejilla
-  // deja de compensar.
+  // En una sola columna la rejilla no se desplaza hacia fuera, pero las fichas
+  // conservan sangrado: pegadas al filete de arriba y abajo el texto se leía
+  // apretado contra el borde.
   @include below(600) {
-    --cmt-pad: 0rem;
+    --cmt-pad: 1rem;
 
     margin-inline: 0;
   }
@@ -108,8 +107,14 @@
     }
   }
 
+  // `:nth-child(n)` y no `.cmt__item` a secas: la regla de 900 px le devuelve
+  // el filete a las fichas 2, 5 y 6 con especificidad 0-2-0, y una declaración
+  // de clase sola perdía contra ella. Por eso la 5 —la única impar de las
+  // tres— se quedaba con un borde derecho que ninguna otra tenía.
   @include below(600) {
-    border-right: 0;
+    &:nth-child(n) {
+      border-right: 0;
+    }
   }
 }
 

@@ -245,7 +245,20 @@
 }
 
 .menu__nav {
+  // Con cuatro enlaces y un botón, la lista medía 252 px dentro de un bloque de
+  // 567: quedaban 315 px de agujero entre la última opción y el pie del menú.
+  // Repartiendo el sobrante entre las opciones, la lista ocupa la pantalla y de
+  // paso cada objetivo táctil crece. Se adapta solo a cualquier alto: en una
+  // pantalla corta simplemente no hay sobrante que repartir.
+  // Sin `align-content` aquí: la rejilla estira su única fila —la lista— hasta
+  // ocupar todo el alto. Si se reparte también en este nivel, lo que hace es
+  // centrar la lista y el agujero se parte en dos en vez de desaparecer.
+  display: grid;
+
   ul {
+    display: grid;
+    align-content: space-evenly;
+    height: 100%;
     list-style: none;
     padding: 0;
   }

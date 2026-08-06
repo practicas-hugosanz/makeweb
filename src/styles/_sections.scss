@@ -12,6 +12,16 @@
     @include rule(0.7);
     top: 0;
   }
+
+  // El filete de sección se desvanece un 18 % por cada lado. En un monitor eso
+  // son 260 px de fundido y se lee como una regla editorial; en un móvil de
+  // 390 px son 70 px y lo que se ve es una línea partida con dos huecos. Aquí
+  // va entera de lado a lado.
+  @include below(600) {
+    &::before {
+      background: var(--line);
+    }
+  }
 }
 
 .sec--flush::before {
