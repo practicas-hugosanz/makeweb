@@ -29,24 +29,17 @@
          isotipo. Los de pestaña van con fondo transparente; los de pantalla de
          inicio, sobre el #111 de la marca y con margen para el recorte
          redondeado que aplican iOS y Android. -->
-    <link rel="icon" href="/favicon.ico" sizes="32x32" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/brand/favicon-48.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" href="favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="32x32" href="brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="brand/favicon-48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="brand/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
 
-    <!-- Las dos que se usan en la primera pantalla: Mollen Bold para el titular
-         e Instrument Sans para el texto. Mollen Regular sigue declarada pero ya
-         no la pide nadie (todos los titulares van a 700), así que no se precarga
-         ni se descarga. -->
-    <link rel="preload" href="/fonts/mollen-bold.woff2" as="font" type="font/woff2" crossorigin />
-    <link
-      rel="preload"
-      href="/fonts/instrument-sans.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+    <!-- Sin <link rel="preload"> para las fuentes: el empaquetador les pone un
+         hash en el nombre, así que no hay una ruta estable a la que apuntar. No
+         se pierde nada, porque el @font-face viaja dentro del CSS crítico que
+         Angular incrusta en esta misma cabecera: el navegador se entera de la
+         fuente mientras lee el <head>, igual que con una precarga. -->
 
     <!-- Organization y no LocalBusiness: el estudio trabaja en remoto y no
          tiene local al que ir, así que declarar dirección o geolocalización
