@@ -65,7 +65,10 @@
 .hero__copy {
   display: grid;
   gap: clamp(1.1rem, 2vw, 1.75rem);
-  max-width: 42ch;
+  // En `rem` y no en `ch`: aquí `ch` se calcula con el tamaño del cuerpo, así
+  // que 42ch daban 357 px y estrangulaban el titular, que se partía en seis
+  // líneas. La entradilla mantiene su propia medida de lectura más abajo.
+  max-width: 36rem;
 
   // `display: contents` disuelve la columna y deja sus dos bloques como hijos
   // directos de la rejilla, para poder meter la demostración entre ellos.
@@ -123,10 +126,11 @@
 .hero__title {
   @include display(clamp(2rem, 1.1rem + 3vw, 3.5rem));
 
-  // El titular es una frase larga: a ~20 caracteres por línea se lee en tres o
-  // cuatro líneas desde 480 px, que es donde el bloque sigue cabiendo sin
-  // empujar la demostración fuera de la primera pantalla.
-  max-width: 20ch;
+  // El titular es una frase larga y con palabras largas ("oportunidad",
+  // "impresión"): a 20 caracteres por línea se partía en seis y el bloque
+  // pesaba demasiado. A 25 entra en cuatro sin empujar la demostración fuera
+  // de la primera pantalla.
+  max-width: 25ch;
   letter-spacing: -0.04em;
 }
 
