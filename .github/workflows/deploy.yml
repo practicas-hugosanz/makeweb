@@ -9,7 +9,6 @@ on:
   push:
     branches:
       - master
-      - rediseno-y-pagina-de-precios
   # Permite lanzarlo a mano desde la pestaña Actions sin tocar el código.
   workflow_dispatch:
 
