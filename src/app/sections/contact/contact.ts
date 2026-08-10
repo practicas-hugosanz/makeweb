@@ -15,10 +15,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { LEAD_LIMITS } from '../../core/forms/sanitize';
+import { emailFormat, minTrimmed, notBlank } from '../../core/forms/validators';
 import { gsap } from '../../core/animation/gsap';
-import { MagneticDirective } from '../../core/animation/magnetic.directive';
 import { MotionService } from '../../core/animation/motion.service';
 import { RevealDirective } from '../../core/animation/reveal.directive';
+import { SweepDirective } from '../../core/animation/sweep.directive';
 import { PLANS } from '../../data/content';
 import { LeadActions } from '../../state/lead/lead.actions';
 import { selectError, selectReference, selectStatus } from '../../state/lead/lead.feature';
@@ -35,7 +37,7 @@ import { STARTING_POINTS, UNDECIDED_PLAN } from '../../state/lead/lead.model';
     MatCheckboxModule,
     RouterLink,
     RevealDirective,
-    MagneticDirective,
+    SweepDirective,
   ],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
@@ -59,14 +61,26 @@ export class Contact {
   protected readonly sending = computed(() => this.status() === 'sending');
   protected readonly sent = computed(() => this.status() === 'sent');
 
+  /** Los mismos topes que aplica el envío, para escribirlos una sola vez. */
+  protected readonly limits = LEAD_LIMITS;
+
   protected readonly form = this.fb.nonNullable.group({
-    name: ['', [Validators.required, Validators.minLength(2)]],
-    business: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
+    name: [
+      '',
+      [Validators.required, notBlank, minTrimmed(2), Validators.maxLength(LEAD_LIMITS.name)],
+    ],
+    business: [
+      '',
+      [Validators.required, notBlank, Validators.maxLength(LEAD_LIMITS.business)],
+    ],
+    email: ['', [Validators.required, emailFormat, Validators.maxLength(LEAD_LIMITS.email)]],
     phone: ['', [Validators.pattern(/^[+0-9 ()-]{9,20}$/)]],
     plan: [UNDECIDED_PLAN.id, Validators.required],
     current: [STARTING_POINTS[0].id, Validators.required],
-    message: ['', [Validators.required, Validators.minLength(12)]],
+    message: [
+      '',
+      [Validators.required, notBlank, minTrimmed(12), Validators.maxLength(LEAD_LIMITS.message)],
+    ],
     consent: [false, Validators.requiredTrue],
   });
 

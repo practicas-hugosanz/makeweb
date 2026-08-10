@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { MagneticDirective } from '../../core/animation/magnetic.directive';
 import { RevealDirective } from '../../core/animation/reveal.directive';
+import { SweepDirective } from '../../core/animation/sweep.directive';
 import { PLANS } from '../../data/content';
 
 /**
@@ -15,7 +15,7 @@ import { PLANS } from '../../data/content';
 @Component({
   selector: 'mw-pricing',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, RevealDirective, MagneticDirective],
+  imports: [RouterLink, RevealDirective, SweepDirective],
   templateUrl: './pricing.html',
   styleUrl: './pricing.scss',
 })

@@ -155,9 +155,15 @@
     min-height: 44px;
   }
 
+  // En el móvil los 44 px lo convertían en un tocho al lado del aspa: la barra
+  // mide 54 px, así que el botón ocupaba casi toda su altura y la píldora se
+  // leía como un bloque macizo. Se queda en 38, que sigue muy por encima del
+  // mínimo de 24 px que pide la WCAG 2.2 y se falla poco con el pulgar, y el
+  // relleno baja con él para que no lo vuelva a estirar.
   @include below(640) {
-    padding: 0.7em 1em;
-    font-size: 0.8rem;
+    min-height: 38px;
+    padding: 0.45em 0.95em;
+    font-size: 0.78rem;
   }
 }
 

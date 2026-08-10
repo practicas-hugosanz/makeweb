@@ -21,7 +21,9 @@ export const LEGAL = {
   registry: 'Registro Mercantil de PROVINCIA, tomo TOMO, folio FOLIO, hoja HOJA',
   email: 'contacto@makeweb.es',
   privacyEmail: 'contacto@makeweb.es',
-  phone: '+34 600 00 00 00',
+  // Sin teléfono a propósito. El art. 10 LSSI-CE pide un medio de contacto
+  // directo y efectivo, y el correo lo cumple. Si algún día hay número, se
+  // añade aquí y se vuelve a poner la fila en `notice.html`.
   domain: 'makeweb.es',
   site: 'https://makeweb.es',
   /** Quién aloja la web y dónde están los servidores. */

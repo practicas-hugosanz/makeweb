@@ -1,8 +1,14 @@
 @use 'mixins' as *;
 
 // La cabecera va en la página, así que la sección arranca ya en las tarjetas.
+//
+// Y cierra antes de lo que pide el ritmo normal de sección: debajo no viene otra
+// sección, viene la fila de vuelta al inicio. Con `--section-y` entero, entre la
+// letra pequeña de los presupuestos y esa fila quedaba un vacío que hacía que el
+// enlace pareciera perdido. Esta sección solo se usa en la página de precios.
 .prz.sec {
   padding-top: clamp(2.5rem, 5vw, 4rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
 // --- plans ------------------------------------------------------------------
@@ -137,7 +143,11 @@
   border-bottom: 1px solid var(--line);
 }
 
+// El símbolo va detrás de la cifra, como se escribe en castellano: «350 €», no
+// «€350». Lleva su propio margen porque el hueco de 0,1 em de la rejilla, medido
+// sobre el cuerpo grande de la cifra, quedaba pegado al último dígito.
 .prz__currency {
+  margin-inline-start: 0.12em;
   font-size: 0.62em;
   color: var(--text-mute);
 }

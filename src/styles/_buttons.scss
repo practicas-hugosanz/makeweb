@@ -28,19 +28,40 @@
     border-color var(--dur-fast) var(--ease-out),
     background-color var(--dur-fast) var(--ease-out);
 
-  // The wipe that fills the pill from the bottom on hover.
+  // El relleno de la píldora. En reposo espera fuera, apoyado en un borde, y al
+  // pasar el puntero cruza hasta cubrirla entera.
+  //
+  // Por qué borde entra lo decide `SweepDirective`: escribe `--wipe-x` y
+  // `--wipe-y` con el lado por el que ha cruzado el cursor, y al salir con el
+  // lado por el que se va. Sin directiva —o antes de que arranque el JS— los
+  // valores de reserva dejan el barrido subiendo desde abajo, que es como se
+  // comportaba antes: el botón nunca depende del script para verse bien.
   &::before {
     content: '';
     position: absolute;
     inset: 0;
     z-index: var(--z-below);
     background: var(--violet-lift);
-    translate: 0 101%;
+    translate: var(--wipe-x, 0) var(--wipe-y, 101%);
     border-radius: inherit;
-    transition: translate 0.55s var(--ease-out);
+    transition: translate var(--wipe-dur, 0.55s) var(--ease-out);
   }
 
-  &:hover::before,
+  // Respaldo para antes de que hidrate la página, y para quien navegue sin JS.
+  // La directiva marca el botón con `data-sweep` en cuanto arranca, y a partir
+  // de ahí esta regla deja de aplicar y manda ella. Mientras tanto, el barrido
+  // sube desde abajo igual que siempre.
+  //
+  // No puede ser un `:hover` a secas: al ser una declaración directa ganaría
+  // siempre a las variables, el relleno estaría en el centro desde el primer
+  // fotograma y el borde de entrada no se vería nunca.
+  &:not([data-sweep]):hover::before {
+    translate: 0 0;
+  }
+
+  // Con el teclado no hay borde de entrada que valga: el relleno simplemente
+  // está. Directa, y no a través de las variables, para ganarle a lo que la
+  // directiva haya dejado escrito en el elemento.
   &:focus-visible::before {
     translate: 0 0;
   }

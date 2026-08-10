@@ -48,9 +48,9 @@
         href="#contacto"
         (click)="go($event, 'contacto')"
         [attr.inert]="menuOpen() ? '' : null"
-        [mwMagnetic]="16"
+        mwSweep
       >
-        <span class="btn__label" data-magnetic-inner>
+        <span class="btn__label">
           <span class="bar__cta-long">Pide presupuesto</span>
           <span class="bar__cta-short">Presupuesto</span>
         </span>
@@ -89,8 +89,10 @@
           </li>
         }
 
-        <!-- El botón de presupuesto baja aquí como última opción. Sustituye al
-             enlace "Contacto", que llevaba exactamente al mismo sitio. -->
+        <!-- El botón de presupuesto baja aquí como última opción. Comparte
+             destino con el enlace "Contacto" de la lista: uno es la sección y el
+             otro la llamada a la acción, y en escritorio solo se ve el enlace
+             porque el botón vive arriba, en la barra. -->
         <li class="menu__cta-item">
           <!-- Entra como una pieza entera, no con la etiqueta deslizándose por
                dentro: es un botón relleno, y verlo llegar vacío durante medio
@@ -109,8 +111,7 @@
 
     <div class="menu__meta" data-menu-meta>
       <a href="mailto:contacto@makeweb.es">contacto&#64;makeweb.es</a>
-      <a href="tel:+34600000000">+34 600 00 00 00</a>
-      <p>Lunes a viernes, 9:00 – 18:00</p>
+      <p>Lunes a sábado, 10:00 – 00:00</p>
     </div>
   </div>
 </div>

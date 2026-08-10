@@ -22,10 +22,10 @@
 
           <p class="prz__price">
             <span class="prz__amount" [attr.data-price]="plan.id">
-              <span class="prz__currency">€</span>{{ formatPrice(plan.from) }}
+              {{ formatPrice(plan.from) }}<span class="prz__currency">€</span>
               <span class="prz__dash" aria-hidden="true">–</span>
               <span class="visually-hidden">a</span>
-              <span class="prz__currency">€</span>{{ formatPrice(plan.to) }}
+              {{ formatPrice(plan.to) }}<span class="prz__currency">€</span>
             </span>
             <span class="prz__term">{{ plan.note ? plan.note + ' · IVA no incluido' : 'IVA no incluido' }}</span>
           </p>
@@ -42,9 +42,9 @@
             [class.btn--ghost]="!plan.best"
             [routerLink]="['/']"
             fragment="contacto"
-            [mwMagnetic]="14"
+            mwSweep
           >
-            <span class="btn__label" data-magnetic-inner>{{ plan.cta }}</span>
+            <span class="btn__label">{{ plan.cta }}</span>
           </a>
         </li>
       }

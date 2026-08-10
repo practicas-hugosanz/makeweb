@@ -27,9 +27,19 @@ import { Pricing } from '../../sections/pricing/pricing';
 
       <mw-pricing />
 
-      <div class="shell prp__back">
-        <a class="btn btn--ghost" routerLink="/">
-          <span class="btn__label">Volver al inicio</span>
+      <div class="shell">
+        <a class="prp__back" routerLink="/">
+          <svg class="prp__back-arrow" viewBox="0 0 44 8" aria-hidden="true">
+            <path
+              d="M43 4H1M5 1 1 4l4 3"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span class="prp__back-label">Volver al inicio</span>
         </a>
       </div>
     </main>

@@ -31,9 +31,16 @@
             <p class="svc__kicker">{{ service.index }}</p>
             <h3 class="svc__title">{{ service.title }}</h3>
             <p class="svc__summary">{{ service.summary }}</p>
+            <!-- Lo que va aparte se marca aquí mismo: el cliente ve la cuota
+                 mensual en la propia línea, no al final del presupuesto. -->
             <ul class="svc__includes">
-              @for (item of service.includes; track item) {
-                <li>{{ item }}</li>
+              @for (item of service.includes; track item.label) {
+                <li [class.svc__include--extra]="item.monthly">
+                  {{ item.label }}
+                  @if (item.monthly; as fee) {
+                    <span class="svc__fee">{{ fee }}</span>
+                  }
+                </li>
               }
             </ul>
           </li>

@@ -150,3 +150,23 @@
     }
   }
 }
+
+// Lo que se paga aparte no se esconde: la línea sube de contraste y arrastra
+// una etiqueta con la cuota, para que no haya sorpresas en el presupuesto.
+.svc__include--extra {
+  color: var(--text-soft);
+}
+
+.svc__fee {
+  display: inline-block;
+  margin-left: 0.45rem;
+  padding: 0.14rem 0.5rem;
+  border: 1px solid var(--violet-40);
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--violet-lift);
+}

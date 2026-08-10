@@ -11,8 +11,8 @@ import {
 import { RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { SplitText, gsap } from '../../core/animation/gsap';
-import { MagneticDirective } from '../../core/animation/magnetic.directive';
 import { MotionService } from '../../core/animation/motion.service';
+import { SweepDirective } from '../../core/animation/sweep.directive';
 import { HERO_QUERIES } from '../../data/content';
 import { selectBooted } from '../../state/ui/ui.feature';
 
@@ -27,7 +27,7 @@ import { selectBooted } from '../../state/ui/ui.feature';
 @Component({
   selector: 'mw-hero',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MagneticDirective, RouterLink],
+  imports: [SweepDirective, RouterLink],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })

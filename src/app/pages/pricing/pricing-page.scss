@@ -2,7 +2,10 @@
 
 .prp {
   padding-top: clamp(8rem, 18vh, 12rem);
-  padding-bottom: clamp(4rem, 9vw, 7rem);
+  // El aire de abajo lo pone ahora la propia fila de vuelta, que tiene su
+  // relleno y su filete. Con los 4-7 rem de antes encima, el enlace flotaba en
+  // mitad de un hueco enorme entre los precios y el pie.
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .prp__head {
@@ -24,6 +27,66 @@
   color: var(--text-soft);
 }
 
+// La vuelta al inicio no es un botón suelto en medio del vacío: es la última
+// línea de la página. Ocupa el ancho del contenido y se apoya en un filete, el
+// mismo recurso que separa las secciones, así que cierra la lectura en vez de
+// interrumpirla.
+//
+// La flecha apunta a la izquierda y es larga y fina, del grosor de los filetes.
+// Las de los botones de acción salen hacia arriba y a la derecha; esta va justo
+// al contrario, porque va justo al contrario. La dirección dice a dónde lleva
+// cada enlace.
 .prp__back {
-  margin-top: clamp(1rem, 3vw, 2rem);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.9rem, 2vw, 1.4rem);
+  padding-block: clamp(1.1rem, 2.2vw, 1.6rem);
+  border-top: 1px solid var(--line);
+  color: var(--text-mute);
+  transition: color var(--dur-fast) var(--ease-out);
+
+  // El filete se tiñe de derecha a izquierda, en el mismo sentido que el viaje.
+  &::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    top: -1px;
+    height: 1px;
+    background: var(--violet-lift);
+    scale: 0 1;
+    transform-origin: right;
+    transition: scale 0.55s var(--ease-out);
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--text);
+
+    &::after {
+      scale: 1 1;
+    }
+
+    .prp__back-arrow {
+      translate: -0.5rem 0;
+    }
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.prp__back-arrow {
+  flex: none;
+  width: clamp(2.2rem, 5vw, 3.2rem);
+  height: 0.5rem;
+  color: var(--violet-lift);
+  transition: translate var(--dur) var(--ease-out);
+}
+
+.prp__back-label {
+  @include label;
+
+  color: inherit;
 }

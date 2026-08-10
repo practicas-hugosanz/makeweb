@@ -30,9 +30,8 @@
 
 // Seis fichas iguales en 3×2 es la retícula de tres columnas que llevan miles
 // de webs: ordenada y muda. Sobre seis carriles, las dos primeras ocupan tres
-// cada una, las tres del medio dos, y la última arranca desplazada dejando el
-// hueco a su izquierda. Se leen en el mismo orden, pero la página deja de ser
-// una tabla.
+// cada una, las tres del medio dos, y la última ocupa la fila entera. Se leen
+// en el mismo orden, pero la página deja de ser una tabla.
 .cmt__list {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -52,8 +51,11 @@
     grid-column: span 2;
   }
 
+  // La sexta cierra: fila completa. Desplazada a la derecha dejaba un hueco
+  // vacío a su izquierda que parecía un fallo de maquetación en vez de una
+  // decisión, y colgaba la sección hacia un lado.
   > :nth-child(6) {
-    grid-column: 4 / span 3;
+    grid-column: 1 / -1;
   }
 
   @include below(900) {
@@ -93,6 +95,38 @@
   &:nth-child(5),
   &:nth-child(6) {
     border-right: 0;
+  }
+
+  // Ocupando la fila entera, la sexta se quedaría con un titular corto y medio
+  // ancho vacío. Se abre en dos columnas —número y titular a la izquierda,
+  // texto a la derecha— y el cierre pesa lo que tiene que pesar.
+  @include above(900) {
+    &:nth-child(6) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      column-gap: clamp(1.5rem, 4vw, 4rem);
+      align-items: start;
+
+      // Colocación explícita: dejando que el reparto automático haga su trabajo,
+      // el titular se iba a la segunda columna junto al texto y la izquierda se
+      // quedaba con el número solo.
+      .cmt__index {
+        grid-area: 1 / 1;
+      }
+
+      .cmt__title {
+        grid-area: 2 / 1;
+      }
+
+      // Cruza las dos filas de la izquierda —la del número y la del titular— y
+      // se centra contra ellas. Anclado solo a la fila del titular arrancaba a
+      // su misma altura, y como el bloque de la izquierda es más alto, el texto
+      // quedaba colgando de la parte de arriba en vez de equilibrar la ficha.
+      .cmt__body {
+        grid-area: 1 / 2 / 3 / 3;
+        align-self: center;
+        max-width: 46ch;
+      }
+    }
   }
 
   @include below(900) {

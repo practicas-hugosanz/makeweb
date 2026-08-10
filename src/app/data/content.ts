@@ -16,6 +16,15 @@ export const NAV_LINKS: readonly NavLink[] = [
   { id: 'servicios', label: 'Servicios' },
   { id: 'proceso', label: 'Proceso' },
   { id: 'precios', label: 'Precios', route: '/precios' },
+  // Contacto va antes que Preguntas aunque en la página sea la última sección.
+  // En el menú móvil la lista termina con el botón de presupuesto, que lleva al
+  // mismo ancla que Contacto: pegados el uno al otro, dos nombres distintos para
+  // el mismo destino hacen que el lector se pare a buscar la diferencia. Con
+  // Preguntas en medio dejan de compararse.
+  //
+  // El precio de esto es que al bajar por la página el marcador de sección
+  // activa retrocede un puesto al llegar a Contacto.
+  { id: 'contacto', label: 'Contacto' },
   { id: 'preguntas', label: 'Preguntas' },
 ];
 
@@ -32,12 +41,26 @@ export const HERO_QUERIES: readonly string[] = [
 
 // --- services ---------------------------------------------------------------
 
+/**
+ * Una línea de lo que entra en un servicio. Lo que se cobra aparte va marcado:
+ * si algo tiene cuota mensual se dice aquí, no en la factura.
+ */
+export interface ServiceItem {
+  label: string;
+  /**
+   * Presente solo cuando la línea no va en el precio cerrado sino en cuota
+   * mensual. El texto es el que se lee en la etiqueta: cada extra tiene su
+   * propia tarifa, así que el precio vive aquí y no en la plantilla.
+   */
+  monthly?: string;
+}
+
 export interface Service {
   id: string;
   index: string;
   title: string;
   summary: string;
-  includes: readonly string[];
+  includes: readonly ServiceItem[];
 }
 
 export const SERVICES: readonly Service[] = [
@@ -47,7 +70,12 @@ export const SERVICES: readonly Service[] = [
     title: 'La primera impresión que te gana clientes',
     summary:
       'No diseñamos webs. Diseñamos la primera impresión que te va a ganar clientes. Cada color, cada detalle, pensado para tu negocio, no copiado de una plantilla.',
-    includes: ['Dirección de arte', 'Diseño en Figma', 'Sistema de componentes', 'Textos incluidos'],
+    includes: [
+      { label: 'Dirección de arte' },
+      { label: 'Demo de la web antes de empezar' },
+      { label: 'Sistema de componentes' },
+      { label: 'Textos incluidos' },
+    ],
   },
   {
     id: 'desarrollo',
@@ -59,11 +87,11 @@ export const SERVICES: readonly Service[] = [
     // JavaScript escritos a mano, y PHP con MySQL solo cuando el negocio
     // necesita guardar datos. Ni plantillas ni gestores que engordan la web.
     includes: [
-      'HTML, CSS y JavaScript',
-      'PHP, MySQL y phpMyAdmin si lleva base de datos',
-      'Sin plantillas ni WordPress',
-      'Accesible AA',
-      'Hosting configurado',
+      { label: 'HTML, CSS y JavaScript' },
+      { label: 'PHP, MySQL y phpMyAdmin si lleva base de datos' },
+      { label: 'Sin plantillas ni WordPress' },
+      { label: 'Accesible AA' },
+      { label: 'Hosting configurado' },
     ],
   },
   {
@@ -72,7 +100,12 @@ export const SERVICES: readonly Service[] = [
     title: 'Ser el mejor no sirve de nada si no te encuentran',
     summary:
       'Nos encargamos de que aparezcas primero cuando alguien busca cerca: ficha de Google, datos estructurados y páginas por zona.',
-    includes: ['Google Business', 'Schema local', 'Páginas por zona', 'Reseñas integradas'],
+    includes: [
+      { label: 'Google Business' },
+      { label: 'Schema local' },
+      { label: 'Páginas por zona' },
+      { label: 'Reseñas integradas' },
+    ],
   },
   {
     id: 'conversion',
@@ -80,7 +113,12 @@ export const SERVICES: readonly Service[] = [
     title: 'Convertimos visitas en clientes',
     summary:
       'Montamos y cuidamos todo el sistema de reservas, citas y pedidos de tu web, conectado con las herramientas que ya usas, para que cada visita tenga un camino claro hasta convertirse en cliente.',
-    includes: ['Reserva online', 'WhatsApp Business', 'Pedidos y pagos', 'Avisos automáticos'],
+    includes: [
+      { label: 'Reserva online' },
+      { label: 'WhatsApp Business', monthly: 'desde 50 €/mes' },
+      { label: 'Pedidos y pagos' },
+      { label: 'Avisos automáticos' },
+    ],
   },
   {
     id: 'cuidado',
@@ -88,7 +126,11 @@ export const SERVICES: readonly Service[] = [
     title: 'No te dejamos con la web y adiós',
     summary:
       'Actualizaciones, copias de seguridad y un informe mensual en castellano donde se entiende qué ha pasado.',
-    includes: ['Soporte por WhatsApp', 'Copias diarias', 'Cambios mensuales', 'Informe de resultados'],
+    includes: [
+      { label: 'Copias diarias', monthly: 'desde 50 €/mes' },
+      { label: 'Cambios mensuales', monthly: 'desde 30 €/mes' },
+      { label: 'Informe de resultados', monthly: 'desde 20 €/mes' },
+    ],
   },
 ];
 
@@ -112,8 +154,8 @@ export const PROCESS: readonly ProcessPhase[] = [
   {
     window: 'Días 2 – 4',
     title: 'Diseñamos',
-    body: 'Ves la web antes de que exista: pantallas reales, con tus fotos y tus textos. Ajustamos hasta que la reconoces como tuya.',
-    outputs: ['Diseño en Figma', 'Textos redactados', 'Dos rondas de cambios'],
+    body: 'Ves la web antes de que exista: una demo navegable, con tus fotos y tus textos. Ajustamos hasta que la reconoces como tuya.',
+    outputs: ['Demo de la web', 'Textos redactados', 'Dos rondas de cambios'],
   },
   {
     window: 'Días 5 – 6',
@@ -155,7 +197,7 @@ export const PLANS: readonly Plan[] = [
     from: 350,
     to: 400,
     note: 'Negociable',
-    pitch: 'Para el negocio que hoy solo tiene un perfil de Instagram y necesita estar en internet ya.',
+    pitch: 'Una página bien contada y tu ficha de Google, listas en una semana.',
     best: false,
     features: [
       'Web de una página, larga y bien contada',
@@ -172,7 +214,7 @@ export const PLANS: readonly Plan[] = [
     kind: 'Web con animaciones',
     from: 450,
     to: 700,
-    pitch: 'La web que se recuerda: movimiento con criterio, sin sacrificar velocidad.',
+    pitch: 'Diseño a medida y movimiento al servicio de la lectura, sin perder velocidad.',
     best: true,
     features: [
       'Todo lo del plan Esencial',
@@ -189,7 +231,7 @@ export const PLANS: readonly Plan[] = [
     kind: 'Animaciones y sistema de citas',
     from: 1000,
     to: 1100,
-    pitch: 'Para quien vive de la agenda: peluquerías, clínicas, talleres, restaurantes.',
+    pitch: 'Reservas integradas en la web, con avisos automáticos y panel de gestión.',
     best: false,
     features: [
       'Todo lo del plan Profesional',

@@ -7,8 +7,8 @@
 
   <div class="prose__note">
     <strong>Pendiente antes de publicar:</strong> rellena los datos del responsable en
-    <code>src/app/data/legal.ts</code> y revisa el apartado 5: si contratas analítica, hosting o
-    una herramienta de correo, cada proveedor debe aparecer ahí por su nombre.
+    <code>src/app/data/legal.ts</code> y revisa el apartado 5: si contratas analítica, hosting o una
+    herramienta de correo, cada proveedor debe aparecer ahí por su nombre.
   </div>
 
   <h2 id="responsable">1. Quién trata tus datos</h2>
@@ -23,7 +23,9 @@
     <dd>{{ legal.address }}</dd>
 
     <dt>Contacto para privacidad</dt>
-    <dd><a [href]="'mailto:' + legal.privacyEmail">{{ legal.privacyEmail }}</a></dd>
+    <dd>
+      <a [href]="'mailto:' + legal.privacyEmail">{{ legal.privacyEmail }}</a>
+    </dd>
   </dl>
 
   <h2 id="datos">2. Qué datos recogemos</h2>
@@ -44,8 +46,8 @@
     </li>
   </ul>
   <p>
-    No pedimos datos de categorías especiales (salud, ideología, religión, afiliación sindical…).
-    Te agradecemos que no los incluyas en el mensaje libre.
+    No pedimos datos de categorías especiales (salud, ideología, religión, afiliación sindical…). Te
+    agradecemos que no los incluyas en el mensaje libre.
   </p>
   <p>
     Esta web no está dirigida a menores de 14 años y no recogemos sus datos de forma consciente.
@@ -55,8 +57,8 @@
   <dl>
     <dt>Responder a tu consulta y prepararte una propuesta</dt>
     <dd>
-      Base jurídica: aplicación de medidas precontractuales a petición tuya
-      (art. 6.1.b RGPD). Sin estos datos no podemos contestarte.
+      Base jurídica: aplicación de medidas precontractuales a petición tuya (art. 6.1.b RGPD). Sin
+      estos datos no podemos contestarte.
     </dd>
 
     <dt>Gestionar la relación si acabamos trabajando juntos</dt>
@@ -67,8 +69,8 @@
 
     <dt>Medir de forma agregada cómo se usa la web</dt>
     <dd>
-      Base jurídica: tu consentimiento (art. 6.1.a RGPD), que puedes retirar cuando quieras desde
-      la <a href="/cookies">política de cookies</a>.
+      Base jurídica: tu consentimiento (art. 6.1.a RGPD), que puedes retirar cuando quieras desde la
+      <a href="/cookies">política de cookies</a>.
     </dd>
   </dl>
   <p>
@@ -92,24 +94,44 @@
 
   <h2 id="destinatarios">5. Quién más ve tus datos</h2>
   <p>
-    No vendemos ni cedemos datos personales. Sí trabajamos con proveedores que los tratan por
-    cuenta nuestra, con un contrato de encargo de tratamiento firmado (art. 28 RGPD):
+    No vendemos ni cedemos datos personales. Sí trabajamos con proveedores que los tratan por cuenta
+    nuestra, con un contrato de encargo de tratamiento firmado (art. 28 RGPD):
   </p>
   <ul>
     <li><strong>Alojamiento web:</strong> {{ legal.host.name }} ({{ legal.host.location }}).</li>
-    <li><strong>Correo electrónico:</strong> PROVEEDOR DE CORREO.</li>
+    <!-- La razón social exacta del contrato de correo va copiada de la factura
+         de IONOS: en un documento legal no se pone de memoria. -->
+    <li>
+      <strong>Correo electrónico:</strong> IONOS (RAZÓN SOCIAL SEGÚN FACTURA), donde se aloja el
+      buzón al que llegan tus mensajes.
+    </li>
+    <li>
+      <strong>Envío del formulario:</strong> Web3Forms, servicio de Web3Creative (India), con
+      servidores en Estados Unidos. Recibe lo que escribes en el formulario de contacto y lo reenvía
+      a nuestro buzón; según su documentación no conserva los envíos y borra sus registros cada dos
+      meses.
+    </li>
     <li><strong>Analítica web:</strong> PROVEEDOR DE ANALÍTICA, solo si aceptas esas cookies.</li>
     <li><strong>Gestoría:</strong> para las obligaciones contables y fiscales.</li>
   </ul>
-  <p>
-    También podemos comunicar datos a la Administración cuando una norma lo exija.
-  </p>
+  <p>También podemos comunicar datos a la Administración cuando una norma lo exija.</p>
 
   <h2 id="transferencias">6. Transferencias fuera de la UE</h2>
+  <!-- Este apartado decía que todos los proveedores tratan los datos dentro del
+       EEE. Dejó de ser cierto al conectar el formulario: Web3Forms procesa en
+       Estados Unidos y su titular está en India. La garantía que ampara esa
+       transferencia es lo único que falta por rellenar, y no se puede inventar:
+       o se firman cláusulas contractuales tipo con el proveedor, o se cambia a
+       uno del EEE que ofrezca contrato de encargo. -->
   <p>
-    Procuramos que todos los proveedores traten los datos dentro del Espacio Económico Europeo. Si
-    alguno operase fuera, la transferencia se ampararía en una decisión de adecuación de la
-    Comisión Europea o en cláusulas contractuales tipo, y se indicará en el apartado anterior.
+    El alojamiento web y el correo electrónico tratan los datos dentro del Espacio Económico
+    Europeo. El envío del formulario de contacto no: Web3Forms los procesa en servidores de Estados
+    Unidos. Esa transferencia se ampara en GARANTÍA APLICABLE.
+  </p>
+  <p>
+    Si prefieres que tus datos no salgan del Espacio Económico Europeo, escríbenos directamente a
+    <a [href]="'mailto:' + legal.privacyEmail">{{ legal.privacyEmail }}</a> en lugar de usar el
+    formulario.
   </p>
 
   <h2 id="derechos">7. Tus derechos</h2>
@@ -128,8 +150,8 @@
   </ul>
   <p>
     Escríbenos a <a [href]="'mailto:' + legal.privacyEmail">{{ legal.privacyEmail }}</a> indicando
-    qué derecho quieres ejercer. Te responderemos en el plazo máximo de un mes. Puede que te
-    pidamos acreditar tu identidad si no podemos identificarte con seguridad.
+    qué derecho quieres ejercer. Te responderemos en el plazo máximo de un mes. Puede que te pidamos
+    acreditar tu identidad si no podemos identificarte con seguridad.
   </p>
   <p>
     Si crees que no hemos atendido bien tu solicitud, puedes reclamar ante la Agencia Española de
@@ -152,7 +174,7 @@
   <h2 id="cambios">10. Cambios en esta política</h2>
   <p>
     Si cambia la forma en que tratamos los datos, actualizaremos esta página y la fecha que aparece
-    arriba. Cuando el cambio sea sustancial y afecte a tratamientos basados en tu consentimiento,
-    te lo pediremos de nuevo.
+    arriba. Cuando el cambio sea sustancial y afecte a tratamientos basados en tu consentimiento, te
+    lo pediremos de nuevo.
   </p>
 </mw-legal-layout>
