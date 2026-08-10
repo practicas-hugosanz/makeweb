@@ -37,8 +37,15 @@ jobs:
 
       - run: npm ci
 
-      # El baseHref /makeweb/ ya va en angular.json, así que no hace falta
-      # pasarlo aquí. Si algún día hay dominio propio, se cambia allí.
+      # El baseHref va en angular.json y desde que la web vive en makeweb.es es
+      # `/`, la raíz del dominio. Cuando estaba en usuario.github.io/makeweb/
+      # tenía que ser `/makeweb/`: si no coinciden, el HTML carga pero busca los
+      # estilos y el JavaScript en una ruta que no existe.
+      #
+      # El dominio se declara en public/CNAME, que se copia entero a la salida.
+      # Está ahí y no solo en los ajustes del repositorio porque este flujo sube
+      # un artefacto ya construido: sin ese archivo, cada despliegue puede
+      # borrar el dominio personalizado.
       - run: npm run build
 
       # Pages sirve /404.html cuando no encuentra una ruta; el prerenderizado

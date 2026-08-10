@@ -39,7 +39,7 @@
             },
             "server": "src/main.server.ts",
             "outputMode": "static",
-            "baseHref": "/makeweb/"
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
