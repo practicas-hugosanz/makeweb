@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { RevealDirective } from '../../core/animation/reveal.directive';
+import { BackLink } from '../../sections/back-link/back-link';
 import { Footer } from '../../sections/footer/footer';
 import { Pricing } from '../../sections/pricing/pricing';
 
@@ -14,7 +14,7 @@ import { Pricing } from '../../sections/pricing/pricing';
 @Component({
   selector: 'mw-pricing-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, RevealDirective, Footer, Pricing],
+  imports: [RevealDirective, BackLink, Footer, Pricing],
   template: `
     <main class="prp" id="contenido">
       <div class="shell prp__head" mwReveal="rise" [revealStagger]="0.08">
@@ -28,19 +28,7 @@ import { Pricing } from '../../sections/pricing/pricing';
       <mw-pricing />
 
       <div class="shell">
-        <a class="prp__back" routerLink="/">
-          <svg class="prp__back-arrow" viewBox="0 0 44 8" aria-hidden="true">
-            <path
-              d="M43 4H1M5 1 1 4l4 3"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <span class="prp__back-label">Volver al inicio</span>
-        </a>
+        <mw-back-link />
       </div>
     </main>
 

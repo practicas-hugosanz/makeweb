@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LEGAL, LEGAL_PAGES } from '../../data/legal';
+import { BackLink } from '../../sections/back-link/back-link';
 import { Footer } from '../../sections/footer/footer';
 
 /**
@@ -11,7 +12,7 @@ import { Footer } from '../../sections/footer/footer';
 @Component({
   selector: 'mw-legal-layout',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, RouterLinkActive, Footer],
+  imports: [RouterLink, RouterLinkActive, BackLink, Footer],
   template: `
     <main class="lg" id="contenido">
       <div class="shell lg__inner">
@@ -38,9 +39,7 @@ import { Footer } from '../../sections/footer/footer';
           <ng-content />
         </div>
 
-        <a class="btn btn--ghost lg__back" routerLink="/">
-          <span class="btn__label">Volver al inicio</span>
-        </a>
+        <mw-back-link class="lg__back" />
       </div>
     </main>
 
