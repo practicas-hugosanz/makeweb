@@ -68,7 +68,8 @@
   padding: 0;
   list-style: none;
 
-  a {
+  a,
+  .ftr__wa {
     display: flex;
     align-items: center;
     // 44 px de alto: en móvil estos enlaces iban a 24 y se fallaba al pulsar.
@@ -81,6 +82,27 @@
       color: var(--violet-lift);
     }
   }
+}
+
+// Se lee como un enlace más de la fila, pero es un botón: abre el selector de
+// líneas en vez de ir a ninguna parte. El icono es lo único que lo distingue.
+.ftr__wa {
+  gap: 0.45rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+
+  &:hover .ftr__wa-glyph {
+    color: #25d366;
+  }
+}
+
+.ftr__wa-glyph {
+  font-size: 1.05em;
+  color: var(--text-mute);
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
 .ftr__base {

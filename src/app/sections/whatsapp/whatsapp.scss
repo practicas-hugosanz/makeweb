@@ -1,0 +1,183 @@
+@use 'mixins' as *;
+
+// La misma esquina y los mismos márgenes que el aviso de cookies: nunca se ven
+// a la vez, así que el sitio es el de aquel y no uno propio pegado al lado.
+.wa {
+  position: fixed;
+  z-index: var(--z-float);
+  left: var(--gutter);
+  bottom: clamp(1rem, 2.5vw, 1.75rem);
+  display: grid;
+  justify-items: start;
+  gap: 0.75rem;
+
+  @include below(560) {
+    left: 0.75rem;
+    bottom: 0.75rem;
+  }
+}
+
+// --- el botón ----------------------------------------------------------------
+// Verde de WhatsApp y no violeta de marca: es un botón que se identifica por el
+// color antes que por el icono, y teñirlo de la paleta lo convertiría en un
+// botón más de la página.
+.wa__toggle {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 0;
+  border-radius: 50%;
+  background: #25d366;
+  color: #04231a;
+  box-shadow: var(--shadow-lift);
+  cursor: pointer;
+  transition:
+    scale var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+  // Entrada en CSS y con el estado por defecto ya visible: si la animación no
+  // llegara a correr, el botón sigue estando ahí.
+  animation: wa-in 0.5s var(--ease-out) backwards;
+
+  &:hover {
+    background: #2ee273;
+    scale: 1.06;
+  }
+
+  &:active {
+    scale: 0.96;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+
+    border-radius: 50%;
+  }
+
+  @include below(560) {
+    width: 3.1rem;
+    height: 3.1rem;
+  }
+}
+
+// `ng-icon` dibuja un svg de 1 em, así que su tamaño se manda con `font-size` y
+// no con un porcentaje del botón. 1,8 rem sobre un círculo de 3,5 rem deja el
+// mismo aire alrededor que tenía el icono anterior.
+.wa__glyph {
+  display: block;
+  font-size: 1.8rem;
+  transition: rotate var(--dur-fast) var(--ease-out);
+
+  @include below(560) {
+    font-size: 1.6rem;
+  }
+}
+
+// Abierto, el icono gira un poco: la única señal de que el botón ya no abre
+// nada, sino que cierra.
+.wa__toggle.is-open .wa__glyph {
+  rotate: -8deg;
+}
+
+@keyframes wa-in {
+  from {
+    opacity: 0;
+    scale: 0.6;
+  }
+}
+
+// --- la lista ----------------------------------------------------------------
+.wa__sheet {
+  width: min(19rem, calc(100vw - var(--gutter) * 2));
+  padding: 1rem 1.05rem 0.85rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-m);
+  background:
+    radial-gradient(120% 70% at 20% 0%, var(--violet-14), transparent 62%),
+    var(--ink-800);
+  box-shadow: var(--shadow-panel);
+  transform-origin: 1.75rem 100%;
+  animation: wa-sheet-in 0.28s var(--ease-out) backwards;
+
+  @include below(560) {
+    width: min(19rem, calc(100vw - 1.5rem));
+  }
+}
+
+@keyframes wa-sheet-in {
+  from {
+    opacity: 0;
+    scale: 0.94;
+    translate: 0 8px;
+  }
+}
+
+.wa__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.wa__note {
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text-mute);
+}
+
+.wa__list {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wa__pick {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  // 44 px de alto real: en móvil esto se pulsa con el pulgar y a una mano.
+  min-height: 44px;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-s);
+  background: var(--veil-03);
+  transition: background var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    background: var(--veil-05);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.wa__pick-label {
+  @include label;
+
+  font-size: 0.62rem;
+}
+
+.wa__pick-number {
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--text);
+}
+
+// El movimiento es decorativo: quien lo tiene desactivado ve el mismo botón y
+// la misma lista, sin entrada.
+@media (prefers-reduced-motion: reduce) {
+  .wa__toggle,
+  .wa__sheet {
+    animation: none;
+  }
+
+  .wa__toggle:hover,
+  .wa__toggle:active {
+    scale: 1;
+  }
+}

@@ -27,16 +27,28 @@
 
       <ul class="ftr__direct">
         <li><a href="mailto:contacto@makeweb.es">contacto&#64;makeweb.es</a></li>
-        <li>
-          <a href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank">
-            Instagram
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank">
-            LinkedIn
-          </a>
-        </li>
+        @for (phone of phones; track phone.e164) {
+          <li><a [href]="'tel:' + phone.e164">{{ phone.display }}</a></li>
+        }
+
+        <!-- El mismo mando que el botón flotante: abre el selector de líneas en
+             la esquina, no un chat concreto. Por eso es un <button> y no un
+             enlace, y por eso lleva `data-wa-trigger`: sin esa marca, el cierre
+             al pulsar fuera se dispararía antes que este clic. -->
+        @if (whatsappReady()) {
+          <li>
+            <button
+              class="ftr__wa"
+              data-wa-trigger
+              type="button"
+              (click)="openWhatsapp()"
+              [attr.aria-expanded]="whatsappOpen()"
+            >
+              <ng-icon class="ftr__wa-glyph" name="simpleWhatsapp" aria-hidden="true" />
+              WhatsApp
+            </button>
+          </li>
+        }
       </ul>
     </div>
 

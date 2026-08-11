@@ -6,12 +6,15 @@ export interface UiState {
   booted: boolean;
   menuOpen: boolean;
   activeSection: string;
+  /** El selector de líneas de WhatsApp, que se abre desde el botón y desde el pie. */
+  whatsappOpen: boolean;
 }
 
 const initialState: UiState = {
   booted: false,
   menuOpen: false,
   activeSection: 'inicio',
+  whatsappOpen: false,
 };
 
 export const uiFeature = createFeature({
@@ -19,8 +22,19 @@ export const uiFeature = createFeature({
   reducer: createReducer(
     initialState,
     on(UiActions.bootCompleted, (state) => ({ ...state, booted: true })),
-    on(UiActions.menuToggled, (state) => ({ ...state, menuOpen: !state.menuOpen })),
+    // Abrir el menú a pantalla completa se lleva por delante el selector de
+    // WhatsApp: no puede quedarse abierto debajo esperando a que se cierre.
+    on(UiActions.menuToggled, (state) => ({
+      ...state,
+      menuOpen: !state.menuOpen,
+      whatsappOpen: false,
+    })),
     on(UiActions.menuClosed, (state) => ({ ...state, menuOpen: false })),
+    on(UiActions.whatsappToggled, (state) => ({
+      ...state,
+      whatsappOpen: !state.whatsappOpen,
+    })),
+    on(UiActions.whatsappClosed, (state) => ({ ...state, whatsappOpen: false })),
     on(UiActions.sectionEntered, (state, { id }) => ({ ...state, activeSection: id })),
   ),
 });
@@ -31,4 +45,5 @@ export const {
   selectBooted,
   selectMenuOpen,
   selectActiveSection,
+  selectWhatsappOpen,
 } = uiFeature;

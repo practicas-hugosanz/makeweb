@@ -22,6 +22,7 @@ import { MotionService } from '../../core/animation/motion.service';
 import { RevealDirective } from '../../core/animation/reveal.directive';
 import { SweepDirective } from '../../core/animation/sweep.directive';
 import { PLANS } from '../../data/content';
+import { PHONES } from '../../data/legal';
 import { LeadActions } from '../../state/lead/lead.actions';
 import { selectError, selectReference, selectStatus } from '../../state/lead/lead.feature';
 import { STARTING_POINTS, UNDECIDED_PLAN } from '../../state/lead/lead.model';
@@ -54,6 +55,7 @@ export class Contact {
     UNDECIDED_PLAN,
   ];
   protected readonly startingPoints = STARTING_POINTS;
+  protected readonly phones = PHONES;
 
   protected readonly status = this.store.selectSignal(selectStatus);
   protected readonly reference = this.store.selectSignal(selectReference);

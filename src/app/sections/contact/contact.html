@@ -23,6 +23,12 @@
           <span class="cnt__direct-label">Correo</span>
           <a href="mailto:contacto@makeweb.es">contacto&#64;makeweb.es</a>
         </li>
+        @for (phone of phones; track phone.e164) {
+          <li>
+            <span class="cnt__direct-label">Teléfono</span>
+            <a [href]="'tel:' + phone.e164">{{ phone.display }}</a>
+          </li>
+        }
         <li>
           <span class="cnt__direct-label">Horario</span>
           <span>Lunes a sábado, 10:00 – 00:00</span>

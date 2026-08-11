@@ -14,6 +14,7 @@ import { AnalyticsService } from './core/analytics.service';
 import { MotionService } from './core/animation/motion.service';
 import { CookieBanner } from './sections/cookie-banner/cookie-banner';
 import { Header } from './sections/header/header';
+import { Whatsapp } from './sections/whatsapp/whatsapp';
 import { ConsentActions } from './state/consent/consent.actions';
 import { ConsentService } from './state/consent/consent.service';
 import { UiActions } from './state/ui/ui.actions';
@@ -21,7 +22,7 @@ import { UiActions } from './state/ui/ui.actions';
 @Component({
   selector: 'app-root',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterOutlet, Header, CookieBanner],
+  imports: [RouterOutlet, Header, CookieBanner, Whatsapp],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

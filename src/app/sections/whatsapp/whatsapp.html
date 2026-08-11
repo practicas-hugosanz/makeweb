@@ -1,0 +1,41 @@
+@if (visible()) {
+  <div class="wa">
+    @if (open()) {
+      <div class="wa__sheet" id="wa-sheet" role="menu" aria-label="Elige con quién hablas">
+        <p class="wa__title">Hablamos por WhatsApp</p>
+        <p class="wa__note">Elige una de las dos líneas. Respondemos de 10:00 a 00:00.</p>
+
+        <ul class="wa__list">
+          @for (phone of phones; track phone.e164) {
+            <li>
+              <a
+                class="wa__pick"
+                role="menuitem"
+                [href]="link(phone)"
+                target="_blank"
+                rel="noopener noreferrer"
+                (click)="toggle()"
+              >
+                <span class="wa__pick-label">{{ phone.label }}</span>
+                <span class="wa__pick-number">{{ phone.display }}</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+    }
+
+    <button
+      class="wa__toggle"
+      data-wa-toggle
+      type="button"
+      (click)="toggle()"
+      [class.is-open]="open()"
+      [attr.aria-expanded]="open()"
+      aria-controls="wa-sheet"
+      [attr.aria-label]="open() ? 'Cerrar las opciones de WhatsApp' : 'Escríbenos por WhatsApp'"
+    >
+      <ng-icon class="wa__glyph" name="simpleWhatsapp" aria-hidden="true" />
+    </button>
+  </div>
+}
