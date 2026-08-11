@@ -35,31 +35,36 @@
              <button> y no un enlace. La lista aparece justo encima, anclada
              aquí, y no en el botón flotante de la esquina.
 
+             No se esconde nunca. Llegó a ocultarse mientras el aviso de cookies
+             pedía respuesta, porque entonces abría el panel de la esquina, que
+             está cedida al aviso. Desde que la lista cuelga de este mismo
+             enlace, ese motivo no existe, y lo que se veía era un enlace de
+             contacto desapareciendo de la fila al abrir las preferencias de
+             cookies, que están tres columnas más abajo.
+
              `data-wa-trigger` lo exime del cierre al pulsar fuera; sin esa
              marca, el `pointerdown` cerraría la lista un instante antes de que
              este `click` la reabriera, y no se podría cerrar desde aquí. -->
-        @if (whatsappReady()) {
-          <li class="ftr__wa-wrap">
-            @if (whatsappOpen()) {
-              <div class="ftr__wa-sheet" data-wa-panel role="menu" aria-label="Elige con quién hablas">
-                <mw-whatsapp-lines />
-              </div>
-            }
+        <li class="ftr__wa-wrap">
+          @if (whatsappOpen()) {
+            <div class="ftr__wa-sheet" data-wa-panel role="menu" aria-label="Elige con quién hablas">
+              <mw-whatsapp-lines />
+            </div>
+          }
 
-            <button
-              class="ftr__wa"
-              data-wa-trigger
-              data-wa-footer-toggle
-              type="button"
-              (click)="openWhatsapp()"
-              [class.is-open]="whatsappOpen()"
-              [attr.aria-expanded]="whatsappOpen()"
-            >
-              <ng-icon class="ftr__wa-glyph" name="simpleWhatsapp" aria-hidden="true" />
-              WhatsApp
-            </button>
-          </li>
-        }
+          <button
+            class="ftr__wa"
+            data-wa-trigger
+            data-wa-footer-toggle
+            type="button"
+            (click)="openWhatsapp()"
+            [class.is-open]="whatsappOpen()"
+            [attr.aria-expanded]="whatsappOpen()"
+          >
+            <ng-icon class="ftr__wa-glyph" name="simpleWhatsapp" aria-hidden="true" />
+            WhatsApp
+          </button>
+        </li>
       </ul>
     </div>
 

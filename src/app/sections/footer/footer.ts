@@ -6,9 +6,8 @@ import { Store } from '@ngrx/store';
 import { MotionService } from '../../core/animation/motion.service';
 import { LEGAL_PAGES, PHONES } from '../../data/legal';
 import { ConsentActions } from '../../state/consent/consent.actions';
-import { selectAsking } from '../../state/consent/consent.feature';
 import { UiActions } from '../../state/ui/ui.actions';
-import { selectBooted, selectWhatsappOpen } from '../../state/ui/ui.feature';
+import { selectWhatsappOpen } from '../../state/ui/ui.feature';
 import { WhatsappLines } from '../whatsapp/whatsapp-lines';
 
 @Component({
@@ -31,16 +30,6 @@ export class Footer {
   /** Solo cuando se abrió desde aquí: en la esquina lo enseña el botón flotante. */
   protected readonly whatsappOpen = computed(() => this.whatsappAnchor() === 'footer');
 
-  private readonly booted = this.store.selectSignal(selectBooted);
-  private readonly asking = this.store.selectSignal(selectAsking);
-
-  /**
-   * Este enlace abre el selector que vive en la esquina, y esa esquina está
-   * cedida al aviso de cookies mientras pide respuesta. Ofrecerlo entonces
-   * sería un botón que no hace nada visible, así que se retira con él: mientras
-   * haya que decidir sobre cookies, no hay acceso a WhatsApp por ninguna vía.
-   */
-  protected readonly whatsappReady = computed(() => this.booted() && !this.asking());
   protected readonly year = new Date().getFullYear();
 
   protected toTop(event: Event): void {
