@@ -4,24 +4,20 @@
     ella te convierte en usuario e implica que aceptas lo que se explica aquí abajo.
   </p>
 
-  <div class="prose__note">
-    <strong>Pendiente antes de publicar:</strong> los datos identificativos que aparecen en
-    mayúsculas son huecos por rellenar. Están todos en un único archivo,
-    <code>src/app/data/legal.ts</code>. Sin ellos, esta página no cumple el artículo 10 de la
-    LSSI-CE.
-  </div>
-
   <h2 id="titular">1. Quién está detrás de esta web</h2>
   <p>
     En cumplimiento del artículo 10 de la Ley 34/2002, de servicios de la sociedad de la
     información y de comercio electrónico (LSSI-CE):
   </p>
   <dl>
-    <dt>Titular</dt>
-    <dd>{{ legal.company }}, que opera bajo la marca {{ legal.brand }}.</dd>
-
-    <dt>NIF</dt>
-    <dd>{{ legal.nif }}</dd>
+    <dt>Titulares</dt>
+    <!-- Los dos, cada uno con su NIF: el titular son dos personas físicas que
+         comparten la marca, no una sociedad con un único identificador. -->
+    <dd>
+      {{ legal.owners[0].name }} (NIF {{ legal.owners[0].nif }}) y
+      {{ legal.owners[1].name }} (NIF {{ legal.owners[1].nif }}), que operan conjuntamente bajo la
+      marca {{ legal.brand }}.
+    </dd>
 
     <dt>Domicilio</dt>
     <dd>
@@ -32,8 +28,12 @@
     <dt>Correo electrónico</dt>
     <dd><a [href]="'mailto:' + legal.email">{{ legal.email }}</a></dd>
 
-    <dt>Datos registrales</dt>
-    <dd>{{ legal.registry }}</dd>
+    <dt>Teléfono</dt>
+    <dd>
+      @for (phone of phones; track phone.e164) {
+        <a [href]="'tel:' + phone.e164">{{ phone.display }}</a>{{ $last ? '' : ' · ' }}
+      }
+    </dd>
 
     <dt>Alojamiento</dt>
     <dd>{{ legal.host.name }}, con servidores en {{ legal.host.location }}.</dd>

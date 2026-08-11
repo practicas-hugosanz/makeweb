@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { LEGAL } from '../../../data/legal';
+import { LEGAL, PHONES } from '../../../data/legal';
 import { LegalLayout } from '../legal-layout';
 
 @Component({
@@ -10,4 +10,5 @@ import { LegalLayout } from '../legal-layout';
 })
 export class LegalNotice {
   protected readonly legal = LEGAL;
+  protected readonly phones = PHONES;
 }

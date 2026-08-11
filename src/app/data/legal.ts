@@ -8,32 +8,73 @@
  */
 export const LEGAL = {
   brand: 'MakeWeb',
-  /** Razón social completa, con la forma jurídica. */
-  company: 'RAZÓN SOCIAL COMPLETA, S.L.',
-  nif: 'NIF / CIF',
+  /**
+   * Los titulares del sitio, cada uno con su NIF.
+   *
+   * No hay sociedad: son dos autónomos que operan bajo la marca MakeWeb, así
+   * que el artículo 10 de la LSSI-CE pide identificar a los dos, no a una razón
+   * social. Por lo mismo no hay datos registrales: un autónomo no se inscribe
+   * en el Registro Mercantil, y esa fila se retiró de `notice.html`.
+   */
+  owners: [
+    { name: 'Hugo Sanz Abad', nif: '50507227D' },
+    { name: 'Lucas Segovia Sánchez', nif: '51253727K' },
+  ],
+  /** Los dos titulares en una línea, para las frases corridas. */
+  company: 'Hugo Sanz Abad y Lucas Segovia Sánchez',
   /**
    * El estudio trabaja en remoto y no atiende público aquí, pero el domicilio
-   * fiscal es obligatorio en el aviso legal (art. 10 LSSI-CE): pon el que
-   * conste en Hacienda, aunque sea tu domicilio particular o el de la gestoría.
+   * fiscal es obligatorio en el aviso legal (art. 10 LSSI-CE), y completo:
+   * calle, número, código postal, localidad y provincia.
    */
-  address: 'DOMICILIO FISCAL COMPLETO, CÓDIGO POSTAL, LOCALIDAD (PROVINCIA), España',
-  /** Solo si es una sociedad; si eres autónomo, borra esta línea de la página. */
-  registry: 'Registro Mercantil de PROVINCIA, tomo TOMO, folio FOLIO, hoja HOJA',
+  address: 'Calle del Marge, 1, 03110 Mutxamel (Alicante), España',
   email: 'contacto@makeweb.es',
   privacyEmail: 'contacto@makeweb.es',
-  // Sin teléfono a propósito. El art. 10 LSSI-CE pide un medio de contacto
-  // directo y efectivo, y el correo lo cumple. Si algún día hay número, se
-  // añade aquí y se vuelve a poner la fila en `notice.html`.
   domain: 'makeweb.es',
   site: 'https://makeweb.es',
-  /** Quién aloja la web y dónde están los servidores. */
+  /**
+   * Quién aloja la web y dónde están los servidores.
+   *
+   * Es GitHub Pages porque el despliegue lo hace el flujo de `.github/workflows`
+   * y el dominio apunta ahí vía `public/CNAME`. Si algún día se cambia de
+   * hosting, esto y el apartado de transferencias de la política de privacidad
+   * cambian juntos: son la misma afirmación contada dos veces.
+   */
   host: {
-    name: 'NOMBRE DEL PROVEEDOR DE ALOJAMIENTO',
-    location: 'Unión Europea',
+    name: 'GitHub Pages (GitHub, Inc.)',
+    location: 'Estados Unidos y red de distribución de contenidos global',
   },
   /** Actualiza esta fecha cada vez que cambies el contenido de las páginas. */
-  updated: '1 de agosto de 2026',
+  updated: '11 de agosto de 2026',
 } as const;
+
+/**
+ * Los dos teléfonos del estudio. Son también los dos WhatsApp: el botón
+ * flotante y la sección de contacto salen de esta misma lista, así que un
+ * número solo se cambia aquí.
+ *
+ * `display` es como se lee; `e164` es lo que entienden `tel:` y `wa.me`, sin
+ * espacios y con el prefijo del país (wa.me además lo quiere sin el `+`).
+ */
+export interface Phone {
+  /** Cómo se distingue de la otra línea en el selector de WhatsApp. */
+  label: string;
+  display: string;
+  e164: string;
+}
+
+export const PHONES: readonly Phone[] = [
+  { label: 'Línea 1', display: '+34 683 10 68 46', e164: '+34683106846' },
+  { label: 'Línea 2', display: '+34 617 84 52 64', e164: '+34617845264' },
+];
+
+/** Lo que aparece ya tecleado al abrir el chat, para que no empiece en blanco. */
+export const WHATSAPP_GREETING = 'Hola, os escribo desde makeweb.es. Me gustaría preguntaros por…';
+
+/** Enlace de chat de WhatsApp, con el mensaje ya escrito. */
+export function whatsappLink(phone: Phone, text: string = WHATSAPP_GREETING): string {
+  return `https://wa.me/${phone.e164.replace(/\D/g, '')}?text=${encodeURIComponent(text)}`;
+}
 
 export interface LegalPageLink {
   path: string;

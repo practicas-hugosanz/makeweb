@@ -42,6 +42,12 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 
+# Documentación interna de RGPD: la evaluación de transferencia y las copias en
+# PDF de los contratos de los proveedores. Son papeles de la empresa, no de la
+# web, y este repositorio es público. Se quedan en el disco: hay que poder
+# enseñarlos si la AEPD los pide, no publicarlos.
+/docs/rgpd
+
 # Herramientas del agente. `.agents/` son casi 1 MB de skills de terceros
 # instaladas con `npx skills add`, y `.claude/` lleva ajustes personales de la
 # máquina. Ninguna de las dos es la web. `skills-lock.json` sí se versiona: con

@@ -5,19 +5,16 @@
     2016/679 (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD).
   </p>
 
-  <div class="prose__note">
-    <strong>Pendiente antes de publicar:</strong> rellena los datos del responsable en
-    <code>src/app/data/legal.ts</code> y revisa el apartado 5: si contratas analítica, hosting o una
-    herramienta de correo, cada proveedor debe aparecer ahí por su nombre.
-  </div>
-
   <h2 id="responsable">1. Quién trata tus datos</h2>
   <dl>
-    <dt>Responsable</dt>
-    <dd>{{ legal.company }} ({{ legal.brand }})</dd>
-
-    <dt>NIF</dt>
-    <dd>{{ legal.nif }}</dd>
+    <!-- Responsables en plural y con NIF cada uno: el RGPD (art. 13.1.a) pide
+         la identidad del responsable, y aquí son dos personas físicas. -->
+    <dt>Responsables</dt>
+    <dd>
+      @for (owner of legal.owners; track owner.nif) {
+        {{ owner.name }} (NIF {{ owner.nif }}){{ $last ? '.' : ' y ' }}
+      }
+    </dd>
 
     <dt>Domicilio</dt>
     <dd>{{ legal.address }}</dd>
@@ -31,10 +28,19 @@
   <h2 id="datos">2. Qué datos recogemos</h2>
   <p>Solo los que tú nos das, y solo donde hay un formulario o un enlace de contacto:</p>
   <ul>
+    <!-- Los campos son los que hay de verdad en `contact.html`. Aquí ponía "la
+         horquilla de presupuesto", que se retiró del formulario hace tiempo:
+         una política no puede describir campos que ya no existen. -->
     <li>
       <strong>Formulario de contacto:</strong> nombre, nombre del negocio, correo electrónico,
-      teléfono (opcional), el servicio que te interesa, la horquilla de presupuesto y lo que
-      escribas en el mensaje.
+      teléfono (opcional), qué plan te encaja, qué tienes ahora y lo que escribas en el mensaje.
+    </li>
+    <!-- Anexo 1 del DPA de Web3Forms: el servicio trata metadatos técnicos, y
+         el antispam necesita la IP para funcionar. Callarlo sería incompleto. -->
+    <li>
+      <strong>Al enviar el formulario:</strong> el servicio que transporta el envío registra
+      además datos técnicos —tu dirección IP, la fecha y hora, y la página desde la que escribes—
+      que necesita para filtrar el spam.
     </li>
     <li>
       <strong>Si nos escribes por correo o nos llamas:</strong> los datos que aparezcan en esa
@@ -90,6 +96,15 @@
       con carácter general).
     </li>
     <li><strong>Datos de analítica:</strong> el plazo indicado para cada cookie.</li>
+    <!-- Sección 8 del DPA: "physical time-to-live of three years, with
+         dashboard visibility governed by the Customer's plan". Los "30 días"
+         que anuncia su web comercial son solo lo que se ve en el panel del
+         plan gratuito, no lo que se borra. Manda el contrato. -->
+    <li>
+      <strong>La copia que guarda el servicio de formularios:</strong> hasta 3 años en los
+      servidores de Web3Forms, según su contrato de encargo, aunque en nuestro plan solo sean
+      visibles los últimos 30 días. Es independiente de lo que guardemos nosotros en el buzón.
+    </li>
   </ul>
 
   <h2 id="destinatarios">5. Quién más ve tus datos</h2>
@@ -99,34 +114,73 @@
   </p>
   <ul>
     <li><strong>Alojamiento web:</strong> {{ legal.host.name }} ({{ legal.host.location }}).</li>
-    <!-- La razón social exacta del contrato de correo va copiada de la factura
-         de IONOS: en un documento legal no se pone de memoria. -->
+    <!-- Nombrar "IONOS" ya identifica al destinatario, que es lo que pide el
+         artículo 13 del RGPD. La razón social exacta de la entidad que factura
+         (IONOS opera en España con más de una) se añade aquí en cuanto se
+         compruebe en la factura; de memoria, en un documento legal, no. -->
     <li>
-      <strong>Correo electrónico:</strong> IONOS (RAZÓN SOCIAL SEGÚN FACTURA), donde se aloja el
-      buzón al que llegan tus mensajes.
+      <strong>Correo electrónico:</strong> IONOS, donde se aloja el buzón al que llegan tus
+      mensajes. Los servidores están en la Unión Europea.
+    </li>
+    <!-- Los subencargados salen del anexo 3 de su DPA. Solo se nombran los que
+         reciben datos personales de quien rellena el formulario; los que son
+         infraestructura del proveedor van agrupados. -->
+    <li>
+      <strong>Envío del formulario:</strong> Web3Forms, servicio de Web3Creative (India), que
+      recibe lo que escribes y lo reenvía a nuestro buzón. Para prestar el servicio se apoya en
+      Amazon Web Services, Cloudflare y Hetzner (este último en la Unión Europea), y guarda una
+      copia del envío hasta 3 años.
     </li>
     <li>
-      <strong>Envío del formulario:</strong> Web3Forms, servicio de Web3Creative (India), con
-      servidores en Estados Unidos. Recibe lo que escribes en el formulario de contacto y lo reenvía
-      a nuestro buzón; según su documentación no conserva los envíos y borra sus registros cada dos
-      meses.
+      <strong>Filtrado de spam:</strong> CleanTalk y Akismet (Automattic), en Estados Unidos.
+      Reciben tu dirección IP y tu correo electrónico para decidir si el envío es basura. Sin este
+      filtro el formulario sería inutilizable.
     </li>
-    <li><strong>Analítica web:</strong> PROVEEDOR DE ANALÍTICA, solo si aceptas esas cookies.</li>
+    <!-- `environment.analyticsId` está vacío, así que no se carga analítica
+         ninguna ni con las cookies aceptadas. En cuanto se conecte una, este
+         punto vuelve con el nombre del proveedor y su país. -->
+    <li>
+      <strong>Analítica web:</strong> ahora mismo no hay ninguna conectada. Si en el futuro la
+      hubiera, aparecería aquí con su nombre y solo se activaría si aceptas esas cookies.
+    </li>
     <li><strong>Gestoría:</strong> para las obligaciones contables y fiscales.</li>
   </ul>
   <p>También podemos comunicar datos a la Administración cuando una norma lo exija.</p>
 
   <h2 id="transferencias">6. Transferencias fuera de la UE</h2>
-  <!-- Este apartado decía que todos los proveedores tratan los datos dentro del
-       EEE. Dejó de ser cierto al conectar el formulario: Web3Forms procesa en
-       Estados Unidos y su titular está en India. La garantía que ampara esa
-       transferencia es lo único que falta por rellenar, y no se puede inventar:
-       o se firman cláusulas contractuales tipo con el proveedor, o se cambia a
-       uno del EEE que ofrezca contrato de encargo. -->
+  <!-- Este apartado llegó a decir que todos los proveedores tratan los datos
+       dentro del EEE. No era cierto por dos vías distintas:
+
+       - El alojamiento es GitHub Pages, de GitHub, Inc. (Estados Unidos).
+       - El formulario pasa por Web3Forms, cuyo titular está en India y cuyos
+         servidores están en Estados Unidos.
+
+       La garantía del segundo es lo único que sigue sin poderse escribir, y no
+       se puede inventar: o se firman cláusulas contractuales tipo con el
+       proveedor, o se cambia a uno del EEE que ofrezca contrato de encargo. -->
   <p>
-    El alojamiento web y el correo electrónico tratan los datos dentro del Espacio Económico
-    Europeo. El envío del formulario de contacto no: Web3Forms los procesa en servidores de Estados
-    Unidos. Esa transferencia se ampara en GARANTÍA APLICABLE.
+    El correo electrónico se trata dentro del Espacio Económico Europeo. Hay dos servicios que no:
+  </p>
+  <ul>
+    <li>
+      <strong>El alojamiento de esta web</strong>, en GitHub Pages (GitHub, Inc., Estados Unidos).
+      Al servirte la página quedan registrados datos técnicos como tu dirección IP. La transferencia
+      se ampara en la certificación de su grupo en el Marco de Privacidad de Datos UE-EE. UU.
+    </li>
+    <li>
+      <strong>El envío del formulario de contacto</strong>, que procesa Web3Forms (Web3Creative,
+      India), junto con los proveedores en que se apoya, entre ellos los filtros antispam
+      CleanTalk y Akismet, en Estados Unidos. Ni India ni Estados Unidos cuentan con una decisión
+      de adecuación que cubra a estos proveedores, así que la transferencia se ampara en las
+      <strong>cláusulas contractuales tipo</strong> aprobadas por la Comisión Europea mediante la
+      Decisión de Ejecución (UE) 2021/914, incorporadas por referencia al contrato de encargo de
+      tratamiento que tenemos suscrito con el proveedor, actuando él como importador de datos y
+      nosotros como exportadores.
+    </li>
+  </ul>
+  <p>
+    Puedes pedirnos una copia de las garantías de cualquiera de estas transferencias escribiendo a
+    <a [href]="'mailto:' + legal.privacyEmail">{{ legal.privacyEmail }}</a>.
   </p>
   <p>
     Si prefieres que tus datos no salgan del Espacio Económico Europeo, escríbenos directamente a
