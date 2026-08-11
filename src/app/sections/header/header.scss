@@ -241,6 +241,7 @@
 }
 
 .menu__sheet {
+  position: relative;
   display: grid;
   grid-template-rows: 1fr auto;
   height: 100%;
@@ -248,27 +249,64 @@
   background: var(--ink-800);
   background-image: radial-gradient(120% 80% at 85% 0%, var(--violet-14), transparent 60%);
   overflow-y: auto;
+
+  // La misma retícula que el fondo del hero. Sin ella el panel era el único
+  // rectángulo liso de la web, y se notaba: el resto de superficies llevan
+  // trama. Va en un pseudoelemento absoluto y no como hijo para no meter una
+  // fila más en la rejilla ni tocar lo que anima GSAP.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 5.5rem 5.5rem;
+    mask-image: radial-gradient(90% 65% at 85% 0%, #000 0%, transparent 100%);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+// Por encima de la trama: un pseudoelemento posicionado pinta sobre los
+// hermanos estáticos, así que sin esto la retícula tapaba el menú.
+.menu__nav,
+.menu__meta {
+  position: relative;
 }
 
 .menu__nav {
-  // Con cuatro enlaces y un botón, la lista medía 252 px dentro de un bloque de
-  // 567: quedaban 315 px de agujero entre la última opción y el pie del menú.
-  // Repartiendo el sobrante entre las opciones, la lista ocupa la pantalla y de
-  // paso cada objetivo táctil crece. Se adapta solo a cualquier alto: en una
-  // pantalla corta simplemente no hay sobrante que repartir.
-  // Sin `align-content` aquí: la rejilla estira su única fila —la lista— hasta
-  // ocupar todo el alto. Si se reparte también en este nivel, lo que hace es
-  // centrar la lista y el agujero se parte en dos en vez de desaparecer.
   display: grid;
 
+  // El sobrante ya no se reparte entre las opciones.
+  //
+  // Con `align-content: space-evenly` el hueco entre enlaces lo decidía la
+  // pantalla y no el diseño: 46 px en un iPhone y 21 en un SE, y cada opción
+  // de 45 px flotaba dentro de una franja de 91. Más de la mitad era aire sin
+  // motivo, y el ritmo se rompía justo antes del botón. Ahora las filas miden
+  // lo que miden en todas partes y el sobrante se queda abajo, que es donde no
+  // molesta.
   ul {
     display: grid;
-    align-content: space-evenly;
-    height: 100%;
+    align-content: start;
     list-style: none;
     padding: 0;
   }
 
+  // Un filete por opción. Es el recurso que estructura el pie, las listas de
+  // contacto y las páginas legales; el menú era lo único sin él.
+  // El alto de fila es fijo y generoso, no el sobrante repartido. Con filas de
+  // 60 px la lista ocupaba el 40 % del panel y quedaba un agujero de 248 px
+  // antes del pie: el mismo vacío de antes, solo que junto en vez de repartido.
+  li:not(.menu__cta-item) {
+    padding-block: clamp(0.55rem, 2.4vw, 1.15rem);
+    border-bottom: 1px solid var(--line);
+    transition: border-color var(--dur-fast) var(--ease-out);
+  }
+
+  // `overflow: hidden` y el relleno mínimo se quedan como estaban: son la
+  // máscara con la que cada línea entra deslizándose desde abajo. El aire de la
+  // fila lo pone el <li>, no esto.
   a {
     display: block;
     padding-block: 0.15em;
@@ -287,16 +325,46 @@
     transition: color var(--dur-fast) var(--ease-out);
   }
 
+  // Los números son la firma del menú, así que se les da una columna propia:
+  // alineados entre sí, las etiquetas arrancan todas a la misma altura y la
+  // lista deja de parecer cinco palabras sueltas.
   em {
+    flex: none;
+    width: 2.4em;
     font-family: var(--font-label);
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-style: normal;
     letter-spacing: 0.08em;
-    color: var(--violet-lift);
+    color: var(--text-mute);
+    transition: color var(--dur-fast) var(--ease-out);
   }
 
   a:hover span {
     color: var(--violet-lift);
+  }
+
+  a:hover em {
+    color: var(--violet-lift);
+  }
+
+  // La sección en la que estás. El dato ya existía en el store y lo usaba la
+  // barra en escritorio; aquí el menú no decía nada, y abrirlo te dejaba sin
+  // saber de dónde venías.
+  li.is-current {
+    border-bottom-color: var(--violet-40);
+
+    em {
+      color: var(--violet-lift);
+    }
+
+    span::after {
+      content: '';
+      align-self: center;
+      width: 0.42em;
+      height: 0.42em;
+      border-radius: 50%;
+      background: var(--violet-lift);
+    }
   }
 }
 

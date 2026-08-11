@@ -78,9 +78,16 @@
   <div class="menu__sheet" data-menu-sheet>
     <nav class="menu__nav" aria-label="Menú principal">
       <ul>
+        <!-- `is-current` va en el <li> y no en el <span>: ese span es el que
+             GSAP desliza al abrir, y no se le añade nada que pueda pelearse con
+             la línea de tiempo. -->
         @for (link of links; track link.id; let i = $index) {
-          <li>
-            <a [href]="link.route ?? '#' + link.id" (click)="go($event, link.id, link.route)">
+          <li [class.is-current]="active() === link.id">
+            <a
+              [href]="link.route ?? '#' + link.id"
+              [attr.aria-current]="active() === link.id ? 'true' : null"
+              (click)="go($event, link.id, link.route)"
+            >
               <span data-menu-item>
                 <em>{{ pad(i + 1) }}</em>
                 {{ link.label }}
