@@ -83,16 +83,26 @@
   gap: clamp(1.1rem, 2vw, 1.75rem);
 }
 
+// En vertical: reclamo, argumento y acción primero; la demostración debajo.
+//
+// Estuvo entre el titular y la entradilla, para que se viese sin desplazarse.
+// El problema es que mide 372 px y la pantalla de un móvil no son los 844 del
+// aparato: en Safari la barra de direcciones deja 748, y con la demo en medio
+// los botones caían 31 px por debajo del pliegue —224 en un iPhone SE—. O se
+// ve la demostración, o se ve el botón de presupuesto; no caben los dos.
+//
+// Gana el botón: la demo convence a quien ya está leyendo, pero el botón es lo
+// único que convierte. Y sigue apareciendo entera al primer gesto de desplazar.
 @include below(1024) {
   .hero__headline {
     order: 1;
   }
 
-  .hero__demo {
+  .hero__pitch {
     order: 2;
   }
 
-  .hero__pitch {
+  .hero__demo {
     order: 3;
   }
 }
@@ -150,6 +160,22 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
+
+  // En vertical van en una fila y no apilados. Apilados medían 113 px y eran
+  // lo que terminaba de echar la llamada a la acción fuera de la pantalla;
+  // en fila miden la mitad. Se reparten el ancho a partes iguales para que el
+  // principal no quede más estrecho que el secundario.
+  @include below(1024) {
+    flex-wrap: nowrap;
+    gap: 0.6rem;
+
+    .btn {
+      flex: 1 1 0;
+      justify-content: center;
+      padding-inline: 0.9em;
+      text-align: center;
+    }
+  }
 }
 
 // --- the search demo --------------------------------------------------------
