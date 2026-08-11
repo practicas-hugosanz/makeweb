@@ -2,6 +2,12 @@
      sección ya no comparte portada con otras seis y no necesita presentarse. -->
 <section class="prz sec sec--flush" id="precios">
   <div class="shell">
+    <!-- El diseño de esta página no lleva subtítulo, pero saltar del h1 al h3
+         deja la lista de planes colgando de ningún sitio para un lector de
+         pantalla y para el rastreador. Este encabezado cierra el hueco sin
+         añadir nada a la pantalla. -->
+    <h2 class="visually-hidden">Planes y precios</h2>
+
     <p class="prz__swipe" aria-hidden="true">Desliza para comparar los tres</p>
 
     <ul class="prz__plans" data-plans>

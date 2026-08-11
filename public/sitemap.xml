@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Si añades páginas al enrutador, añádelas también aquí.
+
+  Solo `loc` y `lastmod`: Google ignora `changefreq` y `priority` desde hace
+  años, y una prioridad inventada no mueve nada. `lastmod` sí lo usa, pero solo
+  mientras sea verdad, así que se actualiza cuando cambia el contenido de esa
+  página, no en cada despliegue.
+
+  La 404 no está aquí a propósito: va con `noindex`.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://makeweb.es/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
     <loc>https://makeweb.es/precios</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
     <loc>https://makeweb.es/aviso-legal</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
     <loc>https://makeweb.es/privacidad</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <lastmod>2026-08-01</lastmod>
   </url>
   <url>
     <loc>https://makeweb.es/cookies</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <lastmod>2026-08-01</lastmod>
   </url>
 </urlset>

@@ -14,16 +14,28 @@
     <meta name="author" content="MakeWeb" />
     <link rel="canonical" href="https://makeweb.es/" />
 
+    <!-- El título, la descripción, la canónica y og:url los reescribe
+         `SeoStrategy` en cada página; estas son las de la portada y el valor de
+         reserva. Lo que sí es común a todas se queda aquí.
+
+         og:image va con la dirección completa a propósito: las tarjetas de
+         WhatsApp, Telegram y LinkedIn no resuelven rutas relativas, así que con
+         "/brand/..." el enlace se compartía sin imagen. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="MakeWeb" />
     <meta property="og:locale" content="es_ES" />
+    <meta property="og:url" content="https://makeweb.es/" />
     <meta property="og:title" content="MakeWeb — Webs para negocios locales que aparecen primero" />
     <meta
       property="og:description"
       content="Diseñamos y desarrollamos la web de tu negocio local en una semana. Rápida, accesible y hecha para convertir visitas en clientes."
     />
-    <meta property="og:image" content="/brand/logotipo-entero.png" />
+    <meta property="og:image" content="https://makeweb.es/brand/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MakeWeb — webs para negocios locales" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://makeweb.es/brand/og-cover.png" />
 
     <!-- Todos derivados de logotipo.png, recortado a los bordes reales del
          isotipo. Los de pestaña van con fondo transparente; los de pantalla de
@@ -54,13 +66,35 @@
         "url": "https://makeweb.es/",
         "logo": "https://makeweb.es/brand/logotipo-entero.png",
         "email": "contacto@makeweb.es",
+        "telephone": ["+34683106846", "+34617845264"],
         "areaServed": { "@type": "Country", "name": "España" },
         "knowsLanguage": ["es"],
         "makesOffer": [
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño web" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo web" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO local" } }
-        ]
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+34683106846",
+          "email": "contacto@makeweb.es",
+          "areaServed": "ES",
+          "availableLanguage": "es"
+        }
+      }
+    </script>
+
+    <!-- Declara el nombre con el que la web quiere aparecer en los resultados.
+         Sin esto, Google se inventa el nombre del sitio a partir del dominio. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "MakeWeb",
+        "url": "https://makeweb.es/",
+        "inLanguage": "es-ES",
+        "publisher": { "@type": "Organization", "name": "MakeWeb" }
       }
     </script>
   </head>
