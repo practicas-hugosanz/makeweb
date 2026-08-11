@@ -32,8 +32,10 @@ export const routes: Routes = [
     data: {
       seo: {
         path: '/precios',
+        // 154 caracteres: por encima de ~160 Google la corta a mitad de frase, y
+        // esta acababa justo en el argumento de venta.
         description:
-          'Cuánto cuesta la web de un negocio local: desde 350 € la web esencial, desde 450 € con animaciones y desde 1.000 € con sistema de citas. Presupuesto cerrado antes de empezar.',
+          'Cuánto cuesta la web de un negocio local: desde 350 € la esencial, desde 450 € con animaciones y desde 1.000 € con citas. Precio cerrado antes de empezar.',
         schema: 'offers',
       } satisfies SeoData,
     },
