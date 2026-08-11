@@ -61,6 +61,8 @@
 // Contacto en una sola fila, no en columna con encabezado: son cuatro enlaces,
 // no una sección del sitio.
 .ftr__direct {
+  // Ancla de reserva del desplegable de WhatsApp en pantallas estrechas.
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem clamp(1.25rem, 2.5vw, 2.25rem);
@@ -84,6 +86,63 @@
   }
 }
 
+// El ancla del desplegable. La lista sale de aquí y no del botón flotante:
+// abrir un panel en la otra punta de la pantalla, lejos de donde se ha pulsado,
+// desorienta.
+//
+// Solo hace de ancla con sitio de sobra. Por debajo se queda estático a
+// propósito, y entonces el panel se posiciona respecto a `.ftr__direct`: en una
+// pantalla de 390 px el botón cae a media fila, y colgar de él un panel de
+// 19 rem lo sacaba 64 px fuera por la derecha, mida lo que mida el borde al que
+// se alinee.
+.ftr__wa-wrap {
+  @include above(699) {
+    position: relative;
+  }
+}
+
+// Alineado por la derecha: en escritorio este enlace es el último de la fila y
+// pega al margen derecho, así que anclarlo por la izquierda lo mandaba fuera de
+// la pantalla. Al envolverse la fila en móvil pasa a empezar por la izquierda,
+// y allí se alinea al revés.
+.ftr__wa-sheet {
+  position: absolute;
+  bottom: calc(100% + 0.6rem);
+  right: 0;
+  z-index: 2;
+  width: min(19rem, calc(100vw - var(--gutter) * 2));
+  padding: 1rem 1.05rem 0.85rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-m);
+  background:
+    radial-gradient(120% 70% at 20% 0%, var(--violet-14), transparent 62%),
+    var(--ink-800);
+  box-shadow: var(--shadow-panel);
+  transform-origin: calc(100% - 2rem) 100%;
+  animation: ftr-wa-in 0.28s var(--ease-out) backwards;
+
+  @include below(700) {
+    left: 0;
+    right: auto;
+    width: min(19rem, 100%);
+    transform-origin: 2rem 100%;
+  }
+}
+
+@keyframes ftr-wa-in {
+  from {
+    opacity: 0;
+    scale: 0.94;
+    translate: 0 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ftr__wa-sheet {
+    animation: none;
+  }
+}
+
 // Se lee como un enlace más de la fila, pero es un botón: abre el selector de
 // líneas en vez de ir a ninguna parte. El icono es lo único que lo distingue.
 .ftr__wa {
@@ -94,8 +153,13 @@
   font: inherit;
   cursor: pointer;
 
-  &:hover .ftr__wa-glyph {
+  &:hover .ftr__wa-glyph,
+  &.is-open .ftr__wa-glyph {
     color: #25d366;
+  }
+
+  &.is-open {
+    color: var(--text);
   }
 }
 

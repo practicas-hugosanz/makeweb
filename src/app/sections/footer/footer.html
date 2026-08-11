@@ -31,17 +31,28 @@
           <li><a [href]="'tel:' + phone.e164">{{ phone.display }}</a></li>
         }
 
-        <!-- El mismo mando que el botón flotante: abre el selector de líneas en
-             la esquina, no un chat concreto. Por eso es un <button> y no un
-             enlace, y por eso lleva `data-wa-trigger`: sin esa marca, el cierre
-             al pulsar fuera se dispararía antes que este clic. -->
+        <!-- Abre el selector de líneas, no un chat concreto: por eso es un
+             <button> y no un enlace. La lista aparece justo encima, anclada
+             aquí, y no en el botón flotante de la esquina.
+
+             `data-wa-trigger` lo exime del cierre al pulsar fuera; sin esa
+             marca, el `pointerdown` cerraría la lista un instante antes de que
+             este `click` la reabriera, y no se podría cerrar desde aquí. -->
         @if (whatsappReady()) {
-          <li>
+          <li class="ftr__wa-wrap">
+            @if (whatsappOpen()) {
+              <div class="ftr__wa-sheet" data-wa-panel role="menu" aria-label="Elige con quién hablas">
+                <mw-whatsapp-lines />
+              </div>
+            }
+
             <button
               class="ftr__wa"
               data-wa-trigger
+              data-wa-footer-toggle
               type="button"
               (click)="openWhatsapp()"
+              [class.is-open]="whatsappOpen()"
               [attr.aria-expanded]="whatsappOpen()"
             >
               <ng-icon class="ftr__wa-glyph" name="simpleWhatsapp" aria-hidden="true" />

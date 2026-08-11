@@ -9,11 +9,12 @@ import { ConsentActions } from '../../state/consent/consent.actions';
 import { selectAsking } from '../../state/consent/consent.feature';
 import { UiActions } from '../../state/ui/ui.actions';
 import { selectBooted, selectWhatsappOpen } from '../../state/ui/ui.feature';
+import { WhatsappLines } from '../whatsapp/whatsapp-lines';
 
 @Component({
   selector: 'mw-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, NgIcon],
+  imports: [RouterLink, NgIcon, WhatsappLines],
   providers: [provideIcons({ simpleWhatsapp })],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
@@ -25,7 +26,10 @@ export class Footer {
 
   protected readonly legalPages = LEGAL_PAGES;
   protected readonly phones = PHONES;
-  protected readonly whatsappOpen = this.store.selectSignal(selectWhatsappOpen);
+  private readonly whatsappAnchor = this.store.selectSignal(selectWhatsappOpen);
+
+  /** Solo cuando se abrió desde aquí: en la esquina lo enseña el botón flotante. */
+  protected readonly whatsappOpen = computed(() => this.whatsappAnchor() === 'footer');
 
   private readonly booted = this.store.selectSignal(selectBooted);
   private readonly asking = this.store.selectSignal(selectAsking);
@@ -58,7 +62,7 @@ export class Footer {
   }
 
   protected openWhatsapp(): void {
-    this.store.dispatch(UiActions.whatsappToggled());
+    this.store.dispatch(UiActions.whatsappToggled({ anchor: 'footer' }));
   }
 
   protected openCookiePrefs(): void {

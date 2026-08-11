@@ -1,20 +1,24 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
-import { UiActions } from './ui.actions';
+import { UiActions, WhatsappAnchor } from './ui.actions';
 
 export interface UiState {
   /** True once the shell has rendered; the hero waits on it before animating. */
   booted: boolean;
   menuOpen: boolean;
   activeSection: string;
-  /** El selector de líneas de WhatsApp, que se abre desde el botón y desde el pie. */
-  whatsappOpen: boolean;
+  /**
+   * Desde dónde está abierto el selector de líneas de WhatsApp, o `null` si no
+   * lo está. Guardar el origen y no un booleano es lo que permite que la lista
+   * salga pegada a lo que se ha pulsado y no en la otra punta de la pantalla.
+   */
+  whatsappOpen: WhatsappAnchor | null;
 }
 
 const initialState: UiState = {
   booted: false,
   menuOpen: false,
   activeSection: 'inicio',
-  whatsappOpen: false,
+  whatsappOpen: null,
 };
 
 export const uiFeature = createFeature({
@@ -27,14 +31,15 @@ export const uiFeature = createFeature({
     on(UiActions.menuToggled, (state) => ({
       ...state,
       menuOpen: !state.menuOpen,
-      whatsappOpen: false,
+      whatsappOpen: null,
     })),
     on(UiActions.menuClosed, (state) => ({ ...state, menuOpen: false })),
-    on(UiActions.whatsappToggled, (state) => ({
+    // Pulsar el mismo origen otra vez cierra; pulsar el otro mueve la lista allí.
+    on(UiActions.whatsappToggled, (state, { anchor }) => ({
       ...state,
-      whatsappOpen: !state.whatsappOpen,
+      whatsappOpen: state.whatsappOpen === anchor ? null : anchor,
     })),
-    on(UiActions.whatsappClosed, (state) => ({ ...state, whatsappOpen: false })),
+    on(UiActions.whatsappClosed, (state) => ({ ...state, whatsappOpen: null })),
     on(UiActions.sectionEntered, (state, { id }) => ({ ...state, activeSection: id })),
   ),
 });

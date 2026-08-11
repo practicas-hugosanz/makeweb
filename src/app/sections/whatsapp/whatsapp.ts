@@ -11,24 +11,26 @@ import {
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { simpleWhatsapp } from '@ng-icons/simple-icons';
 import { Store } from '@ngrx/store';
-import { PHONES, Phone, whatsappLink } from '../../data/legal';
 import { selectAsking } from '../../state/consent/consent.feature';
 import { UiActions } from '../../state/ui/ui.actions';
-import {
-  selectBooted,
-  selectMenuOpen,
-  selectWhatsappOpen,
-} from '../../state/ui/ui.feature';
+import { selectBooted, selectMenuOpen, selectWhatsappOpen } from '../../state/ui/ui.feature';
+import { WhatsappLines } from './whatsapp-lines';
 
 /**
- * Botón flotante de WhatsApp, abajo a la izquierda.
+ * Botón flotante de WhatsApp, en la esquina inferior izquierda.
  *
- * Hay dos líneas, así que pulsarlo no abre un chat: abre la lista para elegir
- * con cuál se habla. Cada opción sale a `wa.me`, que decide sola entre la app
- * y WhatsApp Web según el aparato.
+ * Hay dos líneas, así que pulsarlo no abre un chat: despliega la lista para
+ * elegir con cuál se habla. Cada opción sale a `wa.me`, que decide sola entre
+ * la app y WhatsApp Web según el aparato.
  *
- * Quién está abierto vive en el store y no aquí, porque el enlace de WhatsApp
- * del pie abre esta misma lista: son dos mandos de una sola cosa.
+ * La lista sale de `mw-whatsapp-lines`, compartida con el enlace del pie, y
+ * aparece **pegada al botón** porque el estado guarda desde dónde se abrió.
+ * Antes había un solo booleano y pulsar en el pie desplegaba el panel aquí, en
+ * la otra punta de la pantalla, lejos de donde se había pulsado.
+ *
+ * Este componente es además quien escucha el cierre —pulsar fuera y Escape—
+ * para los dos sitios: siempre está montado, así que no hace falta duplicar los
+ * oyentes en el pie.
  *
  * Cuándo NO se ve, que es lo que condiciona el diseño:
  *
@@ -41,7 +43,7 @@ import {
 @Component({
   selector: 'mw-whatsapp',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgIcon],
+  imports: [NgIcon, WhatsappLines],
   // La marca de WhatsApp viene del paquete, no copiada a mano en la plantilla:
   // `@ng-icons/simple-icons` trae el trazado oficial y solo se empaqueta el
   // icono que se declara aquí.
@@ -57,12 +59,12 @@ export class Whatsapp {
   private readonly booted = this.store.selectSignal(selectBooted);
   private readonly asking = this.store.selectSignal(selectAsking);
   private readonly menuOpen = this.store.selectSignal(selectMenuOpen);
+  private readonly anchor = this.store.selectSignal(selectWhatsappOpen);
 
   protected readonly visible = computed(
     () => this.booted() && !this.asking() && !this.menuOpen(),
   );
-  protected readonly open = this.store.selectSignal(selectWhatsappOpen);
-  protected readonly phones = PHONES;
+  protected readonly open = computed(() => this.anchor() === 'fab');
 
   constructor() {
     afterNextRender(() => {
@@ -70,21 +72,23 @@ export class Whatsapp {
       // El puntero se escucha en fase de captura para que también cierre cuando
       // el clic cae sobre algo que detiene la propagación.
       //
-      // El enlace del pie queda exento: es el otro mando de esto mismo, y sin
-      // la excepción el `pointerdown` cerraría la lista justo antes de que su
-      // `click` la volviera a abrir, con lo que nunca se podría cerrar desde él.
+      // Quedan exentos los mandos y los paneles, estén donde estén: sin esa
+      // excepción, el `pointerdown` cerraría la lista justo antes de que el
+      // `click` del pie la volviera a abrir, y no habría forma de cerrarla
+      // desde ahí.
       const onPointerDown = (event: Event) => {
-        if (!this.open()) return;
+        if (!this.anchor()) return;
         const target = event.target as HTMLElement;
-        if (this.host.nativeElement.contains(target)) return;
-        if (target.closest('[data-wa-trigger]')) return;
+        if (target.closest('[data-wa-trigger], [data-wa-panel]')) return;
         this.store.dispatch(UiActions.whatsappClosed());
       };
 
       const onKeyDown = (event: KeyboardEvent) => {
-        if (event.key !== 'Escape' || !this.open()) return;
+        if (event.key !== 'Escape' || !this.anchor()) return;
+        // Devuelve el foco al mando que la abrió, no siempre a este botón.
+        const abridor = this.anchor() === 'fab' ? '[data-wa-toggle]' : '[data-wa-footer-toggle]';
         this.store.dispatch(UiActions.whatsappClosed());
-        this.host.nativeElement.querySelector<HTMLElement>('[data-wa-toggle]')?.focus();
+        document.querySelector<HTMLElement>(abridor)?.focus();
       };
 
       document.addEventListener('pointerdown', onPointerDown, true);
@@ -105,10 +109,6 @@ export class Whatsapp {
   }
 
   protected toggle(): void {
-    this.store.dispatch(UiActions.whatsappToggled());
-  }
-
-  protected link(phone: Phone): string {
-    return whatsappLink(phone);
+    this.store.dispatch(UiActions.whatsappToggled({ anchor: 'fab' }));
   }
 }

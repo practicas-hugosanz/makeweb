@@ -1,0 +1,65 @@
+@use 'mixins' as *;
+
+// Solo el contenido de la lista. El panel que la envuelve —fondo, borde, sombra
+// y dónde se coloca— lo pone quien la abre, porque eso sí cambia entre el botón
+// flotante y el enlace del pie.
+:host {
+  display: block;
+}
+
+.wal__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.wal__note {
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text-mute);
+}
+
+.wal__list {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wal__pick {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  // 44 px de alto real: en móvil esto se pulsa con el pulgar y a una mano.
+  min-height: 44px;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-s);
+  background: var(--veil-03);
+  transition: background var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    background: var(--veil-05);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.wal__pick-label {
+  @include label;
+
+  font-size: 0.62rem;
+}
+
+.wal__pick-number {
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--text);
+}
