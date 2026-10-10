@@ -21,13 +21,13 @@ export const LEGAL = {
     { name: 'Lucas Segovia Sánchez', nif: '51253727K' },
   ],
   /** Los dos titulares en una línea, para las frases corridas. */
-  company: 'Hugo Sanz Abad y Lucas Segovia Sánchez',
+  company: $localize`Hugo Sanz Abad y Lucas Segovia Sánchez`,
   /**
    * El estudio trabaja en remoto y no atiende público aquí, pero el domicilio
    * fiscal es obligatorio en el aviso legal (art. 10 LSSI-CE), y completo:
    * calle, número, código postal, localidad y provincia.
    */
-  address: 'Calle del Marge, 1, 03110 Mutxamel (Alicante), España',
+  address: $localize`Calle del Marge, 1, 03110 Mutxamel (Alicante), España`,
   email: 'contacto@makeweb.es',
   privacyEmail: 'contacto@makeweb.es',
   domain: 'makeweb.es',
@@ -42,10 +42,10 @@ export const LEGAL = {
    */
   host: {
     name: 'GitHub Pages (GitHub, Inc.)',
-    location: 'Estados Unidos y red de distribución de contenidos global',
+    location: $localize`Estados Unidos y red de distribución de contenidos global`,
   },
   /** Actualiza esta fecha cada vez que cambies el contenido de las páginas. */
-  updated: '11 de agosto de 2026',
+  updated: $localize`11 de agosto de 2026`,
 } as const;
 
 /**
@@ -64,8 +64,8 @@ export interface Phone {
 }
 
 export const PHONES: readonly Phone[] = [
-  { label: 'Línea 1', display: '+34 683 10 68 46', e164: '+34683106846' },
-  { label: 'Línea 2', display: '+34 617 84 52 64', e164: '+34617845264' },
+  { label: $localize`Línea 1`, display: '+34 683 10 68 46', e164: '+34683106846' },
+  { label: $localize`Línea 2`, display: '+34 617 84 52 64', e164: '+34617845264' },
 ];
 
 /** Lo que aparece ya tecleado al abrir el chat, para que no empiece en blanco. */
@@ -82,8 +82,8 @@ export interface LegalPageLink {
 }
 
 export const LEGAL_PAGES: readonly LegalPageLink[] = [
-  { path: '/aviso-legal', label: 'Aviso legal' },
-  { path: '/privacidad', label: 'Privacidad' },
+  { path: '/aviso-legal', label: $localize`Aviso legal` },
+  { path: '/privacidad', label: $localize`Privacidad` },
   { path: '/cookies', label: 'Cookies' },
 ];
 
@@ -102,23 +102,23 @@ export interface CookieCategory {
 export const COOKIE_CATEGORIES: readonly CookieCategory[] = [
   {
     id: 'necessary',
-    name: 'Técnicas',
+    name: $localize`Técnicas`,
     summary:
-      'Imprescindibles para que la web funcione y para recordar tu decisión sobre estas cookies. No se pueden desactivar y no requieren tu permiso.',
+      $localize`Imprescindibles para que la web funcione y para recordar tu decisión sobre estas cookies. No se pueden desactivar y no requieren tu permiso.`,
     required: true,
   },
   {
     id: 'analytics',
-    name: 'Analíticas',
+    name: $localize`Analíticas`,
     summary:
-      'Nos dicen cuánta gente entra y qué páginas lee, de forma agregada, para saber qué mejorar. Nunca para identificarte.',
+      $localize`Nos dicen cuánta gente entra y qué páginas lee, de forma agregada, para saber qué mejorar. Nunca para identificarte.`,
     required: false,
   },
   {
     id: 'marketing',
-    name: 'Publicitarias',
+    name: $localize`Publicitarias`,
     summary:
-      'Permitirían medir la eficacia de nuestros anuncios y mostrarte contenido relacionado fuera de esta web.',
+      $localize`Permitirían medir la eficacia de nuestros anuncios y mostrarte contenido relacionado fuera de esta web.`,
     required: false,
   },
 ];
@@ -139,9 +139,9 @@ export interface CookieRow {
 export const COOKIE_INVENTORY: readonly CookieRow[] = [
   {
     name: 'mw-consent',
-    owner: `${'MakeWeb'} (propia)`,
-    purpose: 'Guarda qué categorías de cookies has aceptado para no volver a preguntártelo.',
-    duration: '12 meses',
+    owner: $localize`MakeWeb (propia)`,
+    purpose: $localize`Guarda qué categorías de cookies has aceptado para no volver a preguntártelo.`,
+    duration: $localize`12 meses`,
     category: 'necessary',
   },
 ];

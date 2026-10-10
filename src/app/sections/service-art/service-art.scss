@@ -1,0 +1,308 @@
+// Colores fijos y no los del tema: la ilustración lleva su propio fondo de
+// tinta y tiene que verse igual dentro de una sección de papel.
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #16141b;
+}
+
+.art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.frame,
+.frame-stroke {
+  stroke: rgb(244 239 231 / 38%);
+  stroke-width: 2;
+}
+
+.line {
+  stroke: rgb(244 239 231 / 16%);
+  stroke-width: 2;
+}
+
+.dot {
+  fill: rgb(244 239 231 / 30%);
+}
+
+.soft {
+  fill: rgb(244 239 231 / 14%);
+}
+
+.fill {
+  fill: rgb(244 239 231 / 70%);
+}
+
+.accent {
+  fill: #7262eb;
+}
+
+.accent-stroke {
+  stroke: #9a8fff;
+  stroke-width: 4;
+}
+
+.needle {
+  stroke: #f4efe7;
+  stroke-width: 3;
+}
+
+.hole {
+  fill: #16141b;
+}
+
+.badge {
+  fill: #16141b;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.cursor {
+  fill: #f4efe7;
+  stroke: #16141b;
+  stroke-width: 1.5;
+}
+
+.swatch1 {
+  fill: #372f8f;
+}
+
+.swatch2 {
+  fill: #7262eb;
+}
+
+.swatch3 {
+  fill: #9a8fff;
+}
+
+.check {
+  stroke: #f4efe7;
+  stroke-width: 3;
+}
+
+.check-lg {
+  stroke: #f4efe7;
+  stroke-width: 7;
+}
+
+// ---------------------------------------------------------------------------
+// Los bucles. Todos parten pausados y corren solo con `.is-playing`, que pone
+// el componente mientras la ilustración está en pantalla. El estado sin
+// animación es el final —todo visible—, que es el que ve quien pide movimiento
+// reducido.
+// ---------------------------------------------------------------------------
+[class*='a-'] {
+  transform-box: fill-box;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  animation-play-state: paused;
+}
+
+:host(.is-playing) [class*='a-'] {
+  animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [class*='a-'] {
+    animation: none !important;
+  }
+
+  .a-ripple {
+    display: none;
+  }
+}
+
+.a-d1 { animation-delay: 0.15s; }
+.a-d2 { animation-delay: 0.3s; }
+.a-d3 { animation-delay: 0.45s; }
+.a-d4 { animation-delay: 0.6s; }
+.a-d5 { animation-delay: 0.75s; }
+
+// --- Diseño: el titular se compone, el puntero va al botón y lo pulsa ------------
+.a-grow {
+  transform-origin: left center;
+  animation-name: grow;
+}
+
+@keyframes grow {
+  0%, 8% { transform: scaleX(0.15); }
+  35%, 100% { transform: scaleX(1); }
+}
+
+.a-cursor {
+  animation-name: cursor;
+}
+
+@keyframes cursor {
+  0%, 15% { transform: translate(90px, 18px); }
+  45% { transform: translate(-28px, -10px); }
+  50% { transform: translate(-28px, -10px) scale(0.85); }
+  55%, 75% { transform: translate(-28px, -10px); }
+  100% { transform: translate(90px, 18px); }
+}
+
+.a-press {
+  transform-origin: center;
+  animation-name: press;
+}
+
+@keyframes press {
+  0%, 46% { transform: scale(1); fill: #7262eb; }
+  50% { transform: scale(0.92); fill: #9a8fff; }
+  58%, 100% { transform: scale(1); fill: #7262eb; }
+}
+
+.a-draw {
+  stroke-dasharray: 1;
+  animation-name: draw;
+}
+
+@keyframes draw {
+  0%, 10% { stroke-dashoffset: 1; }
+  40%, 85% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 1; }
+}
+
+.a-pop {
+  transform-origin: center;
+  animation-name: pop;
+}
+
+@keyframes pop {
+  0%, 55%, 75%, 100% { transform: scale(1); }
+  65% { transform: scale(1.25); }
+}
+
+// --- Desarrollo: el código se escribe y la aguja sube al máximo --------------------
+.a-type {
+  transform-origin: left center;
+  animation-name: type;
+}
+
+@keyframes type {
+  0% { transform: scaleX(0); }
+  25%, 85% { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+
+.a-blink {
+  animation-name: blink;
+  animation-timing-function: steps(1);
+  animation-duration: 1.2s;
+}
+
+@keyframes blink {
+  50% { opacity: 0.35; }
+}
+
+.a-gauge {
+  stroke-dasharray: 1;
+  animation-name: draw;
+}
+
+.a-needle {
+  transform-box: view-box;
+  transform-origin: 265px 150px;
+  animation-name: needle;
+}
+
+@keyframes needle {
+  0%, 10% { transform: rotate(-95deg); }
+  45%, 85% { transform: rotate(0deg); }
+  100% { transform: rotate(-95deg); }
+}
+
+// --- SEO local: la chincheta cae, rebota y se gana el primer puesto ---------------
+.a-pin {
+  animation-name: drop;
+}
+
+@keyframes drop {
+  0%, 5% { transform: translateY(-60px); opacity: 0; }
+  25% { transform: translateY(0); opacity: 1; }
+  32% { transform: translateY(-10px); }
+  39%, 88% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+.a-ripple {
+  fill: none;
+  stroke: #9a8fff;
+  stroke-width: 2;
+  transform-origin: center;
+  opacity: 0;
+  animation-name: ripple;
+}
+
+@keyframes ripple {
+  0%, 24% { transform: scale(0.4); opacity: 0; }
+  27% { opacity: 0.9; }
+  50%, 100% { transform: scale(2.2); opacity: 0; }
+}
+
+.a-badge {
+  transform-origin: left center;
+  animation-name: badge;
+}
+
+@keyframes badge {
+  0%, 38% { transform: scale(0); }
+  48% { transform: scale(1.12); }
+  54%, 88% { transform: scale(1); }
+  100% { transform: scale(0); }
+}
+
+// --- Reservas: se marca el día y se confirma ------------------------------------------
+.a-pick {
+  transform-origin: center;
+  animation-name: pick;
+}
+
+@keyframes pick {
+  0%, 20% { transform: scale(0.4); fill: rgb(244 239 231 / 14%); }
+  32% { transform: scale(1.2); fill: #7262eb; }
+  40%, 88% { transform: scale(1); fill: #7262eb; }
+  100% { transform: scale(0.4); fill: rgb(244 239 231 / 14%); }
+}
+
+.a-check {
+  stroke-dasharray: 1;
+  animation-name: check;
+}
+
+@keyframes check {
+  0%, 38% { stroke-dashoffset: 1; }
+  55%, 88% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 1; }
+}
+
+// --- Mantenimiento: el escudo respira y las copias dan la vuelta --------------------
+.a-breathe {
+  transform-origin: center;
+  animation-name: breathe;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+}
+
+.a-orbit {
+  transform-box: view-box;
+  transform-origin: 160px 100px;
+  animation-name: orbit;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+}
+
+@keyframes orbit {
+  to { transform: rotate(360deg); }
+}

@@ -1,18 +1,37 @@
 @use 'mixins' as *;
 
+// Una tarjeta, como el hero: la página empieza y acaba enmarcada. El canto de
+// arriba lleva la firma de la marca.
 .ftr {
   position: relative;
+  margin: clamp(3rem, 6vw, 5rem) clamp(0.5rem, 1.2vw, 1rem) clamp(0.5rem, 1.2vw, 1rem);
   padding-top: clamp(4rem, 9vw, 7rem);
   padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
-  border-top: 1px solid var(--line);
-  background: linear-gradient(180deg, transparent, var(--violet-08));
+  border-radius: var(--radius-xl);
+  background: var(--ink-950);
   overflow: clip;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 2px;
+    background: var(--violet);
+  }
+
+  @include below(600) {
+    border-radius: var(--radius-l);
+  }
+
+  // Hueco para la barra de pestañas fija: sin él tapaba la última fila del pie.
+  @include below(1080) {
+    margin-bottom: calc(5.6rem + env(safe-area-inset-bottom));
+  }
 }
 
 // La frase que cierra la página. Es lo único grande del pie: manda ella y todo
 // lo demás baja a letra pequeña.
 .ftr__line {
-  padding-bottom: clamp(3rem, 6vw, 5rem);
 
   a {
     // Escala atada al ancho de pantalla: la frase es larga y a 390 px hay que
@@ -20,29 +39,114 @@
     @include display(clamp(1.9rem, 6vw, 4.2rem));
 
     display: block;
-    max-width: 20ch;
+    max-width: 16ch;
     color: var(--text);
     text-wrap: balance;
     transition: color var(--dur-fast) var(--ease-out);
 
     &:hover {
-      color: var(--violet-lift);
+      color: var(--accent-ink);
+    }
+  }
+
+  // Es un párrafo, no un titular: la regla global de cursiva no le llega.
+  em {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+}
+
+// La frase a la izquierda; el correo y el botón a la derecha.
+.ftr__top {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.ftr__top-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem 1.75rem;
+}
+
+.ftr__mail {
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--line-strong);
+  font-size: var(--step-1);
+  transition: border-color var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    border-color: var(--accent-ink);
+  }
+}
+
+.ftr__cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+  gap: clamp(2rem, 4vw, 4rem);
+  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--line);
+
+  @include below(900) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    .ftr__id {
+      grid-column: 1 / -1;
+    }
+  }
+
+  // En móvil, servicios y estudio a dos columnas; el contacto, con el correo
+  // largo, ocupa la fila entera.
+  @include below(480) {
+    .ftr__col:last-child {
+      grid-column: 1 / -1;
     }
   }
 }
 
-.ftr__meta {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: clamp(1.75rem, 4vw, 4rem);
-  padding-block: clamp(2.5rem, 5vw, 3.5rem);
-  border-top: 1px solid var(--line);
+.ftr__col {
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+
+  ul {
+    display: grid;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    font-size: 0.94rem;
+    color: var(--text-soft);
+    transition: color var(--dur-fast) var(--ease-out);
+
+    &:hover {
+      color: var(--accent-ink);
+    }
+  }
+}
+
+.ftr__head {
+  @include label;
+
+  font-size: 0.7rem;
+  color: var(--text);
 }
 
 .ftr__id {
   display: grid;
+  align-content: start;
   gap: 1.1rem;
   max-width: 38ch;
 }
@@ -63,9 +167,8 @@
 .ftr__direct {
   // Ancla de reserva del desplegable de WhatsApp en pantallas estrechas.
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem clamp(1.25rem, 2.5vw, 2.25rem);
+  display: grid !important;
+  gap: 0.15rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -75,13 +178,13 @@
     display: flex;
     align-items: center;
     // 44 px de alto: en móvil estos enlaces iban a 24 y se fallaba al pulsar.
-    min-height: 44px;
+    min-height: 36px;
     font-size: 0.94rem;
     color: var(--text-soft);
     transition: color var(--dur-fast) var(--ease-out);
 
     &:hover {
-      color: var(--violet-lift);
+      color: var(--accent-ink);
     }
   }
 }
@@ -108,17 +211,16 @@
 .ftr__wa-sheet {
   position: absolute;
   bottom: calc(100% + 0.6rem);
-  right: 0;
+  left: 0;
   z-index: 2;
   width: min(19rem, calc(100vw - var(--gutter) * 2));
   padding: 1rem 1.05rem 0.85rem;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-m);
   background:
-    radial-gradient(120% 70% at 20% 0%, var(--violet-14), transparent 62%),
     var(--ink-800);
   box-shadow: var(--shadow-panel);
-  transform-origin: calc(100% - 2rem) 100%;
+  transform-origin: 2rem 100%;
   animation: ftr-wa-in 0.28s var(--ease-out) backwards;
 
   @include below(700) {
@@ -207,7 +309,7 @@
     transition: color var(--dur-fast) var(--ease-out);
 
     &:hover {
-      color: var(--violet-lift);
+      color: var(--accent-ink);
     }
   }
 }
@@ -222,7 +324,7 @@
   cursor: pointer;
 }
 
-.ftr__top {
+.ftr__top-link {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -230,7 +332,7 @@
   transition: color var(--dur-fast) var(--ease-out);
 
   &:hover {
-    color: var(--violet-lift);
+    color: var(--accent-ink);
   }
 
   span {

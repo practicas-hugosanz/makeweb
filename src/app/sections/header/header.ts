@@ -9,20 +9,21 @@ import {
   signal,
   viewChild,
 } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { filter } from 'rxjs';
 import { ScrollTrigger, gsap } from '../../core/animation/gsap';
 import { MotionService } from '../../core/animation/motion.service';
-import { SweepDirective } from '../../core/animation/sweep.directive';
-import { NAV_LINKS } from '../../data/content';
+import { NAV_LINKS, NavLink } from '../../data/content';
+import { SERVICE_PAGES } from '../../data/services';
+import { LangSwitch } from '../lang-switch/lang-switch';
 import { UiActions } from '../../state/ui/ui.actions';
 import { selectActiveSection, selectMenuOpen } from '../../state/ui/ui.feature';
 
 @Component({
   selector: 'mw-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [SweepDirective],
+  imports: [RouterLink, LangSwitch],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
@@ -38,6 +39,10 @@ export class Header {
   protected readonly menuOpen = this.store.selectSignal(selectMenuOpen);
   protected readonly active = this.store.selectSignal(selectActiveSection);
   protected readonly condensed = signal(false);
+  protected readonly servicePages = SERVICE_PAGES;
+
+  /** La ruta actual, sin fragmento ni parámetros. */
+  private readonly path = signal('/');
 
   private menuTl?: gsap.core.Timeline;
   private sectionTriggers: ScrollTrigger[] = [];
@@ -51,9 +56,13 @@ export class Header {
 
       // Las secciones solo existen en la portada. Al ir y volver de una página
       // legal hay que rehacer los triggers contra el DOM nuevo.
+      this.path.set(this.router.url.split(/[?#]/)[0]);
       const sub = this.router.events
         .pipe(filter((event) => event instanceof NavigationEnd))
-        .subscribe(() => queueMicrotask(() => this.trackSections()));
+        .subscribe(() => {
+          this.path.set(this.router.url.split(/[?#]/)[0]);
+          queueMicrotask(() => this.trackSections());
+        });
 
       this.destroyRef.onDestroy(() => sub.unsubscribe());
     });
@@ -78,6 +87,22 @@ export class Header {
       document.body.classList.toggle('is-locked', open);
       this.motion.setPaused(open);
     });
+  }
+
+  /**
+   * Activo según dónde se está: en una página propia, por su ruta; en la
+   * portada, por la sección que hay en pantalla. Servicios se marca también en
+   * cualquiera de sus cinco páginas.
+   */
+  protected isActive(link: NavLink): boolean {
+    const path = this.path();
+    if (link.route) return path === link.route || (path === '/' && this.active() === link.id);
+    if (link.id === 'servicios' && path.startsWith('/servicios/')) return true;
+    return path === '/' && this.active() === link.id;
+  }
+
+  protected closeMenu(): void {
+    this.store.dispatch(UiActions.menuClosed());
   }
 
   protected pad(n: number): string {

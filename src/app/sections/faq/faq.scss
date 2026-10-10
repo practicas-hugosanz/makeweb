@@ -51,7 +51,7 @@
   font-family: var(--font-label);
   font-size: 0.7rem;
   font-weight: 400;
-  color: var(--violet-lift);
+  color: var(--accent-ink);
 }
 
 .faq__sign {
@@ -84,7 +84,7 @@
 
   &.is-open::before,
   &.is-open::after {
-    background: var(--violet-lift);
+    background: var(--accent-ink);
   }
 }
 

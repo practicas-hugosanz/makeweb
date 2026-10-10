@@ -20,20 +20,18 @@
   position: absolute;
   inset-inline: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--line-strong) 18%, var(--line-strong) 82%, transparent);
+  background: var(--line-strong);
   opacity: $opacity;
 }
 
 @mixin panel {
-  background:
-    linear-gradient(180deg, var(--veil-04), transparent 42%),
-    var(--ink-700);
+  background: var(--ink-700);
   border: 1px solid var(--line);
   border-radius: var(--radius-l);
   box-shadow: var(--shadow-card);
 }
 
-/// The utility voice: Mollen Regular set small and wide. The family has no
+/// The utility voice: Instrument Sans set small and wide. The family has no
 /// monospace cut, so the label role is carried by tracking alone.
 @mixin label {
   font-family: var(--font-label);
@@ -48,13 +46,13 @@
   font-family: var(--font-display);
   font-size: $step;
   font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.025em;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
   text-wrap: balance;
 }
 
 @mixin focus-ring {
-  outline: 2px solid var(--violet-lift);
+  outline: 2px solid var(--accent-ink);
   outline-offset: 3px;
   border-radius: var(--radius-s);
 }

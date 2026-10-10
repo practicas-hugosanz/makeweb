@@ -1,18 +1,22 @@
 <section class="cnt sec" id="contacto" #root>
   <div class="shell cnt__inner">
     <div class="cnt__aside">
-      <div class="sec-head" mwReveal="rise" [revealStagger]="0.08">
-        <h2 class="sec-title" data-reveal-item>Te respondemos <em>en 24 h</em>.</h2>
-        <p class="sec-lead" data-reveal-item>
-          Con lo que nos escribas preparamos una propuesta con alcance, precio cerrado y fecha de
-          entrega. Sin compromiso y sin llamadas de seguimiento.
-        </p>
-      </div>
+      <!-- En la página de contacto el titular ya lo pone su cabecera; aquí
+           solo se enseña cuando la sección va suelta. -->
+      @if (showHead()) {
+        <div class="sec-head">
+          <h2 class="sec-title" i18n>Te respondemos <em>en 24 h.</em></h2>
+          <p class="sec-lead" i18n>
+            Con lo que nos escribas preparamos una propuesta con alcance, precio cerrado y fecha de
+            entrega. Sin compromiso y sin llamadas de seguimiento.
+          </p>
+        </div>
+      }
 
       <!-- Rescatado de la sección "Esta web" al retirarla: era lo único de
            aquel bloque que abría una conversación, y aquí cae justo al lado
            del formulario donde se pide. -->
-      <p class="cnt__offer">
+      <p class="cnt__offer" i18n>
         <strong>¿Ya tienes web?</strong> Dinos la dirección en el mensaje y te la analizamos gratis:
         qué la frena, qué cambiaríamos y qué no tocaríamos. Sin compromiso y sin que tengas que
         contratarnos nada.
@@ -20,37 +24,37 @@
 
       <ul class="cnt__direct">
         <li>
-          <span class="cnt__direct-label">Correo</span>
+          <span class="cnt__direct-label" i18n>Correo</span>
           <a href="mailto:contacto@makeweb.es">contacto&#64;makeweb.es</a>
         </li>
         @for (phone of phones; track phone.e164) {
           <li>
-            <span class="cnt__direct-label">Teléfono</span>
+            <span class="cnt__direct-label" i18n>Teléfono</span>
             <a [href]="'tel:' + phone.e164">{{ phone.display }}</a>
           </li>
         }
         <li>
-          <span class="cnt__direct-label">Horario</span>
-          <span>Lunes a sábado, 10:00 – 00:00</span>
+          <span class="cnt__direct-label" i18n>Horario</span>
+          <span i18n>Lunes a sábado, 10:00 – 00:00</span>
         </li>
       </ul>
     </div>
 
     <div class="cnt__panel">
       <header class="cnt__panel-head">
-        <span class="cnt__panel-title">Datos del negocio</span>
-        <span class="cnt__panel-note">Dos minutos</span>
+        <span class="cnt__panel-title" i18n>Datos del negocio</span>
+        <span class="cnt__panel-note" i18n>Dos minutos</span>
       </header>
 
       @if (sent()) {
         <div class="cnt__done" data-done role="status">
           <span class="cnt__done-mark" aria-hidden="true"></span>
-          <h3 class="cnt__done-title">Recibido. Te escribimos en menos de 24 h.</h3>
-          <p class="cnt__done-body">
+          <h3 class="cnt__done-title" i18n>Recibido. Te escribimos en menos de 24 h.</h3>
+          <p class="cnt__done-body" i18n>
             Guarda esta referencia por si quieres darnos prisa:
             <strong>{{ reference() }}</strong>
           </p>
-          <button class="btn btn--quiet" type="button" (click)="reset()">
+          <button class="btn btn--quiet" type="button" (click)="reset()" i18n>
             Enviar otra consulta
           </button>
         </div>
@@ -58,7 +62,7 @@
         <form class="cnt__form" data-form [formGroup]="form" (ngSubmit)="submit()" novalidate>
           <div class="cnt__row">
             <mat-form-field appearance="outline" subscriptSizing="dynamic">
-              <mat-label>Tu nombre</mat-label>
+              <mat-label i18n>Tu nombre</mat-label>
               <input
                 matInput
                 formControlName="name"
@@ -66,12 +70,12 @@
                 [maxlength]="limits.name"
               />
               @if (form.controls.name.touched && form.controls.name.invalid) {
-                <mat-error>Escribe tu nombre.</mat-error>
+                <mat-error i18n>Escribe tu nombre.</mat-error>
               }
             </mat-form-field>
 
             <mat-form-field appearance="outline" subscriptSizing="dynamic">
-              <mat-label>Nombre del negocio</mat-label>
+              <mat-label i18n>Nombre del negocio</mat-label>
               <input
                 matInput
                 formControlName="business"
@@ -79,14 +83,14 @@
                 [maxlength]="limits.business"
               />
               @if (form.controls.business.touched && form.controls.business.invalid) {
-                <mat-error>Dinos cómo se llama el negocio.</mat-error>
+                <mat-error i18n>Dinos cómo se llama el negocio.</mat-error>
               }
             </mat-form-field>
           </div>
 
           <div class="cnt__row">
             <mat-form-field appearance="outline" subscriptSizing="dynamic">
-              <mat-label>Correo</mat-label>
+              <mat-label i18n>Correo</mat-label>
               <input
                 matInput
                 type="email"
@@ -95,12 +99,12 @@
                 [maxlength]="limits.email"
               />
               @if (form.controls.email.touched && form.controls.email.invalid) {
-                <mat-error>Necesitamos un correo válido para responderte.</mat-error>
+                <mat-error i18n>Necesitamos un correo válido para responderte.</mat-error>
               }
             </mat-form-field>
 
             <mat-form-field appearance="outline" subscriptSizing="dynamic">
-              <mat-label>Teléfono (opcional)</mat-label>
+              <mat-label i18n>Teléfono (opcional)</mat-label>
               <input
                 matInput
                 type="tel"
@@ -109,7 +113,7 @@
                 [maxlength]="limits.phone"
               />
               @if (form.controls.phone.touched && form.controls.phone.invalid) {
-                <mat-error>Ese número no nos cuadra. Revísalo o déjalo vacío.</mat-error>
+                <mat-error i18n>Ese número no nos cuadra. Revísalo o déjalo vacío.</mat-error>
               }
             </mat-form-field>
           </div>
@@ -120,7 +124,7 @@
                hasta 6.000 € para una web de 350 €. -->
           <div class="cnt__row">
             <mat-form-field appearance="outline" subscriptSizing="dynamic">
-              <mat-label>Qué plan te encaja</mat-label>
+              <mat-label i18n>Qué plan te encaja</mat-label>
               <mat-select formControlName="plan">
                 @for (option of planOptions; track option.id) {
                   <mat-option [value]="option.id">{{ option.label }}</mat-option>
@@ -129,7 +133,7 @@
             </mat-form-field>
 
             <mat-form-field appearance="outline" subscriptSizing="dynamic">
-              <mat-label>Qué tienes ahora</mat-label>
+              <mat-label i18n>Qué tienes ahora</mat-label>
               <mat-select formControlName="current">
                 @for (option of startingPoints; track option.id) {
                   <mat-option [value]="option.id">{{ option.label }}</mat-option>
@@ -139,28 +143,29 @@
           </div>
 
           <mat-form-field appearance="outline" subscriptSizing="dynamic">
-            <mat-label>Cuéntanos un poco más</mat-label>
+            <mat-label i18n>Cuéntanos un poco más</mat-label>
             <textarea
               matInput
               rows="4"
               formControlName="message"
               [maxlength]="limits.message"
               placeholder="Qué vendes, a quién y qué te gustaría conseguir con la web."
+              i18n-placeholder
             ></textarea>
             @if (form.controls.message.touched && form.controls.message.invalid) {
-              <mat-error>Con dos frases nos vale, pero necesitamos algo.</mat-error>
+              <mat-error i18n>Con dos frases nos vale, pero necesitamos algo.</mat-error>
             }
           </mat-form-field>
 
           <!-- El consentimiento solo vale si la política es accesible desde aquí. -->
-          <mat-checkbox formControlName="consent" class="cnt__consent">
+          <mat-checkbox formControlName="consent" class="cnt__consent" i18n>
             He leído y acepto la
             <a routerLink="/privacidad" target="_blank" (click)="$event.stopPropagation()"
               >política de privacidad</a
             >. Solo usaremos estos datos para responderte.
           </mat-checkbox>
           @if (form.controls.consent.touched && form.controls.consent.invalid) {
-            <p class="cnt__consent-error">Marca la casilla para que podamos escribirte.</p>
+            <p class="cnt__consent-error" i18n>Marca la casilla para que podamos escribirte.</p>
           }
 
           @if (error()) {
@@ -168,15 +173,15 @@
           }
 
           <div class="cnt__submit">
-            <button class="btn btn--primary btn--lg" type="submit" [disabled]="sending()" mwSweep>
+            <button class="btn btn--primary btn--go btn--lg" type="submit" [disabled]="sending()">
               <span class="btn__label">
-                {{ sending() ? 'Enviando…' : 'Enviar y pedir propuesta' }}
+                @if (sending()) {<ng-container i18n>Enviando…</ng-container>} @else {<ng-container i18n>Enviar y pedir propuesta</ng-container>}
                 @if (sending()) {
                   <span class="cnt__spinner" aria-hidden="true"></span>
                 }
               </span>
             </button>
-            <p class="cnt__submit-note">Sin newsletters. Sin llamadas frías.</p>
+            <p class="cnt__submit-note" i18n>Sin newsletters. Sin llamadas frías.</p>
           </div>
         </form>
       }

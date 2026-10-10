@@ -1,22 +1,20 @@
-<section class="faq sec" id="preguntas" #root>
+<section class="faq sec" id="preguntas">
   <div class="shell faq__inner">
     <div class="faq__aside">
-      <div class="sec-head" mwReveal="rise" [revealStagger]="0.08">
-        <h2 class="sec-title" data-reveal-item>Preguntas <em>frecuentes</em>.</h2>
-        <p class="sec-lead" data-reveal-item>
+      <div class="sec-head">
+        <h2 class="sec-title" i18n>Preguntas <em>frecuentes.</em></h2>
+        <p class="sec-lead" i18n>
           Si falta la tuya, escríbenos y te contestamos el mismo día laborable.
         </p>
       </div>
     </div>
 
-    <mat-accordion class="faq__list" [multi]="false" data-list>
-      <span class="faq__rule" data-rule aria-hidden="true"></span>
+    <mat-accordion class="faq__list" [multi]="false">
+      <span class="faq__rule" aria-hidden="true"></span>
 
       @for (item of faqs; track item.q; let i = $index) {
         <mat-expansion-panel
           class="faq__row"
-          data-row
-          data-anim
           [expanded]="open() === i"
           (opened)="open.set(i)"
           (closed)="onClosed(i)"

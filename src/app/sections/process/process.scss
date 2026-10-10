@@ -1,133 +1,202 @@
 @use 'mixins' as *;
 
-.prc__inner {
+.prc__intro {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: clamp(2.5rem, 6vw, 6rem);
-
-  @include below(960) {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 3rem;
-  }
-}
-
-.prc__aside {
-  display: grid;
-  align-content: start;
-  gap: 2rem;
-  position: sticky;
-  top: clamp(6rem, 22vh, 12rem);
-  height: fit-content;
-
-  @include below(960) {
-    position: static;
-  }
+  justify-items: start;
+  gap: 1rem;
 }
 
 .prc__link {
   min-height: 44px;
-  justify-self: start;
 }
 
-.prc__list {
-  position: relative;
+// --- la semana ----------------------------------------------------------------
+.prc__week {
   display: grid;
-  gap: clamp(2.5rem, 5vw, 4rem);
-  margin: 0;
-  padding: 0 0 0 clamp(2rem, 4vw, 3.25rem);
-  list-style: none;
+  gap: 0.6rem;
+  margin-top: clamp(3rem, 6vw, 4.5rem);
 }
 
-.prc__rail {
-  position: absolute;
-  top: 0.6rem;
-  bottom: 0.6rem;
-  left: 0;
-  width: 1px;
-  background: var(--line);
+.prc__days,
+.prc__track {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.4rem;
 }
 
-.prc__rail-fill {
+.prc__day {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0 0.2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 0.9rem + 1vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+
+  small {
+    @include label;
+
+    font-size: 0.6rem;
+  }
+}
+
+// La pista: cada fase es una píldora sobre los días que ocupa. Por debajo, el
+// relleno violeta que avanza con el desplazamiento.
+.prc__track {
+  position: relative;
+  padding: 0.4rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.prc__fill {
   position: absolute;
   inset: 0;
-  background: linear-gradient(var(--violet-lift), var(--violet));
-  transform-origin: top;
+  background: var(--violet-24);
+  transform-origin: left;
 }
 
-.prc__phase {
+.prc__span {
   position: relative;
-  display: grid;
-  gap: 0.7rem;
-}
-
-.prc__marker {
-  position: absolute;
-  top: 0.42rem;
-  left: calc(clamp(2rem, 4vw, 3.25rem) * -1);
-  translate: -50% 0;
-  width: 0.7rem;
-  height: 0.7rem;
-  border-radius: 50%;
-  border: 1px solid var(--line-strong);
-  background: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: var(--ink-700);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition:
-    background-color 0.45s var(--ease-out),
-    border-color 0.45s var(--ease-out),
-    scale 0.45s var(--ease-out),
-    box-shadow 0.45s var(--ease-out);
+    background-color 0.4s var(--ease-out),
+    color 0.4s var(--ease-out);
+
+  b {
+    font-family: var(--font-label);
+    font-size: 0.7rem;
+    color: var(--accent-ink);
+    transition: color 0.4s var(--ease-out);
+  }
+
+  &.is-live {
+    background: var(--accent);
+
+    b {
+      color: var(--text);
+    }
+  }
+
+  // En un día solo cabe el número: el nombre lo cuenta la tarjeta de abajo.
+  @include below(700) {
+    justify-content: center;
+    padding: 0.6rem 0.3rem;
+    font-size: 0;
+
+    b {
+      font-size: 0.7rem;
+    }
+  }
 }
 
-.prc__phase.is-live .prc__marker {
-  background: var(--violet-lift);
-  border-color: var(--violet-lift);
-  scale: 1.35;
-  box-shadow: 0 0 0 6px var(--violet-14);
+// --- las fases ----------------------------------------------------------------
+.prc__cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  padding: 0;
+  list-style: none;
+
+  @include below(1000) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include below(560) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+// La fase que va por la mitad de la pantalla se enciende: borde violeta y su
+// número relleno.
+.prc__card {
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+  padding: 1.5rem 1.4rem 1.6rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  background: var(--ink-800);
+  transition: border-color 0.4s var(--ease-out);
+
+  &.is-live {
+    border-color: var(--accent);
+  }
+}
+
+.prc__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.prc__num {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition:
+    background-color 0.4s var(--ease-out),
+    border-color 0.4s var(--ease-out);
+
+  .prc__card.is-live & {
+    border-color: var(--accent);
+    background: var(--accent);
+  }
 }
 
 .prc__window {
   @include label;
 
-  transition: color 0.4s var(--ease-out);
-}
-
-.prc__phase.is-live .prc__window {
-  color: var(--violet-lift);
+  font-size: 0.68rem;
+  color: var(--accent-ink);
 }
 
 .prc__title {
-  font-size: var(--step-3);
-  letter-spacing: -0.04em;
+  font-size: var(--step-2);
+  letter-spacing: -0.035em;
 }
 
 .prc__body {
-  max-width: 48ch;
   color: var(--text-soft);
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.55;
 }
 
 .prc__outputs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-top: 0.5rem;
+  gap: 0.4rem;
+  margin: 0.25rem 0 0;
   padding: 0;
   list-style: none;
 
   li {
-    padding: 0.34rem 0.8rem;
+    padding: 0.32rem 0.75rem;
     border: 1px solid var(--line);
     border-radius: 999px;
-    font-family: var(--font-label);
-    font-size: 0.68rem;
-    letter-spacing: 0.04em;
-    color: var(--text-mute);
-    transition:
-      border-color 0.4s var(--ease-out),
-      color 0.4s var(--ease-out);
+    font-size: 0.74rem;
+    color: var(--text-soft);
   }
-}
-
-.prc__phase.is-live .prc__outputs li {
-  border-color: var(--violet-40);
-  color: var(--text-soft);
 }

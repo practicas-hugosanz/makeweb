@@ -5,10 +5,10 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-    <title>MakeWeb — Webs para negocios locales que aparecen primero</title>
+    <title>Diseño web en Alicante para negocios locales — MakeWeb</title>
     <meta
       name="description"
-      content="Estudio web en remoto para negocios locales de toda España. Webs rápidas, medibles y preparadas para SEO local: más llamadas, más reservas, más clientes."
+      content="Estudio de diseño y desarrollo web en Alicante para negocios locales de toda España. Webs a medida, rápidas y con SEO local: más llamadas, reservas y clientes."
     />
     <meta name="theme-color" content="#111111" />
     <meta name="author" content="MakeWeb" />
@@ -25,7 +25,7 @@
     <meta property="og:site_name" content="MakeWeb" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:url" content="https://makeweb.es/" />
-    <meta property="og:title" content="MakeWeb — Webs para negocios locales que aparecen primero" />
+    <meta property="og:title" content="Diseño web en Alicante para negocios locales — MakeWeb" />
     <meta
       property="og:description"
       content="Diseñamos y desarrollamos la web de tu negocio local en una semana. Rápida, accesible y hecha para convertir visitas en clientes."
@@ -53,58 +53,18 @@
          Angular incrusta en esta misma cabecera: el navegador se entera de la
          fuente mientras lee el <head>, igual que con una precarga. -->
 
-    <!-- Organization y no LocalBusiness: el estudio trabaja en remoto y no
-         tiene local al que ir, así que declarar dirección o geolocalización
-         sería falso y no ayudaría a posicionar. Lo que sí es cierto y útil es
-         que atiende a toda España. -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "MakeWeb",
-        "description": "Estudio de diseño y desarrollo web para negocios locales. En remoto, para toda España.",
-        "url": "https://makeweb.es/",
-        "logo": "https://makeweb.es/brand/logotipo-entero.png",
-        "email": "contacto@makeweb.es",
-        "telephone": ["+34683106846", "+34617845264"],
-        "areaServed": { "@type": "Country", "name": "España" },
-        "knowsLanguage": ["es"],
-        "makesOffer": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño web" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo web" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO local" } }
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer service",
-          "telephone": "+34683106846",
-          "email": "contacto@makeweb.es",
-          "areaServed": "ES",
-          "availableLanguage": "es"
-        }
-      }
-    </script>
-
-    <!-- Declara el nombre con el que la web quiere aparecer en los resultados.
-         Sin esto, Google se inventa el nombre del sitio a partir del dominio. -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "MakeWeb",
-        "url": "https://makeweb.es/",
-        "inLanguage": "es-ES",
-        "publisher": { "@type": "Organization", "name": "MakeWeb" }
-      }
-    </script>
+    <!-- Los datos estructurados (la empresa, el sitio, las migas de pan y lo
+         propio de cada página) los escribe `SeoStrategy` en `core/seo.ts`, en
+         el idioma de cada página. Aquí iban fijos y en castellano. -->
   </head>
   <body>
     <app-root></app-root>
     <noscript>
       <div style="padding: 4rem 1.5rem; color: #fff; background: #111; font-family: sans-serif">
-        <h1>MakeWeb</h1>
+        <!-- Sin <h1>: Google lee este bloque y la página ya tiene el suyo. -->
+        <p><strong>MakeWeb</strong></p>
         <p>
-          Diseñamos webs para negocios locales. Activa JavaScript para ver la experiencia completa o
+          Diseño y desarrollo web en Alicante para negocios locales. Activa JavaScript para ver la experiencia completa o
           escríbenos a <a style="color: #8d84ff" href="mailto:contacto&#64;makeweb.es">contacto&#64;makeweb.es</a>.
         </p>
       </div>

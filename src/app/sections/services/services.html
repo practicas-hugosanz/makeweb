@@ -1,51 +1,60 @@
-<section class="svc sec sec--flush" id="servicios" #root>
-  <!-- El titular va fuera del bloque anclado: dentro del pin quedaba centrado a
-       media pantalla y no aparecía hasta que la sección ya estaba enganchada
-       arriba. Aquí se lee mientras entra. -->
-  <div class="svc__head shell">
-    <div class="sec-head sec-head--split" mwReveal="rise" [revealStagger]="0.12">
-      <div class="sec-head__stack">
-        <h2 class="sec-title" data-reveal-item>
-          No vendemos una web. <em>Vendemos un sistema que funciona</em>.
-        </h2>
-      </div>
-      <p class="sec-lead" data-reveal-item>
+<section class="svc sec sec--card theme-paper" id="servicios">
+  <div class="shell">
+    <div class="sec-head sec-head--split">
+      <h2 class="sec-title" i18n>
+        No vendemos una web. <em>Vendemos un sistema que funciona.</em>
+      </h2>
+      <p class="sec-lead" i18n>
         Diseño, velocidad, SEO, reservas y mantenimiento, todo en un mismo proyecto, listo para
         traerte clientes desde el día uno.
       </p>
     </div>
-  </div>
 
-  <div class="svc__pin" data-pin>
-    <!-- El contador sí va dentro del anclaje: mientras las tarjetas corren es
-         lo único que dice por dónde vas y cuántas quedan. -->
-    <div class="svc__meter shell" aria-hidden="true">
-      <span class="svc__count">{{ current() }} / {{ services.length }}</span>
-      <span class="svc__hint">Desplaza para avanzar</span>
-    </div>
+    <!-- Una tarjeta por servicio, y entera es un enlace a su página: a la
+         izquierda el número, el nombre y su ilustración; a la derecha qué es, qué
+         incluye y lo que va con cuota, que se ve en la misma línea y no al
+         final del presupuesto. -->
+    <ol class="svc__list">
+      @for (service of services; track service.id; let i = $index) {
+        @let page = pageFor(service.id);
+        <li>
+          <a class="svc__row" [routerLink]="page ? '/servicios/' + page.slug : '/'">
+            <div class="svc__head">
+              <span class="svc__num" aria-hidden="true">{{ pad(i + 1) }}</span>
+              <h3 class="svc__name">{{ service.index }}</h3>
 
-    <div class="svc__viewport" data-viewport>
-      <ol class="svc__track" data-track>
-        @for (service of services; track service.id) {
-          <li class="svc__card" data-card>
-            <p class="svc__kicker">{{ service.index }}</p>
-            <h3 class="svc__title">{{ service.title }}</h3>
-            <p class="svc__summary">{{ service.summary }}</p>
-            <!-- Lo que va aparte se marca aquí mismo: el cliente ve la cuota
-                 mensual en la propia línea, no al final del presupuesto. -->
-            <ul class="svc__includes">
-              @for (item of service.includes; track item.label) {
-                <li [class.svc__include--extra]="item.monthly">
-                  {{ item.label }}
-                  @if (item.monthly; as fee) {
-                    <span class="svc__fee">{{ fee }}</span>
-                  }
-                </li>
-              }
-            </ul>
-          </li>
-        }
-      </ol>
-    </div>
+              <div class="svc__thumb">
+                <mw-service-art [kind]="artFor(service.id)" />
+              </div>
+            </div>
+
+            <div class="svc__body">
+              <p class="svc__title">{{ service.title }}</p>
+              <p class="svc__summary">{{ service.summary }}</p>
+
+              <ul class="svc__includes">
+                @for (item of service.includes; track item.label) {
+                  <li [class.svc__include--extra]="item.monthly">
+                    {{ item.label }}
+                    @if (item.monthly; as fee) {
+                      <span class="svc__fee">{{ fee }}</span>
+                    }
+                  </li>
+                }
+              </ul>
+
+              <span class="svc__more">
+                <span i18n>Ver {{ page ? page.name.toLowerCase() : '' }}</span>
+                <span class="svc__arrow" aria-hidden="true">
+                  <svg viewBox="0 0 12 12">
+                    <path d="M2 10 10 2M4 2h6v6" fill="none" stroke="currentColor" stroke-width="1.6" />
+                  </svg>
+                </span>
+              </span>
+            </div>
+          </a>
+        </li>
+      }
+    </ol>
   </div>
 </section>

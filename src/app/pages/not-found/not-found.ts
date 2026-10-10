@@ -15,14 +15,14 @@ import { Footer } from '../../sections/footer/footer';
     <main class="nf" id="contenido">
       <div class="shell nf__inner">
         <p class="nf__code">404</p>
-        <h1 class="nf__title">Esta página no existe.</h1>
-        <p class="nf__body">
+        <h1 class="nf__title" i18n>Esta página no existe.</h1>
+        <p class="nf__body" i18n>
           O la dirección está mal escrita, o la hemos movido. Ninguna de las dos es culpa tuya.
         </p>
         <div class="nf__actions">
-          <a class="btn btn--primary" routerLink="/"><span class="btn__label">Ir al inicio</span></a>
-          <a class="btn btn--ghost" routerLink="/" fragment="contacto">
-            <span class="btn__label">Escríbenos</span>
+          <a class="btn btn--primary btn--go" routerLink="/"><span class="btn__label" i18n>Ir al inicio</span></a>
+          <a class="btn btn--ghost" routerLink="/contacto">
+            <span class="btn__label" i18n>Escríbenos</span>
           </a>
         </div>
       </div>

@@ -8,6 +8,9 @@ import { gsap, ScrollSmoother, ScrollTrigger } from './gsap';
  * Components never create a smoother themselves; they ask for `smoother()` or
  * simply build ScrollTriggers, which stay in sync automatically.
  */
+/** Lo que ocupa la barra flotante de arriba, con su margen: al saltar a una sección, queda debajo. */
+const BAR_CLEARANCE = 80;
+
 @Injectable({ providedIn: 'root' })
 export class MotionService {
   private readonly zone = inject(NgZone);
@@ -107,10 +110,10 @@ export class MotionService {
     if (!el) return;
 
     if (this.smoother) {
-      this.smoother.scrollTo(el, true, `top ${72 + offset}px`);
+      this.smoother.scrollTo(el, true, `top ${BAR_CLEARANCE + offset}px`);
       return;
     }
-    const top = el.getBoundingClientRect().top + window.scrollY - (72 + offset);
+    const top = el.getBoundingClientRect().top + window.scrollY - (BAR_CLEARANCE + offset);
     window.scrollTo({ top, behavior: this.reducedMotion() ? 'auto' : 'smooth' });
   }
 

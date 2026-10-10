@@ -1,0 +1,101 @@
+@use 'mixins' as *;
+
+:host {
+  position: relative;
+  display: block;
+}
+
+// --- escritorio: tres píldoras a la vista ---------------------------------------
+.ls__toggle {
+  display: none;
+}
+
+.ls__list {
+  display: flex;
+  gap: 0.15rem;
+  margin: 0;
+  padding: 0.2rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  list-style: none;
+}
+
+.ls__item {
+  display: grid;
+  place-items: center;
+  min-width: 2.1rem;
+  height: 2rem;
+  padding: 0 0.45rem;
+  border-radius: 999px;
+  font-family: var(--font-label);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-soft);
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    color: var(--text);
+  }
+
+  &.is-current {
+    background: var(--accent);
+    color: var(--text);
+  }
+}
+
+// --- pantallas estrechas: un botón con el idioma y una lista desplegable --------
+// Hasta 1180 y no solo en móvil: entre 1080 y 1180 los enlaces, centrados en la
+// barra, ya se tocaban con las tres pastillas de idioma.
+@include below(1180) {
+  .ls__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    height: 38px;
+    padding: 0 0.7rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    background: none;
+    font-family: var(--font-label);
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  .ls__globe {
+    width: 0.95rem;
+    height: 0.95rem;
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 1.5;
+  }
+
+  .ls__list {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.35rem;
+    border-color: var(--line-strong);
+    border-radius: var(--radius-m);
+    background: var(--ink-800);
+    box-shadow: var(--shadow-panel);
+
+    &.is-open {
+      display: flex;
+    }
+  }
+
+  .ls__item {
+    min-width: 3.2rem;
+    height: 2.5rem;
+    border-radius: var(--radius-s);
+    font-size: 0.8rem;
+  }
+}

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RevealDirective } from '../../core/animation/reveal.directive';
-import { BackLink } from '../../sections/back-link/back-link';
+import { CtaCard } from '../../sections/cta-card/cta-card';
 import { Footer } from '../../sections/footer/footer';
+import { PageHero } from '../../sections/page-hero/page-hero';
 import { Pricing } from '../../sections/pricing/pricing';
 
 /**
@@ -14,26 +14,35 @@ import { Pricing } from '../../sections/pricing/pricing';
 @Component({
   selector: 'mw-pricing-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RevealDirective, BackLink, Footer, Pricing],
+  imports: [PageHero, CtaCard, Footer, Pricing],
   template: `
     <main class="prp" id="contenido">
-      <div class="shell prp__head" mwReveal="rise" [revealStagger]="0.08">
-        <h1 class="prp__title" data-reveal-item>Lo que cuesta, dicho antes de empezar.</h1>
-        <p class="prp__lead" data-reveal-item>
-          Tres formas de hacerlo, con su horquilla real. Ninguna lleva cuotas escondidas ni
-          permanencia, y el presupuesto se cierra por escrito antes de tocar nada.
-        </p>
-      </div>
+      <mw-page-hero
+        crumb="Precios"
+        i18n-crumb
+        [cta]="false"
+        i18n-lead
+        lead="Tres formas de hacerlo, con su horquilla real. Ninguna lleva cuotas escondidas ni permanencia, y el presupuesto se cierra por escrito antes de tocar nada."
+      >
+        <span title i18n>Lo que cuesta, <em>dicho antes</em> de empezar.</span>
+      </mw-page-hero>
 
       <mw-pricing />
 
-      <div class="shell">
-        <mw-back-link />
-      </div>
+      <mw-cta-card
+        title="hablemos de tu presupuesto."
+        i18n-title
+        [links]="links"
+      />
     </main>
 
     <mw-footer />
   `,
   styleUrl: './pricing-page.scss',
 })
-export class PricingPage {}
+export class PricingPage {
+  protected readonly links = [
+    { label: $localize`Ver los servicios`, sub: $localize`Qué entra en cada parte del proyecto`, link: '/servicios/diseno-web' },
+    { label: $localize`Conocer el estudio`, sub: $localize`Quién hace tu web y cómo trabajamos`, link: '/estudio' },
+  ];
+}

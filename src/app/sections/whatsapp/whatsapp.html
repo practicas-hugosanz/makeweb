@@ -1,7 +1,8 @@
 @if (visible()) {
   <div class="wa">
     @if (open()) {
-      <div class="wa__sheet" id="wa-sheet" data-wa-panel role="menu" aria-label="Elige con quién hablas">
+      <div class="wa__sheet" id="wa-sheet" data-wa-panel role="menu" aria-label="Elige con quién hablas"
+        i18n-aria-label>
         <mw-whatsapp-lines />
       </div>
     }
@@ -15,7 +16,7 @@
       [class.is-open]="open()"
       [attr.aria-expanded]="open()"
       aria-controls="wa-sheet"
-      [attr.aria-label]="open() ? 'Cerrar las opciones de WhatsApp' : 'Escríbenos por WhatsApp'"
+      [attr.aria-label]="open() ? labels.close : labels.open"
     >
       <ng-icon class="wa__glyph" name="simpleWhatsapp" aria-hidden="true" />
     </button>

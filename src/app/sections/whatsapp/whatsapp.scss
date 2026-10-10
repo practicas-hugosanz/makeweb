@@ -19,6 +19,15 @@
     left: 0.85rem;
     bottom: 0.85rem;
   }
+
+  // Con la barra de pestañas abajo, el botón sube y se queda justo encima,
+  // a la derecha: la esquina izquierda queda libre para leer.
+  @include below(1080) {
+    left: auto;
+    right: 0.85rem;
+    bottom: calc(5.4rem + env(safe-area-inset-bottom));
+    justify-items: end;
+  }
 }
 
 // --- el botón ----------------------------------------------------------------
@@ -97,7 +106,6 @@
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-m);
   background:
-    radial-gradient(120% 70% at 20% 0%, var(--violet-14), transparent 62%),
     var(--ink-800);
   box-shadow: var(--shadow-panel);
   transform-origin: 1.75rem 100%;

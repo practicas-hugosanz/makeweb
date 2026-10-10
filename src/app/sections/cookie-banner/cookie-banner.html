@@ -7,8 +7,8 @@
     aria-describedby="ck-body"
   >
     <div class="ck__main">
-      <h2 class="ck__title" id="ck-title">Cookies</h2>
-      <p class="ck__body" id="ck-body">
+      <h2 class="ck__title" id="ck-title" i18n>Cookies</h2>
+      <p class="ck__body" id="ck-body" i18n>
         Usamos cookies técnicas para que la web funcione. Las analíticas y las publicitarias solo
         se activan si tú lo dices, y puedes cambiar de idea cuando quieras.
         <a routerLink="/cookies">Ver el detalle</a>.
@@ -16,10 +16,10 @@
 
       <div class="ck__actions">
         <button class="btn btn--primary ck__btn" type="button" (click)="acceptAll()">
-          <span class="btn__label">Aceptar todas</span>
+          <span class="btn__label" i18n>Aceptar todas</span>
         </button>
         <button class="btn btn--ghost ck__btn" type="button" (click)="rejectAll()">
-          <span class="btn__label">Rechazar todas</span>
+          <span class="btn__label" i18n>Rechazar todas</span>
         </button>
         <button
           class="btn btn--quiet ck__config"
@@ -28,7 +28,11 @@
           [attr.aria-expanded]="detailOpen()"
           aria-controls="ck-detail"
         >
-          {{ detailOpen() ? 'Ocultar opciones' : 'Configurar' }}
+          @if (detailOpen()) {
+            <ng-container i18n>Ocultar opciones</ng-container>
+          } @else {
+            <ng-container i18n>Configurar</ng-container>
+          }
         </button>
       </div>
     </div>
@@ -47,10 +51,17 @@
                 [checked]="isOn(category.id)"
                 [disabled]="category.required"
                 (change)="setCategory(category.id, $event.checked)"
-                [attr.aria-label]="'Cookies ' + category.name"
+                aria-label="Cookies {{ category.name }}"
+                i18n-aria-label
               >
                 <span class="ck__state">
-                  {{ category.required ? 'Siempre' : isOn(category.id) ? 'Sí' : 'No' }}
+                  @if (category.required) {
+                    <ng-container i18n>Siempre</ng-container>
+                  } @else if (isOn(category.id)) {
+                    <ng-container i18n>Sí</ng-container>
+                  } @else {
+                    <ng-container i18n>No</ng-container>
+                  }
                 </span>
               </mat-slide-toggle>
             </li>
@@ -58,7 +69,7 @@
         </ul>
 
         <button class="btn btn--primary ck__save" type="button" (click)="saveDraft()">
-          <span class="btn__label">Guardar mi elección</span>
+          <span class="btn__label" i18n>Guardar mi elección</span>
         </button>
       </div>
     }

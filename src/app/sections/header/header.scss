@@ -30,10 +30,18 @@
 
 .bar__inner {
   position: relative;
-  display: flex;
+  // Tres columnas, las de los lados iguales: así los enlaces quedan en el
+  // centro exacto de la barra aunque el logotipo y el bloque del idioma y el
+  // botón no midan lo mismo. Con `space-between` el hueco se repartía a
+  // partes iguales y los enlaces quedaban corridos hacia el lado más estrecho.
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: clamp(1rem, 2.1vw, 2.1rem);
-  max-width: calc(100% - var(--gutter) * 2);
+  // Ancha, del ancho del contenido de la página: ceñida a sus enlaces se
+  // quedaba en una isla estrecha en el centro de la pantalla. El logotipo va
+  // al borde izquierdo, el botón al derecho y los enlaces en medio.
+  width: min(calc(var(--shell) - var(--gutter) * 2), calc(100% - var(--gutter) * 2));
   height: var(--bar-h);
   padding-inline: 1.15rem 0.75rem;
   pointer-events: auto;
@@ -70,6 +78,8 @@
 }
 
 .bar__brand {
+  grid-column: 1;
+  justify-self: start;
   display: inline-flex;
   align-items: center;
   // El logotipo mide 26 px de alto; el enlace necesita 44 para el dedo.
@@ -87,6 +97,12 @@
 }
 
 .bar__nav {
+  grid-column: 2;
+  // La barra lleva más relleno a la izquierda (junto al logotipo) que a la
+  // derecha (junto al botón); sin esto los enlaces quedaban 3 px a la derecha
+  // del centro.
+  translate: calc((0.75rem - 1.15rem) / 2) 0;
+
   @include below(1080) {
     display: none;
   }
@@ -114,7 +130,7 @@
       inset-inline: 0;
       bottom: 0;
       height: 1px;
-      background: var(--violet-lift);
+      background: var(--accent-ink);
       scale: 0 1;
       transform-origin: right;
       transition: scale 0.4s var(--ease-out);
@@ -133,7 +149,79 @@
   }
 }
 
+// --- desplegable de servicios ------------------------------------------------
+.bar__has-sub {
+  position: relative;
+}
+
+.bar__sub {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  translate: -50% 0.5rem;
+  padding-top: 1.1rem; // puente invisible: el puntero no lo pierde al bajar
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s var(--ease-out),
+    translate 0.35s var(--ease-out),
+    visibility 0s linear 0.35s;
+
+  .bar__has-sub:hover &,
+  .bar__has-sub:focus-within & {
+    opacity: 1;
+    visibility: visible;
+    translate: -50% 0;
+    transition:
+      opacity 0.25s var(--ease-out),
+      translate 0.35s var(--ease-out),
+      visibility 0s;
+  }
+
+  ul {
+    display: grid !important;
+    gap: 0.15rem !important;
+    width: 21rem;
+    padding: 0.6rem !important;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-m);
+    background: rgb(22 20 27 / 96%);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-panel);
+  }
+
+  a {
+    display: grid !important;
+    gap: 0.1rem;
+    padding: 0.7rem 0.85rem !important;
+    border-radius: var(--radius-s);
+    transition: background-color var(--dur-fast) var(--ease-out);
+
+    &::after {
+      display: none;
+    }
+
+    &:hover {
+      background: var(--veil-05);
+    }
+  }
+
+  strong {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--text);
+  }
+
+  small {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    color: var(--text-mute);
+  }
+}
+
 .bar__end {
+  grid-column: 3;
+  justify-self: end;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -143,7 +231,11 @@
 // este es el único que se ve siempre: antes se ocultaba por debajo de 640 px y
 // la primera pantalla se quedaba sin ninguna llamada a la acción.
 .bar__cta {
-  padding: 0.72em 1.25em;
+  // Con el círculo de la flecha dentro: poco aire a la derecha, el que pide.
+  // Con la variable y no a mano, para que la flecha sepa dónde está el círculo.
+  --go-inset: 0.3em;
+
+  padding: var(--go-inset) var(--go-inset) var(--go-inset) 1.15em;
   font-size: 0.86rem;
   // Dentro de la píldora la sombra sobra: ya la lleva el contenedor.
   box-shadow: none;
@@ -161,8 +253,10 @@
   // mínimo de 24 px que pide la WCAG 2.2 y se falla poco con el pulgar, y el
   // relleno baja con él para que no lo vuelva a estirar.
   @include below(640) {
+    --go-inset: 0.25em;
+
     min-height: 38px;
-    padding: 0.45em 0.95em;
+    padding: var(--go-inset) var(--go-inset) var(--go-inset) 0.95em;
     font-size: 0.78rem;
   }
 }
@@ -193,8 +287,11 @@
   cursor: pointer;
   transition: border-color var(--dur-fast) var(--ease-out);
 
+  // En pantallas estrechas la navegación la lleva la barra de pestañas de abajo
+  // (`mw-tabbar`), como en una app. El menú a pantalla completa queda sin botón
+  // que lo abra: dos menús para lo mismo eran uno de más.
   @include below(1080) {
-    display: grid;
+    display: none;
   }
 }
 
@@ -247,32 +344,7 @@
   height: 100%;
   padding: calc(var(--bar-h) + 2rem) var(--gutter) 2.5rem;
   background: var(--ink-800);
-  background-image: radial-gradient(120% 80% at 85% 0%, var(--violet-14), transparent 60%);
   overflow-y: auto;
-
-  // La misma retícula que el fondo del hero. Sin ella el panel era el único
-  // rectángulo liso de la web, y se notaba: el resto de superficies llevan
-  // trama. Va en un pseudoelemento absoluto y no como hijo para no meter una
-  // fila más en la rejilla ni tocar lo que anima GSAP.
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 5.5rem 5.5rem;
-    mask-image: radial-gradient(90% 65% at 85% 0%, #000 0%, transparent 100%);
-    opacity: 0.5;
-    pointer-events: none;
-  }
-}
-
-// Por encima de la trama: un pseudoelemento posicionado pinta sobre los
-// hermanos estáticos, así que sin esto la retícula tapaba el menú.
-.menu__nav,
-.menu__meta {
-  position: relative;
 }
 
 .menu__nav {
@@ -340,21 +412,21 @@
   }
 
   a:hover span {
-    color: var(--violet-lift);
+    color: var(--accent-ink);
   }
 
   a:hover em {
-    color: var(--violet-lift);
+    color: var(--accent-ink);
   }
 
   // La sección en la que estás. El dato ya existía en el store y lo usaba la
   // barra en escritorio; aquí el menú no decía nada, y abrirlo te dejaba sin
   // saber de dónde venías.
   li.is-current {
-    border-bottom-color: var(--violet-40);
+    border-bottom-color: var(--accent-40);
 
     em {
-      color: var(--violet-lift);
+      color: var(--accent-ink);
     }
 
     span::after {
@@ -363,7 +435,7 @@
       width: 0.42em;
       height: 0.42em;
       border-radius: 50%;
-      background: var(--violet-lift);
+      background: var(--accent-ink);
     }
   }
 }
@@ -408,7 +480,7 @@
   }
 
   a:hover {
-    color: var(--violet-lift);
+    color: var(--accent-ink);
   }
 
   p {

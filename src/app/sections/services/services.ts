@@ -1,117 +1,30 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  DestroyRef,
-  ElementRef,
-  afterNextRender,
-  inject,
-  signal,
-  viewChild,
-} from '@angular/core';
-import { gsap } from '../../core/animation/gsap';
-import { MotionService } from '../../core/animation/motion.service';
-import { RevealDirective } from '../../core/animation/reveal.directive';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { SERVICES } from '../../data/content';
+import { pageForService } from '../../data/services';
+import { ServiceArt, ServiceArtKind } from '../service-art/service-art';
 
 /**
- * What we do, read sideways.
- *
- * The section pins and the row of cards travels horizontally under scroll
- * control, so the five services are one continuous movement rather than five
- * boxes. Below 900px the pin is dropped entirely and the same cards become a
- * snap-scrolling row you can swipe.
+ * Lo que hacemos, sobre papel: una tarjeta por servicio con su número, su
+ * nombre, su ilustración y, al lado, qué incluye y qué va con cuota. Cada tarjeta
+ * lleva a la página del servicio.
  */
 @Component({
   selector: 'mw-services',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RevealDirective],
+  imports: [RouterLink, ServiceArt],
   templateUrl: './services.html',
   styleUrl: './services.scss',
 })
 export class Services {
-  private readonly root = viewChild.required<ElementRef<HTMLElement>>('root');
-  private readonly motion = inject(MotionService);
-  private readonly destroyRef = inject(DestroyRef);
-
   protected readonly services = SERVICES;
-  protected readonly current = signal(1);
+  protected readonly pageFor = pageForService;
 
-  constructor() {
-    afterNextRender(() => {
-      const el = this.root().nativeElement;
+  protected artFor(id: string): ServiceArtKind {
+    return id as ServiceArtKind;
+  }
 
-      this.motion.scope(
-        el,
-        () => {
-          const mm = gsap.matchMedia();
-
-          mm.add('(min-width: 901px)', () => {
-            const viewport = el.querySelector<HTMLElement>('[data-viewport]')!;
-            const track = el.querySelector<HTMLElement>('[data-track]')!;
-            const cards = gsap.utils.toArray<HTMLElement>('[data-card]', el);
-
-            // The track is `width: max-content`, so its own scrollWidth and
-            // clientWidth are identical. The travel distance is how much wider
-            // the track is than the window it moves inside.
-            const distance = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
-
-            // On a screen wide enough to fit every card there is nothing to
-            // travel, and pinning would just freeze the page for no reason.
-            if (distance() < 120) return;
-
-            const pin = el.querySelector<HTMLElement>('[data-pin]')!;
-
-            const tween = gsap.to(track, {
-              x: () => -distance(),
-              ease: 'none',
-              scrollTrigger: {
-                // El disparador es el bloque anclado, no la sección: ahora el
-                // titular vive fuera del pin, y con la sección como disparador
-                // el anclaje saltaría cuando llega arriba el titular, dejando
-                // las tarjetas por debajo del pliegue todo el recorrido.
-                trigger: pin,
-                start: 'top top',
-                end: () => `+=${distance()}`,
-                pin,
-                scrub: 0.6,
-                anticipatePin: 1,
-                invalidateOnRefresh: true,
-                onUpdate: (self) =>
-                  this.current.set(
-                    Math.min(cards.length, Math.floor(self.progress * cards.length) + 1),
-                  ),
-              },
-            });
-
-            // Cards fade up as they approach the middle of the screen and fade
-            // back out again — driven by the same tween, so it is reversible.
-            // Opacity only: a 3D rotation here forces a new compositing layer
-            // per card on every scroll frame.
-            cards.forEach((card) => {
-              gsap.fromTo(
-                card,
-                { opacity: 0.4 },
-                {
-                  opacity: 1,
-                  ease: 'none',
-                  scrollTrigger: {
-                    trigger: card,
-                    containerAnimation: tween,
-                    start: 'left 92%',
-                    end: 'left 55%',
-                    scrub: true,
-                  },
-                },
-              );
-            });
-
-            return () => gsap.set([track, ...cards], { clearProps: 'all' });
-          });
-
-          this.destroyRef.onDestroy(() => mm.revert());
-        },
-        this.destroyRef,
-      );
-    });
+  protected pad(n: number): string {
+    return String(n).padStart(2, '0');
   }
 }

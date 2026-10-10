@@ -14,6 +14,9 @@ import { AnalyticsService } from './core/analytics.service';
 import { MotionService } from './core/animation/motion.service';
 import { CookieBanner } from './sections/cookie-banner/cookie-banner';
 import { Header } from './sections/header/header';
+import { Neon } from './sections/neon/neon';
+import { QuickContact } from './sections/quick-contact/quick-contact';
+import { Tabbar } from './sections/tabbar/tabbar';
 import { Whatsapp } from './sections/whatsapp/whatsapp';
 import { ConsentActions } from './state/consent/consent.actions';
 import { ConsentService } from './state/consent/consent.service';
@@ -22,7 +25,7 @@ import { UiActions } from './state/ui/ui.actions';
 @Component({
   selector: 'app-root',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterOutlet, Header, CookieBanner, Whatsapp],
+  imports: [RouterOutlet, Header, CookieBanner, Whatsapp, Neon, Tabbar, QuickContact],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
@@ -44,7 +47,6 @@ export class App {
 
       // Nada bloquea el primer pintado, así que la página está "arrancada" en
       // cuanto se ha renderizado. La portada espera a esto para su intro.
-      document.body.classList.remove('js-loading');
       this.store.dispatch(UiActions.bootCompleted());
 
       // Lo que el visitante decidió sobre cookies en una visita anterior. Si no

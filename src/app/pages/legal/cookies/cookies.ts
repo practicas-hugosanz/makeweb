@@ -23,15 +23,15 @@ export class Cookies {
   /** Lo que el visitante tiene decidido ahora mismo, en una frase. */
   protected readonly current = computed(() => {
     const choice = this.choice();
-    if (!choice) return 'Todavía no has elegido.';
+    if (!choice) return $localize`Todavía no has elegido.`;
 
     const on = this.categories
       .filter((c) => !c.required && choice[c.id as 'analytics' | 'marketing'])
       .map((c) => c.name.toLowerCase());
 
     return on.length
-      ? `Ahora mismo tienes activadas las cookies ${on.join(' y ')}.`
-      : 'Ahora mismo solo están activas las cookies técnicas.';
+      ? $localize`Ahora mismo tienes activadas las cookies ${on.join($localize` y `)}:list:.`
+      : $localize`Ahora mismo solo están activas las cookies técnicas.`;
   });
 
   protected reopen(): void {

@@ -12,6 +12,15 @@ export interface Lead {
   consent: boolean;
 }
 
+/** Lo que llega desde el contacto rápido: menos campos, para una pregunta. */
+export interface QuickMessage {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+  consent: boolean;
+}
+
 export type LeadStatus = 'idle' | 'sending' | 'sent' | 'error';
 
 export interface ChoiceOption {
@@ -29,14 +38,14 @@ export interface ChoiceOption {
  * en nada a partir de cero.
  */
 export const STARTING_POINTS: readonly ChoiceOption[] = [
-  { id: 'nada', label: 'Nada todavía, o solo redes sociales' },
-  { id: 'web-vieja', label: 'Una web antigua que quiero rehacer' },
-  { id: 'web-ok', label: 'Una web que funciona, pero quiero mejorarla' },
-  { id: 'por-abrir', label: 'El negocio abre pronto y aún no hay nada' },
+  { id: 'nada', label: $localize`Nada todavía, o solo redes sociales` },
+  { id: 'web-vieja', label: $localize`Una web antigua que quiero rehacer` },
+  { id: 'web-ok', label: $localize`Una web que funciona, pero quiero mejorarla` },
+  { id: 'por-abrir', label: $localize`El negocio abre pronto y aún no hay nada` },
 ];
 
 /** La opción que se añade a los planes para quien todavía no ha elegido. */
 export const UNDECIDED_PLAN: ChoiceOption = {
   id: 'sin-decidir',
-  label: 'Aún no lo sé',
+  label: $localize`Aún no lo sé`,
 };

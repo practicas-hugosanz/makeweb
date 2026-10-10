@@ -35,5 +35,5 @@ import { RouterLink } from '@angular/router';
 })
 export class BackLink {
   readonly to = input('/');
-  readonly label = input('Volver al inicio');
+  readonly label = input($localize`Volver al inicio`);
 }

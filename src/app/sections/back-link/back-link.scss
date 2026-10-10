@@ -17,7 +17,7 @@
     inset-inline: 0;
     top: -1px;
     height: 1px;
-    background: var(--violet-lift);
+    background: var(--accent-ink);
     scale: 0 1;
     transform-origin: right;
     transition: scale 0.55s var(--ease-out);
@@ -45,7 +45,7 @@
   flex: none;
   width: clamp(2.2rem, 5vw, 3.2rem);
   height: 0.5rem;
-  color: var(--violet-lift);
+  color: var(--accent-ink);
   transition: translate var(--dur) var(--ease-out);
 }
 

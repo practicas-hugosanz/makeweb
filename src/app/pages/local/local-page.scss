@@ -1,0 +1,45 @@
+@use 'mixins' as *;
+
+// Lo propio de la página de Alicante; el resto viene de la de servicio.
+
+.lp-search__copy {
+  display: grid;
+  gap: 1rem;
+}
+
+// El nombre del servicio enlaza a su página: subrayado solo al pasar, para que
+// la lista siga leyéndose como lista.
+.lp-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color var(--dur-fast) var(--ease-out);
+
+  &:hover,
+  &:focus-visible {
+    text-decoration-color: var(--accent-ink);
+  }
+}
+
+.lp-areas__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 0.55rem 1rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    color: var(--text-soft);
+  }
+
+  .lp-areas__more {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+}

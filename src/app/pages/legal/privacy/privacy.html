@@ -1,137 +1,137 @@
-<mw-legal-layout title="Política de privacidad">
-  <p>
+<mw-legal-layout title="Política de privacidad" i18n-title>
+  <p i18n>
     Aquí se explica qué datos personales recogemos en {{ legal.domain }}, para qué los usamos,
     cuánto tiempo los guardamos y qué puedes exigirnos. Está redactada conforme al Reglamento (UE)
     2016/679 (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD).
   </p>
 
-  <h2 id="responsable">1. Quién trata tus datos</h2>
+  <h2 id="responsable" i18n>1. Quién trata tus datos</h2>
   <dl>
     <!-- Responsables en plural y con NIF cada uno: el RGPD (art. 13.1.a) pide
          la identidad del responsable, y aquí son dos personas físicas. -->
-    <dt>Responsables</dt>
+    <dt i18n>Responsables</dt>
     <dd>
       @for (owner of legal.owners; track owner.nif) {
-        {{ owner.name }} (NIF {{ owner.nif }}){{ $last ? '.' : ' y ' }}
+        {{ owner.name }} (NIF {{ owner.nif }})@if ($last) {.} @else {<ng-container i18n> y </ng-container>}
       }
     </dd>
 
-    <dt>Domicilio</dt>
+    <dt i18n>Domicilio</dt>
     <dd>{{ legal.address }}</dd>
 
-    <dt>Contacto para privacidad</dt>
+    <dt i18n>Contacto para privacidad</dt>
     <dd>
       <a [href]="'mailto:' + legal.privacyEmail">{{ legal.privacyEmail }}</a>
     </dd>
   </dl>
 
-  <h2 id="datos">2. Qué datos recogemos</h2>
-  <p>Solo los que tú nos das, y solo donde hay un formulario o un enlace de contacto:</p>
+  <h2 id="datos" i18n>2. Qué datos recogemos</h2>
+  <p i18n>Solo los que tú nos das, y solo donde hay un formulario o un enlace de contacto:</p>
   <ul>
     <!-- Los campos son los que hay de verdad en `contact.html`. Aquí ponía "la
          horquilla de presupuesto", que se retiró del formulario hace tiempo:
          una política no puede describir campos que ya no existen. -->
-    <li>
+    <li i18n>
       <strong>Formulario de contacto:</strong> nombre, nombre del negocio, correo electrónico,
       teléfono (opcional), qué plan te encaja, qué tienes ahora y lo que escribas en el mensaje.
     </li>
     <!-- Anexo 1 del DPA de Web3Forms: el servicio trata metadatos técnicos, y
          el antispam necesita la IP para funcionar. Callarlo sería incompleto. -->
-    <li>
+    <li i18n>
       <strong>Al enviar el formulario:</strong> el servicio que transporta el envío registra
       además datos técnicos —tu dirección IP, la fecha y hora, y la página desde la que escribes—
       que necesita para filtrar el spam.
     </li>
-    <li>
+    <li i18n>
       <strong>Si nos escribes por correo o nos llamas:</strong> los datos que aparezcan en esa
       comunicación.
     </li>
-    <li>
+    <li i18n>
       <strong>Datos de navegación:</strong> solo si aceptas las cookies analíticas. Se explican en
       la <a href="/cookies">política de cookies</a>.
     </li>
   </ul>
-  <p>
+  <p i18n>
     No pedimos datos de categorías especiales (salud, ideología, religión, afiliación sindical…). Te
     agradecemos que no los incluyas en el mensaje libre.
   </p>
-  <p>
+  <p i18n>
     Esta web no está dirigida a menores de 14 años y no recogemos sus datos de forma consciente.
   </p>
 
-  <h2 id="finalidades">3. Para qué los usamos y con qué base legal</h2>
+  <h2 id="finalidades" i18n>3. Para qué los usamos y con qué base legal</h2>
   <dl>
-    <dt>Responder a tu consulta y prepararte una propuesta</dt>
-    <dd>
+    <dt i18n>Responder a tu consulta y prepararte una propuesta</dt>
+    <dd i18n>
       Base jurídica: aplicación de medidas precontractuales a petición tuya (art. 6.1.b RGPD). Sin
       estos datos no podemos contestarte.
     </dd>
 
-    <dt>Gestionar la relación si acabamos trabajando juntos</dt>
-    <dd>Base jurídica: ejecución del contrato (art. 6.1.b RGPD).</dd>
+    <dt i18n>Gestionar la relación si acabamos trabajando juntos</dt>
+    <dd i18n>Base jurídica: ejecución del contrato (art. 6.1.b RGPD).</dd>
 
-    <dt>Cumplir obligaciones fiscales y contables</dt>
-    <dd>Base jurídica: obligación legal (art. 6.1.c RGPD).</dd>
+    <dt i18n>Cumplir obligaciones fiscales y contables</dt>
+    <dd i18n>Base jurídica: obligación legal (art. 6.1.c RGPD).</dd>
 
-    <dt>Medir de forma agregada cómo se usa la web</dt>
-    <dd>
+    <dt i18n>Medir de forma agregada cómo se usa la web</dt>
+    <dd i18n>
       Base jurídica: tu consentimiento (art. 6.1.a RGPD), que puedes retirar cuando quieras desde la
       <a href="/cookies">política de cookies</a>.
     </dd>
   </dl>
-  <p>
+  <p i18n>
     <strong>No hacemos envíos comerciales</strong> a quien no los haya pedido, ni cedemos tus datos
     para que otros lo hagan.
   </p>
 
-  <h2 id="conservacion">4. Cuánto tiempo los guardamos</h2>
+  <h2 id="conservacion" i18n>4. Cuánto tiempo los guardamos</h2>
   <ul>
-    <li>
+    <li i18n>
       <strong>Consultas que no llegan a nada:</strong> hasta 12 meses desde el último contacto, por
       si retomas el proyecto. Después se borran.
     </li>
-    <li>
+    <li i18n>
       <strong>Clientes:</strong> mientras dure la relación y, después, durante los plazos de
       prescripción de las obligaciones legales (6 años en materia mercantil y 4 en materia fiscal,
       con carácter general).
     </li>
-    <li><strong>Datos de analítica:</strong> el plazo indicado para cada cookie.</li>
+    <li i18n><strong>Datos de analítica:</strong> el plazo indicado para cada cookie.</li>
     <!-- Sección 8 del DPA: "physical time-to-live of three years, with
          dashboard visibility governed by the Customer's plan". Los "30 días"
          que anuncia su web comercial son solo lo que se ve en el panel del
          plan gratuito, no lo que se borra. Manda el contrato. -->
-    <li>
+    <li i18n>
       <strong>La copia que guarda el servicio de formularios:</strong> hasta 3 años en los
       servidores de Web3Forms, según su contrato de encargo, aunque en nuestro plan solo sean
       visibles los últimos 30 días. Es independiente de lo que guardemos nosotros en el buzón.
     </li>
   </ul>
 
-  <h2 id="destinatarios">5. Quién más ve tus datos</h2>
-  <p>
+  <h2 id="destinatarios" i18n>5. Quién más ve tus datos</h2>
+  <p i18n>
     No vendemos ni cedemos datos personales. Sí trabajamos con proveedores que los tratan por cuenta
     nuestra, con un contrato de encargo de tratamiento firmado (art. 28 RGPD):
   </p>
   <ul>
-    <li><strong>Alojamiento web:</strong> {{ legal.host.name }} ({{ legal.host.location }}).</li>
+    <li i18n><strong>Alojamiento web:</strong> {{ legal.host.name }} ({{ legal.host.location }}).</li>
     <!-- Nombrar "IONOS" ya identifica al destinatario, que es lo que pide el
          artículo 13 del RGPD. La razón social exacta de la entidad que factura
          (IONOS opera en España con más de una) se añade aquí en cuanto se
          compruebe en la factura; de memoria, en un documento legal, no. -->
-    <li>
+    <li i18n>
       <strong>Correo electrónico:</strong> IONOS, donde se aloja el buzón al que llegan tus
       mensajes. Los servidores están en la Unión Europea.
     </li>
     <!-- Los subencargados salen del anexo 3 de su DPA. Solo se nombran los que
          reciben datos personales de quien rellena el formulario; los que son
          infraestructura del proveedor van agrupados. -->
-    <li>
+    <li i18n>
       <strong>Envío del formulario:</strong> Web3Forms, servicio de Web3Creative (India), que
       recibe lo que escribes y lo reenvía a nuestro buzón. Para prestar el servicio se apoya en
       Amazon Web Services, Cloudflare y Hetzner (este último en la Unión Europea), y guarda una
       copia del envío hasta 3 años.
     </li>
-    <li>
+    <li i18n>
       <strong>Filtrado de spam:</strong> CleanTalk y Akismet (Automattic), en Estados Unidos.
       Reciben tu dirección IP y tu correo electrónico para decidir si el envío es basura. Sin este
       filtro el formulario sería inutilizable.
@@ -139,15 +139,15 @@
     <!-- `environment.analyticsId` está vacío, así que no se carga analítica
          ninguna ni con las cookies aceptadas. En cuanto se conecte una, este
          punto vuelve con el nombre del proveedor y su país. -->
-    <li>
+    <li i18n>
       <strong>Analítica web:</strong> ahora mismo no hay ninguna conectada. Si en el futuro la
       hubiera, aparecería aquí con su nombre y solo se activaría si aceptas esas cookies.
     </li>
-    <li><strong>Gestoría:</strong> para las obligaciones contables y fiscales.</li>
+    <li i18n><strong>Gestoría:</strong> para las obligaciones contables y fiscales.</li>
   </ul>
-  <p>También podemos comunicar datos a la Administración cuando una norma lo exija.</p>
+  <p i18n>También podemos comunicar datos a la Administración cuando una norma lo exija.</p>
 
-  <h2 id="transferencias">6. Transferencias fuera de la UE</h2>
+  <h2 id="transferencias" i18n>6. Transferencias fuera de la UE</h2>
   <!-- Este apartado llegó a decir que todos los proveedores tratan los datos
        dentro del EEE. No era cierto por dos vías distintas:
 
@@ -158,16 +158,16 @@
        La garantía del segundo es lo único que sigue sin poderse escribir, y no
        se puede inventar: o se firman cláusulas contractuales tipo con el
        proveedor, o se cambia a uno del EEE que ofrezca contrato de encargo. -->
-  <p>
+  <p i18n>
     El correo electrónico se trata dentro del Espacio Económico Europeo. Hay dos servicios que no:
   </p>
   <ul>
-    <li>
+    <li i18n>
       <strong>El alojamiento de esta web</strong>, en GitHub Pages (GitHub, Inc., Estados Unidos).
       Al servirte la página quedan registrados datos técnicos como tu dirección IP. La transferencia
       se ampara en la certificación de su grupo en el Marco de Privacidad de Datos UE-EE. UU.
     </li>
-    <li>
+    <li i18n>
       <strong>El envío del formulario de contacto</strong>, que procesa Web3Forms (Web3Creative,
       India), junto con los proveedores en que se apoya, entre ellos los filtros antispam
       CleanTalk y Akismet, en Estados Unidos. Ni India ni Estados Unidos cuentan con una decisión
@@ -178,43 +178,43 @@
       nosotros como exportadores.
     </li>
   </ul>
-  <p>
+  <p i18n>
     Puedes pedirnos una copia de las garantías de cualquiera de estas transferencias escribiendo a
     <a [href]="'mailto:' + legal.privacyEmail">{{ legal.privacyEmail }}</a>.
   </p>
-  <p>
+  <p i18n>
     Si prefieres que tus datos no salgan del Espacio Económico Europeo, escríbenos directamente a
     <a [href]="'mailto:' + legal.privacyEmail">{{ legal.privacyEmail }}</a> en lugar de usar el
     formulario.
   </p>
 
-  <h2 id="derechos">7. Tus derechos</h2>
-  <p>Puedes ejercer en cualquier momento estos derechos:</p>
+  <h2 id="derechos" i18n>7. Tus derechos</h2>
+  <p i18n>Puedes ejercer en cualquier momento estos derechos:</p>
   <ul>
-    <li><strong>Acceso:</strong> saber qué datos tuyos tenemos.</li>
-    <li><strong>Rectificación:</strong> corregir los que sean inexactos.</li>
-    <li><strong>Supresión:</strong> pedir que los borremos cuando ya no sean necesarios.</li>
-    <li><strong>Oposición:</strong> oponerte a un tratamiento concreto.</li>
-    <li><strong>Limitación:</strong> pedir que los conservemos pero no los usemos.</li>
-    <li><strong>Portabilidad:</strong> recibirlos en un formato estructurado y de uso común.</li>
-    <li>
+    <li i18n><strong>Acceso:</strong> saber qué datos tuyos tenemos.</li>
+    <li i18n><strong>Rectificación:</strong> corregir los que sean inexactos.</li>
+    <li i18n><strong>Supresión:</strong> pedir que los borremos cuando ya no sean necesarios.</li>
+    <li i18n><strong>Oposición:</strong> oponerte a un tratamiento concreto.</li>
+    <li i18n><strong>Limitación:</strong> pedir que los conservemos pero no los usemos.</li>
+    <li i18n><strong>Portabilidad:</strong> recibirlos en un formato estructurado y de uso común.</li>
+    <li i18n>
       <strong>Retirar el consentimiento</strong> en cualquier momento, sin que ello afecte a la
       licitud del tratamiento anterior.
     </li>
   </ul>
-  <p>
+  <p i18n>
     Escríbenos a <a [href]="'mailto:' + legal.privacyEmail">{{ legal.privacyEmail }}</a> indicando
     qué derecho quieres ejercer. Te responderemos en el plazo máximo de un mes. Puede que te pidamos
     acreditar tu identidad si no podemos identificarte con seguridad.
   </p>
-  <p>
+  <p i18n>
     Si crees que no hemos atendido bien tu solicitud, puedes reclamar ante la Agencia Española de
     Protección de Datos:
     <a href="https://www.aepd.es" rel="noopener noreferrer" target="_blank">www.aepd.es</a>.
   </p>
 
-  <h2 id="seguridad">8. Seguridad</h2>
-  <p>
+  <h2 id="seguridad" i18n>8. Seguridad</h2>
+  <p i18n>
     Aplicamos medidas técnicas y organizativas razonables para proteger tus datos: conexión cifrada
     (HTTPS) en toda la web, acceso restringido a quien lo necesita, copias de seguridad y revisión
     periódica de los accesos. Ningún sistema es infalible; si se produjera una brecha con riesgo
@@ -222,11 +222,11 @@
     plazos legales.
   </p>
 
-  <h2 id="decisiones">9. Decisiones automatizadas</h2>
-  <p>No tomamos decisiones automatizadas ni elaboramos perfiles con efectos jurídicos sobre ti.</p>
+  <h2 id="decisiones" i18n>9. Decisiones automatizadas</h2>
+  <p i18n>No tomamos decisiones automatizadas ni elaboramos perfiles con efectos jurídicos sobre ti.</p>
 
-  <h2 id="cambios">10. Cambios en esta política</h2>
-  <p>
+  <h2 id="cambios" i18n>10. Cambios en esta política</h2>
+  <p i18n>
     Si cambia la forma en que tratamos los datos, actualizaremos esta página y la fecha que aparece
     arriba. Cuando el cambio sea sustancial y afecte a tratamientos basados en tu consentimiento, te
     lo pediremos de nuevo.

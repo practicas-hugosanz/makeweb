@@ -1,33 +1,353 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Si añades páginas al enrutador, añádelas también aquí.
+  Si añades páginas al enrutador, añádelas también aquí, en los tres idiomas.
 
-  Solo `loc` y `lastmod`: Google ignora `changefreq` y `priority` desde hace
-  años, y una prioridad inventada no mueve nada. `lastmod` sí lo usa, pero solo
-  mientras sea verdad, así que se actualiza cuando cambia el contenido de esa
-  página, no en cada despliegue.
+  Solo `loc`, `lastmod` y las alternativas de idioma: Google ignora
+  `changefreq` y `priority` desde hace años, y una prioridad inventada no mueve
+  nada. `lastmod` sí lo usa, pero solo mientras sea verdad, así que se
+  actualiza cuando cambia el contenido de esa página, no en cada despliegue.
+
+  Cada URL lista sus versiones en castellano, inglés y francés (lo mismo que
+  los `hreflang` del <head>); `x-default` apunta al castellano.
 
   La 404 no está aquí a propósito: va con `noindex`.
 -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://makeweb.es/</loc>
-    <lastmod>2026-08-11</lastmod>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/diseno-web-alicante</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/diseno-web-alicante"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/diseno-web-alicante"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/diseno-web-alicante"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/diseno-web-alicante"/>
   </url>
   <url>
     <loc>https://makeweb.es/precios</loc>
-    <lastmod>2026-08-11</lastmod>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/precios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/precios"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/precios"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/precios"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/servicios/diseno-web</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/diseno-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/diseno-web"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/diseno-web"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/diseno-web"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/servicios/desarrollo-web</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/desarrollo-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/desarrollo-web"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/desarrollo-web"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/desarrollo-web"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/servicios/seo-local</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/seo-local"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/seo-local"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/seo-local"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/seo-local"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/servicios/reservas-online</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/reservas-online"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/reservas-online"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/reservas-online"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/reservas-online"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/servicios/mantenimiento-web</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/mantenimiento-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/mantenimiento-web"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/mantenimiento-web"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/mantenimiento-web"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/estudio</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/estudio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/estudio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/estudio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/estudio"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/proyectos</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/proyectos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/proyectos"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/proyectos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/proyectos"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/contacto</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/contacto"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/contacto"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/contacto"/>
   </url>
   <url>
     <loc>https://makeweb.es/aviso-legal</loc>
     <lastmod>2026-08-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/aviso-legal"/>
   </url>
   <url>
     <loc>https://makeweb.es/privacidad</loc>
     <lastmod>2026-08-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/privacidad"/>
   </url>
   <url>
     <loc>https://makeweb.es/cookies</loc>
     <lastmod>2026-08-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/cookies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/cookies"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/diseno-web-alicante</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/diseno-web-alicante"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/diseno-web-alicante"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/diseno-web-alicante"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/diseno-web-alicante"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/precios</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/precios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/precios"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/precios"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/precios"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/servicios/diseno-web</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/diseno-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/diseno-web"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/diseno-web"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/diseno-web"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/servicios/desarrollo-web</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/desarrollo-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/desarrollo-web"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/desarrollo-web"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/desarrollo-web"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/servicios/seo-local</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/seo-local"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/seo-local"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/seo-local"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/seo-local"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/servicios/reservas-online</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/reservas-online"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/reservas-online"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/reservas-online"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/reservas-online"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/servicios/mantenimiento-web</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/mantenimiento-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/mantenimiento-web"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/mantenimiento-web"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/mantenimiento-web"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/estudio</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/estudio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/estudio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/estudio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/estudio"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/proyectos</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/proyectos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/proyectos"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/proyectos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/proyectos"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/contacto</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/contacto"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/contacto"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/contacto"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/aviso-legal</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/aviso-legal"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/privacidad</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/privacidad"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/cookies</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/cookies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/cookies"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/diseno-web-alicante</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/diseno-web-alicante"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/diseno-web-alicante"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/diseno-web-alicante"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/diseno-web-alicante"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/precios</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/precios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/precios"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/precios"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/precios"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/servicios/diseno-web</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/diseno-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/diseno-web"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/diseno-web"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/diseno-web"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/servicios/desarrollo-web</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/desarrollo-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/desarrollo-web"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/desarrollo-web"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/desarrollo-web"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/servicios/seo-local</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/seo-local"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/seo-local"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/seo-local"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/seo-local"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/servicios/reservas-online</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/reservas-online"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/reservas-online"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/reservas-online"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/reservas-online"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/servicios/mantenimiento-web</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/mantenimiento-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/mantenimiento-web"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/mantenimiento-web"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/mantenimiento-web"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/estudio</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/estudio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/estudio"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/estudio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/estudio"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/proyectos</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/proyectos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/proyectos"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/proyectos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/proyectos"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/contacto</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/contacto"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/contacto"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/contacto"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/aviso-legal</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/aviso-legal"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/privacidad</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/privacidad"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/cookies</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/cookies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/cookies"/>
   </url>
 </urlset>

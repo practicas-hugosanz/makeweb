@@ -1,31 +1,54 @@
 <section class="prc sec" id="proceso" #root>
-  <div class="prc__inner shell">
-    <div class="prc__aside">
-      <div class="sec-head" mwReveal="rise" [revealStagger]="0.08">
-        <h2 class="sec-title" data-reveal-item>Una semana, <em>sin sorpresas</em>.</h2>
-        <p class="sec-lead" data-reveal-item>
+  <div class="shell">
+    <div class="sec-head sec-head--split">
+      <h2 class="sec-title" i18n>Una semana, <em>sin sorpresas.</em></h2>
+      <div class="prc__intro">
+        <p class="sec-lead" i18n>
           Sabes qué pasa cada día, qué necesitamos de ti y cuándo estará online. Si algo se mueve,
           te lo decimos el mismo día.
         </p>
+        <a class="btn btn--quiet prc__link" routerLink="/contacto" i18n>Reserva la primera sesión</a>
       </div>
-
-      <a class="btn btn--quiet prc__link" href="#contacto">
-        Reserva la primera sesión
-      </a>
     </div>
 
-    <ol class="prc__list" data-list>
-      <span class="prc__rail" aria-hidden="true">
-        <span class="prc__rail-fill" data-rail-fill></span>
-      </span>
+    <!-- La semana en una tira: siete días y, debajo, cada fase ocupando los
+         suyos. Se llena de violeta a medida que se baja por la sección, como
+         si la semana fuese avanzando. -->
+    <div class="prc__week" data-week aria-hidden="true">
+      <div class="prc__days">
+        @for (day of days; track day) {
+          <span class="prc__day">
+            <small i18n>Día</small>
+            {{ day }}
+          </span>
+        }
+      </div>
 
-      @for (phase of phases; track phase.title) {
-        <li class="prc__phase" data-phase>
-          <span class="prc__marker" aria-hidden="true"></span>
-          <p class="prc__window" data-phase-part>{{ phase.window }}</p>
-          <h3 class="prc__title" data-phase-part>{{ phase.title }}</h3>
-          <p class="prc__body" data-phase-part>{{ phase.body }}</p>
-          <ul class="prc__outputs" data-phase-part>
+      <div class="prc__track">
+        <span class="prc__fill" data-fill></span>
+        @for (phase of phases; track phase.title; let i = $index) {
+          <span
+            class="prc__span"
+            data-span
+            [style.grid-column]="phase.from + ' / ' + (phase.to + 1)"
+          >
+            <b>{{ pad(i + 1) }}</b>
+            {{ phase.title }}
+          </span>
+        }
+      </div>
+    </div>
+
+    <ol class="prc__cards">
+      @for (phase of phases; track phase.title; let i = $index) {
+        <li class="prc__card" data-phase>
+          <div class="prc__card-top">
+            <span class="prc__num">{{ pad(i + 1) }}</span>
+            <span class="prc__window">{{ phase.window }}</span>
+          </div>
+          <h3 class="prc__title">{{ phase.title }}</h3>
+          <p class="prc__body">{{ phase.body }}</p>
+          <ul class="prc__outputs">
             @for (output of phase.outputs; track output) {
               <li>{{ output }}</li>
             }

@@ -9,50 +9,69 @@
     <a
       class="bar__brand"
       data-bar-brand
-      href="#inicio"
+      href="/"
       (click)="go($event, 'inicio')"
       aria-label="MakeWeb, ir al inicio"
+      i18n-aria-label
     >
       <img
         class="bar__logo"
-        src="brand/logotipo-entero.png"
+        src="brand/logotipo-entero.webp"
         alt="MakeWeb"
-        width="900"
-        height="228"
+        width="360"
+        height="91"
       />
     </a>
 
-    <nav class="bar__nav" aria-label="Secciones">
+    <nav class="bar__nav" aria-label="Secciones" i18n-aria-label>
       <ul>
         @for (link of links; track link.id) {
-          <li>
+          <li [class.bar__has-sub]="link.id === 'servicios'">
             <a
-              [href]="link.route ?? '#' + link.id"
-              [class.is-active]="active() === link.id"
-              [attr.aria-current]="active() === link.id ? 'true' : null"
+              [href]="link.route ?? '/#' + link.id"
+              [class.is-active]="isActive(link)"
+              [attr.aria-current]="isActive(link) ? 'page' : null"
               (click)="go($event, link.id, link.route)"
             >
               {{ link.label }}
             </a>
+
+            <!-- Las cinco páginas de servicio, al pasar por encima o al llegar
+                 con el tabulador. Sin JavaScript: es :hover y :focus-within. -->
+            @if (link.id === 'servicios') {
+              <div class="bar__sub">
+                <ul>
+                  @for (page of servicePages; track page.slug) {
+                    <li>
+                      <a [routerLink]="'/servicios/' + page.slug" (click)="closeMenu()">
+                        <strong>{{ page.name }}</strong>
+                        <small>{{ page.service.title }}</small>
+                      </a>
+                    </li>
+                  }
+                </ul>
+              </div>
+            }
           </li>
         }
       </ul>
     </nav>
 
     <div class="bar__end">
+      <mw-lang-switch />
+
       <!-- Con el menú abierto este botón no está: su sitio lo ocupa el último
            elemento de la lista. `inert` lo saca también del tabulador. -->
       <a
-        class="btn btn--primary bar__cta"
+        class="btn btn--primary btn--go bar__cta"
         data-bar-cta
-        href="#contacto"
-        (click)="go($event, 'contacto')"
+        href="/contacto"
+        (click)="go($event, 'contacto', '/contacto')"
         [attr.inert]="menuOpen() ? '' : null"
-        mwSweep
       >
         <span class="btn__label">
-          <span class="bar__cta-long">Pide presupuesto</span>
-          <span class="bar__cta-short">Presupuesto</span>
+          <span class="bar__cta-long" i18n>Pide presupuesto</span>
+          <span class="bar__cta-short" i18n>Presupuesto</span>
         </span>
       </a>
 
@@ -64,7 +83,7 @@
         [attr.aria-expanded]="menuOpen()"
         aria-controls="menu-principal"
       >
-        <span class="visually-hidden">{{ menuOpen() ? 'Cerrar menú' : 'Abrir menú' }}</span>
+        <span class="visually-hidden">@if (menuOpen()) {<ng-container i18n>Cerrar menú</ng-container>} @else {<ng-container i18n>Abrir menú</ng-container>}</span>
         <span class="bar__burger-lines" [class.is-open]="menuOpen()" aria-hidden="true">
           <span></span>
           <span></span>
@@ -76,16 +95,16 @@
 
 <div class="menu" id="menu-principal" #panel [attr.inert]="menuOpen() ? null : ''">
   <div class="menu__sheet" data-menu-sheet>
-    <nav class="menu__nav" aria-label="Menú principal">
+    <nav class="menu__nav" aria-label="Menú principal" i18n-aria-label>
       <ul>
         <!-- `is-current` va en el <li> y no en el <span>: ese span es el que
              GSAP desliza al abrir, y no se le añade nada que pueda pelearse con
              la línea de tiempo. -->
         @for (link of links; track link.id; let i = $index) {
-          <li [class.is-current]="active() === link.id">
+          <li [class.is-current]="isActive(link)">
             <a
-              [href]="link.route ?? '#' + link.id"
-              [attr.aria-current]="active() === link.id ? 'true' : null"
+              [href]="link.route ?? '/#' + link.id"
+              [attr.aria-current]="isActive(link) ? 'page' : null"
               (click)="go($event, link.id, link.route)"
             >
               <span data-menu-item>
@@ -107,10 +126,10 @@
           <a
             class="btn btn--primary menu__cta"
             data-menu-cta
-            href="#contacto"
-            (click)="go($event, 'contacto')"
+            href="/contacto"
+            (click)="go($event, 'contacto', '/contacto')"
           >
-            <span class="btn__label">Pide presupuesto</span>
+            <span class="btn__label" i18n>Pide presupuesto</span>
           </a>
         </li>
       </ul>
@@ -118,7 +137,7 @@
 
     <div class="menu__meta" data-menu-meta>
       <a href="mailto:contacto@makeweb.es">contacto&#64;makeweb.es</a>
-      <p>Lunes a sábado, 10:00 – 00:00</p>
+      <p i18n>Lunes a sábado, 10:00 – 00:00</p>
     </div>
   </div>
 </div>

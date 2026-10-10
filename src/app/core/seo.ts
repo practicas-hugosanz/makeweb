@@ -2,8 +2,11 @@ import { DOCUMENT } from '@angular/common';
 import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, TitleStrategy } from '@angular/router';
-import { FAQS, PLANS } from '../data/content';
-import { LEGAL } from '../data/legal';
+import { FAQS, Faq, PLANS } from '../data/content';
+import { LEGAL, PHONES } from '../data/legal';
+import { LOCAL_FAQS } from '../data/local';
+import { SERVICE_PAGES } from '../data/services';
+import { LANGUAGES, currentLanguage, localizedPath } from './i18n';
 
 /**
  * Lo que cada ruta declara sobre sí misma de cara a los buscadores. Va en el
@@ -17,8 +20,15 @@ export interface SeoData {
   description: string;
   /** Fuera del índice. Solo la 404: una página de error no debe posicionar. */
   noindex?: boolean;
-  /** Qué datos estructurados lleva esta página, y solo esta. */
-  schema?: 'faq' | 'offers';
+  /**
+   * El nombre de la página en las migas de pan, el mismo que se ve en su
+   * cabecera. Sin él (la portada) no se declaran migas.
+   */
+  crumb?: string;
+  /** Qué datos estructurados propios lleva esta página, además de los comunes. */
+  schema?: 'faq' | 'offers' | 'service' | 'local';
+  /** En las páginas de servicio, cuál es. */
+  service?: string;
 }
 
 /**
@@ -40,6 +50,7 @@ export class SeoStrategy extends TitleStrategy {
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
   private readonly doc = inject(DOCUMENT);
+  private readonly lang = currentLanguage();
 
   override updateTitle(snapshot: RouterStateSnapshot): void {
     const title = this.buildTitle(snapshot) ?? LEGAL.brand;
@@ -51,7 +62,7 @@ export class SeoStrategy extends TitleStrategy {
     // `index.html` a una etiqueta a medias.
     if (!seo) return;
 
-    const url = this.absolute(seo.path);
+    const url = this.absolute(localizedPath(this.lang, seo.path || '/'));
 
     this.meta.updateTag({ name: 'description', content: seo.description });
     this.meta.updateTag({ property: 'og:title', content: title });
@@ -68,8 +79,15 @@ export class SeoStrategy extends TitleStrategy {
       this.meta.removeTag('name="robots"');
     }
 
+    this.meta.updateTag({ property: 'og:locale', content: this.lang.og });
+    this.meta.updateTag({
+      property: 'og:image:alt',
+      content: $localize`:@@seo.ogImageAlt:MakeWeb — webs para negocios locales`,
+    });
+
     this.setCanonical(url);
-    this.setJsonLd(seo);
+    this.setAlternates(seo.path || '/', !!seo.noindex);
+    this.setJsonLd(seo, url, title);
   }
 
   /** La ruta activa más profunda es la que manda; las padres solo son marco. */
@@ -85,9 +103,32 @@ export class SeoStrategy extends TitleStrategy {
     return found;
   }
 
-  /** Absoluta y sin barra final, salvo la portada, que la lleva. */
+  /** Absoluta y sin barra final, salvo las portadas, que la llevan. */
   private absolute(path: string): string {
-    return path ? `${LEGAL.site}/${path.replace(/^\/+|\/+$/g, '')}` : `${LEGAL.site}/`;
+    const clean = path.replace(/^\/+/, '');
+    if (!clean) return `${LEGAL.site}/`;
+    return clean.endsWith('/') ? `${LEGAL.site}/${clean}` : `${LEGAL.site}/${clean.replace(/\/+$/, '')}`;
+  }
+
+  /**
+   * Una etiqueta `hreflang` por idioma, y `x-default` al castellano: así Google
+   * sabe que `/precios`, `/en/precios` y `/fr/precios` son la misma página y
+   * enseña a cada cual la suya. La 404 no lleva, porque no se indexa.
+   */
+  private setAlternates(path: string, noindex: boolean): void {
+    this.doc.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach((l) => l.remove());
+    if (noindex) return;
+
+    const add = (hreflang: string, href: string) => {
+      const link = this.doc.createElement('link');
+      link.setAttribute('rel', 'alternate');
+      link.setAttribute('hreflang', hreflang);
+      link.setAttribute('href', href);
+      this.doc.head.appendChild(link);
+    };
+
+    for (const lang of LANGUAGES) add(lang.code, this.absolute(localizedPath(lang, path)));
+    add('x-default', this.absolute(localizedPath(LANGUAGES[0], path)));
   }
 
   private setCanonical(url: string): void {
@@ -103,41 +144,146 @@ export class SeoStrategy extends TitleStrategy {
   }
 
   /**
-   * Un solo bloque JSON-LD por página, el que le corresponde.
+   * Un solo bloque JSON-LD por página, con un `@graph`: la empresa y el sitio,
+   * que son ciertos en todas; las migas de pan de las interiores; y lo que solo
+   * vale donde está su contenido (las preguntas, los precios, el servicio).
+   * Declarar un `FAQPage` en una página sin preguntas visibles es motivo de
+   * acción manual de Google, así que cada bloque va solo donde se ve lo suyo.
    *
-   * `Organization` se queda en `index.html` porque es cierto en todas; lo que
-   * se monta aquí es lo que solo vale donde está el contenido: las preguntas en
-   * la portada y las horquillas de precio en `/precios`. Declarar un `FAQPage`
-   * en una página sin preguntas visibles es motivo de acción manual de Google.
+   * Antes la empresa iba fija en `index.html`, en castellano y sin dirección;
+   * aquí sale en el idioma de cada página y con su zona de servicio.
    */
-  private setJsonLd(seo: SeoData): void {
+  private setJsonLd(seo: SeoData, url: string, title: string): void {
     const id = 'seo-jsonld';
     const existing = this.doc.getElementById(id);
-    const graph = seo.schema === 'faq' ? faqSchema() : seo.schema === 'offers' ? offerSchema() : null;
+    const home = this.absolute(localizedPath(this.lang, '/'));
 
-    if (!graph) {
-      existing?.remove();
-      return;
+    const graph: object[] = [organization(), website(this.lang.code, home)];
+    if (seo.crumb && !seo.noindex) graph.push(breadcrumbs(home, seo.crumb, url));
+
+    if (seo.schema === 'faq') graph.push(faqSchema(FAQS));
+    if (seo.schema === 'offers') graph.push(offerSchema());
+    if (seo.schema === 'service') {
+      const page = SERVICE_PAGES.find((p) => p.slug === seo.service);
+      if (page) {
+        graph.push(serviceSchema(page.name, seo.description, url, SPAIN));
+        graph.push(faqSchema(page.faqs));
+      }
+    }
+    if (seo.schema === 'local') {
+      graph.push(serviceSchema(seo.crumb ?? title, seo.description, url, ALICANTE));
+      graph.push(faqSchema(LOCAL_FAQS));
     }
 
     const script = existing ?? this.doc.createElement('script');
     script.id = id;
     script.setAttribute('type', 'application/ld+json');
-    script.textContent = JSON.stringify(graph);
+    script.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
     if (!existing) this.doc.head.appendChild(script);
   }
 }
 
+const ORG_ID = `${LEGAL.site}/#organization`;
+
+/** Dónde se trabaja: la ciudad y la provincia, y el resto de España en remoto. */
+const ALICANTE = [
+  { '@type': 'City', name: 'Alicante' },
+  { '@type': 'AdministrativeArea', name: $localize`Provincia de Alicante` },
+];
+const SPAIN = [...ALICANTE, { '@type': 'Country', name: $localize`España` }];
+
 /**
- * Las mismas preguntas que se ven en la portada, en el formato que Google
- * entiende. Salen de `FAQS`, así que no hay una segunda copia que actualizar:
- * el marcado y lo que lee el visitante no se pueden separar.
+ * El estudio. `ProfessionalService` es el tipo de negocio local que corresponde
+ * a un estudio que presta servicios.
+ *
+ * La dirección va sin calle a propósito: es el domicilio fiscal y ahí no se
+ * atiende público (lo dice `LEGAL.address`). Para un negocio que trabaja en una
+ * zona y no recibe en un local, Google pide justo eso: localidad y zona de
+ * servicio, no un portal al que nadie debe ir.
  */
-function faqSchema(): object {
+function organization(): object {
   return {
-    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    '@id': ORG_ID,
+    name: LEGAL.brand,
+    url: `${LEGAL.site}/`,
+    logo: `${LEGAL.site}/brand/logotipo-entero.png`,
+    image: `${LEGAL.site}/brand/og-cover.png`,
+    description: $localize`Estudio de diseño y desarrollo web en Mutxamel (Alicante). Webs a medida, rápidas y con SEO local para negocios de Alicante y de toda España.`,
+    email: LEGAL.email,
+    telephone: PHONES[0].e164,
+    priceRange: '€€',
+    address: {
+      '@type': 'PostalAddress',
+      postalCode: '03110',
+      addressLocality: 'Mutxamel',
+      addressRegion: 'Alicante',
+      addressCountry: 'ES',
+    },
+    areaServed: SPAIN,
+    founder: LEGAL.owners.map((o) => ({ '@type': 'Person', name: o.name })),
+    knowsLanguage: 'es',
+    makesOffer: SERVICE_PAGES.map((p) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name: p.name, url: `${LEGAL.site}/servicios/${p.slug}` },
+    })),
+    contactPoint: PHONES.map((p) => ({
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      telephone: p.e164,
+      email: LEGAL.email,
+      areaServed: 'ES',
+      availableLanguage: 'es',
+    })),
+  };
+}
+
+/** El sitio, en el idioma de la página: así Google lo nombra «MakeWeb». */
+function website(lang: string, home: string): object {
+  return {
+    '@type': 'WebSite',
+    '@id': `${home}#website`,
+    name: LEGAL.brand,
+    url: home,
+    inLanguage: lang,
+    publisher: { '@id': ORG_ID },
+  };
+}
+
+/** Las mismas migas que se ven en la cabecera de la página: Inicio › página. */
+function breadcrumbs(home: string, crumb: string, url: string): object {
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: $localize`Inicio`, item: home },
+      { '@type': 'ListItem', position: 2, name: crumb, item: url },
+    ],
+  };
+}
+
+/** Un servicio concreto, prestado por el estudio, en su zona. */
+function serviceSchema(name: string, description: string, url: string, area: object[]): object {
+  return {
+    '@type': 'Service',
+    name,
+    description,
+    url,
+    serviceType: name,
+    provider: { '@id': ORG_ID },
+    areaServed: area,
+  };
+}
+
+/**
+ * Las mismas preguntas que se ven en la página, en el formato que Google
+ * entiende. Salen de los mismos datos que la plantilla, así que no hay una
+ * segunda copia que actualizar: el marcado y lo que lee el visitante no se
+ * pueden separar.
+ */
+function faqSchema(faqs: readonly Faq[]): object {
+  return {
     '@type': 'FAQPage',
-    mainEntity: FAQS.map((faq) => ({
+    mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.q,
       acceptedAnswer: { '@type': 'Answer', text: faq.a },
@@ -154,7 +300,6 @@ function faqSchema(): object {
  */
 function offerSchema(): object {
   return {
-    '@context': 'https://schema.org',
     '@type': 'ItemList',
     itemListElement: PLANS.map((plan, index) => ({
       '@type': 'ListItem',
@@ -164,8 +309,8 @@ function offerSchema(): object {
         name: `${LEGAL.brand} ${plan.name}`,
         serviceType: plan.kind,
         description: plan.pitch,
-        provider: { '@type': 'Organization', name: LEGAL.brand, url: LEGAL.site },
-        areaServed: { '@type': 'Country', name: 'España' },
+        provider: { '@id': ORG_ID },
+        areaServed: SPAIN,
         offers: {
           '@type': 'AggregateOffer',
           priceCurrency: 'EUR',

@@ -39,7 +39,11 @@
             },
             "server": "src/main.server.ts",
             "outputMode": "static",
-            "baseHref": "/"
+            "baseHref": "/",
+            "polyfills": [
+              "@angular/localize/init"
+            ],
+            "localize": true
           },
           "configurations": {
             "production": {
@@ -78,7 +82,12 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
+          "builder": "@angular/build:extract-i18n",
+          "options": {
+            "buildTarget": "makeweb:build",
+            "format": "xlf2",
+            "outputPath": "src/locale"
+          }
         },
         "test": {
           "builder": "@angular/build:karma",
@@ -98,7 +107,26 @@
               "includePaths": [
                 "src/styles"
               ]
-            }
+            },
+            "polyfills": [
+              "@angular/localize/init"
+            ]
+          }
+        }
+      },
+      "i18n": {
+        "sourceLocale": {
+          "code": "es",
+          "subPath": ""
+        },
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf",
+            "subPath": "en"
+          },
+          "fr": {
+            "translation": "src/locale/messages.fr.xlf",
+            "subPath": "fr"
           }
         }
       }

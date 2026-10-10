@@ -1,0 +1,75 @@
+<section class="prj sec sec--flush" id="proyectos">
+  <div class="shell">
+    <div class="sec-head sec-head--split">
+      <h2 class="sec-title" i18n>
+        Webs hechas para <em>negocios de verdad.</em>
+      </h2>
+      @if (projects.length) {
+        <p class="sec-lead" i18n>
+          Cada una a medida, para un negocio concreto y su forma de trabajar. Ábrela y compruébalo
+          desde tu móvil.
+        </p>
+      } @else {
+        <p class="sec-lead" i18n>
+          Estamos preparando los casos de nuestros clientes, con su permiso y con sus números. Muy
+          pronto, aquí.
+        </p>
+      }
+      @if (showLink()) {
+        <a class="prj__all" routerLink="/proyectos" i18n>
+          Ver todos los proyectos <span aria-hidden="true">→</span>
+        </a>
+      }
+    </div>
+  </div>
+
+  <ul class="prj__track">
+    @for (project of projects; track project.name) {
+      <li class="prj__card">
+        <a
+          class="prj__link"
+          [href]="project.url ?? null"
+          [attr.target]="project.url ? '_blank' : null"
+          rel="noopener"
+        >
+          <span class="prj__frame">
+            <img
+              class="prj__shot"
+              [src]="project.image"
+              alt="Web de {{ project.name }}"
+              i18n-alt
+              width="1200"
+              height="750"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
+          <span class="prj__name">{{ project.name }}</span>
+          <span class="prj__meta">
+            {{ project.sector }}@if (project.place) {
+              · {{ project.place }}
+            }
+          </span>
+        </a>
+      </li>
+    } @empty {
+      <!-- Fichas de espera. Se ven como lo que son: un hueco reservado, no
+           un trabajo. Desaparecen solas en cuanto PROJECTS tenga algo. -->
+      @for (slot of placeholders; track slot) {
+        <li class="prj__card prj__card--pending">
+          <span class="prj__frame" aria-hidden="true">
+            <span class="prj__chrome"><i></i><i></i><i></i></span>
+            <span class="prj__skeleton">
+              <span class="prj__bar prj__bar--title"></span>
+              <span class="prj__bar"></span>
+              <span class="prj__bar prj__bar--short"></span>
+              <span class="prj__block"></span>
+            </span>
+          </span>
+          <span class="prj__name" i18n>Caso en preparación</span>
+          <span class="prj__meta">{{ slot }}</span>
+        </li>
+      }
+    }
+  </ul>
+</section>

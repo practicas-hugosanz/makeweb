@@ -58,9 +58,13 @@
   @include display(var(--step-4));
 }
 
+// La palabra dicha en otro tono: Fraunces en cursiva, del mismo color que el
+// resto del titular. El énfasis lo pone el cambio de voz, no un color.
 .sec-title em {
-  font-style: normal;
-  color: var(--violet-lift);
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 .sec-lead {
@@ -87,4 +91,56 @@
 .sec-head__stack {
   display: grid;
   gap: clamp(1.1rem, 2vw, 1.75rem);
+}
+
+// ---------------------------------------------------------------------------
+// Secciones en papel. Redefine los tokens de superficie y texto dentro de la
+// sección, así que todo lo que cuelga de ella —titulares, filetes, botones—
+// se invierte solo sin una regla más. `--ink` pasa a ser el crema para que el
+// botón principal (fondo `--text`, letra `--ink`) quede tinta sobre crema.
+// ---------------------------------------------------------------------------
+.theme-paper {
+  --ink: var(--paper);
+  --ink-800: var(--paper-2);
+  --ink-700: var(--paper-2);
+  --ink-600: #e2dbcf;
+  --text: var(--paper-ink);
+  --text-soft: var(--paper-soft);
+  // Más oscuro que el gris de tinta: tiene que llegar a 4.5:1 también sobre
+  // las tarjetas (`--ink-700`), que son más oscuras que el crema de fondo.
+  --text-mute: #615b68;
+  --line: var(--paper-line);
+  --line-strong: rgb(22 20 27 / 22%);
+  --veil-03: rgb(22 20 27 / 3%);
+  --veil-04: rgb(22 20 27 / 4%);
+  --veil-05: rgb(22 20 27 / 5%);
+  --accent: #4b3fc4;
+  --accent-ink: #4b3fc4;
+  --accent-08: rgb(75 63 196 / 7%);
+  --accent-14: rgb(75 63 196 / 13%);
+  --accent-40: rgb(75 63 196 / 40%);
+  --violet-lift: #4b3fc4;
+
+  background: var(--paper);
+  color: var(--text);
+
+  ::selection {
+    background: var(--paper-ink);
+    color: var(--paper);
+  }
+}
+
+// Las secciones en papel van enmarcadas igual que el hero: una tarjeta con las
+// esquinas redondeadas y un hilo de tinta alrededor, no una franja a sangre.
+.sec--card {
+  margin-inline: clamp(0.5rem, 1.2vw, 1rem);
+  border-radius: var(--radius-xl);
+
+  @include below(600) {
+    border-radius: var(--radius-l);
+  }
+
+  &::before {
+    display: none;
+  }
 }

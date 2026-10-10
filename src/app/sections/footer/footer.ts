@@ -5,6 +5,7 @@ import { simpleWhatsapp } from '@ng-icons/simple-icons';
 import { Store } from '@ngrx/store';
 import { MotionService } from '../../core/animation/motion.service';
 import { LEGAL_PAGES, PHONES } from '../../data/legal';
+import { SERVICE_PAGES } from '../../data/services';
 import { ConsentActions } from '../../state/consent/consent.actions';
 import { UiActions } from '../../state/ui/ui.actions';
 import { selectWhatsappOpen } from '../../state/ui/ui.feature';
@@ -25,6 +26,7 @@ export class Footer {
 
   protected readonly legalPages = LEGAL_PAGES;
   protected readonly phones = PHONES;
+  protected readonly servicePages = SERVICE_PAGES;
   private readonly whatsappAnchor = this.store.selectSignal(selectWhatsappOpen);
 
   /** Solo cuando se abrió desde aquí: en la esquina lo enseña el botón flotante. */
@@ -39,15 +41,6 @@ export class Footer {
       return;
     }
     this.motion.scrollTo('#inicio');
-  }
-
-  protected go(event: Event, id: string): void {
-    event.preventDefault();
-    if (!this.onHome()) {
-      this.router.navigate(['/'], { fragment: id });
-      return;
-    }
-    this.motion.scrollTo(`#${id}`);
   }
 
   protected openWhatsapp(): void {

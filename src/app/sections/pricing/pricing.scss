@@ -82,13 +82,11 @@
 }
 
 .prz__plan.is-best {
-  border-color: var(--violet-40);
-  background:
-    radial-gradient(120% 80% at 50% 0%, var(--violet-14), transparent 60%),
-    linear-gradient(180deg, var(--veil-05), transparent 42%),
-    var(--ink-700);
-  // La tarjeta recomendada destaca por superficie más clara y borde violeta,
-  // no por un halo de color a su alrededor.
+  border-color: var(--accent);
+  background: var(--ink-700);
+  // La tarjeta recomendada destaca por el borde violeta y la etiqueta, no por
+  // un halo de color. Más clara no puede ir: el gris de las letras pequeñas
+  // bajaba a 4,2:1 sobre `--ink-600`.
   box-shadow: var(--shadow-card);
 
   // Rompe la línea de arriba: es la única que no baja, y lleva más aire dentro.
@@ -105,7 +103,7 @@
   translate: -50% -50%;
   padding: 0.32rem 0.9rem;
   border-radius: 999px;
-  background: var(--violet);
+  background: var(--accent);
   font-family: var(--font-label);
   font-size: 0.58rem;
   font-weight: 700;
@@ -126,7 +124,7 @@
   @include label;
 
   margin-top: -0.4rem;
-  color: var(--violet-lift);
+  color: var(--accent-ink);
 }
 
 .prz__pitch {
@@ -206,7 +204,7 @@
       width: 0.5rem;
       height: 0.5rem;
       border-radius: 50%;
-      border: 1px solid var(--violet);
+      border: 1px solid var(--accent);
     }
   }
 }
@@ -230,7 +228,7 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, var(--line-strong), transparent);
+    background: var(--line-strong);
   }
 
   @include below(960) {

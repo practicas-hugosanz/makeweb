@@ -27,7 +27,7 @@
     content: '';
     width: 1.9em;
     height: 1px;
-    background: var(--violet);
+    background: var(--accent);
   }
 }
 
@@ -70,7 +70,7 @@
   }
 
   &.is-current {
-    background: var(--violet);
+    background: var(--accent);
     border-color: transparent;
     color: var(--text);
   }

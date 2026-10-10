@@ -20,8 +20,11 @@ html {
         theme-type: dark,
       ),
       typography: (
-        plain-family: 'Mollen',
-        brand-family: 'Mollen',
+        // El texto corrido de Material (respuestas, etiquetas, menús) va en la
+        // de lectura: Bricolage está en un solo peso, 700, y con ella todo
+        // salía en negrita. Los títulos de Material sí llevan la de titulares.
+        plain-family: 'Instrument Sans',
+        brand-family: 'Bricolage Grotesque',
         bold-weight: 700,
         medium-weight: 400,
         regular-weight: 400,
@@ -128,6 +131,17 @@ h4 {
   text-wrap: balance;
 }
 
+// La palabra dicha en otro tono dentro de cualquier titular: Fraunces en
+// cursiva. Sin esta regla, un <em> en un titular salía en una cursiva falsa de
+// Bricolage, que no tiene cursiva.
+h1 em,
+h2 em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
 p {
   text-wrap: pretty;
 }
@@ -155,11 +169,6 @@ p {
   position: fixed;
   inset: 0;
   overflow: hidden;
-}
-
-// Elements animated on load start hidden, but only while JS is booting.
-.js-loading [data-anim] {
-  visibility: hidden;
 }
 
 // ---------------------------------------------------------------------------
@@ -248,9 +257,5 @@ p {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
-  }
-
-  .js-loading [data-anim] {
-    visibility: visible;
   }
 }

@@ -14,57 +14,17 @@
   padding: 1.05em 1.9em;
   border: 1px solid transparent;
   border-radius: 999px;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: var(--step-0);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
-  isolation: isolate;
-  overflow: hidden;
   transition:
     color var(--dur-fast) var(--ease-out),
     border-color var(--dur-fast) var(--ease-out),
     background-color var(--dur-fast) var(--ease-out);
-
-  // El relleno de la píldora. En reposo espera fuera, apoyado en un borde, y al
-  // pasar el puntero cruza hasta cubrirla entera.
-  //
-  // Por qué borde entra lo decide `SweepDirective`: escribe `--wipe-x` y
-  // `--wipe-y` con el lado por el que ha cruzado el cursor, y al salir con el
-  // lado por el que se va. Sin directiva —o antes de que arranque el JS— los
-  // valores de reserva dejan el barrido subiendo desde abajo, que es como se
-  // comportaba antes: el botón nunca depende del script para verse bien.
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: var(--z-below);
-    background: var(--violet-lift);
-    translate: var(--wipe-x, 0) var(--wipe-y, 101%);
-    border-radius: inherit;
-    transition: translate var(--wipe-dur, 0.55s) var(--ease-out);
-  }
-
-  // Respaldo para antes de que hidrate la página, y para quien navegue sin JS.
-  // La directiva marca el botón con `data-sweep` en cuanto arranca, y a partir
-  // de ahí esta regla deja de aplicar y manda ella. Mientras tanto, el barrido
-  // sube desde abajo igual que siempre.
-  //
-  // No puede ser un `:hover` a secas: al ser una declaración directa ganaría
-  // siempre a las variables, el relleno estaría en el centro desde el primer
-  // fotograma y el borde de entrada no se vería nunca.
-  &:not([data-sweep]):hover::before {
-    translate: 0 0;
-  }
-
-  // Con el teclado no hay borde de entrada que valga: el relleno simplemente
-  // está. Directa, y no a través de las variables, para ganarle a lo que la
-  // directiva haya dejado escrito en el elemento.
-  &:focus-visible::before {
-    translate: 0 0;
-  }
 
   &[disabled] {
     opacity: 0.45;
@@ -76,42 +36,103 @@
     align-items: center;
     gap: 0.6em;
   }
+}
 
-  .btn__arrow {
-    width: 0.85em;
-    height: 0.85em;
-    transition: translate var(--dur-fast) var(--ease-out);
+// ---------------------------------------------------------------------------
+// La firma de los botones de la marca: el círculo violeta con la flecha.
+//
+// Los botones que llevan a algún sitio —pedir presupuesto, enviar, ver un
+// plan— acaban en un círculo violeta con una flecha crema que apunta en
+// diagonal, como saliendo. Al pasar por encima, sin barridos ni rellenos: la
+// flecha gira hasta apuntar al frente. Ya vas.
+//
+// Va en pseudoelementos y no en el marcado, para no repetir el SVG en cada
+// plantilla: `::after` es el círculo, quieto, y `::before` la flecha, encima,
+// que es lo único que gira. Antes giraba el círculo entero con la flecha
+// pintada dentro, y al terminar el giro el navegador lo volvía a pintar en su
+// sitio con medio píxel de diferencia: el círculo daba un salto.
+// ---------------------------------------------------------------------------
+$arrow-cream: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6h8M6.5 2.5 10 6 6.5 9.5' fill='none' stroke='%23f4efe7' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+.btn--go {
+  --go-inset: 0.4em;
+
+  gap: 1em;
+  padding: var(--go-inset) var(--go-inset) var(--go-inset) 1.7em;
+
+  &::after {
+    content: '';
+    flex: none;
+    // Siempre al final del botón, que es donde va la flecha. En los botones
+    // estirados a todo el ancho (los de los planes de precios) el círculo se
+    // quedaba junto al texto, en medio, y la flecha en la esquina, suelta.
+    margin-left: auto;
+    width: 2.35em;
+    height: 2.35em;
+    border-radius: 50%;
+    background: var(--accent);
   }
 
-  &:hover .btn__arrow {
-    translate: 0.25em -0.25em;
+  // Encima del círculo, del mismo tamaño y en la misma esquina.
+  &::before {
+    content: '';
+    position: absolute;
+    // Centrada en alto como el círculo, aunque el botón tenga un alto mínimo
+    // mayor que el círculo y su relleno.
+    inset-block: 0;
+    right: var(--go-inset);
+    width: 2.35em;
+    height: 2.35em;
+    margin-block: auto;
+    background: $arrow-cream center / 42% no-repeat;
+    rotate: -45deg;
+    transition: rotate 0.35s var(--ease-out);
+    // Siempre en su propia capa. Si no, el navegador la sube a una capa solo
+    // mientras gira y al terminar la vuelve a pintar ajustada al píxel: en los
+    // botones que caen en medio píxel, la flecha daba un saltito al acabar.
+    will-change: transform;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &:hover::before,
+  &:focus-visible::before {
+    rotate: 0deg;
+  }
+
+  &.btn--lg {
+    --go-inset: 0.45em;
+
+    // Entero, no solo el izquierdo: `.btn--lg` va después y pisaría el resto.
+    padding: var(--go-inset) var(--go-inset) var(--go-inset) 2.2em;
   }
 }
 
+// Crema sobre tinta, como papel impreso. Al pasar por encima solo baja un
+// punto de tono; el gesto lo hace la flecha.
 .btn--primary {
-  background: var(--violet);
-  color: var(--text);
+  background: var(--text);
+  color: var(--ink);
   box-shadow: var(--shadow-lift);
 
+  // Mezcla y no un color fijo: en las secciones de papel el botón es tinta
+  // sobre crema, y un crema fijo lo dejaría sin contraste.
   &:hover,
   &:focus-visible {
-    color: var(--ink);
+    background: color-mix(in srgb, var(--text) 86%, var(--ink));
   }
 }
 
+// El secundario: solo el contorno. Al pasar por encima, el borde se pone
+// violeta.
 .btn--ghost {
   background: transparent;
   border-color: var(--line-strong);
   color: var(--text);
 
-  &::before {
-    background: var(--text);
-  }
-
   &:hover,
   &:focus-visible {
-    color: var(--ink);
-    border-color: var(--text);
+    border-color: var(--accent);
   }
 }
 
@@ -124,10 +145,6 @@
   color: var(--text-soft);
   font-weight: 400;
   overflow: visible;
-
-  &::before {
-    display: none;
-  }
 
   &::after {
     content: '';

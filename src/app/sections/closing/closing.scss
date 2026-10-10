@@ -1,0 +1,52 @@
+@use 'mixins' as *;
+
+.cls {
+  padding: var(--section-y) clamp(0.5rem, 1.2vw, 1rem) 0;
+}
+
+// La misma tarjeta que el hero: la página abre y cierra igual.
+.cls__stage {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: clamp(22rem, 60vh, 38rem);
+  border-radius: var(--radius-xl);
+  overflow: clip;
+  background: var(--ink-800);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 6px;
+    background: var(--violet);
+  }
+
+  @include below(600) {
+    border-radius: var(--radius-l);
+  }
+}
+
+.cls__copy {
+  display: grid;
+  justify-items: start;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(2.5rem, 6vw, 5.5rem) clamp(1.25rem, 5vw, 5rem);
+}
+
+.cls__title {
+  @include display(clamp(2.75rem, 1.4rem + 5.6vw, 7rem));
+
+  max-width: 12ch;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+
+  em {
+    display: block;
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: var(--violet-lift);
+  }
+}

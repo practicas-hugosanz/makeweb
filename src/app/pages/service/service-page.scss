@@ -1,0 +1,216 @@
+@use 'mixins' as *;
+
+// --- datos ------------------------------------------------------------------
+.sp-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  padding-top: clamp(4rem, 9vw, 7rem);
+
+  @include below(800) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.sp-stat {
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-strong);
+}
+
+.sp-stat__value {
+  width: fit-content;
+  padding-right: 0.06em;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 1.6rem + 2.6vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: var(--violet-lift);
+}
+
+.sp-stat__title {
+  font-size: var(--step-1);
+  letter-spacing: -0.02em;
+}
+
+.sp-stat__body {
+  max-width: 34ch;
+  color: var(--text-soft);
+}
+
+// --- lo que incluye ---------------------------------------------------------
+.sp-offers__list {
+  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line-strong);
+}
+
+.sp-offer {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: baseline;
+  gap: clamp(1rem, 3vw, 3rem);
+  padding-block: clamp(1.4rem, 2.6vw, 2rem);
+  border-bottom: 1px solid var(--line-strong);
+
+  @include below(800) {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+
+    .sp-offer__body {
+      grid-column: 2;
+    }
+  }
+}
+
+.sp-offer__num {
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  color: var(--accent-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.sp-offer__title {
+  font-size: clamp(1.6rem, 1.1rem + 1.6vw, 2.6rem);
+  letter-spacing: -0.035em;
+}
+
+.sp-offer__body {
+  max-width: 48ch;
+  color: var(--text-soft);
+}
+
+.sp-offer__fee {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--accent-40);
+  border-radius: 999px;
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+// --- proceso ----------------------------------------------------------------
+.sp-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+  padding: 0;
+  list-style: none;
+
+  @include below(1000) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include below(560) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+// Cuatro tarjetas con el canto de arriba en el violeta de la marca.
+.sp-step {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.7rem;
+  padding: 1.6rem 1.5rem 1.8rem;
+  border-radius: var(--radius-m);
+  background: var(--ink-700);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    background: var(--violet);
+  }
+}
+
+.sp-step__when {
+  @include label;
+
+  font-size: 0.68rem;
+  color: var(--accent-ink);
+}
+
+.sp-step__title {
+  font-size: var(--step-2);
+  letter-spacing: -0.03em;
+}
+
+.sp-step__body {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+// --- preguntas ----------------------------------------------------------------
+.sp-faq__list {
+  max-width: 62rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--line);
+}
+
+.sp-q {
+  border-bottom: 1px solid var(--line);
+
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: 4.5rem;
+    padding-block: 1.1rem;
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  p {
+    max-width: 62ch;
+    padding-bottom: 1.6rem;
+    color: var(--text-soft);
+  }
+}
+
+// El signo: una cruz que se vuelve guion al abrir.
+.sp-q__sign {
+  position: relative;
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 50% 0 auto;
+    height: 2px;
+    margin-top: -1px;
+    background: var(--accent-ink);
+    transition: rotate var(--dur) var(--ease-out);
+  }
+
+  &::after {
+    rotate: 90deg;
+  }
+
+  .sp-q[open] &::after {
+    rotate: 0deg;
+  }
+}

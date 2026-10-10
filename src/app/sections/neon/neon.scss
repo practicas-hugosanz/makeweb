@@ -1,0 +1,152 @@
+// Fijo y fuera del contenido suavizado: se mueve con `transform` desde el
+// script, coordenadas de pantalla.
+.neon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-float);
+  cursor: pointer;
+  will-change: transform;
+  transition: opacity 0.4s var(--ease-out);
+
+  &.is-away {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+// El tubo encendido, con un halo corto alrededor.
+.neon__glyph {
+  display: block;
+  fill: var(--violet-lift);
+  overflow: visible;
+  // Más contenido que al principio: con tres halos fuertes deslumbraba encima
+  // del texto. Queda un filo claro y un halo corto.
+  filter:
+    drop-shadow(0 0 1px rgb(255 255 255 / 35%))
+    drop-shadow(0 0 6px rgb(114 98 235 / 45%));
+  animation: neon-flicker 9s steps(1) infinite;
+  transition: scale 0.35s var(--ease-out);
+
+  .neon.is-hover & {
+    scale: 1.12;
+    animation: none;
+  }
+}
+
+// El parpadeo de un tubo viejo: casi siempre encendido, y de vez en cuando dos
+// cortes rápidos. Con `steps` para que sea un corte y no un fundido.
+@keyframes neon-flicker {
+  0%,
+  71%,
+  73.5%,
+  75%,
+  100% {
+    opacity: 1;
+  }
+
+  72% {
+    opacity: 0.35;
+  }
+
+  74% {
+    opacity: 0.55;
+  }
+}
+
+.neon__bubble {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-float);
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.7rem 0.95rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-m);
+  background: rgb(14 13 17 / 88%);
+  backdrop-filter: blur(12px);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--text);
+  box-shadow: var(--shadow-panel);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease-out);
+
+  span {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--text-soft);
+  }
+
+  &.is-visible {
+    opacity: 1;
+  }
+}
+
+// --- móvil ----------------------------------------------------------------------
+// La M mide 28 px, pero el dedo necesita 44: el área que se puede tocar crece
+// por fuera sin que cambie nada de lo que se ve.
+.neon--compact {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    translate: -50% -50%;
+    z-index: -1;
+    border-radius: 50%;
+    // Esperando en la esquina va sobre el texto de la página: lleva detrás el
+    // mismo círculo oscuro que la versión quieta. Posada, desaparece.
+    background: rgb(14 13 17 / 72%);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-out);
+  }
+
+  &.is-resting::before {
+    opacity: 1;
+  }
+
+  .neon__glyph {
+    filter:
+      drop-shadow(0 0 1px rgb(255 255 255 / 35%))
+      drop-shadow(0 0 4px rgb(114 98 235 / 50%));
+  }
+}
+
+// --- la versión quieta ---------------------------------------------------------
+// Pidiendo menos movimiento. Pequeña, en la esquina contraria a WhatsApp y a su
+// misma altura, encima de la barra de pestañas. El botón mide 44 px para el
+// dedo aunque la M mida 28.
+.neon--dock {
+  inset: auto auto calc(5.65rem + env(safe-area-inset-bottom)) 0.85rem;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(14 13 17 / 70%);
+  backdrop-filter: blur(10px);
+  will-change: auto;
+
+  .neon__glyph {
+    filter: drop-shadow(0 0 4px rgb(114 98 235 / 50%));
+  }
+
+  // En escritorio sin barra de pestañas (pantalla ancha pero táctil), abajo.
+  @media (min-width: 1081px) {
+    bottom: 1.25rem;
+    left: auto;
+    right: 6rem;
+  }
+}

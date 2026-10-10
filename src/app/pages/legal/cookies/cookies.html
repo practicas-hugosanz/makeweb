@@ -1,44 +1,44 @@
-<mw-legal-layout title="Política de cookies">
-  <p>
+<mw-legal-layout title="Política de cookies" i18n-title>
+  <p i18n>
     Una cookie es un archivo pequeño que una web guarda en tu navegador para recordar algo entre
     una visita y la siguiente. Aquí tienes exactamente cuáles usa {{ legal.domain }}, para qué, y
     cómo cambiar tu decisión en cualquier momento.
   </p>
 
-  <h2 id="tu-eleccion">Tu elección</h2>
+  <h2 id="tu-eleccion" i18n>Tu elección</h2>
   <p>{{ current() }}</p>
   <p>
-    <button class="btn btn--primary" type="button" (click)="reopen()">
+    <button class="btn btn--primary" type="button" (click)="reopen()" i18n>
       <span class="btn__label">Cambiar mis preferencias</span>
     </button>
   </p>
 
-  <h2 id="tipos">Qué tipos usamos</h2>
+  <h2 id="tipos" i18n>Qué tipos usamos</h2>
   @for (category of categories; track category.id) {
     <h3>{{ category.name }}</h3>
     <p>{{ category.summary }}</p>
     @if (category.required) {
-      <p>
+      <p i18n>
         Se instalan sin pedirte permiso porque son estrictamente necesarias para prestarte el
         servicio, según el artículo 22.2 de la LSSI-CE.
       </p>
     } @else {
-      <p>Solo se instalan si las activas, y puedes desactivarlas cuando quieras.</p>
+      <p i18n>Solo se instalan si las activas, y puedes desactivarlas cuando quieras.</p>
     }
   }
 
-  <h2 id="inventario">Cookies que hay ahora mismo</h2>
+  <h2 id="inventario" i18n>Cookies que hay ahora mismo</h2>
   <div class="prose__table">
     <table>
-      <caption class="visually-hidden">
+      <caption class="visually-hidden" i18n>
         Cookies utilizadas en {{ legal.domain }}
       </caption>
       <thead>
         <tr>
-          <th scope="col">Nombre</th>
-          <th scope="col">Titular</th>
-          <th scope="col">Finalidad</th>
-          <th scope="col">Duración</th>
+          <th scope="col" i18n>Nombre</th>
+          <th scope="col" i18n>Titular</th>
+          <th scope="col" i18n>Finalidad</th>
+          <th scope="col" i18n>Duración</th>
         </tr>
       </thead>
       <tbody>
@@ -54,30 +54,30 @@
     </table>
   </div>
 
-  <div class="prose__note">
-    <strong>Este inventario tiene que reflejar la realidad.</strong> Hoy la web solo guarda tu
-    decisión sobre el banner, y por eso la tabla tiene una sola fila. En cuanto conectes analítica,
-    un píxel publicitario o vídeos incrustados, añade una fila por cookie en
-    <code>COOKIE_INVENTORY</code> (<code>src/app/data/legal.ts</code>) con su nombre, titular,
-    finalidad y plazo reales, y sube <code>CONSENT_VERSION</code> para volver a preguntar.
-  </div>
+  <!-- Nota para quien mantenga la web, no para el visitante: este inventario
+       tiene que reflejar la realidad. Hoy la web solo guarda la decisión sobre
+       el banner, y por eso la tabla tiene una sola fila. En cuanto se conecte
+       analítica, un píxel publicitario o vídeos incrustados, hay que añadir una
+       fila por cookie en COOKIE_INVENTORY (src/app/data/legal.ts) con su
+       nombre, titular, finalidad y plazo reales, y subir CONSENT_VERSION para
+       volver a preguntar. -->
 
-  <h2 id="terceros">Cookies de terceros</h2>
-  <p>
+  <h2 id="terceros" i18n>Cookies de terceros</h2>
+  <p i18n>
     Las cookies analíticas y publicitarias, cuando estén activas, las instalan proveedores
     externos, que actúan como responsables o encargados según el caso. Sus condiciones y sus plazos
     los fija cada proveedor: los tienes identificados en la tabla anterior y en el apartado 5 de la
     <a href="/privacidad">política de privacidad</a>.
   </p>
 
-  <h2 id="gestionar">Cómo gestionarlas desde tu navegador</h2>
-  <p>
+  <h2 id="gestionar" i18n>Cómo gestionarlas desde tu navegador</h2>
+  <p i18n>
     Además del panel de esta web, puedes borrar o bloquear cookies desde la configuración de tu
     navegador. Ten en cuenta que bloquear las técnicas puede impedir que algunas partes de la web
     funcionen.
   </p>
   <ul>
-    <li>
+    <li i18n>
       <a
         href="https://support.google.com/chrome/answer/95647"
         rel="noopener noreferrer"
@@ -85,7 +85,7 @@
         >Google Chrome</a
       >
     </li>
-    <li>
+    <li i18n>
       <a
         href="https://support.mozilla.org/es/kb/Borrar%20cookies"
         rel="noopener noreferrer"
@@ -93,12 +93,12 @@
         >Mozilla Firefox</a
       >
     </li>
-    <li>
+    <li i18n>
       <a href="https://support.apple.com/es-es/HT201265" rel="noopener noreferrer" target="_blank"
         >Safari</a
       >
     </li>
-    <li>
+    <li i18n>
       <a
         href="https://support.microsoft.com/es-es/microsoft-edge"
         rel="noopener noreferrer"
@@ -108,15 +108,15 @@
     </li>
   </ul>
 
-  <h2 id="retirar">Retirar el consentimiento</h2>
-  <p>
+  <h2 id="retirar" i18n>Retirar el consentimiento</h2>
+  <p i18n>
     Retirarlo es tan fácil como darlo: pulsa «Cambiar mis preferencias» al principio de esta página
     o el enlace «Cookies» del pie. El cambio surte efecto de inmediato y no afecta a la licitud de
     lo tratado antes de retirarlo.
   </p>
 
-  <h2 id="cambios">Cambios en esta política</h2>
-  <p>
+  <h2 id="cambios" i18n>Cambios en esta política</h2>
+  <p i18n>
     Actualizaremos esta página siempre que cambien las cookies que usamos. Si el cambio afecta a
     cookies que requieren consentimiento, te volveremos a preguntar.
   </p>

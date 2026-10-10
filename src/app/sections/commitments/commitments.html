@@ -1,30 +1,41 @@
-<section class="cmt sec sec--open" id="compromisos" #root>
+<section class="cmt sec sec--open sec--card theme-paper" id="compromisos">
   <div class="shell">
-    <!-- Una sola entrada para toda la cabecera: el titular y la entradilla
-         llegaban antes con dos animaciones distintas, y eso es lo que hace que
-         una página no se asiente nunca. -->
-    <div class="sec-head sec-head--split" mwReveal="rise" [revealStagger]="0.12">
-      <div class="sec-head__stack">
-        <h2 class="sec-title" data-reveal-item>Lo que <em>firmamos</em>.</h2>
-      </div>
-      <p class="sec-lead" data-reveal-item>
-        Todavía no tenemos una pared de reseñas, y no vamos a inventárnoslas. Lo que sí podemos
-        darte por escrito es esto.
+    <div class="sec-head sec-head--split">
+      <h2 class="sec-title" i18n>Lo que <em>firmamos.</em></h2>
+      <p class="sec-lead" i18n>
+        Lo que va por escrito en cada presupuesto, antes de empezar. Si no lo cumplimos, se nota
+        en la factura, no en una excusa.
       </p>
     </div>
 
-    <div class="cmt__grid" data-list>
-      <span class="cmt__rule" data-rule aria-hidden="true"></span>
+    <!-- Seis compromisos, cada uno con su icono en línea violeta. Son
+         promesas concretas, así que van como fichas que se pueden señalar y
+         no como un párrafo. -->
+    <ol class="cmt__list">
+      @for (item of commitments; track item.title; let i = $index) {
+        <li class="cmt__item">
+          <div class="cmt__top">
+            <span class="cmt__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path [attr.d]="icons[item.icon]" />
+              </svg>
+            </span>
+            <span class="cmt__index" aria-hidden="true">{{ pad(i + 1) }}</span>
+          </div>
+          <h3 class="cmt__title">{{ item.title }}</h3>
+          <p class="cmt__body">{{ item.body }}</p>
+        </li>
+      }
+    </ol>
 
-      <ol class="cmt__list">
-        @for (item of commitments; track item.title; let i = $index) {
-          <li class="cmt__item" data-item data-anim>
-            <span class="cmt__index" aria-hidden="true">{{ i + 1 }}</span>
-            <h3 class="cmt__title">{{ item.title }}</h3>
-            <p class="cmt__body">{{ item.body }}</p>
-          </li>
-        }
-      </ol>
+    <!-- El cierre de la sección: todo lo de arriba, por escrito. -->
+    <div class="cmt__seal">
+      <p class="cmt__seal-text" i18n>
+        Todo esto va <em>por escrito</em> en tu presupuesto, con su fecha y su firma.
+      </p>
+      <a class="btn btn--primary btn--go" routerLink="/contacto">
+        <span class="btn__label" i18n>Pide presupuesto</span>
+      </a>
     </div>
   </div>
 </section>

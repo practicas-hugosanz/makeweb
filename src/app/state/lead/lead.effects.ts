@@ -18,7 +18,7 @@ export const submitLead = createEffect(
           catchError((error: Error) =>
             of(
               LeadActions.submitFailed({
-                message: error.message || 'No hemos podido enviar el mensaje. Inténtalo otra vez.',
+                message: error.message || $localize`No hemos podido enviar el mensaje. Inténtalo otra vez.`,
               }),
             ),
           ),

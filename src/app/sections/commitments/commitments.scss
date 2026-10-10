@@ -1,69 +1,17 @@
 @use 'mixins' as *;
 
-.cmt__grid {
-  // El sangrado que llevan por dentro todas las fichas. Sacando la rejilla esa
-  // misma medida hacia fuera, el texto de la primera columna vuelve a caer
-  // sobre el margen de la página.
-  --cmt-pad: clamp(1.1rem, 2.2vw, 2.25rem);
-
-  margin-top: clamp(3rem, 6vw, 4.5rem);
-  margin-inline: calc(var(--cmt-pad) * -1);
-
-  // En una sola columna la rejilla no se desplaza hacia fuera, pero las fichas
-  // conservan sangrado: pegadas al filete de arriba y abajo el texto se leía
-  // apretado contra el borde.
-  @include below(600) {
-    --cmt-pad: 1rem;
-
-    margin-inline: 0;
-  }
-}
-
-// La línea de arriba es un elemento y no un `border-top`: así se puede dibujar
-// de izquierda a derecha al entrar la sección.
-.cmt__rule {
-  display: block;
-  height: 1px;
-  background: var(--line);
-  transform-origin: left;
-}
-
-// Seis fichas iguales en 3×2 es la retícula de tres columnas que llevan miles
-// de webs: ordenada y muda. Sobre seis carriles, las dos primeras ocupan tres
-// cada una, las tres del medio dos, y la última ocupa la fila entera. Se leen
-// en el mismo orden, pero la página deja de ser una tabla.
+// Seis fichas sobre el papel, en 3 × 2. Cada una lleva su icono en un círculo
+// violeta y el número a la derecha, como un punto de contrato.
 .cmt__list {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 0;
-  margin: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: clamp(3rem, 6vw, 4.5rem) 0 0;
   padding: 0;
   list-style: none;
 
-  > :nth-child(1),
-  > :nth-child(2) {
-    grid-column: span 3;
-  }
-
-  > :nth-child(3),
-  > :nth-child(4),
-  > :nth-child(5) {
-    grid-column: span 2;
-  }
-
-  // La sexta cierra: fila completa. Desplazada a la derecha dejaba un hueco
-  // vacío a su izquierda que parecía un fallo de maquetación en vez de una
-  // decisión, y colgaba la sección hacia un lado.
-  > :nth-child(6) {
-    grid-column: 1 / -1;
-  }
-
-  @include below(900) {
+  @include below(960) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    > :nth-child(n) {
-      grid-column: auto;
-    }
   }
 
   @include below(600) {
@@ -72,105 +20,105 @@
 }
 
 .cmt__item {
-  position: relative;
   display: grid;
   align-content: start;
-  gap: 0.6rem;
-  padding: clamp(1.75rem, 3vw, 2.5rem) var(--cmt-pad);
-  border-bottom: 1px solid var(--line);
-  border-right: 1px solid var(--line);
-  transition: background-color var(--dur) var(--ease-out);
+  gap: 0.8rem;
+  padding: clamp(1.4rem, 2.4vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  background: var(--paper-2);
+  transition: border-color var(--dur-fast) var(--ease-out);
 
   &:hover {
-    background: var(--veil-02);
-  }
-
-  // Todas llevan el mismo sangrado y la rejilla se compensa hacia fuera esa
-  // misma medida, así que el texto de la columna izquierda sigue cayendo sobre
-  // el margen de la página sin que ninguna ficha quede pegada al borde.
-  //
-  // Sin filete a la derecha en las que cierran fila: la 2 (fin de la primera),
-  // la 5 (fin de la segunda) y la 6 (sola en la tercera).
-  &:nth-child(2),
-  &:nth-child(5),
-  &:nth-child(6) {
-    border-right: 0;
-  }
-
-  // Ocupando la fila entera, la sexta se quedaría con un titular corto y medio
-  // ancho vacío. Se abre en dos columnas —número y titular a la izquierda,
-  // texto a la derecha— y el cierre pesa lo que tiene que pesar.
-  @include above(900) {
-    &:nth-child(6) {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      column-gap: clamp(1.5rem, 4vw, 4rem);
-      align-items: start;
-
-      // Colocación explícita: dejando que el reparto automático haga su trabajo,
-      // el titular se iba a la segunda columna junto al texto y la izquierda se
-      // quedaba con el número solo.
-      .cmt__index {
-        grid-area: 1 / 1;
-      }
-
-      .cmt__title {
-        grid-area: 2 / 1;
-      }
-
-      // Cruza las dos filas de la izquierda —la del número y la del titular— y
-      // se centra contra ellas. Anclado solo a la fila del titular arrancaba a
-      // su misma altura, y como el bloque de la izquierda es más alto, el texto
-      // quedaba colgando de la parte de arriba en vez de equilibrar la ficha.
-      .cmt__body {
-        grid-area: 1 / 2 / 3 / 3;
-        align-self: center;
-        max-width: 46ch;
-      }
-    }
-  }
-
-  @include below(900) {
-    &:nth-child(2),
-    &:nth-child(5),
-    &:nth-child(6) {
-      border-right: 1px solid var(--line);
-    }
-
-    &:nth-child(even) {
-      border-right: 0;
-    }
-  }
-
-  // `:nth-child(n)` y no `.cmt__item` a secas: la regla de 900 px le devuelve
-  // el filete a las fichas 2, 5 y 6 con especificidad 0-2-0, y una declaración
-  // de clase sola perdía contra ella. Por eso la 5 —la única impar de las
-  // tres— se quedaba con un borde derecho que ninguna otra tenía.
-  @include below(600) {
-    &:nth-child(n) {
-      border-right: 0;
-    }
+    border-color: var(--accent);
   }
 }
 
-// El acento de cada ficha es su número, no un filo de color en el borde: una
-// franja gruesa y asimétrica en un lado es de las formas más reconocibles del
-// SaaS de plantilla. Los filetes de la rejilla ya delimitan la ficha.
+.cmt__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.cmt__icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--accent);
+
+  svg {
+    width: 1.45rem;
+    height: 1.45rem;
+    fill: none;
+    stroke: var(--paper);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
 .cmt__index {
   font-family: var(--font-label);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  color: var(--violet-lift);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--text-mute);
+  font-variant-numeric: tabular-nums;
 }
 
 .cmt__title {
   font-size: var(--step-1);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
 }
 
 .cmt__body {
-  max-width: 34ch;
-  font-size: 0.94rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.55;
   color: var(--text-soft);
+}
+
+// --- el sello -------------------------------------------------------------------
+// Una banda de tinta dentro del papel: la frase que resume la sección y el
+// botón. Lleva los colores de la tinta a mano porque el tema de papel ha
+// invertido los suyos.
+.cmt__seal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  margin-top: 0.75rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: var(--radius-l);
+  background: var(--paper-ink);
+
+  .btn--primary {
+    background: var(--paper);
+    color: var(--paper-ink);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--paper-2);
+    }
+  }
+}
+
+.cmt__seal-text {
+  max-width: 34ch;
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--paper);
+
+  em {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 400;
+    color: #9a8fff;
+  }
 }

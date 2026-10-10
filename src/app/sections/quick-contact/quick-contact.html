@@ -1,0 +1,138 @@
+<dialog
+  class="qc"
+  #dialog
+  aria-labelledby="qc-title"
+  (close)="onClosed()"
+  (click)="onBackdrop($event)"
+>
+  <div class="qc__box">
+    <!-- Quién contesta. -->
+    <div class="qc__head">
+      <div class="qc__who">
+        <span class="qc__mark" aria-hidden="true">
+          <svg [attr.viewBox]="isoViewBox">
+            @for (d of isoPaths; track $index) {
+              <path [attr.d]="d" />
+            }
+          </svg>
+        </span>
+        <span class="qc__names">
+          <strong>MakeWeb</strong>
+          <span i18n>Te respondemos en 24 horas</span>
+        </span>
+      </div>
+
+      <button class="qc__close" type="button" aria-label="Cerrar" i18n-aria-label (click)="close()">
+        <!-- La X ocupa el botón entero y va dibujada en el centro del lienzo:
+             así no depende de cómo redondee el navegador el centrado. -->
+        <svg viewBox="0 0 42 42" aria-hidden="true">
+          <path d="M16 16l10 10M26 16 16 26" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none" />
+        </svg>
+      </button>
+    </div>
+
+    <h2 class="qc__title" id="qc-title" i18n>¿Una pregunta? <em>Escríbenos.</em></h2>
+
+    @if (status() === 'sent') {
+      <div class="qc__done" role="status">
+        <p i18n><strong>¡Gracias!</strong> Tu mensaje ha llegado. Te respondemos en 24 horas.</p>
+        <button class="btn btn--ghost" type="button" (click)="close()">
+          <span class="btn__label" i18n>Cerrar</span>
+        </button>
+      </div>
+    } @else {
+      <p class="qc__lead" i18n>Una duda, una idea o un precio orientativo: cuéntanoslo en dos líneas.</p>
+
+      <form class="qc__form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <div class="qc__row">
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label i18n>Tu nombre</mat-label>
+            <input
+              matInput
+              formControlName="name"
+              autocomplete="name"
+              [maxlength]="limits.name"
+              autofocus
+            />
+            @if (form.controls.name.touched && form.controls.name.invalid) {
+              <mat-error i18n>Escribe tu nombre.</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label i18n>Tu correo</mat-label>
+            <input
+              matInput
+              type="email"
+              formControlName="email"
+              autocomplete="email"
+              [maxlength]="limits.email"
+            />
+            @if (form.controls.email.touched && form.controls.email.invalid) {
+              <mat-error i18n>Necesitamos un correo válido.</mat-error>
+            }
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+          <mat-label i18n>Teléfono o WhatsApp (opcional)</mat-label>
+          <input
+            matInput
+            type="tel"
+            formControlName="phone"
+            autocomplete="tel"
+            [maxlength]="limits.phone"
+          />
+          @if (form.controls.phone.touched && form.controls.phone.invalid) {
+            <mat-error i18n>Ese número no nos cuadra. Revísalo o déjalo vacío.</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+          <mat-label i18n>Tu pregunta</mat-label>
+          <textarea
+            matInput
+            rows="3"
+            formControlName="message"
+            [maxlength]="limits.message"
+          ></textarea>
+          @if (form.controls.message.touched && form.controls.message.invalid) {
+            <mat-error i18n>Escribe tu pregunta, aunque sea corta.</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-checkbox formControlName="consent" class="qc__consent" i18n>
+          Acepto la
+          <a routerLink="/privacidad" target="_blank" (click)="$event.stopPropagation()"
+            >política de privacidad</a
+          >.
+        </mat-checkbox>
+        @if (form.controls.consent.touched && form.controls.consent.invalid) {
+          <p class="qc__error" i18n>Marca la casilla para que podamos escribirte.</p>
+        }
+
+        @if (error()) {
+          <p class="qc__error" role="alert">{{ error() }}</p>
+        }
+
+        <div class="qc__actions">
+          <button
+            class="btn btn--primary btn--go qc__send"
+            type="submit"
+            [disabled]="status() === 'sending'"
+          >
+            <span class="btn__label">@if (status() === 'sending') {<ng-container i18n>Enviando…</ng-container>} @else {<ng-container i18n>Enviar</ng-container>}</span>
+          </button>
+
+          <div class="qc__alt">
+            <span class="qc__alt-label" i18n>¿Prefieres hablar?</span>
+            <button class="qc__wa" type="button" (click)="whatsapp()" aria-label="Escribir por WhatsApp" i18n-aria-label>
+              <ng-icon name="simpleWhatsapp" aria-hidden="true" />
+              <span>WhatsApp</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    }
+  </div>
+</dialog>

@@ -4,7 +4,7 @@ import { Observable, catchError, map, throwError } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { LEAD_LIMITS, multiLine, singleLine } from '../../core/forms/sanitize';
 import { PLANS } from '../../data/content';
-import { Lead, STARTING_POINTS, UNDECIDED_PLAN } from './lead.model';
+import { Lead, QuickMessage, STARTING_POINTS, UNDECIDED_PLAN } from './lead.model';
 
 export interface LeadReceipt {
   reference: string;
@@ -42,20 +42,7 @@ export class LeadService {
   private readonly http = inject(HttpClient);
 
   send(lead: Lead): Observable<LeadReceipt> {
-    if (!environment.leadAccessKey || !environment.leadEndpoint) {
-      return throwError(
-        () =>
-          new Error(
-            'El formulario todavía no está conectado a ningún correo. ' +
-              'Escríbenos directamente mientras tanto.',
-          ),
-      );
-    }
-
-    const reference = `MW-${new Date().getFullYear()}-${Math.random()
-      .toString(36)
-      .slice(2, 7)
-      .toUpperCase()}`;
+    const reference = newReference();
 
     // Última puerta antes de que el texto salga de la web. Va aquí y no solo en
     // el formulario porque este servicio es el único camino de salida: cualquier
@@ -88,6 +75,47 @@ export class LeadService {
       Enviado: new Date().toISOString(),
     };
 
+    return this.post(payload, reference);
+  }
+
+  /** El contacto rápido: una pregunta, al mismo buzón y con su propio asunto. */
+  sendQuick(quick: QuickMessage): Observable<LeadReceipt> {
+    const reference = newReference();
+    const clean = {
+      name: singleLine(quick.name, LEAD_LIMITS.name),
+      email: singleLine(quick.email, LEAD_LIMITS.email),
+      phone: singleLine(quick.phone, LEAD_LIMITS.phone),
+      message: multiLine(quick.message, LEAD_LIMITS.message),
+    };
+
+    return this.post(
+      {
+        access_key: environment.leadAccessKey,
+        subject: `Pregunta rápida de ${clean.name} — ${reference}`,
+        from_name: 'Contacto rápido de MakeWeb',
+        replyto: clean.email,
+        Referencia: reference,
+        Nombre: clean.name,
+        Correo: clean.email,
+        Teléfono: clean.phone || '(no lo ha dejado)',
+        Mensaje: clean.message,
+        'Acepta la política de privacidad': quick.consent ? 'Sí' : 'No',
+        Enviado: new Date().toISOString(),
+      },
+      reference,
+    );
+  }
+
+  private post(payload: Record<string, unknown>, reference: string): Observable<LeadReceipt> {
+    if (!environment.leadAccessKey || !environment.leadEndpoint) {
+      return throwError(
+        () =>
+          new Error(
+            $localize`El formulario todavía no está conectado a ningún correo. Escríbenos directamente mientras tanto.`,
+          ),
+      );
+    }
+
     return this.http.post<Web3FormsResponse>(environment.leadEndpoint, payload).pipe(
       map((response) => {
         if (!response?.success) throw new Error(response?.message ?? 'Envío rechazado');
@@ -97,11 +125,14 @@ export class LeadService {
         throwError(
           () =>
             new Error(
-              'No hemos podido enviar el mensaje. Inténtalo otra vez en un minuto ' +
-                'o escríbenos directamente.',
+              $localize`No hemos podido enviar el mensaje. Inténtalo otra vez en un minuto o escríbenos directamente.`,
             ),
         ),
       ),
     );
   }
+}
+
+function newReference(): string {
+  return `MW-${new Date().getFullYear()}-${Math.random().toString(36).slice(2, 7).toUpperCase()}`;
 }

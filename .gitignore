@@ -54,3 +54,7 @@ Thumbs.db
 # él se reinstala lo mismo en otro equipo.
 /.agents
 /.claude
+
+# Mollen en su versión de uso personal. La web ya no la usa, y su licencia no
+# permite redistribuirla en un repositorio público. Se queda solo en el disco.
+/mollen

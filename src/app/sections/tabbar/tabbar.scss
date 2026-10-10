@@ -1,0 +1,142 @@
+@use 'mixins' as *;
+
+// Solo en pantallas estrechas: en escritorio manda la barra de arriba.
+:host {
+  display: none;
+
+  @include below(1080) {
+    display: block;
+  }
+}
+
+.tb {
+  position: fixed;
+  inset: auto 0.6rem calc(0.6rem + env(safe-area-inset-bottom)) 0.6rem;
+  z-index: var(--z-bar);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.2rem;
+  max-width: 34rem;
+  margin-inline: auto;
+  padding: 0.35rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 1.6rem;
+  background: rgb(16 15 20 / 86%);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-panel);
+}
+
+.tb__tab {
+  display: grid;
+  justify-items: center;
+  gap: 0.2rem;
+  min-height: 3.4rem;
+  padding: 0.45rem 0.2rem;
+  border: 0;
+  border-radius: 1.25rem;
+  background: none;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+
+  // La pestaña activa, en crema: la misma píldora que el botón principal.
+  &.is-active {
+    background: var(--text);
+    color: var(--ink);
+  }
+}
+
+.tb__icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+// --- hoja de servicios -------------------------------------------------------
+// Por encima del botón de WhatsApp: abierta, la hoja es lo único que importa.
+.tb__scrim {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-float) + 1);
+  border: 0;
+  background: rgb(9 8 11 / 60%);
+  animation: tb-fade 0.25s var(--ease-out);
+}
+
+.tb__sheet {
+  position: fixed;
+  inset: auto 0.6rem calc(5.3rem + env(safe-area-inset-bottom)) 0.6rem;
+  z-index: calc(var(--z-float) + 2);
+  max-width: 34rem;
+  margin-inline: auto;
+  padding: 1.1rem 0.6rem 0.6rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 1.4rem;
+  background: var(--ink-800);
+  box-shadow: var(--shadow-panel);
+  animation: tb-up 0.35s var(--ease-out);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 1.5rem auto;
+    height: 2px;
+    background: var(--violet);
+  }
+
+  ul {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    display: grid;
+    gap: 0.1rem;
+    padding: 0.75rem 0.85rem;
+    border-radius: var(--radius-s);
+
+    &:active {
+      background: var(--veil-05);
+    }
+  }
+
+  strong {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+  }
+
+  small {
+    font-size: 0.8rem;
+    color: var(--text-mute);
+  }
+}
+
+.tb__sheet-head {
+  @include label;
+
+  padding: 0 0.85rem 0.4rem;
+  font-size: 0.66rem;
+}
+
+@keyframes tb-up {
+  from {
+    opacity: 0;
+    translate: 0 1rem;
+  }
+}
+
+@keyframes tb-fade {
+  from {
+    opacity: 0;
+  }
+}

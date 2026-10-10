@@ -6,6 +6,7 @@ import {
   computed,
   effect,
   inject,
+  input,
   viewChild,
 } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -19,8 +20,6 @@ import { LEAD_LIMITS } from '../../core/forms/sanitize';
 import { emailFormat, minTrimmed, notBlank } from '../../core/forms/validators';
 import { gsap } from '../../core/animation/gsap';
 import { MotionService } from '../../core/animation/motion.service';
-import { RevealDirective } from '../../core/animation/reveal.directive';
-import { SweepDirective } from '../../core/animation/sweep.directive';
 import { PLANS } from '../../data/content';
 import { PHONES } from '../../data/legal';
 import { LeadActions } from '../../state/lead/lead.actions';
@@ -30,20 +29,13 @@ import { STARTING_POINTS, UNDECIDED_PLAN } from '../../state/lead/lead.model';
 @Component({
   selector: 'mw-contact',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatCheckboxModule,
-    RouterLink,
-    RevealDirective,
-    SweepDirective,
-  ],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatCheckboxModule, RouterLink],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
 export class Contact {
+  /** Titular propio: sobra cuando la página ya trae el suyo arriba. */
+  readonly showHead = input(true);
   private readonly root = viewChild.required<ElementRef<HTMLElement>>('root');
   private readonly fb = inject(FormBuilder);
   private readonly store = inject(Store);

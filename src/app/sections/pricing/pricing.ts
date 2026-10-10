@@ -1,7 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { RevealDirective } from '../../core/animation/reveal.directive';
-import { SweepDirective } from '../../core/animation/sweep.directive';
 import { PLANS } from '../../data/content';
 
 /**
@@ -15,7 +13,7 @@ import { PLANS } from '../../data/content';
 @Component({
   selector: 'mw-pricing',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, RevealDirective, SweepDirective],
+  imports: [RouterLink],
   templateUrl: './pricing.html',
   styleUrl: './pricing.scss',
 })
@@ -26,9 +24,3 @@ export class Pricing {
     return value.toLocaleString('es-ES');
   }
 }
-
-// La tarjeta recomendada llegó a llevar un `gsap.from()` a mano encima del que
-// ya aplica mwReveal. Dos `from` sobre el mismo elemento se renderizan los dos
-// al momento, así que el segundo tomaba los valores iniciales del primero como
-// valores finales y la tarjeta se quedaba en y:44 / opacity:0 — invisible.
-// Ahora entra con `scale` a través de la directiva, que es un solo tween.

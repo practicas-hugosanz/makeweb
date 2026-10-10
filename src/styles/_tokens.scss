@@ -2,27 +2,29 @@
 
 // ---------------------------------------------------------------------------
 // MakeWeb — design tokens
-// Brand palette is fixed: violet #6b60e7, white #ffffff, ink #111111.
-// Everything else is derived from those three so the system stays disciplined.
+// Un solo color de marca, el violeta del logotipo, sobre una tinta cálida y un
+// crema en vez de blanco puro. El blanco #fff sobre negro vibraba y se leía
+// como pantalla; el crema se lee como papel. No hay segundo color: el ámbar
+// que acompañó al violeta un tiempo salió de la paleta.
 // ---------------------------------------------------------------------------
 
-$brand-violet: #6b60e7;
-$brand-white: #ffffff;
-$brand-ink: #111111;
+$brand-violet: #7262eb; // el del isotipo, exacto
+$brand-white: #f4efe7; // crema
+$brand-ink: #0e0d11;
 
-$violet-lift: #8d84ff; // hover / highlight edge
-$violet-deep: #372f8f; // depth, shadows, gradient tail
+$violet-lift: #9a8fff; // hover / highlight edge
+$violet-deep: #372f8f; // depth, shadows
 
 :root {
   // --- surfaces -------------------------------------------------------------
   --ink: #{$brand-ink};
-  --ink-950: #0c0c0c; // canal de la barra de desplazamiento, por debajo del fondo
-  --ink-800: #17161d; // raised panels
-  --ink-700: #1e1d26; // cards
-  --ink-600: #262532; // hovered cards
-  --ink-550: #2e2d3c; // superficie más alta (menús de Material)
-  --line: rgb(255 255 255 / 9%);
-  --line-strong: rgb(255 255 255 / 18%);
+  --ink-950: #09080b; // canal de la barra de desplazamiento, por debajo del fondo
+  --ink-800: #16141b; // raised panels
+  --ink-700: #1c1a22; // cards
+  --ink-600: #25222c; // hovered cards
+  --ink-550: #2e2b37; // superficie más alta (menús de Material)
+  --line: rgb(244 239 231 / 9%);
+  --line-strong: rgb(244 239 231 / 18%);
   --line-solid: #4b4959; // borde opaco: el de los campos de formulario
   --line-solid-soft: #2b2a36;
 
@@ -35,17 +37,37 @@ $violet-deep: #372f8f; // depth, shadows, gradient tail
 
   // El fondo de la píldora de navegación: translúcido para que el desenfoque
   // tenga algo que hacer, y más cerrado en cuanto se empieza a desplazar.
-  --bar-veil: rgb(20 19 26 / 72%);
-  --bar-veil-strong: rgb(20 19 26 / 88%);
+  --bar-veil: rgb(16 15 20 / 62%);
+  --bar-veil-strong: rgb(16 15 20 / 86%);
 
   // --- brand ---------------------------------------------------------------
   --violet: #{$brand-violet};
   --violet-lift: #{$violet-lift};
   --violet-deep: #{$violet-deep};
-  --violet-08: rgb(107 96 231 / 8%);
-  --violet-14: rgb(107 96 231 / 14%);
-  --violet-24: rgb(107 96 231 / 24%);
-  --violet-40: rgb(107 96 231 / 40%);
+  --violet-08: rgb(114 98 235 / 8%);
+  --violet-14: rgb(114 98 235 / 14%);
+  --violet-24: rgb(114 98 235 / 24%);
+  --violet-40: rgb(114 98 235 / 40%);
+  // El acento de interacción: lo que está activo, lo que se señala, lo que
+  // cambia al pasar por encima. Siempre violeta, en dos tonos según el papel:
+  // `--accent` para rellenar —lleva texto crema encima a 4,9:1— y
+  // `--accent-ink` para escribir sobre la tinta, a 6,7:1. El violeta exacto del
+  // logotipo se queda a 3,9 con el crema y a 4,1 con la tinta: no llega a 4,5
+  // para texto ni en un sentido ni en el otro.
+  --accent: #6253d9;
+  --accent-ink: #{$violet-lift};
+  --accent-08: rgb(114 98 235 / 8%);
+  --accent-14: rgb(114 98 235 / 14%);
+  --accent-40: rgb(114 98 235 / 45%);
+
+
+  // Superficie clara para las secciones que se leen como papel. Alternar
+  // tinta y crema da ritmo a la página sin necesitar un solo adorno.
+  --paper: #{$brand-white};
+  --paper-2: #ebe5da;
+  --paper-ink: #16141b;
+  --paper-soft: #57525f;
+  --paper-line: rgb(22 20 27 / 12%);
   --violet-sunk: #2a2461; // relleno de los contenedores de Material
   --violet-wash: #d9d5ff; // texto sobre ese relleno
 
@@ -54,14 +76,16 @@ $violet-deep: #372f8f; // depth, shadows, gradient tail
 
   // --- text ----------------------------------------------------------------
   --text: #{$brand-white};
-  --text-soft: #b6b4c6;
-  --text-mute: #7d7a90;
+  --text-soft: #bdb7b0;
+  --text-mute: #8a847f;
 
   // --- type ----------------------------------------------------------------
-  // Dos familias, tres papeles. Mollen Bold, muy apretado, es la voz que grita:
-  // titulares y cifras. Instrument Sans es la que se lee sin darte cuenta, y la
-  // misma puesta pequeña y espaciada hace de etiqueta.
-  --font-display: 'Mollen', system-ui, sans-serif;
+  // Tres familias, cuatro papeles. Bricolage Grotesque, apretada, es la voz
+  // que grita: titulares y cifras. Fraunces en cursiva es la palabra dicha en
+  // otro tono dentro del titular. Instrument Sans es la que se lee sin darte
+  // cuenta, y la misma puesta pequeña y espaciada hace de etiqueta.
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-accent: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-label: 'Instrument Sans', system-ui, sans-serif;
 
@@ -72,7 +96,7 @@ $violet-deep: #372f8f; // depth, shadows, gradient tail
   --step-2: clamp(1.4rem, 1.2rem + 0.9vw, 2rem);
   --step-3: clamp(1.9rem, 1.5rem + 1.8vw, 3rem);
   --step-4: clamp(2.5rem, 1.7rem + 3.4vw, 4.5rem);
-  --step-5: clamp(3.2rem, 1.6rem + 6.6vw, 7.5rem);
+  --step-5: clamp(3rem, 1.4rem + 6.6vw, 7.5rem);
   --step-6: clamp(4rem, 0.8rem + 13vw, 13rem);
 
   // --- layout ---------------------------------------------------------------

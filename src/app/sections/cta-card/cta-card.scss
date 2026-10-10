@@ -1,0 +1,121 @@
+@use 'mixins' as *;
+
+.cta {
+  padding: var(--section-y) clamp(0.5rem, 1.2vw, 1rem) 0;
+}
+
+.cta__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  max-width: none;
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+  padding-inline: clamp(1.25rem, 5vw, 5rem);
+  border-radius: var(--radius-xl);
+  overflow: clip;
+  background: var(--ink-700);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 6px;
+    background: var(--violet);
+  }
+
+  @include below(900) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  @include below(600) {
+    border-radius: var(--radius-l);
+  }
+}
+
+.cta__copy {
+  display: grid;
+  justify-items: start;
+  gap: 1.25rem;
+}
+
+.cta__eyebrow {
+  @include label;
+
+  color: var(--text-soft);
+}
+
+.cta__title {
+  @include display(clamp(2.6rem, 1.4rem + 4.4vw, 5.5rem));
+
+  letter-spacing: -0.045em;
+}
+
+.cta__text {
+  max-width: 44ch;
+  color: var(--text-soft);
+}
+
+.cta__links {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cta__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-m);
+  background: var(--veil-04);
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+
+  > span:first-child {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  strong {
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    letter-spacing: -0.02em;
+  }
+
+  small {
+    font-size: 0.86rem;
+    color: var(--text-soft);
+  }
+
+  &:hover {
+    border-color: var(--accent-40);
+    background: var(--accent-08);
+  }
+
+  &:hover .cta__arrow {
+    translate: 0.25rem 0;
+    border-color: var(--accent-ink);
+    color: var(--accent-ink);
+  }
+}
+
+.cta__arrow {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  transition:
+    translate var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}

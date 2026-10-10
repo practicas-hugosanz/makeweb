@@ -1,29 +1,40 @@
 // ---------------------------------------------------------------------------
-// Dos familias, dos papeles. Una web escrita entera con una sola tipografía se
-// lee como una plantilla: no hay contraste entre lo que grita y lo que se lee.
+// Tres familias, tres papeles, y las tres con licencia SIL Open Font License
+// 1.1: se pueden usar en una web comercial sin pagar ni pedir permiso.
 //
-// Mollen Bold pone la voz de los titulares —es la marca— e Instrument Sans
-// pone la de lectura y la de las etiquetas. Ambas autoalojadas: cero peticiones
-// a un CDN de fuentes, que es la mayor ganancia de la primera pintada.
+// - Bricolage Grotesque pone la voz de los titulares. Grotesca con carácter,
+//   apretada en los cuerpos grandes.
+// - Fraunces Italic es el contrapunto: la palabra que se dice en otro tono
+//   dentro del titular. Sin ella, todo el énfasis se hacía con color, y una
+//   página que subraya en violeta cada titular se lee como plantilla.
+// - Instrument Sans es la de lectura y la de las etiquetas.
 //
-// NOTE: los archivos de /mollen son la versión de USO PERSONAL. Hace falta una
-// licencia comercial (myfonts.com/fonts/eko-bimantara/mollen) antes de publicar.
-// Instrument Sans es SIL Open Font License 1.1, sin restricciones.
+// Sustituyen a Mollen, que estaba en su versión de USO PERSONAL y no se podía
+// publicar en la web de una empresa.
+//
+// Las dos primeras salen de los archivos variables de Google Fonts, fijados y
+// recortados con fontTools: Bricolage en un solo peso, 700, con tamaño óptico
+// 72, y Fraunces en 400 con SOFT 50 y WONK 1. Bricolage con el peso libre
+// pesaba 43 kB y competía en móvil con la imagen del hero por la red; en un
+// solo peso son 25 kB, y la página no usaba más que el 700 de verdad.
+// El subconjunto es latino más lo que usa la página: ñ, vocales acentuadas,
+// ¿ ¡ « », €, ★ y las flechas.
+// Todas autoalojadas: cero peticiones a un CDN de fuentes.
 // ---------------------------------------------------------------------------
 
 @font-face {
-  font-family: 'Mollen';
-  src: url('../fonts/mollen-regular.woff2') format('woff2');
-  font-weight: 400;
+  font-family: 'Bricolage Grotesque';
+  src: url('../fonts/bricolage-grotesque.woff2') format('woff2');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Mollen';
-  src: url('../fonts/mollen-bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
+  font-family: 'Fraunces';
+  src: url('../fonts/fraunces-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
   font-display: swap;
 }
 

@@ -12,7 +12,6 @@
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-l);
   background:
-    radial-gradient(120% 70% at 20% 0%, var(--violet-14), transparent 62%),
     var(--ink-800);
   box-shadow: var(--shadow-panel);
   // Entrada en CSS: el estado por defecto es visible, así que si la animación
@@ -55,7 +54,7 @@
   }
 
   a {
-    color: var(--violet-lift);
+    color: var(--accent-ink);
     text-decoration: underline;
     text-underline-offset: 0.2em;
   }

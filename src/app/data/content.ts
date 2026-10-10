@@ -13,30 +13,25 @@ export interface NavLink {
 }
 
 export const NAV_LINKS: readonly NavLink[] = [
-  { id: 'servicios', label: 'Servicios' },
-  { id: 'proceso', label: 'Proceso' },
-  { id: 'precios', label: 'Precios', route: '/precios' },
-  // Contacto va antes que Preguntas aunque en la página sea la última sección.
-  // En el menú móvil la lista termina con el botón de presupuesto, que lleva al
-  // mismo ancla que Contacto: pegados el uno al otro, dos nombres distintos para
-  // el mismo destino hacen que el lector se pare a buscar la diferencia. Con
-  // Preguntas en medio dejan de compararse.
-  //
-  // El precio de esto es que al bajar por la página el marcador de sección
-  // activa retrocede un puesto al llegar a Contacto.
-  { id: 'contacto', label: 'Contacto' },
-  { id: 'preguntas', label: 'Preguntas' },
+  // Servicios baja a la sección de la portada, y en escritorio despliega las
+  // cinco páginas de servicio. El resto son páginas propias, como en cualquier
+  // web de varias páginas: la portada resume y enlaza, no lo contiene todo.
+  { id: 'servicios', label: $localize`Servicios` },
+  { id: 'proyectos', label: $localize`Proyectos`, route: '/proyectos' },
+  { id: 'precios', label: $localize`Precios`, route: '/precios' },
+  { id: 'estudio', label: $localize`Estudio`, route: '/estudio' },
+  { id: 'contacto', label: $localize`Contacto`, route: '/contacto' },
 ];
 
 // --- hero -------------------------------------------------------------------
 
 /** Búsquedas que se van tecleando en el buscador de la portada. */
 export const HERO_QUERIES: readonly string[] = [
-  'peluquería cerca de mí',
-  'dentista urgencias hoy',
-  'taller de coches abierto ahora',
-  'restaurante para cenar esta noche',
-  'gimnasio con clases por la mañana',
+  $localize`peluquería cerca de mí`,
+  $localize`dentista urgencias hoy`,
+  $localize`taller de coches abierto ahora`,
+  $localize`restaurante para cenar esta noche`,
+  $localize`gimnasio con clases por la mañana`,
 ];
 
 // --- services ---------------------------------------------------------------
@@ -66,78 +61,107 @@ export interface Service {
 export const SERVICES: readonly Service[] = [
   {
     id: 'diseno',
-    index: 'Diseño',
-    title: 'La primera impresión que te gana clientes',
+    index: $localize`Diseño`,
+    title: $localize`La primera impresión que te gana clientes`,
     summary:
-      'No diseñamos webs. Diseñamos la primera impresión que te va a ganar clientes. Cada color, cada detalle, pensado para tu negocio, no copiado de una plantilla.',
+      $localize`No diseñamos webs. Diseñamos la primera impresión que te va a ganar clientes. Cada color, cada detalle, pensado para tu negocio, no copiado de una plantilla.`,
     includes: [
-      { label: 'Dirección de arte' },
-      { label: 'Demo de la web antes de empezar' },
-      { label: 'Sistema de componentes' },
-      { label: 'Textos incluidos' },
+      { label: $localize`Dirección de arte` },
+      { label: $localize`Demo de la web antes de empezar` },
+      { label: $localize`Sistema de componentes` },
+      { label: $localize`Textos incluidos` },
     ],
   },
   {
     id: 'desarrollo',
-    index: 'Desarrollo',
-    title: 'Rápida de verdad, no rápida en el portátil del diseñador',
+    index: $localize`Desarrollo`,
+    title: $localize`Rápida de verdad, no rápida en el portátil del diseñador`,
     summary:
-      'Construimos tu web para que cargue rápido de verdad en todos los dispositivos, comprobado en condiciones reales, tal y como lo va a usar tu cliente.',
+      $localize`Construimos tu web para que cargue rápido de verdad en todos los dispositivos, comprobado en condiciones reales, tal y como lo va a usar tu cliente.`,
     // La pila que se entrega al cliente, dicha sin rodeos: HTML, CSS y
     // JavaScript escritos a mano, y PHP con MySQL solo cuando el negocio
     // necesita guardar datos. Ni plantillas ni gestores que engordan la web.
     includes: [
-      { label: 'HTML, CSS y JavaScript' },
-      { label: 'PHP, MySQL y phpMyAdmin si lleva base de datos' },
-      { label: 'Sin plantillas ni WordPress' },
-      { label: 'Accesible AA' },
-      { label: 'Hosting configurado' },
+      { label: $localize`HTML, CSS y JavaScript` },
+      { label: $localize`PHP, MySQL y phpMyAdmin si lleva base de datos` },
+      { label: $localize`Sin plantillas ni WordPress` },
+      { label: $localize`Accesible AA` },
+      { label: $localize`Hosting configurado` },
     ],
   },
   {
     id: 'seo-local',
-    index: 'SEO',
-    title: 'Ser el mejor no sirve de nada si no te encuentran',
+    index: $localize`SEO`,
+    title: $localize`Ser el mejor no sirve de nada si no te encuentran`,
     summary:
-      'Nos encargamos de que aparezcas primero cuando alguien busca cerca: ficha de Google, datos estructurados y páginas por zona.',
+      $localize`Nos encargamos de que aparezcas primero cuando alguien busca cerca: ficha de Google, datos estructurados y páginas por zona.`,
     includes: [
-      { label: 'Google Business' },
-      { label: 'Schema local' },
-      { label: 'Páginas por zona' },
-      { label: 'Reseñas integradas' },
+      { label: $localize`Google Business` },
+      { label: $localize`Schema local` },
+      { label: $localize`Páginas por zona` },
+      { label: $localize`Reseñas integradas` },
     ],
   },
   {
     id: 'conversion',
-    index: 'Reservas',
-    title: 'Convertimos visitas en clientes',
+    index: $localize`Reservas`,
+    title: $localize`Convertimos visitas en clientes`,
     summary:
-      'Montamos y cuidamos todo el sistema de reservas, citas y pedidos de tu web, conectado con las herramientas que ya usas, para que cada visita tenga un camino claro hasta convertirse en cliente.',
+      $localize`Montamos y cuidamos todo el sistema de reservas, citas y pedidos de tu web, conectado con las herramientas que ya usas, para que cada visita tenga un camino claro hasta convertirse en cliente.`,
     includes: [
-      { label: 'Reserva online' },
-      { label: 'WhatsApp Business', monthly: 'desde 50 €/mes' },
-      { label: 'Pedidos y pagos' },
-      { label: 'Avisos automáticos' },
+      { label: $localize`Reserva online` },
+      { label: $localize`WhatsApp Business`, monthly: $localize`desde 50 €/mes` },
+      { label: $localize`Pedidos y pagos` },
+      { label: $localize`Avisos automáticos` },
     ],
   },
   {
     id: 'cuidado',
-    index: 'Cuidado',
-    title: 'No te dejamos con la web y adiós',
+    index: $localize`Cuidado`,
+    title: $localize`No te dejamos con la web y adiós`,
     summary:
-      'Actualizaciones, copias de seguridad y un informe mensual en castellano donde se entiende qué ha pasado.',
+      $localize`Actualizaciones, copias de seguridad y un informe mensual en castellano donde se entiende qué ha pasado.`,
     includes: [
-      { label: 'Copias diarias', monthly: 'desde 50 €/mes' },
-      { label: 'Cambios mensuales', monthly: 'desde 30 €/mes' },
-      { label: 'Informe de resultados', monthly: 'desde 20 €/mes' },
+      { label: $localize`Copias diarias`, monthly: $localize`desde 50 €/mes` },
+      { label: $localize`Cambios mensuales`, monthly: $localize`desde 30 €/mes` },
+      { label: $localize`Informe de resultados`, monthly: $localize`desde 20 €/mes` },
     ],
   },
 ];
+
+// --- projects ---------------------------------------------------------------
+
+/** Un trabajo publicado para un cliente real. */
+export interface Project {
+  /** Nombre del negocio, tal y como quiere aparecer. */
+  name: string;
+  /** Sector en dos o tres palabras: «Peluquería», «Clínica dental». */
+  sector: string;
+  /** Ciudad o zona, si el cliente da permiso. */
+  place?: string;
+  /** Captura de la web, en `public/img/proyectos/`, ancho 1200 y en WebP. */
+  image: string;
+  /** Dirección pública de la web, si se puede enlazar. */
+  url?: string;
+}
+
+/**
+ * Los trabajos que se enseñan en portada.
+ *
+ * Vacía a propósito: hay clientes, pero sus casos se publican cuando estén
+ * preparados y con su permiso. Mientras esté vacía, la sección enseña tres
+ * fichas de «caso en preparación». Nada inventado: ni negocios de ejemplo ni
+ * capturas de webs que no hemos hecho.
+ */
+export const PROJECTS: readonly Project[] = [];
 
 // --- process ----------------------------------------------------------------
 
 export interface ProcessPhase {
   window: string;
+  /** Primer y último día de la semana que ocupa la fase, de 1 a 7. */
+  from: number;
+  to: number;
   title: string;
   body: string;
   outputs: readonly string[];
@@ -146,28 +170,36 @@ export interface ProcessPhase {
 /** Una secuencia real con duraciones reales: por eso va numerada por días. */
 export const PROCESS: readonly ProcessPhase[] = [
   {
-    window: 'Día 1',
-    title: 'Escuchamos',
-    body: 'Una videollamada contigo. Salimos sabiendo a quién quieres atraer y qué te está frenando ahora.',
-    outputs: ['Sesión de arranque', 'Mapa de clientes', 'Auditoría de la web actual'],
+    window: $localize`Día 1`,
+    from: 1,
+    to: 1,
+    title: $localize`Escuchamos`,
+    body: $localize`Una videollamada contigo. Salimos sabiendo a quién quieres atraer y qué te está frenando ahora.`,
+    outputs: [$localize`Sesión de arranque`, $localize`Mapa de clientes`, $localize`Auditoría de la web actual`],
   },
   {
-    window: 'Días 2 – 4',
-    title: 'Diseñamos',
-    body: 'Ves la web antes de que exista: una demo navegable, con tus fotos y tus textos. Ajustamos hasta que la reconoces como tuya.',
-    outputs: ['Demo de la web', 'Textos redactados', 'Dos rondas de cambios'],
+    window: $localize`Días 2 – 4`,
+    from: 2,
+    to: 4,
+    title: $localize`Diseñamos`,
+    body: $localize`Ves la web antes de que exista: una demo navegable, con tus fotos y tus textos. Ajustamos hasta que la reconoces como tuya.`,
+    outputs: [$localize`Demo de la web`, $localize`Textos redactados`, $localize`Dos rondas de cambios`],
   },
   {
-    window: 'Días 5 – 6',
-    title: 'Desarrollamos',
-    body: 'Programamos, conectamos reservas y analítica, y lo probamos en móviles de verdad antes de enseñártelo.',
-    outputs: ['Web a medida', 'Reservas conectadas', 'Analítica y eventos'],
+    window: $localize`Días 5 – 6`,
+    from: 5,
+    to: 6,
+    title: $localize`Desarrollamos`,
+    body: $localize`Programamos, conectamos reservas y analítica, y lo probamos en móviles de verdad antes de enseñártelo.`,
+    outputs: [$localize`Web a medida`, $localize`Reservas conectadas`, $localize`Analítica y eventos`],
   },
   {
-    window: 'Día 7',
-    title: 'Lanzamos',
-    body: 'Publicamos, avisamos a Google y te enseñamos a moverla.',
-    outputs: ['Puesta en marcha', 'Formación en vídeo', 'Alta en Google'],
+    window: $localize`Día 7`,
+    from: 7,
+    to: 7,
+    title: $localize`Lanzamos`,
+    body: $localize`Publicamos, avisamos a Google y te enseñamos a moverla.`,
+    outputs: [$localize`Puesta en marcha`, $localize`Formación en vídeo`, $localize`Alta en Google`],
   },
 ];
 
@@ -192,95 +224,105 @@ export interface Plan {
 export const PLANS: readonly Plan[] = [
   {
     id: 'estatica',
-    name: 'Esencial',
-    kind: 'Web estática',
+    name: $localize`Esencial`,
+    kind: $localize`Web estática`,
     from: 350,
     to: 400,
-    note: 'Negociable',
-    pitch: 'Una página bien contada y tu ficha de Google, listas en una semana.',
+    note: $localize`Negociable`,
+    pitch: $localize`Una página bien contada y tu ficha de Google, listas en una semana.`,
     best: false,
     features: [
-      'Web de una página, larga y bien contada',
-      'Diseño a medida, no plantilla',
-      'Ficha de Google optimizada',
-      'Botón de WhatsApp y llamada',
-      'Lista en una semana',
+      $localize`Web de una página, larga y bien contada`,
+      $localize`Diseño a medida, no plantilla`,
+      $localize`Ficha de Google optimizada`,
+      $localize`Botón de WhatsApp y llamada`,
+      $localize`Lista en una semana`,
     ],
-    cta: 'Empezar por aquí',
+    cta: $localize`Empezar por aquí`,
   },
   {
     id: 'animaciones',
-    name: 'Profesional',
-    kind: 'Web con animaciones',
+    name: $localize`Profesional`,
+    kind: $localize`Web con animaciones`,
     from: 450,
     to: 700,
-    pitch: 'Diseño a medida y movimiento al servicio de la lectura, sin perder velocidad.',
+    pitch: $localize`Diseño a medida y movimiento al servicio de la lectura, sin perder velocidad.`,
     best: true,
     features: [
-      'Todo lo del plan Esencial',
-      'Animaciones al desplazarte, como esta página',
-      'Varias páginas o secciones',
-      'SEO local por servicio y por zona',
-      'Analítica con objetivos medibles',
+      $localize`Todo lo del plan Esencial`,
+      $localize`Panel de administrador`,
+      $localize`Varias páginas o secciones`,
+      $localize`SEO local por servicio y por zona`,
+      $localize`Analítica con objetivos medibles`,
     ],
-    cta: 'Quiero esta',
+    cta: $localize`Quiero esta`,
   },
   {
     id: 'citas',
-    name: 'Integral',
-    kind: 'Animaciones y sistema de citas',
+    name: $localize`Integral`,
+    kind: $localize`Animaciones y sistema de citas`,
     from: 1000,
     to: 1100,
-    pitch: 'Reservas integradas en la web, con avisos automáticos y panel de gestión.',
+    pitch: $localize`Reservas integradas en la web, con avisos automáticos y panel de gestión.`,
     best: false,
     features: [
-      'Todo lo del plan Profesional',
-      'Sistema de reservas y citas integrado',
-      'Avisos automáticos al cliente y a ti',
-      'Conectado con tus herramientas',
-      'Panel para gestionar la agenda',
+      $localize`Todo lo del plan Profesional`,
+      $localize`Sistema de reservas y citas integrado`,
+      $localize`Avisos automáticos al cliente y a ti`,
+      $localize`Conectado con tus herramientas`,
+      $localize`Panel para gestionar la agenda`,
     ],
-    cta: 'Hablemos del proyecto',
+    cta: $localize`Hablemos del proyecto`,
   },
 ];
 
 // --- commitments ------------------------------------------------------------
 
+/** El icono de cada compromiso, dibujado en `CommitmentsSection`. */
+export type CommitmentIcon = 'price' | 'key' | 'calendar' | 'play' | 'chart' | 'chat';
+
 export interface Commitment {
+  icon: CommitmentIcon;
   title: string;
   body: string;
 }
 
 /**
- * Sustituye a los testimonios. Un estudio que empieza no tiene reseñas, y
- * inventarlas además de engañar es competencia desleal. Lo que sí se puede
- * ofrecer son compromisos verificables: esto es lo que reduce el riesgo de
- * comprar, que es para lo que servían los testimonios.
+ * Compromisos verificables: lo que reduce el riesgo de comprar. Nacieron para
+ * sustituir a los testimonios cuando el estudio aún no tenía clientes, porque
+ * inventar reseñas además de engañar es competencia desleal. Las reseñas de
+ * verdad irán junto a los casos de `PROJECTS`.
  */
 export const COMMITMENTS: readonly Commitment[] = [
   {
-    title: 'Precio cerrado antes de empezar',
-    body: 'El presupuesto que firmas es el que pagas. Si aparece algo fuera de alcance, se te dice y decides tú; no llega como sorpresa en la factura.',
+    icon: 'price',
+    title: $localize`Precio cerrado antes de empezar`,
+    body: $localize`El presupuesto que firmas es el que pagas. Si aparece algo fuera de alcance, se te dice y decides tú; no llega como sorpresa en la factura.`,
   },
   {
-    title: 'La web es tuya, toda',
-    body: 'Dominio a tu nombre, código entregado y accesos en tu poder. Puedes llevártela a otro estudio cuando quieras y no te pediremos explicaciones.',
+    icon: 'key',
+    title: $localize`La web es tuya, toda`,
+    body: $localize`Dominio a tu nombre, código entregado y accesos en tu poder. Puedes llevártela a otro estudio cuando quieras y no te pediremos explicaciones.`,
   },
   {
-    title: 'Plazo con fecha, no “pronto”',
-    body: 'Te damos día de entrega desde el principio. Si se mueve por nuestra culpa, descontamos; si se mueve porque faltan tus fotos, te avisamos el mismo día.',
+    icon: 'calendar',
+    title: $localize`Plazo con fecha, no “pronto”`,
+    body: $localize`Te damos día de entrega desde el principio. Si se mueve por nuestra culpa, descontamos; si se mueve porque faltan tus fotos, te avisamos el mismo día.`,
   },
   {
-    title: 'Te enseñamos a manejarla',
-    body: 'Al publicar te grabamos vídeos cortos con lo que vas a tocar tú, y durante el primer mes nos escribes por WhatsApp cuando te atasques. No dependes de nadie para cambiar un horario.',
+    icon: 'play',
+    title: $localize`Te enseñamos a manejarla`,
+    body: $localize`Al publicar te grabamos vídeos cortos con lo que vas a tocar tú, y durante el primer mes nos escribes por WhatsApp cuando te atasques. No dependes de nadie para cambiar un horario.`,
   },
   {
-    title: 'Lo medimos y te lo enseñamos',
-    body: 'Velocidad, visitas y contactos, en un informe en castellano. Empezando por esta misma página: los números de arriba están medidos, no estimados.',
+    icon: 'chart',
+    title: $localize`Lo medimos y te lo enseñamos`,
+    body: $localize`Velocidad, visitas y contactos, en un informe en castellano. Empezando por esta misma página: pásala por PageSpeed Insights y compruébalo tú.`,
   },
   {
-    title: 'Te contesta quien la hace',
-    body: 'No hay cuenta ni centralita. Escribes y responde la persona que tiene el proyecto en las manos.',
+    icon: 'chat',
+    title: $localize`Te contesta quien la hace`,
+    body: $localize`No hay cuenta ni centralita. Escribes y responde la persona que tiene el proyecto en las manos.`,
   },
 ];
 
@@ -293,39 +335,45 @@ export interface Faq {
 
 export const FAQS: readonly Faq[] = [
   {
-    q: '¿Cuánto se tarda en tener la web funcionando?',
-    a: 'Una semana. El día 1 hablamos, del 2 al 4 diseñamos, el 5 y el 6 desarrollamos y el día 7 se publica. El plazo solo se alarga si faltan fotos o textos por tu parte, y te avisamos en cuanto ocurre.',
+    q: $localize`¿Cuánto se tarda en tener la web funcionando?`,
+    a: $localize`Una semana. El día 1 hablamos, del 2 al 4 diseñamos, el 5 y el 6 desarrollamos y el día 7 se publica. El plazo solo se alarga si faltan fotos o textos por tu parte, y te avisamos en cuanto ocurre.`,
   },
   {
-    q: '¿Cuánto cuesta y de qué depende el precio?',
-    a: 'Una web estática va de 350 € a 400 € y es negociable. Con animaciones, de 450 € a 700 €. Con animaciones y sistema de citas, de 1.000 € a 1.100 €. Dentro de cada horquilla el precio depende del número de páginas y de las integraciones, y se cierra por escrito antes de empezar: el presupuesto que firmas es el que pagas.',
+    q: $localize`¿Cuánto cuesta y de qué depende el precio?`,
+    a: $localize`Una web estática va de 350 € a 400 € y es negociable. Con animaciones, de 450 € a 700 €. Con animaciones y sistema de citas, de 1.000 € a 1.100 €. Dentro de cada horquilla el precio depende del número de páginas y de las integraciones, y se cierra por escrito antes de empezar: el presupuesto que firmas es el que pagas.`,
   },
   {
-    q: '¿Cómo se paga?',
-    a: 'La mitad al empezar y la mitad al publicar. Sin cuotas escondidas: el mantenimiento es aparte, opcional, y solo si lo quieres.',
+    q: $localize`¿Cómo se paga?`,
+    a: $localize`La mitad al empezar y la mitad al publicar. Sin cuotas escondidas: el mantenimiento es aparte, opcional, y solo si lo quieres.`,
   },
   {
-    q: 'Trabajáis en remoto. ¿Eso me afecta en algo?',
-    a: 'En el precio, para bien: sin oficina que mantener, el presupuesto se va entero a tu proyecto. El trabajo se hace por videollamada y con un documento compartido donde ves el avance cada día. Si prefieres vernos en persona para arrancar, se organiza.',
+    q: $localize`Trabajáis en remoto. ¿Eso me afecta en algo?`,
+    a: $localize`En el precio, para bien: sin oficina que mantener, el presupuesto se va entero a tu proyecto. El trabajo se hace por videollamada y con un documento compartido donde ves el avance cada día. Si prefieres vernos en persona para arrancar, se organiza.`,
   },
   {
-    q: 'No tengo fotos buenas de mi negocio. ¿Es un problema?',
-    a: 'No. Te enviamos una guía para hacerlas tú con el móvil, y si prefieres, coordinamos a un fotógrafo en tu ciudad. Mientras tanto usamos recursos de calidad para que la web pueda salir a tiempo.',
+    q: $localize`No tengo fotos buenas de mi negocio. ¿Es un problema?`,
+    a: $localize`No. Te enviamos una guía para hacerlas tú con el móvil, y si prefieres, coordinamos a un fotógrafo en tu ciudad. Mientras tanto usamos recursos de calidad para que la web pueda salir a tiempo.`,
   },
   {
-    q: '¿La web es mía o me quedo atado a vosotros?',
-    a: 'Es tuya. El dominio se registra a tu nombre, te entregamos el código y los accesos, y puedes llevártela cuando quieras. El mantenimiento es opcional y se cancela con un mes de aviso.',
+    q: $localize`¿La web es mía o me quedo atado a vosotros?`,
+    a: $localize`Es tuya. El dominio se registra a tu nombre, te entregamos el código y los accesos, y puedes llevártela cuando quieras. El mantenimiento es opcional y se cancela con un mes de aviso.`,
   },
   {
-    q: '¿Y si a mitad del proyecto quiero cambiar cosas?',
-    a: 'Durante el diseño hay dos rondas de cambios incluidas, que es donde salen casi todos. Si el cambio llega después y toca el alcance, te decimos qué cuesta y decides tú; nunca aparece de sorpresa en la factura.',
+    q: $localize`¿Y si a mitad del proyecto quiero cambiar cosas?`,
+    a: $localize`Durante el diseño hay dos rondas de cambios incluidas, que es donde salen casi todos. Si el cambio llega después y toca el alcance, te decimos qué cuesta y decides tú; nunca aparece de sorpresa en la factura.`,
   },
   {
-    q: '¿Podré cambiar textos o precios yo mismo?',
-    a: 'Sí. Dejamos editable lo que se toca a menudo (carta, horarios, precios, ofertas) y te grabamos un vídeo corto explicando cómo. Si prefieres no tocar nada, lo hacemos nosotros dentro del mantenimiento.',
+    q: $localize`¿Podré cambiar textos o precios yo mismo?`,
+    a: $localize`Sí. Dejamos editable lo que se toca a menudo (carta, horarios, precios, ofertas) y te grabamos un vídeo corto explicando cómo. Si prefieres no tocar nada, lo hacemos nosotros dentro del mantenimiento.`,
   },
   {
-    q: '¿Qué pasa si ya tengo una web hecha?',
-    a: 'La auditamos gratis. A veces sale más a cuenta arreglar lo que tienes que rehacerlo, y te lo diremos aunque nos convenga lo contrario. Si la rehacemos, mantenemos las direcciones que ya posicionan.',
+    q: $localize`¿Qué pasa si ya tengo una web hecha?`,
+    a: $localize`La auditamos gratis. A veces sale más a cuenta arreglar lo que tienes que rehacerlo, y te lo diremos aunque nos convenga lo contrario. Si la rehacemos, mantenemos las direcciones que ya posicionan.`,
+  },
+  // Al final y no en medio: las páginas de servicio eligen sus preguntas por
+  // posición en esta lista.
+  {
+    q: $localize`¿Dónde estáis? ¿Solo hacéis webs en Alicante?`,
+    a: $localize`Estamos en Mutxamel, junto a Alicante, y hacemos webs para negocios de toda España. Con los de la provincia de Alicante podemos vernos en persona para arrancar; con el resto, todo funciona igual de bien por videollamada.`,
   },
 ];

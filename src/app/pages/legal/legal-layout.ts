@@ -19,10 +19,10 @@ import { Footer } from '../../sections/footer/footer';
         <header class="lg__head">
           <p class="lg__eyebrow">Legal</p>
           <h1 class="lg__title">{{ title() }}</h1>
-          <p class="lg__meta">Última actualización: {{ updated }}</p>
+          <p class="lg__meta" i18n>Última actualización: {{ updated }}</p>
         </header>
 
-        <nav class="lg__tabs" aria-label="Páginas legales">
+        <nav class="lg__tabs" aria-label="Páginas legales" i18n-aria-label>
           @for (page of pages; track page.path) {
             <a
               [routerLink]="page.path"

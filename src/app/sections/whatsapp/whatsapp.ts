@@ -52,6 +52,11 @@ import { WhatsappLines } from './whatsapp-lines';
   styleUrl: './whatsapp.scss',
 })
 export class Whatsapp {
+  protected readonly labels = {
+    open: $localize`Escríbenos por WhatsApp`,
+    close: $localize`Cerrar las opciones de WhatsApp`,
+  };
+
   private readonly store = inject(Store);
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly destroyRef = inject(DestroyRef);

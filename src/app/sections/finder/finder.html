@@ -1,0 +1,59 @@
+<section class="fnd sec sec--flush" id="busqueda" #root>
+  <div class="fnd__inner shell">
+    <!-- La demostración vivía en el hero. Allí competía con el titular y
+         obligaba a elegir entre ver la demo o ver el botón en un móvil; aquí
+         tiene la pantalla para ella, y el hero se queda con la imagen. -->
+    <div class="fnd__copy">
+      <h2 class="sec-title" i18n>
+        La pregunta no es si necesitas una web, <em>sino cuántos clientes pierdes sin ella.</em>
+      </h2>
+      <p class="sec-lead" i18n>
+        Así te ve un cliente cuando busca desde el móvil. Quien sale arriba, con buenas reseñas y
+        una web que carga al instante, se lleva la visita. Desplázate y mira qué pasa.
+      </p>
+    </div>
+
+    <figure class="finder" data-finder>
+      <div class="finder__phone">
+        <div class="finder__search">
+          <svg class="finder__icon" viewBox="0 0 16 16" aria-hidden="true">
+            <circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+          <span class="finder__query" data-finder-query>{{ firstQuery }}</span>
+          <span class="finder__caret" aria-hidden="true"></span>
+        </div>
+
+        <p class="finder__label" i18n>Resultados cerca de ti</p>
+
+        <div class="finder__results">
+          <span class="finder__rank" style="grid-row: 1">01</span>
+          <span class="finder__rank" style="grid-row: 2">02</span>
+          <span class="finder__rank" style="grid-row: 3">03</span>
+
+          <article class="finder__row" style="grid-row: 1" data-row>
+            <span class="finder__name">Bar La Parada</span>
+            <span class="finder__meta" i18n>3,8 ★ (24) · Sin web</span>
+          </article>
+
+          <article class="finder__row" style="grid-row: 2" data-row>
+            <span class="finder__name" i18n>Cafetería Duna</span>
+            <span class="finder__meta" i18n>4,1 ★ (58) · Web lenta</span>
+          </article>
+
+          <article class="finder__row finder__row--you" style="grid-row: 3" data-row data-row-you>
+            <span class="finder__name" i18n>Tu negocio</span>
+            <span class="finder__meta" i18n>4,8 ★ (312) · Abierto ahora · Reservar</span>
+            <span class="finder__badge">Web MakeWeb</span>
+          </article>
+        </div>
+
+        <p class="finder__flag" data-finder-flag i18n>Primera posición · 0,8 s de carga</p>
+      </div>
+
+      <figcaption class="visually-hidden" i18n>
+        Simulación de una búsqueda en el móvil: tu negocio sube del tercer al primer puesto.
+      </figcaption>
+    </figure>
+  </div>
+</section>

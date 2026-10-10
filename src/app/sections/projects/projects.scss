@@ -1,0 +1,146 @@
+@use 'mixins' as *;
+
+.prj {
+  overflow: clip;
+}
+
+// Las fichas arrancan alineadas con el texto y se salen por la derecha: en
+// escritorio caben tres; en móvil se desliza, y la que asoma dice que hay más.
+.prj__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(18rem, calc((min(100vw, var(--shell)) - var(--gutter) * 2 - 3rem) / 3));
+  gap: 1.5rem;
+  margin: clamp(3rem, 6vw, 5rem) 0 0;
+  padding: 0 var(--gutter) 1rem max(var(--gutter), calc((100vw - var(--shell)) / 2 + var(--gutter)));
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include below(700) {
+    grid-auto-columns: 82%;
+    gap: 1rem;
+  }
+}
+
+.prj__card {
+  scroll-snap-align: start;
+}
+
+.prj__link,
+.prj__card--pending {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.prj__frame {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  background: var(--ink-800);
+}
+
+.prj__shot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: scale 0.9s var(--ease-out);
+
+  .prj__link:hover & {
+    scale: 1.04;
+  }
+}
+
+.prj__name {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.prj__meta {
+  font-size: 0.88rem;
+  color: var(--text-mute);
+}
+
+// --- huecos reservados ------------------------------------------------------
+.prj__card--pending .prj__name {
+  color: var(--text-soft);
+}
+
+.prj__chrome {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--line);
+
+  i {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--line-strong);
+  }
+}
+
+.prj__skeleton {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.4rem 1.3rem;
+}
+
+.prj__bar,
+.prj__block {
+  display: block;
+  height: 0.6rem;
+  border-radius: 99px;
+  background: var(--veil-05);
+}
+
+.prj__bar--title {
+  width: 62%;
+  height: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.prj__bar--short {
+  width: 40%;
+}
+
+.prj__block {
+  height: 4.5rem;
+  margin-top: 0.6rem;
+  border-radius: var(--radius-s);
+}
+
+
+.prj__all {
+  grid-column: 2;
+  justify-self: start;
+  display: inline-flex;
+  gap: 0.5rem;
+  min-height: 44px;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  border-bottom: 1px solid var(--line-strong);
+
+  &:hover {
+    color: var(--accent-ink);
+    border-color: var(--accent-ink);
+  }
+
+  @include below(900) {
+    grid-column: 1;
+  }
+}

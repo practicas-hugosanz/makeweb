@@ -1,0 +1,71 @@
+@use 'mixins' as *;
+
+.st-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding-top: clamp(4rem, 9vw, 7rem);
+
+  @include below(900) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.st-fact {
+  display: grid;
+  gap: 0.6rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-strong);
+}
+
+.st-fact__value {
+  width: fit-content;
+  padding-right: 0.06em;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 2rem + 3vw, 5rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: var(--violet-lift);
+}
+
+.st-fact__body {
+  max-width: 20ch;
+  color: var(--text-soft);
+}
+
+.st-quote {
+  padding: var(--section-y) clamp(0.5rem, 1.2vw, 1rem) 0;
+}
+
+.st-quote__card {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: clamp(20rem, 50vh, 30rem);
+  padding: clamp(2rem, 6vw, 6rem);
+  border-radius: var(--radius-xl);
+  overflow: clip;
+  background: var(--ink-800);
+
+  @include below(600) {
+    border-radius: var(--radius-l);
+  }
+}
+
+.st-quote__text {
+  max-width: 24ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 1.1rem + 2.8vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+
+  em {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--violet-lift);
+  }
+}

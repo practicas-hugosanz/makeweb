@@ -1,34 +1,30 @@
 import { ChangeDetectionStrategy, Component, afterNextRender, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MotionService } from '../../core/animation/motion.service';
+import { Closing } from '../../sections/closing/closing';
 import { Commitments } from '../../sections/commitments/commitments';
-import { Contact } from '../../sections/contact/contact';
 import { Faq } from '../../sections/faq/faq';
+import { Finder } from '../../sections/finder/finder';
 import { Footer } from '../../sections/footer/footer';
 import { Hero } from '../../sections/hero/hero';
 import { Process } from '../../sections/process/process';
+import { Projects } from '../../sections/projects/projects';
 import { Services } from '../../sections/services/services';
 
 @Component({
   selector: 'mw-home',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    Hero,
-    Services,
-    Process,
-    Commitments,
-    Faq,
-    Contact,
-    Footer,
-  ],
+  imports: [Hero, Finder, Services, Projects, Process, Commitments, Faq, Closing, Footer],
   template: `
     <main id="contenido">
       <mw-hero />
+      <mw-finder />
       <mw-services />
+      <mw-projects />
       <mw-process />
       <mw-commitments />
       <mw-faq />
-      <mw-contact />
+      <mw-closing />
     </main>
     <mw-footer />
   `,
