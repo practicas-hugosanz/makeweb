@@ -193,6 +193,7 @@ export class Neon {
     let idle = 0;
     let frame = 0;
     let t = 0;
+    let resting = false;
 
     const onScroll = () => {
       scrolling = true;
@@ -235,7 +236,10 @@ export class Neon {
       let ty: number;
       let spot = perch && (compact || !scrolling) ? this.spotFor(perch, W, H, compact) : null;
       // En móvil, si su titular se ha ido de la pantalla, espera en la esquina.
-      if (spot && compact && (spot.y < 72 || spot.y > innerHeight - 150 - H)) spot = null;
+      // El suelo es el borde de arriba de la barra de pestañas, medido en cada
+      // fotograma: en el móvil sube y baja con la barra del navegador.
+      const floor = compact ? this.floor() : innerHeight;
+      if (spot && compact && (spot.y < 72 || spot.y > floor - 60 - H)) spot = null;
       this.perched = !!spot && Math.hypot(vx, vy) < 1.5;
       // En la esquina se pone su círculo oscuro detrás: ahí suele haber texto.
       if (compact) el.classList.toggle('is-resting', !spot);
@@ -246,7 +250,7 @@ export class Neon {
       } else if (compact) {
         // La esquina inferior izquierda, encima de la barra de pestañas.
         tx = 22;
-        ty = innerHeight - 112 - H;
+        ty = floor - 26 - H;
       } else {
         // En vuelo: por el margen derecho, a media altura, con un vaivén lento.
         tx = innerWidth - W - 56 + Math.sin(t * 0.9) * 18;
@@ -268,10 +272,25 @@ export class Neon {
         }
         x += vx;
         y += vy;
+
+        // Ya en la esquina, va pegada a la barra sin muelle: al esconderse la
+        // barra del navegador, la de pestañas baja de golpe y, con el muelle,
+        // la M se quedaba un momento montada encima de ella.
+        if (compact && !spot) {
+          if (resting) {
+            x = tx;
+            y = ty;
+            vx = vy = 0;
+          } else if (Math.hypot(tx - x, ty - y) < 2 && Math.hypot(vx, vy) < 0.5) {
+            resting = true;
+          }
+        } else {
+          resting = false;
+        }
       }
 
       // Posado, respira; volando, cabecea en la dirección en que va.
-      const bob = spot ? Math.sin(t * 2.2) * (compact ? 2 : 3) : Math.sin(t * 5) * 2;
+      const bob = spot ? Math.sin(t * 2.2) * (compact ? 2 : 3) : compact ? 0 : Math.sin(t * 5) * 2;
       const tilt = Math.max(-16, Math.min(16, vx * 1.6));
       el.style.transform = `translate3d(${x.toFixed(1)}px, ${(y + bob).toFixed(1)}px, 0) rotate(${tilt.toFixed(1)}deg)`;
 
@@ -308,7 +327,7 @@ export class Neon {
       document.querySelectorAll('#smooth-content :is(h1, h2, h3)').forEach((c) => {
         if (c.getBoundingClientRect().width === 0) return;
         const spot = this.spotFor(c, w, h, true);
-        if (!spot || spot.y < 90 || spot.y > innerHeight - 150 - h) return;
+        if (!spot || spot.y < 90 || spot.y > this.floor() - 60 - h) return;
         const d = Math.abs(spot.y - mid);
         if (d < bestDist) {
           bestDist = d;
@@ -335,6 +354,19 @@ export class Neon {
 
     return best;
   }
+
+  /**
+   * El borde de arriba de la barra de pestañas, que es el suelo de la M en
+   * móvil. Se mide en vez de calcularse con `innerHeight`: en el móvil la barra
+   * del navegador aparece y desaparece, y la de pestañas se mueve con ella.
+   */
+  private floor(): number {
+    if (!this.tabbar?.isConnected) this.tabbar = document.querySelector<HTMLElement>('.tb');
+    const r = this.tabbar?.getBoundingClientRect();
+    return r && r.height ? r.top : innerHeight - 86;
+  }
+
+  private tabbar: HTMLElement | null = null;
 
   /** El punto exacto: al final de la última línea del titular, o junto al botón. */
   private spotFor(target: Element, W: number, H: number, compact: boolean): { x: number; y: number } | null {
