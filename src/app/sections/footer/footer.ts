@@ -10,6 +10,7 @@ import { ConsentActions } from '../../state/consent/consent.actions';
 import { UiActions } from '../../state/ui/ui.actions';
 import { selectWhatsappOpen } from '../../state/ui/ui.feature';
 import { WhatsappLines } from '../whatsapp/whatsapp-lines';
+import { routePath } from '../../core/trailing-slash';
 
 @Component({
   selector: 'mw-footer',
@@ -52,6 +53,6 @@ export class Footer {
   }
 
   private onHome(): boolean {
-    return this.router.url.split(/[?#]/)[0] === '/';
+    return routePath(this.router.url) === '/';
   }
 }

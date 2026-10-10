@@ -4,11 +4,12 @@ import { COOKIE_CATEGORIES, COOKIE_INVENTORY, LEGAL } from '../../../data/legal'
 import { ConsentActions } from '../../../state/consent/consent.actions';
 import { selectChoice } from '../../../state/consent/consent.feature';
 import { LegalLayout } from '../legal-layout';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'mw-cookies',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [LegalLayout],
+  imports: [LegalLayout, RouterLink],
   templateUrl: './cookies.html',
 })
 export class Cookies {

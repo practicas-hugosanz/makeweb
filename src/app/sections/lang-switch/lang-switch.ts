@@ -10,6 +10,7 @@ import {
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { LANGUAGES, Language, currentLanguage, localizedPath } from '../../core/i18n';
+import { routePath, withSlash } from '../../core/trailing-slash';
 
 /**
  * El selector de idioma de la barra.
@@ -73,7 +74,7 @@ export class LangSwitch {
   constructor() {
     const destroyRef = inject(DestroyRef);
     afterNextRender(() => {
-      const read = () => this.path.set(this.router.url.split(/[?#]/)[0] || '/');
+      const read = () => this.path.set(routePath(this.router.url));
       read();
       const sub = this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe(() => {
         read();
@@ -84,7 +85,7 @@ export class LangSwitch {
   }
 
   protected hrefFor(lang: Language): string {
-    return localizedPath(lang, this.path());
+    return withSlash(localizedPath(lang, this.path()));
   }
 
   protected onOutside(event: PointerEvent): void {

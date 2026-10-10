@@ -5,12 +5,13 @@ import {
 } from '@angular/core';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { TitleStrategy, provideRouter, withInMemoryScrolling } from '@angular/router';
+import { TitleStrategy, UrlSerializer, provideRouter, withInMemoryScrolling } from '@angular/router';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 
 import { routes } from './app.routes';
 import { SeoStrategy } from './core/seo';
+import { TrailingSlashUrlSerializer } from './core/trailing-slash';
 import { uiFeature } from './state/ui/ui.feature';
 import { leadFeature } from './state/lead/lead.feature';
 import { consentFeature } from './state/consent/consent.feature';
@@ -28,6 +29,8 @@ export const appConfig: ApplicationConfig = {
     // de cada página. El enrutador la llama también al prerenderizar, que es
     // cuando importa: ese HTML es el que lee el buscador.
     { provide: TitleStrategy, useClass: SeoStrategy },
+    // Direcciones con barra final, como las sirve GitHub Pages (ver el archivo).
+    { provide: UrlSerializer, useClass: TrailingSlashUrlSerializer },
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
     provideStore({

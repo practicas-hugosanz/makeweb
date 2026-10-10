@@ -9,6 +9,7 @@ import {
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
 import { SERVICE_PAGES } from '../../data/services';
+import { routePath } from '../../core/trailing-slash';
 
 interface Tab {
   label: string;
@@ -112,11 +113,11 @@ export class Tabbar {
 
   constructor() {
     afterNextRender(() => {
-      this.path.set(this.router.url.split(/[?#]/)[0]);
+      this.path.set(routePath(this.router.url));
       const sub = this.router.events
         .pipe(filter((e) => e instanceof NavigationEnd))
         .subscribe(() => {
-          this.path.set(this.router.url.split(/[?#]/)[0]);
+          this.path.set(routePath(this.router.url));
           this.sheetOpen.set(false);
         });
       this.destroyRef.onDestroy(() => sub.unsubscribe());

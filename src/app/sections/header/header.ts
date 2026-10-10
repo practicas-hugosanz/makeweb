@@ -19,6 +19,8 @@ import { SERVICE_PAGES } from '../../data/services';
 import { LangSwitch } from '../lang-switch/lang-switch';
 import { UiActions } from '../../state/ui/ui.actions';
 import { selectActiveSection, selectMenuOpen } from '../../state/ui/ui.feature';
+import { currentLanguage, localizedPath } from '../../core/i18n';
+import { routePath, withSlash } from '../../core/trailing-slash';
 
 @Component({
   selector: 'mw-header',
@@ -40,6 +42,7 @@ export class Header {
   protected readonly active = this.store.selectSignal(selectActiveSection);
   protected readonly condensed = signal(false);
   protected readonly servicePages = SERVICE_PAGES;
+  private readonly lang = currentLanguage();
 
   /** La ruta actual, sin fragmento ni parámetros. */
   private readonly path = signal('/');
@@ -56,11 +59,11 @@ export class Header {
 
       // Las secciones solo existen en la portada. Al ir y volver de una página
       // legal hay que rehacer los triggers contra el DOM nuevo.
-      this.path.set(this.router.url.split(/[?#]/)[0]);
+      this.path.set(routePath(this.router.url));
       const sub = this.router.events
         .pipe(filter((event) => event instanceof NavigationEnd))
         .subscribe(() => {
-          this.path.set(this.router.url.split(/[?#]/)[0]);
+          this.path.set(routePath(this.router.url));
           queueMicrotask(() => this.trackSections());
         });
 
@@ -101,6 +104,17 @@ export class Header {
     return path === '/' && this.active() === link.id;
   }
 
+  /**
+   * El `href` real de cada enlace: en el idioma de la página y con barra
+   * final. El clic lo intercepta `go()`, pero el `href` es lo que siguen los
+   * buscadores y lo que se abre en otra pestaña; escrito a mano («/precios»)
+   * llevaba desde /en/ a la página en castellano.
+   */
+  protected hrefFor(route?: string, id?: string): string {
+    if (route) return withSlash(localizedPath(this.lang, route));
+    return localizedPath(this.lang, '/') + (id && id !== 'inicio' ? `#${id}` : '');
+  }
+
   protected closeMenu(): void {
     this.store.dispatch(UiActions.menuClosed());
   }
@@ -136,7 +150,7 @@ export class Header {
   }
 
   private onHome(): boolean {
-    return this.router.url.split(/[?#]/)[0] === '/';
+    return routePath(this.router.url) === '/';
   }
 
   /**

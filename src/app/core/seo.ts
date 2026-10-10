@@ -7,6 +7,7 @@ import { LEGAL, PHONES } from '../data/legal';
 import { LOCAL_FAQS } from '../data/local';
 import { SERVICE_PAGES } from '../data/services';
 import { LANGUAGES, currentLanguage, localizedPath } from './i18n';
+import { withSlash } from './trailing-slash';
 
 /**
  * Lo que cada ruta declara sobre sí misma de cara a los buscadores. Va en el
@@ -103,11 +104,13 @@ export class SeoStrategy extends TitleStrategy {
     return found;
   }
 
-  /** Absoluta y sin barra final, salvo las portadas, que la llevan. */
+  /**
+   * Absoluta y con barra final, como la sirve GitHub Pages: sin ella responde
+   * con un 301, y una canónica que redirige es una señal contradictoria (ver
+   * `trailing-slash.ts`).
+   */
   private absolute(path: string): string {
-    const clean = path.replace(/^\/+/, '');
-    if (!clean) return `${LEGAL.site}/`;
-    return clean.endsWith('/') ? `${LEGAL.site}/${clean}` : `${LEGAL.site}/${clean.replace(/\/+$/, '')}`;
+    return `${LEGAL.site}${withSlash(path.startsWith('/') ? path : `/${path}`)}`;
   }
 
   /**
@@ -225,7 +228,7 @@ function organization(): object {
     knowsLanguage: 'es',
     makesOffer: SERVICE_PAGES.map((p) => ({
       '@type': 'Offer',
-      itemOffered: { '@type': 'Service', name: p.name, url: `${LEGAL.site}/servicios/${p.slug}` },
+      itemOffered: { '@type': 'Service', name: p.name, url: `${LEGAL.site}/servicios/${p.slug}/` },
     })),
     contactPoint: PHONES.map((p) => ({
       '@type': 'ContactPoint',

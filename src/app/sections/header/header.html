@@ -9,7 +9,7 @@
     <a
       class="bar__brand"
       data-bar-brand
-      href="/"
+      [href]="hrefFor()"
       (click)="go($event, 'inicio')"
       aria-label="MakeWeb, ir al inicio"
       i18n-aria-label
@@ -28,7 +28,7 @@
         @for (link of links; track link.id) {
           <li [class.bar__has-sub]="link.id === 'servicios'">
             <a
-              [href]="link.route ?? '/#' + link.id"
+              [href]="hrefFor(link.route, link.id)"
               [class.is-active]="isActive(link)"
               [attr.aria-current]="isActive(link) ? 'page' : null"
               (click)="go($event, link.id, link.route)"
@@ -65,7 +65,7 @@
       <a
         class="btn btn--primary btn--go bar__cta"
         data-bar-cta
-        href="/contacto"
+        [href]="hrefFor('/contacto')"
         (click)="go($event, 'contacto', '/contacto')"
         [attr.inert]="menuOpen() ? '' : null"
       >
@@ -103,7 +103,7 @@
         @for (link of links; track link.id; let i = $index) {
           <li [class.is-current]="isActive(link)">
             <a
-              [href]="link.route ?? '/#' + link.id"
+              [href]="hrefFor(link.route, link.id)"
               [attr.aria-current]="isActive(link) ? 'page' : null"
               (click)="go($event, link.id, link.route)"
             >
@@ -126,7 +126,7 @@
           <a
             class="btn btn--primary menu__cta"
             data-menu-cta
-            href="/contacto"
+            [href]="hrefFor('/contacto')"
             (click)="go($event, 'contacto', '/contacto')"
           >
             <span class="btn__label" i18n>Pide presupuesto</span>
