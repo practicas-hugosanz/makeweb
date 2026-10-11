@@ -266,22 +266,27 @@
   animation-name: pick;
 }
 
+// El día parte igual que los demás: si encoge, en el calendario se ve un hueco.
 @keyframes pick {
-  0%, 20% { transform: scale(0.4); fill: rgb(244 239 231 / 14%); }
-  32% { transform: scale(1.2); fill: #7262eb; }
+  0%, 20% { transform: scale(1); fill: rgb(244 239 231 / 14%); }
+  26% { transform: scale(0.82); fill: #7262eb; }
+  34% { transform: scale(1.15); fill: #7262eb; }
   40%, 88% { transform: scale(1); fill: #7262eb; }
-  100% { transform: scale(0.4); fill: rgb(244 239 231 / 14%); }
+  100% { transform: scale(1); fill: rgb(244 239 231 / 14%); }
 }
 
+// Con el trazo recogido el remate redondo seguía pintando un punto blanco: va
+// también con opacidad, y se desvanece en vez de deshacerse.
 .a-check {
   stroke-dasharray: 1;
   animation-name: check;
 }
 
 @keyframes check {
-  0%, 38% { stroke-dashoffset: 1; }
-  55%, 88% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: 1; }
+  0%, 38% { stroke-dashoffset: 1; opacity: 0; }
+  40% { stroke-dashoffset: 1; opacity: 1; }
+  55%, 86% { stroke-dashoffset: 0; opacity: 1; }
+  96%, 100% { stroke-dashoffset: 0; opacity: 0; }
 }
 
 // --- Mantenimiento: el escudo respira y las copias dan la vuelta --------------------

@@ -100,7 +100,7 @@ export type ServiceArtKind = 'diseno' | 'desarrollo' | 'seo-local' | 'conversion
               />
             }
           }
-          <path class="check a-check" pathLength="1" d="M175 128l4 4 8-9" />
+          <path class="check a-check" pathLength="1" d="M176 128l4 4 8-9" />
         }
 
         <!-- Mantenimiento: el escudo con la copia hecha y la flecha de vuelta. -->

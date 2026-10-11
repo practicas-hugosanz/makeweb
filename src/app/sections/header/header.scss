@@ -45,6 +45,13 @@
   height: var(--bar-h);
   padding-inline: 1.15rem 0.75rem;
   pointer-events: auto;
+
+  // Sin los enlaces del centro la rejilla de tres columnas sobra: dejaba al
+  // idioma y al botón en media barra, y el globo del idioma se aplastaba a 0 px.
+  @include below(1080) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 // La superficie de la píldora. Va detrás del contenido y es la que GSAP encoge
