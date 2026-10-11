@@ -37,6 +37,11 @@ export interface ServicePage {
   faqs: readonly Faq[];
   /** El cierre: «hablemos de tu …». */
   closing: string;
+  /**
+   * Proyecto a medida (tienda, software, IA): no cabe en la semana de una web,
+   * así que la página enseña el proceso por pasos y sin días.
+   */
+  bespoke?: boolean;
   seoTitle: string;
   seoDescription: string;
 }
@@ -140,6 +145,111 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
     seoTitle: $localize`Reservas y citas online para negocios en Alicante — MakeWeb`,
     seoDescription:
       $localize`Reservas, citas y pedidos online integrados en la web de tu negocio en Alicante o en toda España, con avisos automáticos y WhatsApp Business.`,
+  },
+  {
+    slug: 'tiendas-online',
+    service: service('tienda'),
+    name: $localize`Tiendas online`,
+    title: [$localize`Tu tienda, `, $localize`abierta `, $localize`las 24 horas.`],
+    lead: $localize`Diseñamos y programamos tu tienda online a medida: catálogo, carrito, pagos seguros y envíos, con un panel sencillo para que gestiones pedidos y existencias sin ayuda.`,
+    stats: [
+      { value: $localize`24 h`, title: $localize`Abierta siempre`, body: $localize`Tus clientes compran cuando les viene bien, no solo en horario de tienda.` },
+      { value: $localize`Móvil`, title: $localize`Comprar desde el teléfono`, body: $localize`Carrito y pago cómodos en pantalla pequeña, probados en móviles reales.` },
+      { value: $localize`Panel`, title: $localize`Pedidos y existencias`, body: $localize`Cada pedido, su estado y lo que queda en el almacén, en un solo sitio.` },
+    ],
+    offersTitle: [$localize`Lo que `, $localize`montamos `, $localize`en tu tienda.`],
+    offers: [
+      { title: $localize`Catálogo a medida`, body: $localize`Fichas de producto con fotos, variantes de talla o color y buscador, pensadas para que se entienda qué compras.` },
+      { title: $localize`Carrito y pagos seguros`, body: $localize`Pago con tarjeta y otros métodos habituales, a través de pasarelas de pago reconocidas.` },
+      { title: $localize`Envíos y devoluciones`, body: $localize`Gastos de envío por zona o por peso, seguimiento del pedido y avisos automáticos al cliente.` },
+      { title: $localize`Panel de gestión`, body: $localize`Pedidos, clientes y existencias en un panel sencillo, con vídeos cortos que te enseñan a usarlo.` },
+    ],
+    faqs: [
+      {
+        q: $localize`¿Cuánto cuesta una tienda online?`,
+        a: $localize`Depende del número de productos, de los métodos de pago y de cómo gestionas los envíos. Te enviamos una propuesta con el precio cerrado antes de empezar, y el presupuesto que firmas es el que pagas.`,
+      },
+      {
+        q: $localize`¿Podré añadir productos yo mismo?`,
+        a: $localize`Sí. Te dejamos un panel para dar de alta productos, cambiar precios y ver pedidos, y te grabamos vídeos cortos explicando cómo se hace.`,
+      },
+      ...faqs(5, 2),
+    ],
+    closing: $localize`hablemos de tu tienda.`,
+    bespoke: true,
+    seoTitle: $localize`Tiendas online a medida en Alicante y España — MakeWeb`,
+    seoDescription:
+      $localize`Creamos tiendas online a medida en Alicante y para toda España: catálogo, carrito, pagos seguros, envíos y un panel sencillo para gestionar pedidos y stock.`,
+  },
+  {
+    slug: 'software-a-medida',
+    service: service('software'),
+    name: $localize`Software a medida`,
+    title: [$localize`Software `, $localize`hecho para cómo `, $localize`trabaja tu negocio.`],
+    lead: $localize`Aplicaciones web, paneles de gestión e integraciones a medida. Lo que hoy haces a mano o repartido en varias hojas de cálculo, en una sola herramienta pensada para tu equipo.`,
+    stats: [
+      { value: $localize`A medida`, title: $localize`Solo lo que necesitas`, body: $localize`Las funciones que usa tu equipo, sin pagar por un programa genérico lleno de opciones que sobran.` },
+      { value: $localize`Navegador`, title: $localize`En cualquier equipo`, body: $localize`Desde el ordenador, la tableta o el móvil, sin instalar nada.` },
+      { value: $localize`Tuyo`, title: $localize`Código entregado`, body: $localize`Te damos el código y los accesos: el programa es tuyo, igual que una web.` },
+    ],
+    offersTitle: [$localize`Lo que `, $localize`programamos `, $localize`para ti.`],
+    offers: [
+      { title: $localize`Aplicaciones web`, body: $localize`Herramientas internas para tu equipo: presupuestos, inventario, fichajes o lo que tu día a día necesite.` },
+      { title: $localize`Paneles de gestión`, body: $localize`Tus datos en un solo sitio, con los números que importan a la vista.` },
+      { title: $localize`Integraciones`, body: $localize`Conectamos las herramientas que ya usas para que los datos pasen de una a otra sin copiar y pegar.` },
+      { title: $localize`Automatización de tareas`, body: $localize`Informes, avisos o copias de datos que se hacen solos, sin que nadie tenga que acordarse.` },
+    ],
+    faqs: [
+      {
+        q: $localize`¿Cómo sé si necesito software a medida?`,
+        a: $localize`Si tu equipo pierde horas copiando datos de un sitio a otro, o si ningún programa del mercado encaja con cómo trabajas, probablemente sí. Nos lo cuentas en una videollamada y te decimos con sinceridad si te sale más a cuenta uno a medida o uno que ya exista.`,
+      },
+      {
+        q: $localize`¿Cuánto tarda y cuánto cuesta?`,
+        a: $localize`Depende del alcance. Antes de empezar te damos por escrito qué se va a hacer, el precio cerrado y la fecha de entrega. Si el proyecto es grande, lo dividimos en fases para que empieces a usarlo cuanto antes.`,
+      },
+      ...faqs(3, 2),
+    ],
+    closing: $localize`hablemos de tu proyecto.`,
+    bespoke: true,
+    seoTitle: $localize`Software a medida para empresas en Alicante — MakeWeb`,
+    seoDescription:
+      $localize`Desarrollo de software a medida en Alicante y toda España: aplicaciones web, paneles de gestión, integraciones y automatizaciones pensadas para tu negocio.`,
+  },
+  {
+    slug: 'inteligencia-artificial',
+    service: service('ia'),
+    name: $localize`Inteligencia artificial`,
+    title: [$localize`Inteligencia artificial `, $localize`que te quita trabajo, `, $localize`no que te lo da.`],
+    lead: $localize`Asistentes que responden a tus clientes con la información de tu negocio, automatizaciones que leen y ordenan correos y documentos, y herramientas de IA conectadas con lo que ya usas.`,
+    stats: [
+      { value: $localize`24 h`, title: $localize`Asistente siempre activo`, body: $localize`Resuelve las dudas frecuentes en tu web a cualquier hora, y te pasa lo que no sabe resolver.` },
+      { value: $localize`Tus datos`, title: $localize`Respuestas con tu información`, body: $localize`Contesta con tus horarios, precios y servicios, no con respuestas genéricas.` },
+      { value: $localize`A medida`, title: $localize`Donde ya trabajas`, body: $localize`Correo, hojas de cálculo, agenda o la web: la IA se conecta a lo que ya usas.` },
+    ],
+    offersTitle: [$localize`Lo que `, $localize`hacemos `, $localize`con IA.`],
+    offers: [
+      { title: $localize`Asistente para tu web`, body: $localize`Un chat que resuelve las dudas de tus clientes con la información de tu negocio y te avisa cuando hace falta una persona.` },
+      { title: $localize`Automatización con IA`, body: $localize`Correos clasificados, respuestas sugeridas y tareas que se ponen en marcha solas cuando llega algo nuevo.` },
+      { title: $localize`Correos y documentos`, body: $localize`Sacar los datos de facturas, albaranes o formularios y llevarlos a donde los necesitas.` },
+      { title: $localize`Formación para tu equipo`, body: $localize`Te enseñamos a sacarle partido a la IA en el día a día, con ejemplos de tu propio negocio.` },
+    ],
+    faqs: [
+      {
+        q: $localize`¿Qué pasa con mis datos y los de mis clientes?`,
+        a: $localize`Usamos solo los datos que hacen falta para cada tarea y te explicamos por escrito qué servicio los trata y dónde. Si algún dato no debe salir de tu empresa, la solución se diseña para que no salga.`,
+      },
+      {
+        q: $localize`¿Y si la IA se equivoca?`,
+        a: $localize`Puede pasar, y por eso la usamos en tareas acotadas, con tu información y con una persona revisando lo importante. Antes de ponerla en marcha la probamos con casos reales de tu negocio.`,
+      },
+      ...faqs(3, 2),
+    ],
+    closing: $localize`hablemos de tu idea.`,
+    bespoke: true,
+    seoTitle: $localize`Inteligencia artificial para empresas en Alicante — MakeWeb`,
+    seoDescription:
+      $localize`Soluciones de inteligencia artificial para negocios de Alicante y toda España: asistentes para tu web, automatización de correos y documentos, y formación.`,
   },
   {
     slug: 'mantenimiento-web',

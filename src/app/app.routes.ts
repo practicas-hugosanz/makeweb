@@ -21,12 +21,12 @@ export const routes: Routes = [
   {
     path: '',
     component: Home,
-    title: $localize`Diseño web en Alicante para negocios locales — MakeWeb`,
+    title: $localize`Diseño web, tiendas online y software en Alicante — MakeWeb`,
     data: {
       seo: {
         path: '',
         description:
-          $localize`Estudio de diseño y desarrollo web en Alicante para negocios locales de toda España. Webs a medida, rápidas y con SEO local: más llamadas, reservas y clientes.`,
+          $localize`Estudio de diseño web y software en Alicante para negocios de toda España: webs a medida, tiendas online, software, inteligencia artificial y SEO local.`,
         schema: 'faq',
       } satisfies SeoData,
     },
@@ -85,7 +85,7 @@ export const routes: Routes = [
       seo: {
         path: '/estudio',
         description:
-          $localize`MakeWeb somos Hugo y Lucas, un estudio de diseño y desarrollo web en Mutxamel (Alicante) que hace cada web desde cero para negocios locales de toda España.`,
+          $localize`MakeWeb somos Hugo y Lucas, un estudio de Mutxamel (Alicante) que hace webs, tiendas online, software e IA desde cero para negocios de toda España.`,
         crumb: $localize`El estudio`,
       } satisfies SeoData,
     },

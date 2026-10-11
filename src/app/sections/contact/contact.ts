@@ -24,7 +24,7 @@ import { PLANS } from '../../data/content';
 import { PHONES } from '../../data/legal';
 import { LeadActions } from '../../state/lead/lead.actions';
 import { selectError, selectReference, selectStatus } from '../../state/lead/lead.feature';
-import { STARTING_POINTS, UNDECIDED_PLAN } from '../../state/lead/lead.model';
+import { OTHER_PROJECTS, STARTING_POINTS, UNDECIDED_PLAN } from '../../state/lead/lead.model';
 
 @Component({
   selector: 'mw-contact',
@@ -41,9 +41,10 @@ export class Contact {
   private readonly store = inject(Store);
   private readonly motion = inject(MotionService);
 
-  /** Los tres planes tal y como se venden, más "aún no lo sé". */
+  /** Los tres planes tal y como se venden, los proyectos a medida y "aún no lo sé". */
   protected readonly planOptions = [
     ...PLANS.map((plan) => ({ id: plan.id, label: `${plan.name} — ${plan.kind.toLowerCase()}` })),
+    ...OTHER_PROJECTS,
     UNDECIDED_PLAN,
   ];
   protected readonly startingPoints = STARTING_POINTS;

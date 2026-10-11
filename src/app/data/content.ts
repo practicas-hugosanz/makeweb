@@ -14,7 +14,7 @@ export interface NavLink {
 
 export const NAV_LINKS: readonly NavLink[] = [
   // Servicios baja a la sección de la portada, y en escritorio despliega las
-  // cinco páginas de servicio. El resto son páginas propias, como en cualquier
+  // páginas de servicio. El resto son páginas propias, como en cualquier
   // web de varias páginas: la portada resume y enlaza, no lo contiene todo.
   { id: 'servicios', label: $localize`Servicios` },
   { id: 'proyectos', label: $localize`Proyectos`, route: '/proyectos' },
@@ -115,6 +115,47 @@ export const SERVICES: readonly Service[] = [
       { label: $localize`Avisos automáticos` },
     ],
   },
+  // Lo que va más allá de la web del negocio local. Sin cuota ni precio: cada
+  // uno es un proyecto distinto y se presupuesta aparte.
+  {
+    id: 'tienda',
+    index: $localize`Tiendas`,
+    title: $localize`Tu tienda, abierta las 24 horas`,
+    summary:
+      $localize`Tiendas online a medida para vender tus productos: catálogo, carrito, pagos seguros y envíos, con un panel sencillo para gestionar pedidos y existencias.`,
+    includes: [
+      { label: $localize`Catálogo y carrito` },
+      { label: $localize`Pagos seguros` },
+      { label: $localize`Envíos y devoluciones` },
+      { label: $localize`Panel de pedidos y stock` },
+    ],
+  },
+  {
+    id: 'software',
+    index: $localize`Software`,
+    title: $localize`Programas hechos para cómo trabajas`,
+    summary:
+      $localize`Aplicaciones web, paneles de gestión e integraciones a medida. Lo que hoy haces a mano o repartido en varias hojas de cálculo, en una sola herramienta.`,
+    includes: [
+      { label: $localize`Aplicaciones web` },
+      { label: $localize`Paneles de gestión` },
+      { label: $localize`Integraciones` },
+      { label: $localize`Automatización de tareas` },
+    ],
+  },
+  {
+    id: 'ia',
+    index: $localize`IA`,
+    title: $localize`Inteligencia artificial que te quita trabajo`,
+    summary:
+      $localize`Asistentes que responden a tus clientes con la información de tu negocio, y automatizaciones que leen y ordenan correos y documentos por ti.`,
+    includes: [
+      { label: $localize`Asistente para tu web` },
+      { label: $localize`Automatización con IA` },
+      { label: $localize`Correos y documentos` },
+      { label: $localize`Formación para tu equipo` },
+    ],
+  },
   {
     id: 'cuidado',
     index: $localize`Cuidado`,
@@ -200,6 +241,45 @@ export const PROCESS: readonly ProcessPhase[] = [
     title: $localize`Lanzamos`,
     body: $localize`Publicamos, avisamos a Google y te enseñamos a moverla.`,
     outputs: [$localize`Puesta en marcha`, $localize`Formación en vídeo`, $localize`Alta en Google`],
+  },
+];
+
+/**
+ * El proceso de las tiendas, el software y la IA. Sin días: cada proyecto tiene
+ * su tamaño, y la fecha se da en la propuesta, no antes de saber qué se hace.
+ */
+export const PROJECT_PROCESS: readonly ProcessPhase[] = [
+  {
+    window: $localize`Paso 1`,
+    from: 1,
+    to: 1,
+    title: $localize`Escuchamos`,
+    body: $localize`Una videollamada para entender cómo trabajas hoy, qué te quita tiempo y qué quieres conseguir.`,
+    outputs: [],
+  },
+  {
+    window: $localize`Paso 2`,
+    from: 2,
+    to: 2,
+    title: $localize`Proponemos`,
+    body: $localize`Te enviamos por escrito qué vamos a hacer, el precio cerrado y la fecha de entrega. Decides tú.`,
+    outputs: [],
+  },
+  {
+    window: $localize`Paso 3`,
+    from: 3,
+    to: 3,
+    title: $localize`Construimos`,
+    body: $localize`Por fases, para que lo pruebes desde pronto y lo ajustemos con tu uso real.`,
+    outputs: [],
+  },
+  {
+    window: $localize`Paso 4`,
+    from: 4,
+    to: 4,
+    title: $localize`Entregamos`,
+    body: $localize`Lo ponemos en marcha, te enseñamos a usarlo y te entregamos el código y los accesos.`,
+    outputs: [],
   },
 ];
 
@@ -375,5 +455,9 @@ export const FAQS: readonly Faq[] = [
   {
     q: $localize`¿Dónde estáis? ¿Solo hacéis webs en Alicante?`,
     a: $localize`Estamos en Mutxamel, junto a Alicante, y hacemos webs para negocios de toda España. Con los de la provincia de Alicante podemos vernos en persona para arrancar; con el resto, todo funciona igual de bien por videollamada.`,
+  },
+  {
+    q: $localize`¿Solo hacéis páginas web?`,
+    a: $localize`No. También hacemos tiendas online, software a medida, soluciones con inteligencia artificial y, en general, cualquier proyecto informático que necesite tu negocio. Cuéntanos qué te hace falta y te decimos con sinceridad si podemos hacerlo, cuánto cuesta y cuánto tarda.`,
   },
 ];

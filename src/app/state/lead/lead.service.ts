@@ -4,7 +4,7 @@ import { Observable, catchError, map, throwError } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { LEAD_LIMITS, multiLine, singleLine } from '../../core/forms/sanitize';
 import { PLANS } from '../../data/content';
-import { Lead, QuickMessage, STARTING_POINTS, UNDECIDED_PLAN } from './lead.model';
+import { Lead, OTHER_PROJECTS, QuickMessage, STARTING_POINTS, UNDECIDED_PLAN } from './lead.model';
 
 export interface LeadReceipt {
   reference: string;
@@ -19,6 +19,8 @@ interface Web3FormsResponse {
 /** Los ids que viajan en el formulario no se entienden en un correo. */
 function planLabel(id: string): string {
   if (id === UNDECIDED_PLAN.id) return UNDECIDED_PLAN.label;
+  const other = OTHER_PROJECTS.find((option) => option.id === id);
+  if (other) return other.label;
   const plan = PLANS.find((candidate) => candidate.id === id);
   return plan ? `${plan.name} — ${plan.kind}` : id;
 }

@@ -4,7 +4,7 @@ export interface Lead {
   business: string;
   email: string;
   phone: string;
-  /** Coincide con el `id` de un plan de PLANS, o 'sin-decidir'. */
+  /** Coincide con el `id` de un plan de PLANS, de OTHER_PROJECTS, o 'sin-decidir'. */
   plan: string;
   /** Con qué presencia digital parte hoy. */
   current: string;
@@ -42,6 +42,17 @@ export const STARTING_POINTS: readonly ChoiceOption[] = [
   { id: 'web-vieja', label: $localize`Una web antigua que quiero rehacer` },
   { id: 'web-ok', label: $localize`Una web que funciona, pero quiero mejorarla` },
   { id: 'por-abrir', label: $localize`El negocio abre pronto y aún no hay nada` },
+];
+
+/**
+ * Lo que no es una web de plan: se elige en la misma lista que los planes, y
+ * cada uno se presupuesta aparte.
+ */
+export const OTHER_PROJECTS: readonly ChoiceOption[] = [
+  { id: 'tienda', label: $localize`Tienda online` },
+  { id: 'software', label: $localize`Software a medida` },
+  { id: 'ia', label: $localize`Inteligencia artificial` },
+  { id: 'otra', label: $localize`Otra solución informática` },
 ];
 
 /** La opción que se añade a los planes para quien todavía no ha elegido. */

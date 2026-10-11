@@ -21,7 +21,7 @@ interface Tab {
 /**
  * La navegación de móvil y tableta: cinco pestañas fijas abajo, al alcance del
  * pulgar, como en una app. Servicios no lleva a una página: abre una hoja con
- * las cinco páginas de servicio y los precios.
+ * las páginas de servicio y los precios.
  */
 @Component({
   selector: 'mw-tabbar',

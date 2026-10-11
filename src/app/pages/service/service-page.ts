@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/c
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
-import { PROCESS } from '../../data/content';
+import { PROCESS, PROJECT_PROCESS } from '../../data/content';
 import { SERVICE_PAGES, servicePage } from '../../data/services';
 import { CtaCard, CtaLink } from '../../sections/cta-card/cta-card';
 import { Footer } from '../../sections/footer/footer';
@@ -65,14 +65,21 @@ import { ServiceArt, ServiceArtKind } from '../../sections/service-art/service-a
 
         <section class="sec shell sp-process">
           <div class="sec-head sec-head--split">
-            <h2 class="sec-title" i18n>Una semana, <em>del principio al final.</em></h2>
-            <p class="sec-lead" i18n>
-              Un solo interlocutor y sin jerga. Siempre sabes en qué punto está tu web.
-            </p>
+            @if (p.bespoke) {
+              <h2 class="sec-title" i18n>Por pasos, <em>sin sorpresas.</em></h2>
+              <p class="sec-lead" i18n>
+                Un solo interlocutor y sin jerga. Siempre sabes en qué punto está tu proyecto.
+              </p>
+            } @else {
+              <h2 class="sec-title" i18n>Una semana, <em>del principio al final.</em></h2>
+              <p class="sec-lead" i18n>
+                Un solo interlocutor y sin jerga. Siempre sabes en qué punto está tu web.
+              </p>
+            }
           </div>
 
           <ol class="sp-steps">
-            @for (step of process; track step.title) {
+            @for (step of p.bespoke ? projectProcess : process; track step.title) {
               <li class="sp-step">
                 <span class="sp-step__when">{{ step.window }}</span>
                 <h3 class="sp-step__title">{{ step.title }}</h3>
@@ -116,6 +123,7 @@ export class ServicePage {
 
   protected readonly page = computed(() => servicePage(this.slug()));
   protected readonly process = PROCESS;
+  protected readonly projectProcess = PROJECT_PROCESS;
   protected readonly parent = { label: $localize`Servicios`, link: '/', fragment: 'servicios' };
 
   /** Los dos servicios siguientes, en bucle: cada página lleva a otras dos. */

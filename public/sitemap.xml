@@ -72,6 +72,30 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/reservas-online/"/>
   </url>
   <url>
+    <loc>https://makeweb.es/servicios/tiendas-online/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/tiendas-online/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/tiendas-online/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/tiendas-online/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/tiendas-online/"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/servicios/software-a-medida/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/software-a-medida/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/software-a-medida/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/software-a-medida/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/software-a-medida/"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/servicios/inteligencia-artificial/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/inteligencia-artificial/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/inteligencia-artificial/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/inteligencia-artificial/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/inteligencia-artificial/"/>
+  </url>
+  <url>
     <loc>https://makeweb.es/servicios/mantenimiento-web/</loc>
     <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/mantenimiento-web/"/>
@@ -184,6 +208,30 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/reservas-online/"/>
   </url>
   <url>
+    <loc>https://makeweb.es/en/servicios/tiendas-online/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/tiendas-online/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/tiendas-online/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/tiendas-online/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/tiendas-online/"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/servicios/software-a-medida/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/software-a-medida/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/software-a-medida/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/software-a-medida/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/software-a-medida/"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/en/servicios/inteligencia-artificial/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/inteligencia-artificial/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/inteligencia-artificial/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/inteligencia-artificial/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/inteligencia-artificial/"/>
+  </url>
+  <url>
     <loc>https://makeweb.es/en/servicios/mantenimiento-web/</loc>
     <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/mantenimiento-web/"/>
@@ -294,6 +342,30 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/reservas-online/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/reservas-online/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/reservas-online/"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/servicios/tiendas-online/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/tiendas-online/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/tiendas-online/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/tiendas-online/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/tiendas-online/"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/servicios/software-a-medida/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/software-a-medida/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/software-a-medida/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/software-a-medida/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/software-a-medida/"/>
+  </url>
+  <url>
+    <loc>https://makeweb.es/fr/servicios/inteligencia-artificial/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://makeweb.es/servicios/inteligencia-artificial/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeweb.es/en/servicios/inteligencia-artificial/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://makeweb.es/fr/servicios/inteligencia-artificial/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeweb.es/servicios/inteligencia-artificial/"/>
   </url>
   <url>
     <loc>https://makeweb.es/fr/servicios/mantenimiento-web/</loc>

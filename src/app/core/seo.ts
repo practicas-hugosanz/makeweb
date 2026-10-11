@@ -212,7 +212,7 @@ function organization(): object {
     url: `${LEGAL.site}/`,
     logo: `${LEGAL.site}/brand/logotipo-entero.png`,
     image: `${LEGAL.site}/brand/og-cover.png`,
-    description: $localize`Estudio de diseño y desarrollo web en Mutxamel (Alicante). Webs a medida, rápidas y con SEO local para negocios de Alicante y de toda España.`,
+    description: $localize`Estudio de diseño, desarrollo web y software en Mutxamel (Alicante). Webs a medida, tiendas online, software e inteligencia artificial para negocios de Alicante y de toda España.`,
     email: LEGAL.email,
     telephone: PHONES[0].e164,
     priceRange: '€€',

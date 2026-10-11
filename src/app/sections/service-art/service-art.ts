@@ -9,7 +9,15 @@ import {
 } from '@angular/core';
 
 /** Los servicios con ilustración, por su `id` de `SERVICES`. */
-export type ServiceArtKind = 'diseno' | 'desarrollo' | 'seo-local' | 'conversion' | 'cuidado';
+export type ServiceArtKind =
+  | 'diseno'
+  | 'desarrollo'
+  | 'seo-local'
+  | 'conversion'
+  | 'tienda'
+  | 'software'
+  | 'ia'
+  | 'cuidado';
 
 /**
  * La ilustración de cada servicio, dibujada en línea violeta sobre tinta.
@@ -101,6 +109,77 @@ export type ServiceArtKind = 'diseno' | 'desarrollo' | 'seo-local' | 'conversion
             }
           }
           <path class="check a-check" pathLength="1" d="M176 128l4 4 8-9" />
+        }
+
+        <!-- Tiendas: el escaparate, el producto que baja al carrito y el
+             contador del pedido. -->
+        @case ('tienda') {
+          <rect class="frame" x="30" y="28" width="170" height="150" rx="10" />
+          <path class="line" d="M30 50h170" />
+          <circle class="dot" cx="44" cy="39" r="3" />
+          <circle class="dot" cx="55" cy="39" r="3" />
+          <circle class="dot" cx="66" cy="39" r="3" />
+          <rect class="soft" x="46" y="64" width="62" height="50" rx="6" />
+          <rect class="soft" x="122" y="64" width="62" height="50" rx="6" />
+          <rect class="fill" x="46" y="122" width="40" height="6" rx="3" />
+          <rect class="fill" x="122" y="122" width="34" height="6" rx="3" />
+          <rect class="soft" x="46" y="134" width="24" height="6" rx="3" />
+          <rect class="soft" x="122" y="134" width="28" height="6" rx="3" />
+          <rect class="accent a-press" x="46" y="152" width="62" height="14" rx="7" />
+          <path class="frame-stroke" d="M218 100h12l10 46h40l8-32h-54" />
+          <circle class="frame-stroke" cx="248" cy="160" r="5" />
+          <circle class="frame-stroke" cx="274" cy="160" r="5" />
+          <rect class="accent a-cart" x="250" y="118" width="20" height="20" rx="4" />
+          <g class="a-count">
+            <circle class="needle-fill" cx="290" cy="100" r="11" />
+            <text class="badge" x="290" y="105" text-anchor="middle">1</text>
+          </g>
+        }
+
+        <!-- Software: el panel con su menú, las barras que suben y el
+             interruptor de una tarea automática. -->
+        @case ('software') {
+          <rect class="frame" x="30" y="28" width="260" height="150" rx="10" />
+          <path class="line" d="M30 50h260M94 50v128" />
+          <circle class="dot" cx="44" cy="39" r="3" />
+          <circle class="dot" cx="55" cy="39" r="3" />
+          <circle class="dot" cx="66" cy="39" r="3" />
+          <rect class="fill" x="44" y="64" width="38" height="6" rx="3" />
+          <rect class="soft" x="44" y="80" width="30" height="6" rx="3" />
+          <rect class="soft" x="44" y="96" width="34" height="6" rx="3" />
+          <rect class="soft" x="44" y="112" width="26" height="6" rx="3" />
+          <rect class="soft" x="110" y="64" width="70" height="6" rx="3" />
+          <rect class="frame-stroke switch a-switch" x="234" y="60" width="40" height="20" rx="10" />
+          <circle class="needle-fill a-knob" cx="264" cy="70" r="6" />
+          <path class="line" d="M110 164h164" />
+          <rect class="soft a-bar a-d1" x="114" y="128" width="18" height="36" rx="3" />
+          <rect class="soft a-bar a-d2" x="142" y="112" width="18" height="52" rx="3" />
+          <rect class="fill a-bar a-d3" x="170" y="120" width="18" height="44" rx="3" />
+          <rect class="soft a-bar a-d4" x="198" y="100" width="18" height="64" rx="3" />
+          <rect class="accent a-bar a-d5" x="226" y="88" width="18" height="76" rx="3" />
+          <path class="accent-stroke a-chart" pathLength="1" d="M123 120l28-14 28 8 28-20 28-14" />
+        }
+
+        <!-- IA: la pregunta del cliente, el asistente que piensa y responde. -->
+        @case ('ia') {
+          <rect class="frame" x="70" y="22" width="180" height="160" rx="12" />
+          <path class="line" d="M70 54h180" />
+          <path class="accent a-twinkle" d="M94 30l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" />
+          <rect class="soft" x="112" y="35" width="50" height="6" rx="3" />
+          <g class="a-ask">
+            <rect class="fill" x="150" y="66" width="86" height="26" rx="13" />
+          </g>
+          <g class="a-dots">
+            <circle class="dot a-bob" cx="100" cy="116" r="4" />
+            <circle class="dot a-bob a-d2" cx="114" cy="116" r="4" />
+            <circle class="dot a-bob a-d4" cx="128" cy="116" r="4" />
+          </g>
+          <g class="a-reply">
+            <rect class="accent" x="84" y="102" width="122" height="54" rx="13" />
+            <rect class="hole-soft a-type a-d1" x="98" y="116" width="86" height="6" rx="3" />
+            <rect class="hole-soft a-type a-d2" x="98" y="128" width="94" height="6" rx="3" />
+            <rect class="hole-soft a-type a-d3" x="98" y="140" width="56" height="6" rx="3" />
+          </g>
         }
 
         <!-- Mantenimiento: el escudo con la copia hecha y la flecha de vuelta. -->

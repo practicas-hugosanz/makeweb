@@ -92,10 +92,15 @@
     background: var(--violet);
   }
 
+  // Nueve entradas no caben en un móvil pequeño: la lista se desplaza dentro
+  // de la hoja en vez de salirse por arriba.
   ul {
     display: grid;
+    max-height: calc(100dvh - 12rem - env(safe-area-inset-bottom));
     margin: 0;
     padding: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     list-style: none;
   }
 

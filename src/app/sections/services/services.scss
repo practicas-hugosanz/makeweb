@@ -159,9 +159,52 @@
     height: 0.8rem;
   }
 
-  .svc__row:hover & {
+  .svc__row:hover &,
+  .svc__other:hover & {
     border-color: var(--accent);
     background: var(--accent);
     color: var(--paper);
+  }
+}
+
+// --- cualquier otra cosa: una franja que lleva al formulario ------------------
+.svc__other {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-top: 0.75rem;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-l);
+  color: inherit;
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--accent);
+    background: var(--paper-2);
+  }
+
+  .svc__more {
+    margin-top: 0;
+  }
+}
+
+.svc__other-text {
+  display: grid;
+  gap: 0.4rem;
+  max-width: 60ch;
+  color: var(--text-soft);
+  line-height: 1.55;
+
+  strong {
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    line-height: 1.15;
+    color: var(--text);
   }
 }

@@ -95,7 +95,7 @@ export class Header {
   /**
    * Activo según dónde se está: en una página propia, por su ruta; en la
    * portada, por la sección que hay en pantalla. Servicios se marca también en
-   * cualquiera de sus cinco páginas.
+   * cualquiera de sus páginas.
    */
   protected isActive(link: NavLink): boolean {
     const path = this.path();

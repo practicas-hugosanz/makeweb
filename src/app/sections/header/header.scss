@@ -185,10 +185,14 @@
       visibility 0s;
   }
 
+  // Dos columnas: con las webs, las tiendas, el software y la IA son ocho
+  // servicios, y en una sola la lista bajaba más que media pantalla.
   ul {
     display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start !important;
     gap: 0.15rem !important;
-    width: 21rem;
+    width: 40rem;
     padding: 0.6rem !important;
     border: 1px solid var(--line-strong);
     border-radius: var(--radius-m);

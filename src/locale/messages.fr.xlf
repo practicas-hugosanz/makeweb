@@ -9,21 +9,21 @@
         <source>Saltar al contenido</source>
       <target>Aller au contenu</target></segment>
     </unit>
-    <unit id="5160705301609071868">
+    <unit id="6508905018167031567">
       <notes>
         <note category="location">src/app/app.routes.ts:24</note>
       </notes>
       <segment>
-        <source>Diseño web en Alicante para negocios locales — MakeWeb</source>
-      <target>Création de site web à Alicante pour commerces — MakeWeb</target></segment>
+        <source>Diseño web, tiendas online y software en Alicante — MakeWeb</source>
+      <target>Sites web, boutiques en ligne et logiciels à Alicante — MakeWeb</target></segment>
     </unit>
-    <unit id="6467311865905301378">
+    <unit id="7344815222504586890">
       <notes>
         <note category="location">src/app/app.routes.ts:29</note>
       </notes>
       <segment>
-        <source>Estudio de diseño y desarrollo web en Alicante para negocios locales de toda España. Webs a medida, rápidas y con SEO local: más llamadas, reservas y clientes.</source>
-      <target>Studio de création et de développement web à Alicante pour les commerces de toute l’Espagne. Sites sur mesure, rapides et optimisés pour le SEO local.</target></segment>
+        <source>Estudio de diseño web y software en Alicante para negocios de toda España: webs a medida, tiendas online, software, inteligencia artificial y SEO local.</source>
+      <target>Studio de création web et de logiciels à Alicante pour les entreprises de toute l’Espagne : sites sur mesure, boutiques en ligne, logiciels, intelligence artificielle et SEO local.</target></segment>
     </unit>
     <unit id="3845333718913308474">
       <notes>
@@ -73,7 +73,7 @@
         <note category="location">src/app/data/content.ts:21</note>
         <note category="location">src/app/pages/pricing/pricing-page.ts:21,22</note>
         <note category="location">src/app/sections/footer/footer.html:50,51</note>
-        <note category="location">src/app/sections/tabbar/tabbar.ts:45,46</note>
+        <note category="location">src/app/sections/tabbar/tabbar.ts:46,47</note>
       </notes>
       <segment>
         <source>Precios</source>
@@ -87,13 +87,13 @@
         <source>Estudio de diseño web en Mutxamel (Alicante) — MakeWeb</source>
       <target>Studio de création web à Mutxamel (Alicante) — MakeWeb</target></segment>
     </unit>
-    <unit id="7742269506501863879">
+    <unit id="4635856278935544994">
       <notes>
         <note category="location">src/app/app.routes.ts:88</note>
       </notes>
       <segment>
-        <source>MakeWeb somos Hugo y Lucas, un estudio de diseño y desarrollo web en Mutxamel (Alicante) que hace cada web desde cero para negocios locales de toda España.</source>
-      <target>MakeWeb, c’est Hugo et Lucas : un studio de création web à Mutxamel (Alicante) qui conçoit chaque site de zéro pour les commerces de toute l’Espagne.</target></segment>
+        <source>MakeWeb somos Hugo y Lucas, un estudio de Mutxamel (Alicante) que hace webs, tiendas online, software e IA desde cero para negocios de toda España.</source>
+      <target>MakeWeb, c’est Hugo et Lucas, un studio de Mutxamel (Alicante) qui crée sites web, boutiques en ligne, logiciels et IA de A à Z pour les entreprises de toute l’Espagne.</target></segment>
     </unit>
     <unit id="6373858674381021832">
       <notes>
@@ -128,7 +128,7 @@
         <note category="location">src/app/data/content.ts:20</note>
         <note category="location">src/app/pages/projects/projects-page.ts:15,16</note>
         <note category="location">src/app/sections/footer/footer.html:49,50</note>
-        <note category="location">src/app/sections/tabbar/tabbar.ts:99</note>
+        <note category="location">src/app/sections/tabbar/tabbar.ts:100</note>
       </notes>
       <segment>
         <source>Proyectos</source>
@@ -156,7 +156,7 @@
         <note category="location">src/app/data/content.ts:23</note>
         <note category="location">src/app/pages/contact/contact-page.ts:17,18</note>
         <note category="location">src/app/sections/footer/footer.html:56,57</note>
-        <note category="location">src/app/sections/tabbar/tabbar.ts:101</note>
+        <note category="location">src/app/sections/tabbar/tabbar.ts:102</note>
       </notes>
       <segment>
         <source>Contacto</source>
@@ -230,7 +230,7 @@
     </unit>
     <unit id="seo.ogImageAlt">
       <notes>
-        <note category="location">src/app/core/seo.ts:85</note>
+        <note category="location">src/app/core/seo.ts:86</note>
       </notes>
       <segment>
         <source>MakeWeb — webs para negocios locales</source>
@@ -238,7 +238,7 @@
     </unit>
     <unit id="1697560253634173708">
       <notes>
-        <note category="location">src/app/core/seo.ts:191</note>
+        <note category="location">src/app/core/seo.ts:194</note>
       </notes>
       <segment>
         <source>Provincia de Alicante</source>
@@ -246,25 +246,25 @@
     </unit>
     <unit id="4546809016867059773">
       <notes>
-        <note category="location">src/app/core/seo.ts:193</note>
+        <note category="location">src/app/core/seo.ts:196</note>
       </notes>
       <segment>
         <source>España</source>
       <target>Espagne</target></segment>
     </unit>
-    <unit id="7873698391898653679">
+    <unit id="745430455271049532">
       <notes>
-        <note category="location">src/app/core/seo.ts:212</note>
+        <note category="location">src/app/core/seo.ts:215</note>
       </notes>
       <segment>
-        <source>Estudio de diseño y desarrollo web en Mutxamel (Alicante). Webs a medida, rápidas y con SEO local para negocios de Alicante y de toda España.</source>
-      <target>Studio de création et de développement web à Mutxamel (Alicante). Sites sur mesure, rapides et avec SEO local pour les commerces d’Alicante et de toute l’Espagne.</target></segment>
+        <source>Estudio de diseño, desarrollo web y software en Mutxamel (Alicante). Webs a medida, tiendas online, software e inteligencia artificial para negocios de Alicante y de toda España.</source>
+      <target>Studio de design, de développement web et de logiciels à Mutxamel (Alicante). Sites sur mesure, boutiques en ligne, logiciels et intelligence artificielle pour les entreprises d’Alicante et de toute l’Espagne.</target></segment>
     </unit>
     <unit id="1926157928707021468">
       <notes>
-        <note category="location">src/app/core/seo.ts:258</note>
+        <note category="location">src/app/core/seo.ts:261</note>
         <note category="location">src/app/sections/page-hero/page-hero.ts:20,21</note>
-        <note category="location">src/app/sections/tabbar/tabbar.ts:97</note>
+        <note category="location">src/app/sections/tabbar/tabbar.ts:98</note>
       </notes>
       <segment>
         <source>Inicio</source>
@@ -273,12 +273,12 @@
     <unit id="5962081135827219847">
       <notes>
         <note category="location">src/app/data/content.ts:19</note>
-        <note category="location">src/app/pages/service/service-page.ts:119</note>
+        <note category="location">src/app/pages/service/service-page.ts:127</note>
         <note category="location">src/app/sections/footer/footer.html:35</note>
         <note category="location">src/app/sections/footer/footer.html:36,37</note>
-        <note category="location">src/app/sections/tabbar/tabbar.ts:32</note>
-        <note category="location">src/app/sections/tabbar/tabbar.ts:33,34</note>
-        <note category="location">src/app/sections/tabbar/tabbar.ts:98</note>
+        <note category="location">src/app/sections/tabbar/tabbar.ts:33</note>
+        <note category="location">src/app/sections/tabbar/tabbar.ts:34,35</note>
+        <note category="location">src/app/sections/tabbar/tabbar.ts:99</note>
       </notes>
       <segment>
         <source>Servicios</source>
@@ -287,7 +287,7 @@
     <unit id="7218790133845194606">
       <notes>
         <note category="location">src/app/data/content.ts:22</note>
-        <note category="location">src/app/sections/tabbar/tabbar.ts:100</note>
+        <note category="location">src/app/sections/tabbar/tabbar.ts:101</note>
       </notes>
       <segment>
         <source>Estudio</source>
@@ -360,7 +360,7 @@
     <unit id="5345718061161715392">
       <notes>
         <note category="location">src/app/data/content.ts:69</note>
-        <note category="location">src/app/data/services.ts:61</note>
+        <note category="location">src/app/data/services.ts:66</note>
       </notes>
       <segment>
         <source>Dirección de arte</source>
@@ -377,7 +377,7 @@
     <unit id="3435808904471455951">
       <notes>
         <note category="location">src/app/data/content.ts:71</note>
-        <note category="location">src/app/data/services.ts:63</note>
+        <note category="location">src/app/data/services.ts:68</note>
       </notes>
       <segment>
         <source>Sistema de componentes</source>
@@ -386,7 +386,7 @@
     <unit id="2297065185594526652">
       <notes>
         <note category="location">src/app/data/content.ts:72</note>
-        <note category="location">src/app/data/services.ts:64</note>
+        <note category="location">src/app/data/services.ts:69</note>
       </notes>
       <segment>
         <source>Textos incluidos</source>
@@ -419,8 +419,8 @@
     <unit id="2824152956518406040">
       <notes>
         <note category="location">src/app/data/content.ts:85</note>
-        <note category="location">src/app/data/services.ts:79</note>
-        <note category="location">src/app/data/services.ts:85</note>
+        <note category="location">src/app/data/services.ts:84</note>
+        <note category="location">src/app/data/services.ts:90</note>
       </notes>
       <segment>
         <source>HTML, CSS y JavaScript</source>
@@ -453,7 +453,7 @@
     <unit id="2498597053901479136">
       <notes>
         <note category="location">src/app/data/content.ts:89</note>
-        <note category="location">src/app/data/services.ts:88</note>
+        <note category="location">src/app/data/services.ts:93</note>
       </notes>
       <segment>
         <source>Hosting configurado</source>
@@ -486,7 +486,7 @@
     <unit id="1333430717598530946">
       <notes>
         <note category="location">src/app/data/content.ts:99</note>
-        <note category="location">src/app/data/services.ts:109</note>
+        <note category="location">src/app/data/services.ts:114</note>
       </notes>
       <segment>
         <source>Google Business</source>
@@ -495,7 +495,7 @@
     <unit id="3634756512316559800">
       <notes>
         <note category="location">src/app/data/content.ts:100</note>
-        <note category="location">src/app/data/services.ts:110</note>
+        <note category="location">src/app/data/services.ts:115</note>
       </notes>
       <segment>
         <source>Schema local</source>
@@ -504,7 +504,7 @@
     <unit id="4193636561419938636">
       <notes>
         <note category="location">src/app/data/content.ts:101</note>
-        <note category="location">src/app/data/services.ts:111</note>
+        <note category="location">src/app/data/services.ts:116</note>
       </notes>
       <segment>
         <source>Páginas por zona</source>
@@ -513,7 +513,7 @@
     <unit id="3847326720773681684">
       <notes>
         <note category="location">src/app/data/content.ts:102</note>
-        <note category="location">src/app/data/services.ts:112</note>
+        <note category="location">src/app/data/services.ts:117</note>
       </notes>
       <segment>
         <source>Reseñas integradas</source>
@@ -546,8 +546,8 @@
     <unit id="1311348391102692372">
       <notes>
         <note category="location">src/app/data/content.ts:112</note>
-        <note category="location">src/app/data/services.ts:127</note>
-        <note category="location">src/app/data/services.ts:133</note>
+        <note category="location">src/app/data/services.ts:132</note>
+        <note category="location">src/app/data/services.ts:138</note>
       </notes>
       <segment>
         <source>Reserva online</source>
@@ -556,8 +556,8 @@
     <unit id="2867947571385421524">
       <notes>
         <note category="location">src/app/data/content.ts:113</note>
-        <note category="location">src/app/data/services.ts:129</note>
         <note category="location">src/app/data/services.ts:134</note>
+        <note category="location">src/app/data/services.ts:139</note>
       </notes>
       <segment>
         <source>WhatsApp Business</source>
@@ -566,9 +566,9 @@
     <unit id="4803583371113949506">
       <notes>
         <note category="location">src/app/data/content.ts:113</note>
-        <note category="location">src/app/data/content.ts:125</note>
-        <note category="location">src/app/data/services.ts:134</note>
-        <note category="location">src/app/data/services.ts:157</note>
+        <note category="location">src/app/data/content.ts:166</note>
+        <note category="location">src/app/data/services.ts:139</note>
+        <note category="location">src/app/data/services.ts:267</note>
       </notes>
       <segment>
         <source>desde 50 €/mes</source>
@@ -577,7 +577,7 @@
     <unit id="2137894968067977459">
       <notes>
         <note category="location">src/app/data/content.ts:114</note>
-        <note category="location">src/app/data/services.ts:135</note>
+        <note category="location">src/app/data/services.ts:140</note>
       </notes>
       <segment>
         <source>Pedidos y pagos</source>
@@ -586,15 +586,192 @@
     <unit id="7952382524863204037">
       <notes>
         <note category="location">src/app/data/content.ts:115</note>
-        <note category="location">src/app/data/services.ts:136</note>
+        <note category="location">src/app/data/services.ts:141</note>
       </notes>
       <segment>
         <source>Avisos automáticos</source>
       <target>Rappels automatiques</target></segment>
     </unit>
+    <unit id="7446091211918460631">
+      <notes>
+        <note category="location">src/app/data/content.ts:122</note>
+      </notes>
+      <segment>
+        <source>Tiendas</source>
+      <target>Boutiques</target></segment>
+    </unit>
+    <unit id="9023230642353490516">
+      <notes>
+        <note category="location">src/app/data/content.ts:123</note>
+      </notes>
+      <segment>
+        <source>Tu tienda, abierta las 24 horas</source>
+      <target>Votre boutique, ouverte 24 h/24</target></segment>
+    </unit>
+    <unit id="7879294104930566466">
+      <notes>
+        <note category="location">src/app/data/content.ts:125</note>
+      </notes>
+      <segment>
+        <source>Tiendas online a medida para vender tus productos: catálogo, carrito, pagos seguros y envíos, con un panel sencillo para gestionar pedidos y existencias.</source>
+      <target>Des boutiques en ligne sur mesure pour vendre vos produits : catalogue, panier, paiements sécurisés et livraisons, avec un tableau de bord simple pour gérer commandes et stocks.</target></segment>
+    </unit>
+    <unit id="1692810452719089888">
+      <notes>
+        <note category="location">src/app/data/content.ts:127</note>
+      </notes>
+      <segment>
+        <source>Catálogo y carrito</source>
+      <target>Catalogue et panier</target></segment>
+    </unit>
+    <unit id="4138459960924803353">
+      <notes>
+        <note category="location">src/app/data/content.ts:128</note>
+      </notes>
+      <segment>
+        <source>Pagos seguros</source>
+      <target>Paiements sécurisés</target></segment>
+    </unit>
+    <unit id="3011661329323264229">
+      <notes>
+        <note category="location">src/app/data/content.ts:129</note>
+        <note category="location">src/app/data/services.ts:164</note>
+      </notes>
+      <segment>
+        <source>Envíos y devoluciones</source>
+      <target>Livraisons et retours</target></segment>
+    </unit>
+    <unit id="7449169140624540977">
+      <notes>
+        <note category="location">src/app/data/content.ts:130</note>
+      </notes>
+      <segment>
+        <source>Panel de pedidos y stock</source>
+      <target>Suivi des commandes et des stocks</target></segment>
+    </unit>
+    <unit id="5093701986340458388">
+      <notes>
+        <note category="location">src/app/data/content.ts:135</note>
+      </notes>
+      <segment>
+        <source>Software</source>
+      <target>Logiciels</target></segment>
+    </unit>
+    <unit id="5597338089992545668">
+      <notes>
+        <note category="location">src/app/data/content.ts:136</note>
+      </notes>
+      <segment>
+        <source>Programas hechos para cómo trabajas</source>
+      <target>Des logiciels pensés pour votre façon de travailler</target></segment>
+    </unit>
+    <unit id="890967213123539165">
+      <notes>
+        <note category="location">src/app/data/content.ts:138</note>
+      </notes>
+      <segment>
+        <source>Aplicaciones web, paneles de gestión e integraciones a medida. Lo que hoy haces a mano o repartido en varias hojas de cálculo, en una sola herramienta.</source>
+      <target>Applications web, tableaux de bord et intégrations sur mesure. Ce que vous faites aujourd’hui à la main ou dans plusieurs tableurs, réuni dans un seul outil.</target></segment>
+    </unit>
+    <unit id="5909817778078273728">
+      <notes>
+        <note category="location">src/app/data/content.ts:140</note>
+        <note category="location">src/app/data/services.ts:197</note>
+      </notes>
+      <segment>
+        <source>Aplicaciones web</source>
+      <target>Applications web</target></segment>
+    </unit>
+    <unit id="5845547649357024349">
+      <notes>
+        <note category="location">src/app/data/content.ts:141</note>
+        <note category="location">src/app/data/services.ts:198</note>
+      </notes>
+      <segment>
+        <source>Paneles de gestión</source>
+      <target>Tableaux de bord</target></segment>
+    </unit>
+    <unit id="6173678464979217295">
+      <notes>
+        <note category="location">src/app/data/content.ts:142</note>
+        <note category="location">src/app/data/services.ts:199</note>
+      </notes>
+      <segment>
+        <source>Integraciones</source>
+      <target>Intégrations</target></segment>
+    </unit>
+    <unit id="7129786568850860286">
+      <notes>
+        <note category="location">src/app/data/content.ts:143</note>
+        <note category="location">src/app/data/services.ts:200</note>
+      </notes>
+      <segment>
+        <source>Automatización de tareas</source>
+      <target>Automatisation des tâches</target></segment>
+    </unit>
+    <unit id="2338142270033064022">
+      <notes>
+        <note category="location">src/app/data/content.ts:148</note>
+      </notes>
+      <segment>
+        <source>IA</source>
+      <target>IA</target></segment>
+    </unit>
+    <unit id="4867656386969570219">
+      <notes>
+        <note category="location">src/app/data/content.ts:149</note>
+      </notes>
+      <segment>
+        <source>Inteligencia artificial que te quita trabajo</source>
+      <target>Une intelligence artificielle qui vous enlève du travail</target></segment>
+    </unit>
+    <unit id="2163716818446026392">
+      <notes>
+        <note category="location">src/app/data/content.ts:151</note>
+      </notes>
+      <segment>
+        <source>Asistentes que responden a tus clientes con la información de tu negocio, y automatizaciones que leen y ordenan correos y documentos por ti.</source>
+      <target>Des assistants qui répondent à vos clients avec les informations de votre entreprise, et des automatisations qui lisent et trient e-mails et documents pour vous.</target></segment>
+    </unit>
+    <unit id="382062957562858732">
+      <notes>
+        <note category="location">src/app/data/content.ts:153</note>
+        <note category="location">src/app/data/services.ts:232</note>
+      </notes>
+      <segment>
+        <source>Asistente para tu web</source>
+      <target>Assistant pour votre site</target></segment>
+    </unit>
+    <unit id="6887990270862702771">
+      <notes>
+        <note category="location">src/app/data/content.ts:154</note>
+        <note category="location">src/app/data/services.ts:233</note>
+      </notes>
+      <segment>
+        <source>Automatización con IA</source>
+      <target>Automatisation par l’IA</target></segment>
+    </unit>
+    <unit id="4677425771131564189">
+      <notes>
+        <note category="location">src/app/data/content.ts:155</note>
+        <note category="location">src/app/data/services.ts:234</note>
+      </notes>
+      <segment>
+        <source>Correos y documentos</source>
+      <target>E-mails et documents</target></segment>
+    </unit>
+    <unit id="7670607106437610040">
+      <notes>
+        <note category="location">src/app/data/content.ts:156</note>
+        <note category="location">src/app/data/services.ts:235</note>
+      </notes>
+      <segment>
+        <source>Formación para tu equipo</source>
+      <target>Formation de votre équipe</target></segment>
+    </unit>
     <unit id="7090105594191896114">
       <notes>
-        <note category="location">src/app/data/content.ts:120</note>
+        <note category="location">src/app/data/content.ts:161</note>
       </notes>
       <segment>
         <source>Cuidado</source>
@@ -602,7 +779,7 @@
     </unit>
     <unit id="3509076547790435532">
       <notes>
-        <note category="location">src/app/data/content.ts:121</note>
+        <note category="location">src/app/data/content.ts:162</note>
       </notes>
       <segment>
         <source>No te dejamos con la web y adiós</source>
@@ -610,7 +787,7 @@
     </unit>
     <unit id="5708693729635232996">
       <notes>
-        <note category="location">src/app/data/content.ts:123</note>
+        <note category="location">src/app/data/content.ts:164</note>
       </notes>
       <segment>
         <source>Actualizaciones, copias de seguridad y un informe mensual en castellano donde se entiende qué ha pasado.</source>
@@ -618,8 +795,8 @@
     </unit>
     <unit id="2564130660318936998">
       <notes>
-        <note category="location">src/app/data/content.ts:125</note>
-        <note category="location">src/app/data/services.ts:157</note>
+        <note category="location">src/app/data/content.ts:166</note>
+        <note category="location">src/app/data/services.ts:267</note>
       </notes>
       <segment>
         <source>Copias diarias</source>
@@ -627,8 +804,8 @@
     </unit>
     <unit id="8182404804509957608">
       <notes>
-        <note category="location">src/app/data/content.ts:126</note>
-        <note category="location">src/app/data/services.ts:158</note>
+        <note category="location">src/app/data/content.ts:167</note>
+        <note category="location">src/app/data/services.ts:268</note>
       </notes>
       <segment>
         <source>Cambios mensuales</source>
@@ -636,8 +813,8 @@
     </unit>
     <unit id="1131822559464407095">
       <notes>
-        <note category="location">src/app/data/content.ts:126</note>
-        <note category="location">src/app/data/services.ts:158</note>
+        <note category="location">src/app/data/content.ts:167</note>
+        <note category="location">src/app/data/services.ts:268</note>
       </notes>
       <segment>
         <source>desde 30 €/mes</source>
@@ -645,8 +822,8 @@
     </unit>
     <unit id="565581346857518703">
       <notes>
-        <note category="location">src/app/data/content.ts:127</note>
-        <note category="location">src/app/data/services.ts:159</note>
+        <note category="location">src/app/data/content.ts:168</note>
+        <note category="location">src/app/data/services.ts:269</note>
       </notes>
       <segment>
         <source>Informe de resultados</source>
@@ -654,8 +831,8 @@
     </unit>
     <unit id="6419699370308123487">
       <notes>
-        <note category="location">src/app/data/content.ts:127</note>
-        <note category="location">src/app/data/services.ts:159</note>
+        <note category="location">src/app/data/content.ts:168</note>
+        <note category="location">src/app/data/services.ts:269</note>
       </notes>
       <segment>
         <source>desde 20 €/mes</source>
@@ -663,7 +840,7 @@
     </unit>
     <unit id="3325359512868338189">
       <notes>
-        <note category="location">src/app/data/content.ts:173</note>
+        <note category="location">src/app/data/content.ts:214</note>
       </notes>
       <segment>
         <source>Día 1</source>
@@ -671,7 +848,8 @@
     </unit>
     <unit id="4501142151419301772">
       <notes>
-        <note category="location">src/app/data/content.ts:176</note>
+        <note category="location">src/app/data/content.ts:217</note>
+        <note category="location">src/app/data/content.ts:256</note>
       </notes>
       <segment>
         <source>Escuchamos</source>
@@ -679,7 +857,7 @@
     </unit>
     <unit id="751243832496731426">
       <notes>
-        <note category="location">src/app/data/content.ts:177</note>
+        <note category="location">src/app/data/content.ts:218</note>
       </notes>
       <segment>
         <source>Una videollamada contigo. Salimos sabiendo a quién quieres atraer y qué te está frenando ahora.</source>
@@ -687,7 +865,7 @@
     </unit>
     <unit id="90201602413567229">
       <notes>
-        <note category="location">src/app/data/content.ts:178</note>
+        <note category="location">src/app/data/content.ts:219</note>
       </notes>
       <segment>
         <source>Sesión de arranque</source>
@@ -695,7 +873,7 @@
     </unit>
     <unit id="7502586199902689743">
       <notes>
-        <note category="location">src/app/data/content.ts:178</note>
+        <note category="location">src/app/data/content.ts:219</note>
       </notes>
       <segment>
         <source>Mapa de clientes</source>
@@ -703,7 +881,7 @@
     </unit>
     <unit id="4184874928013333535">
       <notes>
-        <note category="location">src/app/data/content.ts:178</note>
+        <note category="location">src/app/data/content.ts:219</note>
       </notes>
       <segment>
         <source>Auditoría de la web actual</source>
@@ -711,7 +889,7 @@
     </unit>
     <unit id="6175702781573801128">
       <notes>
-        <note category="location">src/app/data/content.ts:181</note>
+        <note category="location">src/app/data/content.ts:222</note>
       </notes>
       <segment>
         <source>Días 2 – 4</source>
@@ -719,7 +897,7 @@
     </unit>
     <unit id="2540456154136438278">
       <notes>
-        <note category="location">src/app/data/content.ts:184</note>
+        <note category="location">src/app/data/content.ts:225</note>
       </notes>
       <segment>
         <source>Diseñamos</source>
@@ -727,7 +905,7 @@
     </unit>
     <unit id="1668423677422824268">
       <notes>
-        <note category="location">src/app/data/content.ts:185</note>
+        <note category="location">src/app/data/content.ts:226</note>
       </notes>
       <segment>
         <source>Ves la web antes de que exista: una demo navegable, con tus fotos y tus textos. Ajustamos hasta que la reconoces como tuya.</source>
@@ -735,7 +913,7 @@
     </unit>
     <unit id="1255810238007233884">
       <notes>
-        <note category="location">src/app/data/content.ts:186</note>
+        <note category="location">src/app/data/content.ts:227</note>
       </notes>
       <segment>
         <source>Demo de la web</source>
@@ -743,7 +921,7 @@
     </unit>
     <unit id="8573732248518648236">
       <notes>
-        <note category="location">src/app/data/content.ts:186</note>
+        <note category="location">src/app/data/content.ts:227</note>
       </notes>
       <segment>
         <source>Textos redactados</source>
@@ -751,7 +929,7 @@
     </unit>
     <unit id="8386474015995757483">
       <notes>
-        <note category="location">src/app/data/content.ts:186</note>
+        <note category="location">src/app/data/content.ts:227</note>
       </notes>
       <segment>
         <source>Dos rondas de cambios</source>
@@ -759,7 +937,7 @@
     </unit>
     <unit id="5915804563223645654">
       <notes>
-        <note category="location">src/app/data/content.ts:189</note>
+        <note category="location">src/app/data/content.ts:230</note>
       </notes>
       <segment>
         <source>Días 5 – 6</source>
@@ -767,7 +945,7 @@
     </unit>
     <unit id="2432195120100773612">
       <notes>
-        <note category="location">src/app/data/content.ts:192</note>
+        <note category="location">src/app/data/content.ts:233</note>
       </notes>
       <segment>
         <source>Desarrollamos</source>
@@ -775,7 +953,7 @@
     </unit>
     <unit id="6468757211819400845">
       <notes>
-        <note category="location">src/app/data/content.ts:193</note>
+        <note category="location">src/app/data/content.ts:234</note>
       </notes>
       <segment>
         <source>Programamos, conectamos reservas y analítica, y lo probamos en móviles de verdad antes de enseñártelo.</source>
@@ -783,7 +961,7 @@
     </unit>
     <unit id="5518784567671075447">
       <notes>
-        <note category="location">src/app/data/content.ts:194</note>
+        <note category="location">src/app/data/content.ts:235</note>
       </notes>
       <segment>
         <source>Web a medida</source>
@@ -791,7 +969,7 @@
     </unit>
     <unit id="5546977923045086001">
       <notes>
-        <note category="location">src/app/data/content.ts:194</note>
+        <note category="location">src/app/data/content.ts:235</note>
       </notes>
       <segment>
         <source>Reservas conectadas</source>
@@ -799,7 +977,7 @@
     </unit>
     <unit id="1605543524150093017">
       <notes>
-        <note category="location">src/app/data/content.ts:194</note>
+        <note category="location">src/app/data/content.ts:235</note>
       </notes>
       <segment>
         <source>Analítica y eventos</source>
@@ -807,7 +985,7 @@
     </unit>
     <unit id="1205918651341346349">
       <notes>
-        <note category="location">src/app/data/content.ts:197</note>
+        <note category="location">src/app/data/content.ts:238</note>
       </notes>
       <segment>
         <source>Día 7</source>
@@ -815,7 +993,7 @@
     </unit>
     <unit id="914582869222401438">
       <notes>
-        <note category="location">src/app/data/content.ts:200</note>
+        <note category="location">src/app/data/content.ts:241</note>
       </notes>
       <segment>
         <source>Lanzamos</source>
@@ -823,7 +1001,7 @@
     </unit>
     <unit id="8524658763813284073">
       <notes>
-        <note category="location">src/app/data/content.ts:201</note>
+        <note category="location">src/app/data/content.ts:242</note>
       </notes>
       <segment>
         <source>Publicamos, avisamos a Google y te enseñamos a moverla.</source>
@@ -831,7 +1009,7 @@
     </unit>
     <unit id="864734266536137303">
       <notes>
-        <note category="location">src/app/data/content.ts:202</note>
+        <note category="location">src/app/data/content.ts:243</note>
       </notes>
       <segment>
         <source>Puesta en marcha</source>
@@ -839,7 +1017,7 @@
     </unit>
     <unit id="3193712425152035208">
       <notes>
-        <note category="location">src/app/data/content.ts:202</note>
+        <note category="location">src/app/data/content.ts:243</note>
       </notes>
       <segment>
         <source>Formación en vídeo</source>
@@ -847,15 +1025,103 @@
     </unit>
     <unit id="737870524365291542">
       <notes>
-        <note category="location">src/app/data/content.ts:202</note>
+        <note category="location">src/app/data/content.ts:243</note>
       </notes>
       <segment>
         <source>Alta en Google</source>
       <target>Inscription sur Google</target></segment>
     </unit>
+    <unit id="3443568032658596996">
+      <notes>
+        <note category="location">src/app/data/content.ts:253</note>
+      </notes>
+      <segment>
+        <source>Paso 1</source>
+      <target>Étape 1</target></segment>
+    </unit>
+    <unit id="5432956389258015947">
+      <notes>
+        <note category="location">src/app/data/content.ts:257</note>
+      </notes>
+      <segment>
+        <source>Una videollamada para entender cómo trabajas hoy, qué te quita tiempo y qué quieres conseguir.</source>
+      <target>Un appel vidéo pour comprendre comment vous travaillez aujourd’hui, ce qui vous fait perdre du temps et ce que vous voulez obtenir.</target></segment>
+    </unit>
+    <unit id="358705358144980874">
+      <notes>
+        <note category="location">src/app/data/content.ts:261</note>
+      </notes>
+      <segment>
+        <source>Paso 2</source>
+      <target>Étape 2</target></segment>
+    </unit>
+    <unit id="9137781283351941817">
+      <notes>
+        <note category="location">src/app/data/content.ts:264</note>
+      </notes>
+      <segment>
+        <source>Proponemos</source>
+      <target>Nous proposons</target></segment>
+    </unit>
+    <unit id="543910229297092119">
+      <notes>
+        <note category="location">src/app/data/content.ts:265</note>
+      </notes>
+      <segment>
+        <source>Te enviamos por escrito qué vamos a hacer, el precio cerrado y la fecha de entrega. Decides tú.</source>
+      <target>Nous vous envoyons par écrit ce que nous allons faire, le prix ferme et la date de livraison. C’est vous qui décidez.</target></segment>
+    </unit>
+    <unit id="1906514168502507738">
+      <notes>
+        <note category="location">src/app/data/content.ts:269</note>
+      </notes>
+      <segment>
+        <source>Paso 3</source>
+      <target>Étape 3</target></segment>
+    </unit>
+    <unit id="8422475935378741637">
+      <notes>
+        <note category="location">src/app/data/content.ts:272</note>
+      </notes>
+      <segment>
+        <source>Construimos</source>
+      <target>Nous développons</target></segment>
+    </unit>
+    <unit id="4482641864456915460">
+      <notes>
+        <note category="location">src/app/data/content.ts:273</note>
+      </notes>
+      <segment>
+        <source>Por fases, para que lo pruebes desde pronto y lo ajustemos con tu uso real.</source>
+      <target>Par phases, pour que vous puissiez l’essayer tôt et que nous l’ajustions selon votre usage réel.</target></segment>
+    </unit>
+    <unit id="7113160661181099748">
+      <notes>
+        <note category="location">src/app/data/content.ts:277</note>
+      </notes>
+      <segment>
+        <source>Paso 4</source>
+      <target>Étape 4</target></segment>
+    </unit>
+    <unit id="7779223300469003531">
+      <notes>
+        <note category="location">src/app/data/content.ts:280</note>
+      </notes>
+      <segment>
+        <source>Entregamos</source>
+      <target>Nous livrons</target></segment>
+    </unit>
+    <unit id="5376508315820683322">
+      <notes>
+        <note category="location">src/app/data/content.ts:281</note>
+      </notes>
+      <segment>
+        <source>Lo ponemos en marcha, te enseñamos a usarlo y te entregamos el código y los accesos.</source>
+      <target>Nous le mettons en service, nous vous apprenons à l’utiliser et nous vous remettons le code et les accès.</target></segment>
+    </unit>
     <unit id="4515178277281189365">
       <notes>
-        <note category="location">src/app/data/content.ts:227</note>
+        <note category="location">src/app/data/content.ts:307</note>
       </notes>
       <segment>
         <source>Esencial</source>
@@ -863,7 +1129,7 @@
     </unit>
     <unit id="2624152428944423645">
       <notes>
-        <note category="location">src/app/data/content.ts:228</note>
+        <note category="location">src/app/data/content.ts:308</note>
       </notes>
       <segment>
         <source>Web estática</source>
@@ -871,7 +1137,7 @@
     </unit>
     <unit id="264101233418000258">
       <notes>
-        <note category="location">src/app/data/content.ts:231</note>
+        <note category="location">src/app/data/content.ts:311</note>
       </notes>
       <segment>
         <source>Negociable</source>
@@ -879,7 +1145,7 @@
     </unit>
     <unit id="851157957112734875">
       <notes>
-        <note category="location">src/app/data/content.ts:232</note>
+        <note category="location">src/app/data/content.ts:312</note>
       </notes>
       <segment>
         <source>Una página bien contada y tu ficha de Google, listas en una semana.</source>
@@ -887,7 +1153,7 @@
     </unit>
     <unit id="6188493279854430865">
       <notes>
-        <note category="location">src/app/data/content.ts:235</note>
+        <note category="location">src/app/data/content.ts:315</note>
       </notes>
       <segment>
         <source>Web de una página, larga y bien contada</source>
@@ -895,7 +1161,7 @@
     </unit>
     <unit id="6526667028585719568">
       <notes>
-        <note category="location">src/app/data/content.ts:236</note>
+        <note category="location">src/app/data/content.ts:316</note>
       </notes>
       <segment>
         <source>Diseño a medida, no plantilla</source>
@@ -903,7 +1169,7 @@
     </unit>
     <unit id="1213793795866756753">
       <notes>
-        <note category="location">src/app/data/content.ts:237</note>
+        <note category="location">src/app/data/content.ts:317</note>
       </notes>
       <segment>
         <source>Ficha de Google optimizada</source>
@@ -911,7 +1177,7 @@
     </unit>
     <unit id="8976020525951791536">
       <notes>
-        <note category="location">src/app/data/content.ts:238</note>
+        <note category="location">src/app/data/content.ts:318</note>
       </notes>
       <segment>
         <source>Botón de WhatsApp y llamada</source>
@@ -919,7 +1185,7 @@
     </unit>
     <unit id="3822053402260955640">
       <notes>
-        <note category="location">src/app/data/content.ts:239</note>
+        <note category="location">src/app/data/content.ts:319</note>
       </notes>
       <segment>
         <source>Lista en una semana</source>
@@ -927,7 +1193,7 @@
     </unit>
     <unit id="4602645774383178977">
       <notes>
-        <note category="location">src/app/data/content.ts:241</note>
+        <note category="location">src/app/data/content.ts:321</note>
       </notes>
       <segment>
         <source>Empezar por aquí</source>
@@ -935,7 +1201,7 @@
     </unit>
     <unit id="6730348805420511260">
       <notes>
-        <note category="location">src/app/data/content.ts:245</note>
+        <note category="location">src/app/data/content.ts:325</note>
       </notes>
       <segment>
         <source>Profesional</source>
@@ -943,7 +1209,7 @@
     </unit>
     <unit id="6688918131600026379">
       <notes>
-        <note category="location">src/app/data/content.ts:246</note>
+        <note category="location">src/app/data/content.ts:326</note>
       </notes>
       <segment>
         <source>Web con animaciones</source>
@@ -951,7 +1217,7 @@
     </unit>
     <unit id="9060525681920931973">
       <notes>
-        <note category="location">src/app/data/content.ts:249</note>
+        <note category="location">src/app/data/content.ts:329</note>
       </notes>
       <segment>
         <source>Diseño a medida y movimiento al servicio de la lectura, sin perder velocidad.</source>
@@ -959,7 +1225,7 @@
     </unit>
     <unit id="2222477381019959165">
       <notes>
-        <note category="location">src/app/data/content.ts:252</note>
+        <note category="location">src/app/data/content.ts:332</note>
       </notes>
       <segment>
         <source>Todo lo del plan Esencial</source>
@@ -967,7 +1233,7 @@
     </unit>
     <unit id="3548751831179145948">
       <notes>
-        <note category="location">src/app/data/content.ts:253</note>
+        <note category="location">src/app/data/content.ts:333</note>
       </notes>
       <segment>
         <source>Panel de administrador</source>
@@ -975,7 +1241,7 @@
     </unit>
     <unit id="1209581350844017925">
       <notes>
-        <note category="location">src/app/data/content.ts:254</note>
+        <note category="location">src/app/data/content.ts:334</note>
       </notes>
       <segment>
         <source>Varias páginas o secciones</source>
@@ -983,7 +1249,7 @@
     </unit>
     <unit id="2007825997473732649">
       <notes>
-        <note category="location">src/app/data/content.ts:255</note>
+        <note category="location">src/app/data/content.ts:335</note>
       </notes>
       <segment>
         <source>SEO local por servicio y por zona</source>
@@ -991,7 +1257,7 @@
     </unit>
     <unit id="3037545047601190293">
       <notes>
-        <note category="location">src/app/data/content.ts:256</note>
+        <note category="location">src/app/data/content.ts:336</note>
       </notes>
       <segment>
         <source>Analítica con objetivos medibles</source>
@@ -999,7 +1265,7 @@
     </unit>
     <unit id="178466016352366720">
       <notes>
-        <note category="location">src/app/data/content.ts:258</note>
+        <note category="location">src/app/data/content.ts:338</note>
       </notes>
       <segment>
         <source>Quiero esta</source>
@@ -1007,7 +1273,7 @@
     </unit>
     <unit id="2868806520479887044">
       <notes>
-        <note category="location">src/app/data/content.ts:262</note>
+        <note category="location">src/app/data/content.ts:342</note>
       </notes>
       <segment>
         <source>Integral</source>
@@ -1015,7 +1281,7 @@
     </unit>
     <unit id="5756969565311790782">
       <notes>
-        <note category="location">src/app/data/content.ts:263</note>
+        <note category="location">src/app/data/content.ts:343</note>
       </notes>
       <segment>
         <source>Animaciones y sistema de citas</source>
@@ -1023,7 +1289,7 @@
     </unit>
     <unit id="3200827777468725751">
       <notes>
-        <note category="location">src/app/data/content.ts:266</note>
+        <note category="location">src/app/data/content.ts:346</note>
       </notes>
       <segment>
         <source>Reservas integradas en la web, con avisos automáticos y panel de gestión.</source>
@@ -1031,7 +1297,7 @@
     </unit>
     <unit id="5458504228331982184">
       <notes>
-        <note category="location">src/app/data/content.ts:269</note>
+        <note category="location">src/app/data/content.ts:349</note>
       </notes>
       <segment>
         <source>Todo lo del plan Profesional</source>
@@ -1039,7 +1305,7 @@
     </unit>
     <unit id="3666482900184420282">
       <notes>
-        <note category="location">src/app/data/content.ts:270</note>
+        <note category="location">src/app/data/content.ts:350</note>
       </notes>
       <segment>
         <source>Sistema de reservas y citas integrado</source>
@@ -1047,7 +1313,7 @@
     </unit>
     <unit id="2653618232016448816">
       <notes>
-        <note category="location">src/app/data/content.ts:271</note>
+        <note category="location">src/app/data/content.ts:351</note>
       </notes>
       <segment>
         <source>Avisos automáticos al cliente y a ti</source>
@@ -1055,7 +1321,7 @@
     </unit>
     <unit id="2547997082225948137">
       <notes>
-        <note category="location">src/app/data/content.ts:272</note>
+        <note category="location">src/app/data/content.ts:352</note>
       </notes>
       <segment>
         <source>Conectado con tus herramientas</source>
@@ -1063,7 +1329,7 @@
     </unit>
     <unit id="1384742522541094433">
       <notes>
-        <note category="location">src/app/data/content.ts:273</note>
+        <note category="location">src/app/data/content.ts:353</note>
       </notes>
       <segment>
         <source>Panel para gestionar la agenda</source>
@@ -1071,7 +1337,7 @@
     </unit>
     <unit id="4607593845816218391">
       <notes>
-        <note category="location">src/app/data/content.ts:275</note>
+        <note category="location">src/app/data/content.ts:355</note>
       </notes>
       <segment>
         <source>Hablemos del proyecto</source>
@@ -1079,7 +1345,7 @@
     </unit>
     <unit id="6160099160380082020">
       <notes>
-        <note category="location">src/app/data/content.ts:299</note>
+        <note category="location">src/app/data/content.ts:379</note>
       </notes>
       <segment>
         <source>Precio cerrado antes de empezar</source>
@@ -1087,7 +1353,7 @@
     </unit>
     <unit id="1915726351233833700">
       <notes>
-        <note category="location">src/app/data/content.ts:300</note>
+        <note category="location">src/app/data/content.ts:380</note>
       </notes>
       <segment>
         <source>El presupuesto que firmas es el que pagas. Si aparece algo fuera de alcance, se te dice y decides tú; no llega como sorpresa en la factura.</source>
@@ -1095,7 +1361,7 @@
     </unit>
     <unit id="1682843603759339183">
       <notes>
-        <note category="location">src/app/data/content.ts:304</note>
+        <note category="location">src/app/data/content.ts:384</note>
       </notes>
       <segment>
         <source>La web es tuya, toda</source>
@@ -1103,7 +1369,7 @@
     </unit>
     <unit id="3174111139800561154">
       <notes>
-        <note category="location">src/app/data/content.ts:305</note>
+        <note category="location">src/app/data/content.ts:385</note>
       </notes>
       <segment>
         <source>Dominio a tu nombre, código entregado y accesos en tu poder. Puedes llevártela a otro estudio cuando quieras y no te pediremos explicaciones.</source>
@@ -1111,7 +1377,7 @@
     </unit>
     <unit id="2439673895820570682">
       <notes>
-        <note category="location">src/app/data/content.ts:309</note>
+        <note category="location">src/app/data/content.ts:389</note>
       </notes>
       <segment>
         <source>Plazo con fecha, no “pronto”</source>
@@ -1119,7 +1385,7 @@
     </unit>
     <unit id="5055457294676469880">
       <notes>
-        <note category="location">src/app/data/content.ts:310</note>
+        <note category="location">src/app/data/content.ts:390</note>
       </notes>
       <segment>
         <source>Te damos día de entrega desde el principio. Si se mueve por nuestra culpa, descontamos; si se mueve porque faltan tus fotos, te avisamos el mismo día.</source>
@@ -1127,7 +1393,7 @@
     </unit>
     <unit id="4401046524274650008">
       <notes>
-        <note category="location">src/app/data/content.ts:314</note>
+        <note category="location">src/app/data/content.ts:394</note>
       </notes>
       <segment>
         <source>Te enseñamos a manejarla</source>
@@ -1135,7 +1401,7 @@
     </unit>
     <unit id="4935391523500578724">
       <notes>
-        <note category="location">src/app/data/content.ts:315</note>
+        <note category="location">src/app/data/content.ts:395</note>
       </notes>
       <segment>
         <source>Al publicar te grabamos vídeos cortos con lo que vas a tocar tú, y durante el primer mes nos escribes por WhatsApp cuando te atasques. No dependes de nadie para cambiar un horario.</source>
@@ -1143,7 +1409,7 @@
     </unit>
     <unit id="1250074672727095421">
       <notes>
-        <note category="location">src/app/data/content.ts:319</note>
+        <note category="location">src/app/data/content.ts:399</note>
       </notes>
       <segment>
         <source>Lo medimos y te lo enseñamos</source>
@@ -1151,7 +1417,7 @@
     </unit>
     <unit id="6015458765791797577">
       <notes>
-        <note category="location">src/app/data/content.ts:320</note>
+        <note category="location">src/app/data/content.ts:400</note>
       </notes>
       <segment>
         <source>Velocidad, visitas y contactos, en un informe en castellano. Empezando por esta misma página: pásala por PageSpeed Insights y compruébalo tú.</source>
@@ -1159,7 +1425,7 @@
     </unit>
     <unit id="57260814749461090">
       <notes>
-        <note category="location">src/app/data/content.ts:324</note>
+        <note category="location">src/app/data/content.ts:404</note>
       </notes>
       <segment>
         <source>Te contesta quien la hace</source>
@@ -1167,7 +1433,7 @@
     </unit>
     <unit id="5439135987289364856">
       <notes>
-        <note category="location">src/app/data/content.ts:325</note>
+        <note category="location">src/app/data/content.ts:405</note>
       </notes>
       <segment>
         <source>No hay cuenta ni centralita. Escribes y responde la persona que tiene el proyecto en las manos.</source>
@@ -1175,7 +1441,7 @@
     </unit>
     <unit id="303093105924656014">
       <notes>
-        <note category="location">src/app/data/content.ts:338</note>
+        <note category="location">src/app/data/content.ts:418</note>
       </notes>
       <segment>
         <source>¿Cuánto se tarda en tener la web funcionando?</source>
@@ -1183,7 +1449,7 @@
     </unit>
     <unit id="237091051796997040">
       <notes>
-        <note category="location">src/app/data/content.ts:339</note>
+        <note category="location">src/app/data/content.ts:419</note>
       </notes>
       <segment>
         <source>Una semana. El día 1 hablamos, del 2 al 4 diseñamos, el 5 y el 6 desarrollamos y el día 7 se publica. El plazo solo se alarga si faltan fotos o textos por tu parte, y te avisamos en cuanto ocurre.</source>
@@ -1191,7 +1457,7 @@
     </unit>
     <unit id="2541844937214087065">
       <notes>
-        <note category="location">src/app/data/content.ts:342</note>
+        <note category="location">src/app/data/content.ts:422</note>
       </notes>
       <segment>
         <source>¿Cuánto cuesta y de qué depende el precio?</source>
@@ -1199,7 +1465,7 @@
     </unit>
     <unit id="3781382450961418516">
       <notes>
-        <note category="location">src/app/data/content.ts:343</note>
+        <note category="location">src/app/data/content.ts:423</note>
       </notes>
       <segment>
         <source>Una web estática va de 350 € a 400 € y es negociable. Con animaciones, de 450 € a 700 €. Con animaciones y sistema de citas, de 1.000 € a 1.100 €. Dentro de cada horquilla el precio depende del número de páginas y de las integraciones, y se cierra por escrito antes de empezar: el presupuesto que firmas es el que pagas.</source>
@@ -1207,7 +1473,7 @@
     </unit>
     <unit id="6622344477911930843">
       <notes>
-        <note category="location">src/app/data/content.ts:346</note>
+        <note category="location">src/app/data/content.ts:426</note>
       </notes>
       <segment>
         <source>¿Cómo se paga?</source>
@@ -1215,7 +1481,7 @@
     </unit>
     <unit id="637954793537538293">
       <notes>
-        <note category="location">src/app/data/content.ts:347</note>
+        <note category="location">src/app/data/content.ts:427</note>
       </notes>
       <segment>
         <source>La mitad al empezar y la mitad al publicar. Sin cuotas escondidas: el mantenimiento es aparte, opcional, y solo si lo quieres.</source>
@@ -1223,7 +1489,7 @@
     </unit>
     <unit id="4512461883506114814">
       <notes>
-        <note category="location">src/app/data/content.ts:350</note>
+        <note category="location">src/app/data/content.ts:430</note>
       </notes>
       <segment>
         <source>Trabajáis en remoto. ¿Eso me afecta en algo?</source>
@@ -1231,7 +1497,7 @@
     </unit>
     <unit id="6599662753226985093">
       <notes>
-        <note category="location">src/app/data/content.ts:351</note>
+        <note category="location">src/app/data/content.ts:431</note>
       </notes>
       <segment>
         <source>En el precio, para bien: sin oficina que mantener, el presupuesto se va entero a tu proyecto. El trabajo se hace por videollamada y con un documento compartido donde ves el avance cada día. Si prefieres vernos en persona para arrancar, se organiza.</source>
@@ -1239,7 +1505,7 @@
     </unit>
     <unit id="6553680478543374843">
       <notes>
-        <note category="location">src/app/data/content.ts:354</note>
+        <note category="location">src/app/data/content.ts:434</note>
       </notes>
       <segment>
         <source>No tengo fotos buenas de mi negocio. ¿Es un problema?</source>
@@ -1247,7 +1513,7 @@
     </unit>
     <unit id="8211040416514588025">
       <notes>
-        <note category="location">src/app/data/content.ts:355</note>
+        <note category="location">src/app/data/content.ts:435</note>
       </notes>
       <segment>
         <source>No. Te enviamos una guía para hacerlas tú con el móvil, y si prefieres, coordinamos a un fotógrafo en tu ciudad. Mientras tanto usamos recursos de calidad para que la web pueda salir a tiempo.</source>
@@ -1255,7 +1521,7 @@
     </unit>
     <unit id="9136966412035724451">
       <notes>
-        <note category="location">src/app/data/content.ts:358</note>
+        <note category="location">src/app/data/content.ts:438</note>
       </notes>
       <segment>
         <source>¿La web es mía o me quedo atado a vosotros?</source>
@@ -1263,7 +1529,7 @@
     </unit>
     <unit id="1056918267131594080">
       <notes>
-        <note category="location">src/app/data/content.ts:359</note>
+        <note category="location">src/app/data/content.ts:439</note>
       </notes>
       <segment>
         <source>Es tuya. El dominio se registra a tu nombre, te entregamos el código y los accesos, y puedes llevártela cuando quieras. El mantenimiento es opcional y se cancela con un mes de aviso.</source>
@@ -1271,7 +1537,7 @@
     </unit>
     <unit id="5900307240898890011">
       <notes>
-        <note category="location">src/app/data/content.ts:362</note>
+        <note category="location">src/app/data/content.ts:442</note>
       </notes>
       <segment>
         <source>¿Y si a mitad del proyecto quiero cambiar cosas?</source>
@@ -1279,7 +1545,7 @@
     </unit>
     <unit id="8339275469700936533">
       <notes>
-        <note category="location">src/app/data/content.ts:363</note>
+        <note category="location">src/app/data/content.ts:443</note>
       </notes>
       <segment>
         <source>Durante el diseño hay dos rondas de cambios incluidas, que es donde salen casi todos. Si el cambio llega después y toca el alcance, te decimos qué cuesta y decides tú; nunca aparece de sorpresa en la factura.</source>
@@ -1287,7 +1553,7 @@
     </unit>
     <unit id="4036632370427093570">
       <notes>
-        <note category="location">src/app/data/content.ts:366</note>
+        <note category="location">src/app/data/content.ts:446</note>
       </notes>
       <segment>
         <source>¿Podré cambiar textos o precios yo mismo?</source>
@@ -1295,7 +1561,7 @@
     </unit>
     <unit id="4734311729007584690">
       <notes>
-        <note category="location">src/app/data/content.ts:367</note>
+        <note category="location">src/app/data/content.ts:447</note>
       </notes>
       <segment>
         <source>Sí. Dejamos editable lo que se toca a menudo (carta, horarios, precios, ofertas) y te grabamos un vídeo corto explicando cómo. Si prefieres no tocar nada, lo hacemos nosotros dentro del mantenimiento.</source>
@@ -1303,7 +1569,7 @@
     </unit>
     <unit id="7541680752120326246">
       <notes>
-        <note category="location">src/app/data/content.ts:370</note>
+        <note category="location">src/app/data/content.ts:450</note>
       </notes>
       <segment>
         <source>¿Qué pasa si ya tengo una web hecha?</source>
@@ -1311,7 +1577,7 @@
     </unit>
     <unit id="132339149200678706">
       <notes>
-        <note category="location">src/app/data/content.ts:371</note>
+        <note category="location">src/app/data/content.ts:451</note>
       </notes>
       <segment>
         <source>La auditamos gratis. A veces sale más a cuenta arreglar lo que tienes que rehacerlo, y te lo diremos aunque nos convenga lo contrario. Si la rehacemos, mantenemos las direcciones que ya posicionan.</source>
@@ -1319,7 +1585,7 @@
     </unit>
     <unit id="3983715433278350739">
       <notes>
-        <note category="location">src/app/data/content.ts:376</note>
+        <note category="location">src/app/data/content.ts:456</note>
       </notes>
       <segment>
         <source>¿Dónde estáis? ¿Solo hacéis webs en Alicante?</source>
@@ -1327,11 +1593,27 @@
     </unit>
     <unit id="4162056906688610502">
       <notes>
-        <note category="location">src/app/data/content.ts:377</note>
+        <note category="location">src/app/data/content.ts:457</note>
       </notes>
       <segment>
         <source>Estamos en Mutxamel, junto a Alicante, y hacemos webs para negocios de toda España. Con los de la provincia de Alicante podemos vernos en persona para arrancar; con el resto, todo funciona igual de bien por videollamada.</source>
       <target>Nous sommes à Mutxamel, juste à côté d’Alicante, et nous créons des sites pour des commerces de toute l’Espagne. Dans la province d’Alicante, nous pouvons nous rencontrer pour démarrer ; ailleurs, tout se passe aussi bien en visioconférence.</target></segment>
+    </unit>
+    <unit id="8448695347212594898">
+      <notes>
+        <note category="location">src/app/data/content.ts:460</note>
+      </notes>
+      <segment>
+        <source>¿Solo hacéis páginas web?</source>
+      <target>Vous ne faites que des sites web ?</target></segment>
+    </unit>
+    <unit id="3814238615608439673">
+      <notes>
+        <note category="location">src/app/data/content.ts:461</note>
+      </notes>
+      <segment>
+        <source>No. También hacemos tiendas online, software a medida, soluciones con inteligencia artificial y, en general, cualquier proyecto informático que necesite tu negocio. Cuéntanos qué te hace falta y te decimos con sinceridad si podemos hacerlo, cuánto cuesta y cuánto tarda.</source>
+      <target>Non. Nous créons aussi des boutiques en ligne, des logiciels sur mesure, des solutions d’intelligence artificielle et, plus généralement, tout projet informatique dont votre entreprise a besoin. Dites-nous ce qu’il vous faut et nous vous dirons honnêtement si nous pouvons le faire, combien cela coûte et combien de temps cela prend.</target></segment>
     </unit>
     <unit id="6168025029375206528">
       <notes>
@@ -1602,7 +1884,7 @@
     </unit>
     <unit id="1088748121450943202">
       <notes>
-        <note category="location">src/app/data/services.ts:51</note>
+        <note category="location">src/app/data/services.ts:56</note>
       </notes>
       <segment>
         <source>Diseño web</source>
@@ -1610,7 +1892,7 @@
     </unit>
     <unit id="8462657106699783980">
       <notes>
-        <note category="location">src/app/data/services.ts:52</note>
+        <note category="location">src/app/data/services.ts:57</note>
       </notes>
       <segment>
         <source>Una web que </source>
@@ -1618,7 +1900,7 @@
     </unit>
     <unit id="5200094218230804733">
       <notes>
-        <note category="location">src/app/data/services.ts:52</note>
+        <note category="location">src/app/data/services.ts:57</note>
       </notes>
       <segment>
         <source>parece tuya, </source>
@@ -1626,7 +1908,7 @@
     </unit>
     <unit id="8767083230806054986">
       <notes>
-        <note category="location">src/app/data/services.ts:52</note>
+        <note category="location">src/app/data/services.ts:57</note>
       </notes>
       <segment>
         <source>no de plantilla.</source>
@@ -1634,7 +1916,7 @@
     </unit>
     <unit id="2689008570953900132">
       <notes>
-        <note category="location">src/app/data/services.ts:53</note>
+        <note category="location">src/app/data/services.ts:58</note>
       </notes>
       <segment>
         <source>Dirección de arte, textos y una demo navegable antes de programar nada. Ves tu web, con tus fotos y tus palabras, antes de que exista.</source>
@@ -1642,7 +1924,9 @@
     </unit>
     <unit id="8254994351389521423">
       <notes>
-        <note category="location">src/app/data/services.ts:55</note>
+        <note category="location">src/app/data/services.ts:60</note>
+        <note category="location">src/app/data/services.ts:191</note>
+        <note category="location">src/app/data/services.ts:228</note>
       </notes>
       <segment>
         <source>A medida</source>
@@ -1650,7 +1934,7 @@
     </unit>
     <unit id="40628939503219888">
       <notes>
-        <note category="location">src/app/data/services.ts:55</note>
+        <note category="location">src/app/data/services.ts:60</note>
       </notes>
       <segment>
         <source>Sin plantillas</source>
@@ -1658,7 +1942,7 @@
     </unit>
     <unit id="1018151601067636818">
       <notes>
-        <note category="location">src/app/data/services.ts:55</note>
+        <note category="location">src/app/data/services.ts:60</note>
       </notes>
       <segment>
         <source>Cada pantalla se diseña para tu negocio. No se rellena una plantilla comprada.</source>
@@ -1666,7 +1950,7 @@
     </unit>
     <unit id="6305576309964393315">
       <notes>
-        <note category="location">src/app/data/services.ts:56</note>
+        <note category="location">src/app/data/services.ts:61</note>
       </notes>
       <segment>
         <source>Rondas de cambios</source>
@@ -1674,7 +1958,7 @@
     </unit>
     <unit id="8347279630487485487">
       <notes>
-        <note category="location">src/app/data/services.ts:56</note>
+        <note category="location">src/app/data/services.ts:61</note>
       </notes>
       <segment>
         <source>Incluidas en el diseño, que es donde salen casi todos los ajustes.</source>
@@ -1682,7 +1966,7 @@
     </unit>
     <unit id="2003854064741336307">
       <notes>
-        <note category="location">src/app/data/services.ts:57</note>
+        <note category="location">src/app/data/services.ts:62</note>
       </notes>
       <segment>
         <source>Días 2–4</source>
@@ -1690,7 +1974,7 @@
     </unit>
     <unit id="4729231560703529154">
       <notes>
-        <note category="location">src/app/data/services.ts:57</note>
+        <note category="location">src/app/data/services.ts:62</note>
       </notes>
       <segment>
         <source>Demo navegable</source>
@@ -1698,7 +1982,7 @@
     </unit>
     <unit id="4822501713607757849">
       <notes>
-        <note category="location">src/app/data/services.ts:57</note>
+        <note category="location">src/app/data/services.ts:62</note>
       </notes>
       <segment>
         <source>La pruebas en tu móvil antes de que empecemos a programar.</source>
@@ -1706,10 +1990,13 @@
     </unit>
     <unit id="3545193798647746888">
       <notes>
-        <note category="location">src/app/data/services.ts:59</note>
-        <note category="location">src/app/data/services.ts:83</note>
-        <note category="location">src/app/data/services.ts:131</note>
-        <note category="location">src/app/data/services.ts:155</note>
+        <note category="location">src/app/data/services.ts:64</note>
+        <note category="location">src/app/data/services.ts:88</note>
+        <note category="location">src/app/data/services.ts:136</note>
+        <note category="location">src/app/data/services.ts:160</note>
+        <note category="location">src/app/data/services.ts:195</note>
+        <note category="location">src/app/data/services.ts:230</note>
+        <note category="location">src/app/data/services.ts:265</note>
       </notes>
       <segment>
         <source>Lo que </source>
@@ -1717,7 +2004,7 @@
     </unit>
     <unit id="3184131852733656686">
       <notes>
-        <note category="location">src/app/data/services.ts:59</note>
+        <note category="location">src/app/data/services.ts:64</note>
       </notes>
       <segment>
         <source>diseñamos </source>
@@ -1725,8 +2012,9 @@
     </unit>
     <unit id="4071387130017196094">
       <notes>
-        <note category="location">src/app/data/services.ts:59</note>
-        <note category="location">src/app/data/services.ts:131</note>
+        <note category="location">src/app/data/services.ts:64</note>
+        <note category="location">src/app/data/services.ts:136</note>
+        <note category="location">src/app/data/services.ts:195</note>
       </notes>
       <segment>
         <source>para ti.</source>
@@ -1734,7 +2022,7 @@
     </unit>
     <unit id="4011692821645355453">
       <notes>
-        <note category="location">src/app/data/services.ts:61</note>
+        <note category="location">src/app/data/services.ts:66</note>
       </notes>
       <segment>
         <source>Colores, tipografías e imágenes elegidos para tu negocio y para quien lo visita.</source>
@@ -1742,7 +2030,7 @@
     </unit>
     <unit id="4109575768057452630">
       <notes>
-        <note category="location">src/app/data/services.ts:62</note>
+        <note category="location">src/app/data/services.ts:67</note>
       </notes>
       <segment>
         <source>Demo antes de empezar</source>
@@ -1750,7 +2038,7 @@
     </unit>
     <unit id="8542328124187848745">
       <notes>
-        <note category="location">src/app/data/services.ts:62</note>
+        <note category="location">src/app/data/services.ts:67</note>
       </notes>
       <segment>
         <source>Una versión navegable para que la pruebes y opines antes de escribir código.</source>
@@ -1758,7 +2046,7 @@
     </unit>
     <unit id="120748197763041457">
       <notes>
-        <note category="location">src/app/data/services.ts:63</note>
+        <note category="location">src/app/data/services.ts:68</note>
       </notes>
       <segment>
         <source>Piezas coherentes entre sí, para que la web crezca sin perder su estilo.</source>
@@ -1766,7 +2054,7 @@
     </unit>
     <unit id="2529182050679714520">
       <notes>
-        <note category="location">src/app/data/services.ts:64</note>
+        <note category="location">src/app/data/services.ts:69</note>
       </notes>
       <segment>
         <source>Los redactamos nosotros, pensando en lo que tu cliente busca y en cómo lo busca.</source>
@@ -1774,9 +2062,9 @@
     </unit>
     <unit id="2493294032065196649">
       <notes>
-        <note category="location">src/app/data/services.ts:67</note>
-        <note category="location">src/app/data/services.ts:91</note>
-        <note category="location">src/app/data/services.ts:162</note>
+        <note category="location">src/app/data/services.ts:72</note>
+        <note category="location">src/app/data/services.ts:96</note>
+        <note category="location">src/app/data/services.ts:272</note>
         <note category="location">src/app/pages/local/local-page.ts:113</note>
         <note category="location">src/app/sections/cta-card/cta-card.ts:54</note>
       </notes>
@@ -1786,7 +2074,7 @@
     </unit>
     <unit id="4461245862818900437">
       <notes>
-        <note category="location">src/app/data/services.ts:68</note>
+        <note category="location">src/app/data/services.ts:73</note>
       </notes>
       <segment>
         <source>Diseño web a medida en Alicante y toda España — MakeWeb</source>
@@ -1794,7 +2082,7 @@
     </unit>
     <unit id="823870395776095366">
       <notes>
-        <note category="location">src/app/data/services.ts:70</note>
+        <note category="location">src/app/data/services.ts:75</note>
       </notes>
       <segment>
         <source>Diseño de páginas web a medida en Alicante y toda España, sin plantillas: dirección de arte, textos incluidos y una demo navegable antes de programar.</source>
@@ -1802,7 +2090,7 @@
     </unit>
     <unit id="4605600044467311869">
       <notes>
-        <note category="location">src/app/data/services.ts:75</note>
+        <note category="location">src/app/data/services.ts:80</note>
       </notes>
       <segment>
         <source>Desarrollo web</source>
@@ -1810,7 +2098,7 @@
     </unit>
     <unit id="7618038872484017484">
       <notes>
-        <note category="location">src/app/data/services.ts:76</note>
+        <note category="location">src/app/data/services.ts:81</note>
       </notes>
       <segment>
         <source>Rápida de verdad, </source>
@@ -1818,7 +2106,7 @@
     </unit>
     <unit id="3792719201296347431">
       <notes>
-        <note category="location">src/app/data/services.ts:76</note>
+        <note category="location">src/app/data/services.ts:81</note>
       </notes>
       <segment>
         <source>también en el móvil </source>
@@ -1826,7 +2114,7 @@
     </unit>
     <unit id="7760515822010721036">
       <notes>
-        <note category="location">src/app/data/services.ts:76</note>
+        <note category="location">src/app/data/services.ts:81</note>
       </notes>
       <segment>
         <source>de tu cliente.</source>
@@ -1834,7 +2122,7 @@
     </unit>
     <unit id="6118706426198528331">
       <notes>
-        <note category="location">src/app/data/services.ts:77</note>
+        <note category="location">src/app/data/services.ts:82</note>
       </notes>
       <segment>
         <source>Programamos tu web a mano, sin gestores que la engorden, y la probamos en móviles de verdad antes de enseñártela.</source>
@@ -1842,7 +2130,7 @@
     </unit>
     <unit id="8870864421535848868">
       <notes>
-        <note category="location">src/app/data/services.ts:79</note>
+        <note category="location">src/app/data/services.ts:84</note>
       </notes>
       <segment>
         <source>A mano</source>
@@ -1850,7 +2138,7 @@
     </unit>
     <unit id="4299637836927340697">
       <notes>
-        <note category="location">src/app/data/services.ts:79</note>
+        <note category="location">src/app/data/services.ts:84</note>
       </notes>
       <segment>
         <source>Sin WordPress ni plantillas: solo el código que tu web necesita.</source>
@@ -1858,7 +2146,7 @@
     </unit>
     <unit id="8172496475016760367">
       <notes>
-        <note category="location">src/app/data/services.ts:80</note>
+        <note category="location">src/app/data/services.ts:85</note>
       </notes>
       <segment>
         <source>AA</source>
@@ -1866,7 +2154,7 @@
     </unit>
     <unit id="6275160635217764224">
       <notes>
-        <note category="location">src/app/data/services.ts:80</note>
+        <note category="location">src/app/data/services.ts:85</note>
       </notes>
       <segment>
         <source>Accesible</source>
@@ -1874,7 +2162,7 @@
     </unit>
     <unit id="6900703923752169516">
       <notes>
-        <note category="location">src/app/data/services.ts:80</note>
+        <note category="location">src/app/data/services.ts:85</note>
       </notes>
       <segment>
         <source>Pensada para que la use cualquiera, también con lector de pantalla.</source>
@@ -1882,7 +2170,7 @@
     </unit>
     <unit id="29494828348441212">
       <notes>
-        <note category="location">src/app/data/services.ts:81</note>
+        <note category="location">src/app/data/services.ts:86</note>
       </notes>
       <segment>
         <source>Días 5–6</source>
@@ -1890,7 +2178,7 @@
     </unit>
     <unit id="8027039572286709964">
       <notes>
-        <note category="location">src/app/data/services.ts:81</note>
+        <note category="location">src/app/data/services.ts:86</note>
       </notes>
       <segment>
         <source>Programación y pruebas</source>
@@ -1898,7 +2186,7 @@
     </unit>
     <unit id="512535113365544764">
       <notes>
-        <note category="location">src/app/data/services.ts:81</note>
+        <note category="location">src/app/data/services.ts:86</note>
       </notes>
       <segment>
         <source>En móviles reales, no solo en el portátil de quien la hace.</source>
@@ -1906,7 +2194,7 @@
     </unit>
     <unit id="542453465873926732">
       <notes>
-        <note category="location">src/app/data/services.ts:83</note>
+        <note category="location">src/app/data/services.ts:88</note>
       </notes>
       <segment>
         <source>construimos </source>
@@ -1914,7 +2202,7 @@
     </unit>
     <unit id="3893866168441490364">
       <notes>
-        <note category="location">src/app/data/services.ts:83</note>
+        <note category="location">src/app/data/services.ts:88</note>
       </notes>
       <segment>
         <source>por dentro.</source>
@@ -1922,7 +2210,7 @@
     </unit>
     <unit id="4805097409125160108">
       <notes>
-        <note category="location">src/app/data/services.ts:85</note>
+        <note category="location">src/app/data/services.ts:90</note>
       </notes>
       <segment>
         <source>Código escrito para tu web, ligero y fácil de mantener por cualquier estudio.</source>
@@ -1930,7 +2218,7 @@
     </unit>
     <unit id="1212181921258345635">
       <notes>
-        <note category="location">src/app/data/services.ts:86</note>
+        <note category="location">src/app/data/services.ts:91</note>
       </notes>
       <segment>
         <source>Base de datos si hace falta</source>
@@ -1938,7 +2226,7 @@
     </unit>
     <unit id="3459346136484806733">
       <notes>
-        <note category="location">src/app/data/services.ts:86</note>
+        <note category="location">src/app/data/services.ts:91</note>
       </notes>
       <segment>
         <source>PHP y MySQL cuando el negocio necesita guardar datos, con phpMyAdmin para gestionarlos.</source>
@@ -1946,7 +2234,7 @@
     </unit>
     <unit id="3336683799316861258">
       <notes>
-        <note category="location">src/app/data/services.ts:87</note>
+        <note category="location">src/app/data/services.ts:92</note>
       </notes>
       <segment>
         <source>Accesibilidad AA</source>
@@ -1954,7 +2242,7 @@
     </unit>
     <unit id="2143800575029321785">
       <notes>
-        <note category="location">src/app/data/services.ts:87</note>
+        <note category="location">src/app/data/services.ts:92</note>
       </notes>
       <segment>
         <source>Contraste, teclado y lectores de pantalla, comprobados antes de publicar.</source>
@@ -1962,7 +2250,7 @@
     </unit>
     <unit id="357352099291335810">
       <notes>
-        <note category="location">src/app/data/services.ts:88</note>
+        <note category="location">src/app/data/services.ts:93</note>
       </notes>
       <segment>
         <source>La dejamos publicada y funcionando, con el dominio a tu nombre.</source>
@@ -1970,7 +2258,7 @@
     </unit>
     <unit id="3785841191737182199">
       <notes>
-        <note category="location">src/app/data/services.ts:92</note>
+        <note category="location">src/app/data/services.ts:97</note>
       </notes>
       <segment>
         <source>Desarrollo web en Alicante, rápido y a medida — MakeWeb</source>
@@ -1978,7 +2266,7 @@
     </unit>
     <unit id="3315140892970956753">
       <notes>
-        <note category="location">src/app/data/services.ts:94</note>
+        <note category="location">src/app/data/services.ts:99</note>
       </notes>
       <segment>
         <source>Desarrollo web a medida desde Alicante: programada a mano, accesible y probada en móviles reales, con base de datos si hace falta. Código y dominio a tu nombre.</source>
@@ -1986,7 +2274,7 @@
     </unit>
     <unit id="7157105886048308640">
       <notes>
-        <note category="location">src/app/data/services.ts:99</note>
+        <note category="location">src/app/data/services.ts:104</note>
         <note category="location">src/app/pages/local/local-page.ts:127</note>
       </notes>
       <segment>
@@ -1995,7 +2283,7 @@
     </unit>
     <unit id="6321623178168210475">
       <notes>
-        <note category="location">src/app/data/services.ts:100</note>
+        <note category="location">src/app/data/services.ts:105</note>
       </notes>
       <segment>
         <source>Que te encuentren </source>
@@ -2003,7 +2291,7 @@
     </unit>
     <unit id="741902840535171064">
       <notes>
-        <note category="location">src/app/data/services.ts:100</note>
+        <note category="location">src/app/data/services.ts:105</note>
       </notes>
       <segment>
         <source>cuando buscan </source>
@@ -2011,7 +2299,7 @@
     </unit>
     <unit id="5918313848115988247">
       <notes>
-        <note category="location">src/app/data/services.ts:100</note>
+        <note category="location">src/app/data/services.ts:105</note>
       </notes>
       <segment>
         <source>cerca.</source>
@@ -2019,7 +2307,7 @@
     </unit>
     <unit id="2542364896286389014">
       <notes>
-        <note category="location">src/app/data/services.ts:101</note>
+        <note category="location">src/app/data/services.ts:106</note>
       </notes>
       <segment>
         <source>Ser el mejor no sirve de nada si no te encuentran. Trabajamos tu ficha de Google, los datos de la web y las páginas por zona para que aparezcas cuando alguien busca lo que haces.</source>
@@ -2027,7 +2315,7 @@
     </unit>
     <unit id="3590805807378700861">
       <notes>
-        <note category="location">src/app/data/services.ts:103</note>
+        <note category="location">src/app/data/services.ts:108</note>
       </notes>
       <segment>
         <source>Google</source>
@@ -2035,7 +2323,7 @@
     </unit>
     <unit id="4624004510389432125">
       <notes>
-        <note category="location">src/app/data/services.ts:103</note>
+        <note category="location">src/app/data/services.ts:108</note>
       </notes>
       <segment>
         <source>Ficha de empresa</source>
@@ -2043,7 +2331,7 @@
     </unit>
     <unit id="7767401327826521274">
       <notes>
-        <note category="location">src/app/data/services.ts:103</note>
+        <note category="location">src/app/data/services.ts:108</note>
       </notes>
       <segment>
         <source>Completa y optimizada: horarios, fotos, categorías y enlace a tu web.</source>
@@ -2051,7 +2339,7 @@
     </unit>
     <unit id="1721827980245086554">
       <notes>
-        <note category="location">src/app/data/services.ts:104</note>
+        <note category="location">src/app/data/services.ts:109</note>
       </notes>
       <segment>
         <source>Schema</source>
@@ -2059,7 +2347,7 @@
     </unit>
     <unit id="9111253306687059280">
       <notes>
-        <note category="location">src/app/data/services.ts:104</note>
+        <note category="location">src/app/data/services.ts:109</note>
       </notes>
       <segment>
         <source>Datos estructurados</source>
@@ -2067,7 +2355,7 @@
     </unit>
     <unit id="5505775196665686492">
       <notes>
-        <note category="location">src/app/data/services.ts:104</note>
+        <note category="location">src/app/data/services.ts:109</note>
       </notes>
       <segment>
         <source>Para que Google entienda qué haces, dónde y en qué horario.</source>
@@ -2075,7 +2363,7 @@
     </unit>
     <unit id="6607398199301175828">
       <notes>
-        <note category="location">src/app/data/services.ts:105</note>
+        <note category="location">src/app/data/services.ts:110</note>
       </notes>
       <segment>
         <source>Por zona</source>
@@ -2083,7 +2371,7 @@
     </unit>
     <unit id="831060026773149709">
       <notes>
-        <note category="location">src/app/data/services.ts:105</note>
+        <note category="location">src/app/data/services.ts:110</note>
       </notes>
       <segment>
         <source>Páginas locales</source>
@@ -2091,7 +2379,7 @@
     </unit>
     <unit id="4674571470092777290">
       <notes>
-        <note category="location">src/app/data/services.ts:105</note>
+        <note category="location">src/app/data/services.ts:110</note>
       </notes>
       <segment>
         <source>Una página por barrio o ciudad donde trabajas, con contenido propio.</source>
@@ -2099,7 +2387,7 @@
     </unit>
     <unit id="4090387508355969623">
       <notes>
-        <note category="location">src/app/data/services.ts:107</note>
+        <note category="location">src/app/data/services.ts:112</note>
       </notes>
       <segment>
         <source>Lo que hacemos </source>
@@ -2107,7 +2395,7 @@
     </unit>
     <unit id="1677825205149571333">
       <notes>
-        <note category="location">src/app/data/services.ts:107</note>
+        <note category="location">src/app/data/services.ts:112</note>
       </notes>
       <segment>
         <source>para que </source>
@@ -2115,7 +2403,7 @@
     </unit>
     <unit id="2415887986235903111">
       <notes>
-        <note category="location">src/app/data/services.ts:107</note>
+        <note category="location">src/app/data/services.ts:112</note>
       </notes>
       <segment>
         <source>te encuentren.</source>
@@ -2123,7 +2411,7 @@
     </unit>
     <unit id="8707983824878426739">
       <notes>
-        <note category="location">src/app/data/services.ts:109</note>
+        <note category="location">src/app/data/services.ts:114</note>
       </notes>
       <segment>
         <source>Tu ficha de Google, completa y conectada con la web.</source>
@@ -2131,7 +2419,7 @@
     </unit>
     <unit id="6471240023468985632">
       <notes>
-        <note category="location">src/app/data/services.ts:110</note>
+        <note category="location">src/app/data/services.ts:115</note>
       </notes>
       <segment>
         <source>Datos estructurados de negocio local, horario y servicios.</source>
@@ -2139,7 +2427,7 @@
     </unit>
     <unit id="447500067447099604">
       <notes>
-        <note category="location">src/app/data/services.ts:111</note>
+        <note category="location">src/app/data/services.ts:116</note>
       </notes>
       <segment>
         <source>Contenido para cada zona donde das servicio, sin páginas copiadas.</source>
@@ -2147,7 +2435,7 @@
     </unit>
     <unit id="1476720552339671869">
       <notes>
-        <note category="location">src/app/data/services.ts:112</note>
+        <note category="location">src/app/data/services.ts:117</note>
       </notes>
       <segment>
         <source>Tus reseñas de Google, visibles en la web donde ayudan a decidir.</source>
@@ -2155,7 +2443,7 @@
     </unit>
     <unit id="7636911400512995500">
       <notes>
-        <note category="location">src/app/data/services.ts:115</note>
+        <note category="location">src/app/data/services.ts:120</note>
       </notes>
       <segment>
         <source>hablemos de tu negocio.</source>
@@ -2163,7 +2451,7 @@
     </unit>
     <unit id="8643082405811477654">
       <notes>
-        <note category="location">src/app/data/services.ts:116</note>
+        <note category="location">src/app/data/services.ts:121</note>
       </notes>
       <segment>
         <source>SEO local en Alicante: aparece en Google — MakeWeb</source>
@@ -2171,7 +2459,7 @@
     </unit>
     <unit id="5912836426931273573">
       <notes>
-        <note category="location">src/app/data/services.ts:118</note>
+        <note category="location">src/app/data/services.ts:123</note>
       </notes>
       <segment>
         <source>Posicionamiento SEO local en Alicante y toda España: ficha de Google optimizada, datos estructurados, páginas por zona y reseñas integradas en la web.</source>
@@ -2179,7 +2467,7 @@
     </unit>
     <unit id="6562343522611740017">
       <notes>
-        <note category="location">src/app/data/services.ts:123</note>
+        <note category="location">src/app/data/services.ts:128</note>
       </notes>
       <segment>
         <source>Reservas online</source>
@@ -2187,7 +2475,7 @@
     </unit>
     <unit id="4482585363937397284">
       <notes>
-        <note category="location">src/app/data/services.ts:124</note>
+        <note category="location">src/app/data/services.ts:129</note>
       </notes>
       <segment>
         <source>Convierte visitas </source>
@@ -2195,7 +2483,7 @@
     </unit>
     <unit id="2013735014102172598">
       <notes>
-        <note category="location">src/app/data/services.ts:124</note>
+        <note category="location">src/app/data/services.ts:129</note>
       </notes>
       <segment>
         <source>en reservas, </source>
@@ -2203,7 +2491,7 @@
     </unit>
     <unit id="3178941307216807209">
       <notes>
-        <note category="location">src/app/data/services.ts:124</note>
+        <note category="location">src/app/data/services.ts:129</note>
       </notes>
       <segment>
         <source>también de noche.</source>
@@ -2211,7 +2499,7 @@
     </unit>
     <unit id="6264821717066424485">
       <notes>
-        <note category="location">src/app/data/services.ts:125</note>
+        <note category="location">src/app/data/services.ts:130</note>
       </notes>
       <segment>
         <source>Montamos el sistema de reservas, citas y pedidos de tu web, conectado con lo que ya usas, para que cada visita tenga un camino claro hasta convertirse en cliente.</source>
@@ -2219,7 +2507,9 @@
     </unit>
     <unit id="8073962907604601724">
       <notes>
-        <note category="location">src/app/data/services.ts:127</note>
+        <note category="location">src/app/data/services.ts:132</note>
+        <note category="location">src/app/data/services.ts:156</note>
+        <note category="location">src/app/data/services.ts:226</note>
       </notes>
       <segment>
         <source>24 h</source>
@@ -2227,7 +2517,7 @@
     </unit>
     <unit id="5690754649867527342">
       <notes>
-        <note category="location">src/app/data/services.ts:127</note>
+        <note category="location">src/app/data/services.ts:132</note>
       </notes>
       <segment>
         <source>Tus clientes reservan a la hora que les conviene, no a la tuya.</source>
@@ -2235,7 +2525,7 @@
     </unit>
     <unit id="6377259224948564303">
       <notes>
-        <note category="location">src/app/data/services.ts:128</note>
+        <note category="location">src/app/data/services.ts:133</note>
       </notes>
       <segment>
         <source>Avisos</source>
@@ -2243,7 +2533,7 @@
     </unit>
     <unit id="3828243688860062837">
       <notes>
-        <note category="location">src/app/data/services.ts:128</note>
+        <note category="location">src/app/data/services.ts:133</note>
       </notes>
       <segment>
         <source>Automáticos</source>
@@ -2251,7 +2541,7 @@
     </unit>
     <unit id="7438534818986528292">
       <notes>
-        <note category="location">src/app/data/services.ts:128</note>
+        <note category="location">src/app/data/services.ts:133</note>
       </notes>
       <segment>
         <source>Confirmación y recordatorio al cliente, y aviso para ti en cada cita.</source>
@@ -2259,7 +2549,7 @@
     </unit>
     <unit id="2549010443785734768">
       <notes>
-        <note category="location">src/app/data/services.ts:129</note>
+        <note category="location">src/app/data/services.ts:134</note>
       </notes>
       <segment>
         <source>desde 50 €</source>
@@ -2267,7 +2557,7 @@
     </unit>
     <unit id="8931468038051550952">
       <notes>
-        <note category="location">src/app/data/services.ts:129</note>
+        <note category="location">src/app/data/services.ts:134</note>
       </notes>
       <segment>
         <source>Conectado a la web, con cuota mensual desde 50 €.</source>
@@ -2275,7 +2565,8 @@
     </unit>
     <unit id="258626964311304075">
       <notes>
-        <note category="location">src/app/data/services.ts:131</note>
+        <note category="location">src/app/data/services.ts:136</note>
+        <note category="location">src/app/data/services.ts:160</note>
       </notes>
       <segment>
         <source>montamos </source>
@@ -2283,7 +2574,7 @@
     </unit>
     <unit id="860831447422414819">
       <notes>
-        <note category="location">src/app/data/services.ts:133</note>
+        <note category="location">src/app/data/services.ts:138</note>
       </notes>
       <segment>
         <source>Citas y reservas desde la web, sin llamadas ni mensajes de ida y vuelta.</source>
@@ -2291,7 +2582,7 @@
     </unit>
     <unit id="4107069613944715086">
       <notes>
-        <note category="location">src/app/data/services.ts:134</note>
+        <note category="location">src/app/data/services.ts:139</note>
       </notes>
       <segment>
         <source>Conectado a la web para responder desde un solo sitio.</source>
@@ -2299,7 +2590,7 @@
     </unit>
     <unit id="5902325770778052840">
       <notes>
-        <note category="location">src/app/data/services.ts:135</note>
+        <note category="location">src/app/data/services.ts:140</note>
       </notes>
       <segment>
         <source>Pedidos y cobros desde la web cuando tu negocio los necesita.</source>
@@ -2307,7 +2598,7 @@
     </unit>
     <unit id="632125269895536422">
       <notes>
-        <note category="location">src/app/data/services.ts:136</note>
+        <note category="location">src/app/data/services.ts:141</note>
       </notes>
       <segment>
         <source>Confirmaciones y recordatorios sin que tengas que escribirlos tú.</source>
@@ -2315,7 +2606,7 @@
     </unit>
     <unit id="9008715416958111562">
       <notes>
-        <note category="location">src/app/data/services.ts:139</note>
+        <note category="location">src/app/data/services.ts:144</note>
       </notes>
       <segment>
         <source>hablemos de tus reservas.</source>
@@ -2323,7 +2614,7 @@
     </unit>
     <unit id="2886855205846876783">
       <notes>
-        <note category="location">src/app/data/services.ts:140</note>
+        <note category="location">src/app/data/services.ts:145</note>
       </notes>
       <segment>
         <source>Reservas y citas online para negocios en Alicante — MakeWeb</source>
@@ -2331,15 +2622,641 @@
     </unit>
     <unit id="6308214403331486215">
       <notes>
-        <note category="location">src/app/data/services.ts:142</note>
+        <note category="location">src/app/data/services.ts:147</note>
       </notes>
       <segment>
         <source>Reservas, citas y pedidos online integrados en la web de tu negocio en Alicante o en toda España, con avisos automáticos y WhatsApp Business.</source>
       <target>Réservations, rendez-vous et commandes en ligne intégrés au site de votre commerce, à Alicante ou partout en Espagne, avec rappels automatiques et WhatsApp Business.</target></segment>
     </unit>
+    <unit id="4941530832236401826">
+      <notes>
+        <note category="location">src/app/data/services.ts:152</note>
+      </notes>
+      <segment>
+        <source>Tiendas online</source>
+      <target>Boutiques en ligne</target></segment>
+    </unit>
+    <unit id="5251861883584622724">
+      <notes>
+        <note category="location">src/app/data/services.ts:153</note>
+      </notes>
+      <segment>
+        <source>Tu tienda, </source>
+      <target>Votre boutique, </target></segment>
+    </unit>
+    <unit id="655973425225035103">
+      <notes>
+        <note category="location">src/app/data/services.ts:153</note>
+      </notes>
+      <segment>
+        <source>abierta </source>
+      <target>ouverte </target></segment>
+    </unit>
+    <unit id="6240352785571577617">
+      <notes>
+        <note category="location">src/app/data/services.ts:153</note>
+      </notes>
+      <segment>
+        <source>las 24 horas.</source>
+      <target>24 h/24.</target></segment>
+    </unit>
+    <unit id="7840480082974050606">
+      <notes>
+        <note category="location">src/app/data/services.ts:154</note>
+      </notes>
+      <segment>
+        <source>Diseñamos y programamos tu tienda online a medida: catálogo, carrito, pagos seguros y envíos, con un panel sencillo para que gestiones pedidos y existencias sin ayuda.</source>
+      <target>Nous concevons et développons votre boutique en ligne sur mesure : catalogue, panier, paiements sécurisés et livraisons, avec un tableau de bord simple pour gérer commandes et stocks en toute autonomie.</target></segment>
+    </unit>
+    <unit id="7886738378657411771">
+      <notes>
+        <note category="location">src/app/data/services.ts:156</note>
+      </notes>
+      <segment>
+        <source>Abierta siempre</source>
+      <target>Toujours ouverte</target></segment>
+    </unit>
+    <unit id="4109316722289893994">
+      <notes>
+        <note category="location">src/app/data/services.ts:156</note>
+      </notes>
+      <segment>
+        <source>Tus clientes compran cuando les viene bien, no solo en horario de tienda.</source>
+      <target>Vos clients achètent quand cela leur convient, pas seulement aux heures d’ouverture.</target></segment>
+    </unit>
+    <unit id="5658879720974586855">
+      <notes>
+        <note category="location">src/app/data/services.ts:157</note>
+      </notes>
+      <segment>
+        <source>Móvil</source>
+      <target>Mobile</target></segment>
+    </unit>
+    <unit id="360497087320889503">
+      <notes>
+        <note category="location">src/app/data/services.ts:157</note>
+      </notes>
+      <segment>
+        <source>Comprar desde el teléfono</source>
+      <target>Acheter depuis le téléphone</target></segment>
+    </unit>
+    <unit id="3286756784066544369">
+      <notes>
+        <note category="location">src/app/data/services.ts:157</note>
+      </notes>
+      <segment>
+        <source>Carrito y pago cómodos en pantalla pequeña, probados en móviles reales.</source>
+      <target>Un panier et un paiement confortables sur petit écran, testés sur de vrais téléphones.</target></segment>
+    </unit>
+    <unit id="5767446336938113608">
+      <notes>
+        <note category="location">src/app/data/services.ts:158</note>
+      </notes>
+      <segment>
+        <source>Panel</source>
+      <target>Tableau de bord</target></segment>
+    </unit>
+    <unit id="1327800835039670834">
+      <notes>
+        <note category="location">src/app/data/services.ts:158</note>
+      </notes>
+      <segment>
+        <source>Pedidos y existencias</source>
+      <target>Commandes et stocks</target></segment>
+    </unit>
+    <unit id="1447898964072812606">
+      <notes>
+        <note category="location">src/app/data/services.ts:158</note>
+      </notes>
+      <segment>
+        <source>Cada pedido, su estado y lo que queda en el almacén, en un solo sitio.</source>
+      <target>Chaque commande, son statut et ce qui reste en stock, au même endroit.</target></segment>
+    </unit>
+    <unit id="1785731112234927573">
+      <notes>
+        <note category="location">src/app/data/services.ts:160</note>
+      </notes>
+      <segment>
+        <source>en tu tienda.</source>
+      <target>dans votre boutique.</target></segment>
+    </unit>
+    <unit id="8632084917337252148">
+      <notes>
+        <note category="location">src/app/data/services.ts:162</note>
+      </notes>
+      <segment>
+        <source>Catálogo a medida</source>
+      <target>Catalogue sur mesure</target></segment>
+    </unit>
+    <unit id="1344585262759622185">
+      <notes>
+        <note category="location">src/app/data/services.ts:162</note>
+      </notes>
+      <segment>
+        <source>Fichas de producto con fotos, variantes de talla o color y buscador, pensadas para que se entienda qué compras.</source>
+      <target>Des fiches produit avec photos, variantes de taille ou de couleur et moteur de recherche, pensées pour qu’on comprenne bien ce qu’on achète.</target></segment>
+    </unit>
+    <unit id="6225190752007148751">
+      <notes>
+        <note category="location">src/app/data/services.ts:163</note>
+      </notes>
+      <segment>
+        <source>Carrito y pagos seguros</source>
+      <target>Panier et paiements sécurisés</target></segment>
+    </unit>
+    <unit id="341593845078908756">
+      <notes>
+        <note category="location">src/app/data/services.ts:163</note>
+      </notes>
+      <segment>
+        <source>Pago con tarjeta y otros métodos habituales, a través de pasarelas de pago reconocidas.</source>
+      <target>Paiement par carte et autres moyens courants, via des passerelles de paiement reconnues.</target></segment>
+    </unit>
+    <unit id="182768850049827984">
+      <notes>
+        <note category="location">src/app/data/services.ts:164</note>
+      </notes>
+      <segment>
+        <source>Gastos de envío por zona o por peso, seguimiento del pedido y avisos automáticos al cliente.</source>
+      <target>Frais de port par zone ou par poids, suivi de commande et notifications automatiques au client.</target></segment>
+    </unit>
+    <unit id="4760236168441364279">
+      <notes>
+        <note category="location">src/app/data/services.ts:165</note>
+      </notes>
+      <segment>
+        <source>Panel de gestión</source>
+      <target>Tableau de bord de gestion</target></segment>
+    </unit>
+    <unit id="3501362281691891579">
+      <notes>
+        <note category="location">src/app/data/services.ts:165</note>
+      </notes>
+      <segment>
+        <source>Pedidos, clientes y existencias en un panel sencillo, con vídeos cortos que te enseñan a usarlo.</source>
+      <target>Commandes, clients et stocks dans un tableau de bord simple, avec de courtes vidéos pour apprendre à l’utiliser.</target></segment>
+    </unit>
+    <unit id="7188953340760886444">
+      <notes>
+        <note category="location">src/app/data/services.ts:169</note>
+      </notes>
+      <segment>
+        <source>¿Cuánto cuesta una tienda online?</source>
+      <target>Combien coûte une boutique en ligne ?</target></segment>
+    </unit>
+    <unit id="5563325026277231324">
+      <notes>
+        <note category="location">src/app/data/services.ts:170</note>
+      </notes>
+      <segment>
+        <source>Depende del número de productos, de los métodos de pago y de cómo gestionas los envíos. Te enviamos una propuesta con el precio cerrado antes de empezar, y el presupuesto que firmas es el que pagas.</source>
+      <target>Cela dépend du nombre de produits, des moyens de paiement et de la gestion des livraisons. Nous vous envoyons une proposition à prix ferme avant de commencer, et le devis que vous signez est celui que vous payez.</target></segment>
+    </unit>
+    <unit id="7714550784704551555">
+      <notes>
+        <note category="location">src/app/data/services.ts:173</note>
+      </notes>
+      <segment>
+        <source>¿Podré añadir productos yo mismo?</source>
+      <target>Pourrai-je ajouter des produits moi-même ?</target></segment>
+    </unit>
+    <unit id="5424921617461688007">
+      <notes>
+        <note category="location">src/app/data/services.ts:174</note>
+      </notes>
+      <segment>
+        <source>Sí. Te dejamos un panel para dar de alta productos, cambiar precios y ver pedidos, y te grabamos vídeos cortos explicando cómo se hace.</source>
+      <target>Oui. Nous vous laissons un tableau de bord pour ajouter des produits, modifier les prix et suivre les commandes, et nous enregistrons de courtes vidéos pour vous montrer comment faire.</target></segment>
+    </unit>
+    <unit id="8229177676397478207">
+      <notes>
+        <note category="location">src/app/data/services.ts:178</note>
+      </notes>
+      <segment>
+        <source>hablemos de tu tienda.</source>
+      <target>parlons de votre boutique.</target></segment>
+    </unit>
+    <unit id="8767683807623030109">
+      <notes>
+        <note category="location">src/app/data/services.ts:180</note>
+      </notes>
+      <segment>
+        <source>Tiendas online a medida en Alicante y España — MakeWeb</source>
+      <target>Boutiques en ligne sur mesure à Alicante et en Espagne — MakeWeb</target></segment>
+    </unit>
+    <unit id="4041973339214251482">
+      <notes>
+        <note category="location">src/app/data/services.ts:182</note>
+      </notes>
+      <segment>
+        <source>Creamos tiendas online a medida en Alicante y para toda España: catálogo, carrito, pagos seguros, envíos y un panel sencillo para gestionar pedidos y stock.</source>
+      <target>Nous créons des boutiques en ligne sur mesure à Alicante et dans toute l’Espagne : catalogue, panier, paiements sécurisés, livraisons et tableau de bord simple pour gérer commandes et stocks.</target></segment>
+    </unit>
+    <unit id="3376740535436360646">
+      <notes>
+        <note category="location">src/app/data/services.ts:187</note>
+        <note category="location">src/app/state/lead/lead.model.ts:53</note>
+      </notes>
+      <segment>
+        <source>Software a medida</source>
+      <target>Logiciel sur mesure</target></segment>
+    </unit>
+    <unit id="1152462043567510743">
+      <notes>
+        <note category="location">src/app/data/services.ts:188</note>
+      </notes>
+      <segment>
+        <source>Software </source>
+      <target>Un logiciel </target></segment>
+    </unit>
+    <unit id="7376015551822913206">
+      <notes>
+        <note category="location">src/app/data/services.ts:188</note>
+      </notes>
+      <segment>
+        <source>hecho para cómo </source>
+      <target>pensé pour la façon dont </target></segment>
+    </unit>
+    <unit id="3667854201869664475">
+      <notes>
+        <note category="location">src/app/data/services.ts:188</note>
+      </notes>
+      <segment>
+        <source>trabaja tu negocio.</source>
+      <target>travaille votre entreprise.</target></segment>
+    </unit>
+    <unit id="608958577347850815">
+      <notes>
+        <note category="location">src/app/data/services.ts:189</note>
+      </notes>
+      <segment>
+        <source>Aplicaciones web, paneles de gestión e integraciones a medida. Lo que hoy haces a mano o repartido en varias hojas de cálculo, en una sola herramienta pensada para tu equipo.</source>
+      <target>Applications web, tableaux de bord et intégrations sur mesure. Ce que vous faites aujourd’hui à la main ou dans plusieurs tableurs, réuni dans un seul outil pensé pour votre équipe.</target></segment>
+    </unit>
+    <unit id="990561821336066072">
+      <notes>
+        <note category="location">src/app/data/services.ts:191</note>
+      </notes>
+      <segment>
+        <source>Solo lo que necesitas</source>
+      <target>Uniquement l’essentiel</target></segment>
+    </unit>
+    <unit id="2116388194739394415">
+      <notes>
+        <note category="location">src/app/data/services.ts:191</note>
+      </notes>
+      <segment>
+        <source>Las funciones que usa tu equipo, sin pagar por un programa genérico lleno de opciones que sobran.</source>
+      <target>Les fonctions qu’utilise votre équipe, sans payer un logiciel générique rempli d’options inutiles.</target></segment>
+    </unit>
+    <unit id="8627448919171559806">
+      <notes>
+        <note category="location">src/app/data/services.ts:192</note>
+      </notes>
+      <segment>
+        <source>Navegador</source>
+      <target>Navigateur</target></segment>
+    </unit>
+    <unit id="3256608400968084399">
+      <notes>
+        <note category="location">src/app/data/services.ts:192</note>
+      </notes>
+      <segment>
+        <source>En cualquier equipo</source>
+      <target>Sur n’importe quel appareil</target></segment>
+    </unit>
+    <unit id="5436734149962965144">
+      <notes>
+        <note category="location">src/app/data/services.ts:192</note>
+      </notes>
+      <segment>
+        <source>Desde el ordenador, la tableta o el móvil, sin instalar nada.</source>
+      <target>Depuis l’ordinateur, la tablette ou le téléphone, sans rien installer.</target></segment>
+    </unit>
+    <unit id="6874962158643028870">
+      <notes>
+        <note category="location">src/app/data/services.ts:193</note>
+      </notes>
+      <segment>
+        <source>Tuyo</source>
+      <target>À vous</target></segment>
+    </unit>
+    <unit id="6354280435609427009">
+      <notes>
+        <note category="location">src/app/data/services.ts:193</note>
+      </notes>
+      <segment>
+        <source>Código entregado</source>
+      <target>Code remis</target></segment>
+    </unit>
+    <unit id="7989862271988095807">
+      <notes>
+        <note category="location">src/app/data/services.ts:193</note>
+      </notes>
+      <segment>
+        <source>Te damos el código y los accesos: el programa es tuyo, igual que una web.</source>
+      <target>Nous vous remettons le code et les accès : le logiciel vous appartient, comme un site web.</target></segment>
+    </unit>
+    <unit id="1803000263587704409">
+      <notes>
+        <note category="location">src/app/data/services.ts:195</note>
+      </notes>
+      <segment>
+        <source>programamos </source>
+      <target>nous développons </target></segment>
+    </unit>
+    <unit id="1172817715539181289">
+      <notes>
+        <note category="location">src/app/data/services.ts:197</note>
+      </notes>
+      <segment>
+        <source>Herramientas internas para tu equipo: presupuestos, inventario, fichajes o lo que tu día a día necesite.</source>
+      <target>Des outils internes pour votre équipe : devis, inventaire, pointage ou tout ce dont votre quotidien a besoin.</target></segment>
+    </unit>
+    <unit id="1007783817530748991">
+      <notes>
+        <note category="location">src/app/data/services.ts:198</note>
+      </notes>
+      <segment>
+        <source>Tus datos en un solo sitio, con los números que importan a la vista.</source>
+      <target>Vos données au même endroit, avec les chiffres qui comptent bien en vue.</target></segment>
+    </unit>
+    <unit id="628816226584927310">
+      <notes>
+        <note category="location">src/app/data/services.ts:199</note>
+      </notes>
+      <segment>
+        <source>Conectamos las herramientas que ya usas para que los datos pasen de una a otra sin copiar y pegar.</source>
+      <target>Nous connectons les outils que vous utilisez déjà pour que les données passent de l’un à l’autre sans copier-coller.</target></segment>
+    </unit>
+    <unit id="7271297570479070846">
+      <notes>
+        <note category="location">src/app/data/services.ts:200</note>
+      </notes>
+      <segment>
+        <source>Informes, avisos o copias de datos que se hacen solos, sin que nadie tenga que acordarse.</source>
+      <target>Rapports, alertes ou sauvegardes de données qui se font tout seuls, sans que personne ait à y penser.</target></segment>
+    </unit>
+    <unit id="946573177739306226">
+      <notes>
+        <note category="location">src/app/data/services.ts:204</note>
+      </notes>
+      <segment>
+        <source>¿Cómo sé si necesito software a medida?</source>
+      <target>Comment savoir si j’ai besoin d’un logiciel sur mesure ?</target></segment>
+    </unit>
+    <unit id="7838626495412123001">
+      <notes>
+        <note category="location">src/app/data/services.ts:205</note>
+      </notes>
+      <segment>
+        <source>Si tu equipo pierde horas copiando datos de un sitio a otro, o si ningún programa del mercado encaja con cómo trabajas, probablemente sí. Nos lo cuentas en una videollamada y te decimos con sinceridad si te sale más a cuenta uno a medida o uno que ya exista.</source>
+      <target>Si votre équipe perd des heures à recopier des données d’un endroit à l’autre, ou si aucun logiciel du marché ne correspond à votre façon de travailler, probablement oui. Parlez-nous-en lors d’un appel vidéo et nous vous dirons honnêtement s’il vaut mieux un outil sur mesure ou un outil existant.</target></segment>
+    </unit>
+    <unit id="4678984781500090509">
+      <notes>
+        <note category="location">src/app/data/services.ts:208</note>
+      </notes>
+      <segment>
+        <source>¿Cuánto tarda y cuánto cuesta?</source>
+      <target>Combien de temps et combien ça coûte ?</target></segment>
+    </unit>
+    <unit id="6524887214122588743">
+      <notes>
+        <note category="location">src/app/data/services.ts:209</note>
+      </notes>
+      <segment>
+        <source>Depende del alcance. Antes de empezar te damos por escrito qué se va a hacer, el precio cerrado y la fecha de entrega. Si el proyecto es grande, lo dividimos en fases para que empieces a usarlo cuanto antes.</source>
+      <target>Cela dépend du périmètre. Avant de commencer, nous vous indiquons par écrit ce qui sera fait, le prix ferme et la date de livraison. Si le projet est important, nous le découpons en phases pour que vous puissiez l’utiliser au plus tôt.</target></segment>
+    </unit>
+    <unit id="949842151829337754">
+      <notes>
+        <note category="location">src/app/data/services.ts:213</note>
+      </notes>
+      <segment>
+        <source>hablemos de tu proyecto.</source>
+      <target>parlons de votre projet.</target></segment>
+    </unit>
+    <unit id="3528592992136599455">
+      <notes>
+        <note category="location">src/app/data/services.ts:215</note>
+      </notes>
+      <segment>
+        <source>Software a medida para empresas en Alicante — MakeWeb</source>
+      <target>Logiciel sur mesure pour entreprises à Alicante — MakeWeb</target></segment>
+    </unit>
+    <unit id="3383238947096900301">
+      <notes>
+        <note category="location">src/app/data/services.ts:217</note>
+      </notes>
+      <segment>
+        <source>Desarrollo de software a medida en Alicante y toda España: aplicaciones web, paneles de gestión, integraciones y automatizaciones pensadas para tu negocio.</source>
+      <target>Développement de logiciels sur mesure à Alicante et dans toute l’Espagne : applications web, tableaux de bord, intégrations et automatisations pensés pour votre entreprise.</target></segment>
+    </unit>
+    <unit id="3853178570428154136">
+      <notes>
+        <note category="location">src/app/data/services.ts:222</note>
+        <note category="location">src/app/state/lead/lead.model.ts:54</note>
+      </notes>
+      <segment>
+        <source>Inteligencia artificial</source>
+      <target>Intelligence artificielle</target></segment>
+    </unit>
+    <unit id="3291589872294010777">
+      <notes>
+        <note category="location">src/app/data/services.ts:223</note>
+      </notes>
+      <segment>
+        <source>Inteligencia artificial </source>
+      <target>Une intelligence artificielle </target></segment>
+    </unit>
+    <unit id="3374289568182620837">
+      <notes>
+        <note category="location">src/app/data/services.ts:223</note>
+      </notes>
+      <segment>
+        <source>que te quita trabajo, </source>
+      <target>qui vous enlève du travail, </target></segment>
+    </unit>
+    <unit id="1215627385073042505">
+      <notes>
+        <note category="location">src/app/data/services.ts:223</note>
+      </notes>
+      <segment>
+        <source>no que te lo da.</source>
+      <target>au lieu de vous en donner.</target></segment>
+    </unit>
+    <unit id="3348210628565061130">
+      <notes>
+        <note category="location">src/app/data/services.ts:224</note>
+      </notes>
+      <segment>
+        <source>Asistentes que responden a tus clientes con la información de tu negocio, automatizaciones que leen y ordenan correos y documentos, y herramientas de IA conectadas con lo que ya usas.</source>
+      <target>Des assistants qui répondent à vos clients avec les informations de votre entreprise, des automatisations qui lisent et trient e-mails et documents, et des outils d’IA connectés à ce que vous utilisez déjà.</target></segment>
+    </unit>
+    <unit id="3680027819554360327">
+      <notes>
+        <note category="location">src/app/data/services.ts:226</note>
+      </notes>
+      <segment>
+        <source>Asistente siempre activo</source>
+      <target>Assistant toujours disponible</target></segment>
+    </unit>
+    <unit id="6807821056052641895">
+      <notes>
+        <note category="location">src/app/data/services.ts:226</note>
+      </notes>
+      <segment>
+        <source>Resuelve las dudas frecuentes en tu web a cualquier hora, y te pasa lo que no sabe resolver.</source>
+      <target>Il répond aux questions fréquentes sur votre site à toute heure, et vous transmet ce qu’il ne sait pas résoudre.</target></segment>
+    </unit>
+    <unit id="2254023812019584949">
+      <notes>
+        <note category="location">src/app/data/services.ts:227</note>
+      </notes>
+      <segment>
+        <source>Tus datos</source>
+      <target>Vos données</target></segment>
+    </unit>
+    <unit id="2592600102599509811">
+      <notes>
+        <note category="location">src/app/data/services.ts:227</note>
+      </notes>
+      <segment>
+        <source>Respuestas con tu información</source>
+      <target>Des réponses avec vos informations</target></segment>
+    </unit>
+    <unit id="8486106667403482202">
+      <notes>
+        <note category="location">src/app/data/services.ts:227</note>
+      </notes>
+      <segment>
+        <source>Contesta con tus horarios, precios y servicios, no con respuestas genéricas.</source>
+      <target>Il répond avec vos horaires, vos prix et vos services, pas avec des réponses génériques.</target></segment>
+    </unit>
+    <unit id="2897393241238807823">
+      <notes>
+        <note category="location">src/app/data/services.ts:228</note>
+      </notes>
+      <segment>
+        <source>Donde ya trabajas</source>
+      <target>Là où vous travaillez déjà</target></segment>
+    </unit>
+    <unit id="1078196157154735295">
+      <notes>
+        <note category="location">src/app/data/services.ts:228</note>
+      </notes>
+      <segment>
+        <source>Correo, hojas de cálculo, agenda o la web: la IA se conecta a lo que ya usas.</source>
+      <target>E-mail, tableurs, agenda ou site web : l’IA se connecte à ce que vous utilisez déjà.</target></segment>
+    </unit>
+    <unit id="7807683054330052099">
+      <notes>
+        <note category="location">src/app/data/services.ts:230</note>
+      </notes>
+      <segment>
+        <source>hacemos </source>
+      <target>nous faisons </target></segment>
+    </unit>
+    <unit id="2615758369068508640">
+      <notes>
+        <note category="location">src/app/data/services.ts:230</note>
+      </notes>
+      <segment>
+        <source>con IA.</source>
+      <target>avec l’IA.</target></segment>
+    </unit>
+    <unit id="4288657243304543446">
+      <notes>
+        <note category="location">src/app/data/services.ts:232</note>
+      </notes>
+      <segment>
+        <source>Un chat que resuelve las dudas de tus clientes con la información de tu negocio y te avisa cuando hace falta una persona.</source>
+      <target>Un chat qui répond aux questions de vos clients avec les informations de votre entreprise et vous prévient quand une personne doit intervenir.</target></segment>
+    </unit>
+    <unit id="1030680793526438074">
+      <notes>
+        <note category="location">src/app/data/services.ts:233</note>
+      </notes>
+      <segment>
+        <source>Correos clasificados, respuestas sugeridas y tareas que se ponen en marcha solas cuando llega algo nuevo.</source>
+      <target>E-mails triés, réponses suggérées et tâches qui se lancent toutes seules dès qu’un nouvel élément arrive.</target></segment>
+    </unit>
+    <unit id="505159196308436948">
+      <notes>
+        <note category="location">src/app/data/services.ts:234</note>
+      </notes>
+      <segment>
+        <source>Sacar los datos de facturas, albaranes o formularios y llevarlos a donde los necesitas.</source>
+      <target>Extraire les données des factures, bons de livraison ou formulaires et les envoyer là où vous en avez besoin.</target></segment>
+    </unit>
+    <unit id="6202639598954140217">
+      <notes>
+        <note category="location">src/app/data/services.ts:235</note>
+      </notes>
+      <segment>
+        <source>Te enseñamos a sacarle partido a la IA en el día a día, con ejemplos de tu propio negocio.</source>
+      <target>Nous vous apprenons à tirer parti de l’IA au quotidien, avec des exemples tirés de votre propre entreprise.</target></segment>
+    </unit>
+    <unit id="7700009732477464879">
+      <notes>
+        <note category="location">src/app/data/services.ts:239</note>
+      </notes>
+      <segment>
+        <source>¿Qué pasa con mis datos y los de mis clientes?</source>
+      <target>Qu’advient-il de mes données et de celles de mes clients ?</target></segment>
+    </unit>
+    <unit id="7079426320027766716">
+      <notes>
+        <note category="location">src/app/data/services.ts:240</note>
+      </notes>
+      <segment>
+        <source>Usamos solo los datos que hacen falta para cada tarea y te explicamos por escrito qué servicio los trata y dónde. Si algún dato no debe salir de tu empresa, la solución se diseña para que no salga.</source>
+      <target>Nous n’utilisons que les données nécessaires à chaque tâche et nous vous expliquons par écrit quel service les traite et où. Si certaines données ne doivent pas sortir de votre entreprise, la solution est conçue pour qu’elles n’en sortent pas.</target></segment>
+    </unit>
+    <unit id="1835929944015129323">
+      <notes>
+        <note category="location">src/app/data/services.ts:243</note>
+      </notes>
+      <segment>
+        <source>¿Y si la IA se equivoca?</source>
+      <target>Et si l’IA se trompe ?</target></segment>
+    </unit>
+    <unit id="1474793278015961166">
+      <notes>
+        <note category="location">src/app/data/services.ts:244</note>
+      </notes>
+      <segment>
+        <source>Puede pasar, y por eso la usamos en tareas acotadas, con tu información y con una persona revisando lo importante. Antes de ponerla en marcha la probamos con casos reales de tu negocio.</source>
+      <target>Cela peut arriver, c’est pourquoi nous l’utilisons pour des tâches bien délimitées, avec vos informations et une personne qui vérifie l’essentiel. Avant de la mettre en service, nous la testons sur des cas réels de votre entreprise.</target></segment>
+    </unit>
+    <unit id="2538172112933273622">
+      <notes>
+        <note category="location">src/app/data/services.ts:248</note>
+      </notes>
+      <segment>
+        <source>hablemos de tu idea.</source>
+      <target>parlons de votre idée.</target></segment>
+    </unit>
+    <unit id="8719858444926384982">
+      <notes>
+        <note category="location">src/app/data/services.ts:250</note>
+      </notes>
+      <segment>
+        <source>Inteligencia artificial para empresas en Alicante — MakeWeb</source>
+      <target>Intelligence artificielle pour entreprises à Alicante — MakeWeb</target></segment>
+    </unit>
+    <unit id="866880576692933158">
+      <notes>
+        <note category="location">src/app/data/services.ts:252</note>
+      </notes>
+      <segment>
+        <source>Soluciones de inteligencia artificial para negocios de Alicante y toda España: asistentes para tu web, automatización de correos y documentos, y formación.</source>
+      <target>Solutions d’intelligence artificielle pour les entreprises d’Alicante et de toute l’Espagne : assistants pour votre site, automatisation des e-mails et documents, et formation.</target></segment>
+    </unit>
     <unit id="9150014301684643670">
       <notes>
-        <note category="location">src/app/data/services.ts:147</note>
+        <note category="location">src/app/data/services.ts:257</note>
       </notes>
       <segment>
         <source>Mantenimiento</source>
@@ -2347,7 +3264,7 @@
     </unit>
     <unit id="6377664857123874457">
       <notes>
-        <note category="location">src/app/data/services.ts:148</note>
+        <note category="location">src/app/data/services.ts:258</note>
       </notes>
       <segment>
         <source>No te dejamos </source>
@@ -2355,7 +3272,7 @@
     </unit>
     <unit id="9106358075172307761">
       <notes>
-        <note category="location">src/app/data/services.ts:148</note>
+        <note category="location">src/app/data/services.ts:258</note>
       </notes>
       <segment>
         <source>con la web </source>
@@ -2363,7 +3280,7 @@
     </unit>
     <unit id="4708955175701138145">
       <notes>
-        <note category="location">src/app/data/services.ts:148</note>
+        <note category="location">src/app/data/services.ts:258</note>
       </notes>
       <segment>
         <source>y adiós.</source>
@@ -2371,7 +3288,7 @@
     </unit>
     <unit id="6285562581399447393">
       <notes>
-        <note category="location">src/app/data/services.ts:149</note>
+        <note category="location">src/app/data/services.ts:259</note>
       </notes>
       <segment>
         <source>Actualizaciones, copias de seguridad y un informe mensual en castellano donde se entiende qué ha pasado. Opcional, y se cancela con un mes de aviso.</source>
@@ -2379,7 +3296,7 @@
     </unit>
     <unit id="6536528119606165672">
       <notes>
-        <note category="location">src/app/data/services.ts:151</note>
+        <note category="location">src/app/data/services.ts:261</note>
       </notes>
       <segment>
         <source>Diarias</source>
@@ -2387,7 +3304,7 @@
     </unit>
     <unit id="8177233061025072469">
       <notes>
-        <note category="location">src/app/data/services.ts:151</note>
+        <note category="location">src/app/data/services.ts:261</note>
       </notes>
       <segment>
         <source>Copias de seguridad</source>
@@ -2395,7 +3312,7 @@
     </unit>
     <unit id="1186175201879062717">
       <notes>
-        <note category="location">src/app/data/services.ts:151</note>
+        <note category="location">src/app/data/services.ts:261</note>
       </notes>
       <segment>
         <source>Si algo se rompe, la web vuelve a como estaba el día anterior.</source>
@@ -2403,7 +3320,7 @@
     </unit>
     <unit id="7875714114514922443">
       <notes>
-        <note category="location">src/app/data/services.ts:152</note>
+        <note category="location">src/app/data/services.ts:262</note>
       </notes>
       <segment>
         <source>Mensual</source>
@@ -2411,7 +3328,7 @@
     </unit>
     <unit id="490404663035154348">
       <notes>
-        <note category="location">src/app/data/services.ts:152</note>
+        <note category="location">src/app/data/services.ts:262</note>
       </notes>
       <segment>
         <source>Informe en castellano</source>
@@ -2419,7 +3336,7 @@
     </unit>
     <unit id="6807232557290607295">
       <notes>
-        <note category="location">src/app/data/services.ts:152</note>
+        <note category="location">src/app/data/services.ts:262</note>
       </notes>
       <segment>
         <source>Visitas, contactos y velocidad, explicados sin jerga.</source>
@@ -2427,7 +3344,7 @@
     </unit>
     <unit id="4039974669970914245">
       <notes>
-        <note category="location">src/app/data/services.ts:153</note>
+        <note category="location">src/app/data/services.ts:263</note>
       </notes>
       <segment>
         <source>1 mes</source>
@@ -2435,7 +3352,7 @@
     </unit>
     <unit id="8536110060610938628">
       <notes>
-        <note category="location">src/app/data/services.ts:153</note>
+        <note category="location">src/app/data/services.ts:263</note>
       </notes>
       <segment>
         <source>De aviso para cancelar</source>
@@ -2443,7 +3360,7 @@
     </unit>
     <unit id="7654694520326985018">
       <notes>
-        <note category="location">src/app/data/services.ts:153</note>
+        <note category="location">src/app/data/services.ts:263</note>
       </notes>
       <segment>
         <source>Sin permanencia: el mantenimiento es opcional.</source>
@@ -2451,7 +3368,7 @@
     </unit>
     <unit id="5929074882245606597">
       <notes>
-        <note category="location">src/app/data/services.ts:155</note>
+        <note category="location">src/app/data/services.ts:265</note>
       </notes>
       <segment>
         <source>cuidamos </source>
@@ -2459,7 +3376,7 @@
     </unit>
     <unit id="2771462099128994240">
       <notes>
-        <note category="location">src/app/data/services.ts:155</note>
+        <note category="location">src/app/data/services.ts:265</note>
       </notes>
       <segment>
         <source>cada mes.</source>
@@ -2467,7 +3384,7 @@
     </unit>
     <unit id="884463721031876655">
       <notes>
-        <note category="location">src/app/data/services.ts:157</note>
+        <note category="location">src/app/data/services.ts:267</note>
       </notes>
       <segment>
         <source>Copias de seguridad automáticas de toda la web.</source>
@@ -2475,7 +3392,7 @@
     </unit>
     <unit id="6847162634904684331">
       <notes>
-        <note category="location">src/app/data/services.ts:158</note>
+        <note category="location">src/app/data/services.ts:268</note>
       </notes>
       <segment>
         <source>Textos, precios, horarios o fotos que quieras cambiar, hechos por nosotros.</source>
@@ -2483,7 +3400,7 @@
     </unit>
     <unit id="4431407311903907928">
       <notes>
-        <note category="location">src/app/data/services.ts:159</note>
+        <note category="location">src/app/data/services.ts:269</note>
       </notes>
       <segment>
         <source>Qué ha pasado en tu web este mes, en un informe que se entiende.</source>
@@ -2491,7 +3408,7 @@
     </unit>
     <unit id="5312956958130162800">
       <notes>
-        <note category="location">src/app/data/services.ts:163</note>
+        <note category="location">src/app/data/services.ts:273</note>
       </notes>
       <segment>
         <source>Mantenimiento web en Alicante, sin permanencia — MakeWeb</source>
@@ -2499,7 +3416,7 @@
     </unit>
     <unit id="530154148236351758">
       <notes>
-        <note category="location">src/app/data/services.ts:165</note>
+        <note category="location">src/app/data/services.ts:275</note>
       </notes>
       <segment>
         <source>Mantenimiento web opcional: copias de seguridad diarias, cambios mensuales e informe de resultados en castellano. Se cancela con un mes de aviso.</source>
@@ -2534,7 +3451,7 @@
         <note category="location">src/app/pages/legal/cookies/cookies.html:3,8</note>
       </notes>
       <segment>
-        <source> Una cookie es un archivo pequeño que una web guarda en tu navegador para recordar algo entre una visita y la siguiente. Aquí tienes exactamente cuáles usa <ph id="0" equiv="INTERPOLATION" disp="{{ legal.domain }}" />, para qué, y cómo cambiar tu decisión en cualquier momento. </source>
+        <source> Una cookie es un archivo pequeño que una web guarda en tu navegador para recordar algo entre una visita y la siguiente. Aquí tienes exactamente cuáles usa <ph id="0" equiv="INTERPOLATION" disp="{{ legal.domain }}"/>, para qué, y cómo cambiar tu decisión en cualquier momento. </source>
       <target> Un cookie est un petit fichier qu’un site enregistre dans votre navigateur pour se souvenir de quelque chose d’une visite à l’autre. Voici exactement lesquels utilise <ph id="0" equiv="INTERPOLATION" disp="{{ legal.domain }}" />, pourquoi, et comment modifier votre choix à tout moment. </target></segment>
     </unit>
     <unit id="8425143863291264512">
@@ -2590,7 +3507,7 @@
         <note category="location">src/app/pages/legal/cookies/cookies.html:34,35</note>
       </notes>
       <segment>
-        <source> Cookies utilizadas en <ph id="0" equiv="INTERPOLATION" disp="{{ legal.domain }}" /> </source>
+        <source> Cookies utilizadas en <ph id="0" equiv="INTERPOLATION" disp="{{ legal.domain }}"/> </source>
       <target> Cookies utilisés sur <ph id="0" equiv="INTERPOLATION" disp="{{ legal.domain }}" /> </target></segment>
     </unit>
     <unit id="5357661269973482487">
@@ -2638,7 +3555,7 @@
         <note category="location">src/app/pages/legal/cookies/cookies.html:67,73</note>
       </notes>
       <segment>
-        <source> Las cookies analíticas y publicitarias, cuando estén activas, las instalan proveedores externos, que actúan como responsables o encargados según el caso. Sus condiciones y sus plazos los fija cada proveedor: los tienes identificados en la tabla anterior y en el apartado 5 de la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;/privacidad&quot;&gt;" dispEnd="&lt;/a&gt;">política de privacidad</pc>. </source>
+        <source> Las cookies analíticas y publicitarias, cuando estén activas, las instalan proveedores externos, que actúan como responsables o encargados según el caso. Sus condiciones y sus plazos los fija cada proveedor: los tienes identificados en la tabla anterior y en el apartado 5 de la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/privacidad&quot;&gt;" dispEnd="&lt;/a&gt;">política de privacidad</pc>. </source>
       <target> Les cookies statistiques et publicitaires, lorsqu’ils sont actifs, sont installés par des prestataires externes qui agissent comme responsables ou sous-traitants selon le cas. Chaque prestataire fixe ses conditions et ses durées : vous les trouverez dans le tableau ci-dessus et dans la section 5 de la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;/privacidad&quot;&gt;" dispEnd="&lt;/a&gt;">politique de confidentialité</pc>. </target></segment>
     </unit>
     <unit id="7616134258430310615">
@@ -2662,7 +3579,12 @@
         <note category="location">src/app/pages/legal/cookies/cookies.html:82,88</note>
       </notes>
       <segment>
-        <source><pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a         href=&quot;https://support.google.com/chrome/answer/95647&quot;         rel=&quot;noopener noreferrer&quot;         target=&quot;_blank&quot;         &gt;" dispEnd="&lt;/a       &gt;">Google Chrome</pc></source>
+        <source><pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a
+        href=&quot;https://support.google.com/chrome/answer/95647&quot;
+        rel=&quot;noopener noreferrer&quot;
+        target=&quot;_blank&quot;
+        &gt;" dispEnd="&lt;/a
+      &gt;">Google Chrome</pc></source>
       <target><pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a         href=&quot;https://support.google.com/chrome/answer/95647&quot;         rel=&quot;noopener noreferrer&quot;         target=&quot;_blank&quot;         &gt;" dispEnd="&lt;/a       &gt;">Google Chrome</pc></target></segment>
     </unit>
     <unit id="7404799402875372124">
@@ -2670,7 +3592,12 @@
         <note category="location">src/app/pages/legal/cookies/cookies.html:90,96</note>
       </notes>
       <segment>
-        <source><pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a         href=&quot;https://support.mozilla.org/es/kb/Borrar%20cookies&quot;         rel=&quot;noopener noreferrer&quot;         target=&quot;_blank&quot;         &gt;" dispEnd="&lt;/a       &gt;">Mozilla Firefox</pc></source>
+        <source><pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a
+        href=&quot;https://support.mozilla.org/es/kb/Borrar%20cookies&quot;
+        rel=&quot;noopener noreferrer&quot;
+        target=&quot;_blank&quot;
+        &gt;" dispEnd="&lt;/a
+      &gt;">Mozilla Firefox</pc></source>
       <target><pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a         href=&quot;https://support.mozilla.org/es/kb/Borrar%20cookies&quot;         rel=&quot;noopener noreferrer&quot;         target=&quot;_blank&quot;         &gt;" dispEnd="&lt;/a       &gt;">Mozilla Firefox</pc></target></segment>
     </unit>
     <unit id="2927285390805601167">
@@ -2678,7 +3605,9 @@
         <note category="location">src/app/pages/legal/cookies/cookies.html:97,101</note>
       </notes>
       <segment>
-        <source><pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;https://support.apple.com/es-es/HT201265&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;         &gt;" dispEnd="&lt;/a       &gt;">Safari</pc></source>
+        <source><pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;https://support.apple.com/es-es/HT201265&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;
+        &gt;" dispEnd="&lt;/a
+      &gt;">Safari</pc></source>
       <target><pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;https://support.apple.com/es-es/HT201265&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;         &gt;" dispEnd="&lt;/a       &gt;">Safari</pc></target></segment>
     </unit>
     <unit id="5867866057650163519">
@@ -2686,7 +3615,12 @@
         <note category="location">src/app/pages/legal/cookies/cookies.html:103,109</note>
       </notes>
       <segment>
-        <source><pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a         href=&quot;https://support.microsoft.com/es-es/microsoft-edge&quot;         rel=&quot;noopener noreferrer&quot;         target=&quot;_blank&quot;         &gt;" dispEnd="&lt;/a       &gt;">Microsoft Edge</pc></source>
+        <source><pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a
+        href=&quot;https://support.microsoft.com/es-es/microsoft-edge&quot;
+        rel=&quot;noopener noreferrer&quot;
+        target=&quot;_blank&quot;
+        &gt;" dispEnd="&lt;/a
+      &gt;">Microsoft Edge</pc></source>
       <target><pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a         href=&quot;https://support.microsoft.com/es-es/microsoft-edge&quot;         rel=&quot;noopener noreferrer&quot;         target=&quot;_blank&quot;         &gt;" dispEnd="&lt;/a       &gt;">Microsoft Edge</pc></target></segment>
     </unit>
     <unit id="3465625402814687416">
@@ -2723,7 +3657,7 @@
     </unit>
     <unit id="1874754927942003739">
       <notes>
-        <note category="location">src/app/pages/legal/cookies/cookies.ts:26</note>
+        <note category="location">src/app/pages/legal/cookies/cookies.ts:27</note>
       </notes>
       <segment>
         <source>Todavía no has elegido.</source>
@@ -2731,15 +3665,15 @@
     </unit>
     <unit id="6179517117748544215">
       <notes>
-        <note category="location">src/app/pages/legal/cookies/cookies.ts:33</note>
+        <note category="location">src/app/pages/legal/cookies/cookies.ts:34</note>
       </notes>
       <segment>
-        <source>Ahora mismo tienes activadas las cookies <ph id="0" equiv="list" disp="on.join($localize` y `)" />.</source>
+        <source>Ahora mismo tienes activadas las cookies <ph id="0" equiv="list" disp="on.join($localize` y `)"/>.</source>
       <target>Vous avez actuellement activé les cookies <ph id="0" equiv="list" disp="on.join($localize` y `)" />.</target></segment>
     </unit>
     <unit id="4363600131932810370">
       <notes>
-        <note category="location">src/app/pages/legal/cookies/cookies.ts:33</note>
+        <note category="location">src/app/pages/legal/cookies/cookies.ts:34</note>
         <note category="location">src/app/pages/legal/privacy/privacy.html:15</note>
       </notes>
       <segment>
@@ -2748,7 +3682,7 @@
     </unit>
     <unit id="2586298324040522821">
       <notes>
-        <note category="location">src/app/pages/legal/cookies/cookies.ts:34</note>
+        <note category="location">src/app/pages/legal/cookies/cookies.ts:35</note>
       </notes>
       <segment>
         <source>Ahora mismo solo están activas las cookies técnicas.</source>
@@ -2759,7 +3693,7 @@
         <note category="location">src/app/pages/legal/legal-layout.ts:22,23</note>
       </notes>
       <segment>
-        <source>Última actualización: <ph id="0" equiv="INTERPOLATION" disp="{{ updated }}" /></source>
+        <source>Última actualización: <ph id="0" equiv="INTERPOLATION" disp="{{ updated }}"/></source>
       <target>Dernière mise à jour : <ph id="0" equiv="INTERPOLATION" disp="{{ updated }}" /></target></segment>
     </unit>
     <unit id="8482781523239748637">
@@ -2775,7 +3709,7 @@
         <note category="location">src/app/pages/legal/notice/notice.html:3,7</note>
       </notes>
       <segment>
-        <source> Este aviso regula el acceso y el uso de la web <pc id="0" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ legal.domain }}" /></pc>. Navegar por ella te convierte en usuario e implica que aceptas lo que se explica aquí abajo. </source>
+        <source> Este aviso regula el acceso y el uso de la web <pc id="0" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ legal.domain }}"/></pc>. Navegar por ella te convierte en usuario e implica que aceptas lo que se explica aquí abajo. </source>
       <target> Les présentes mentions régissent l’accès et l’utilisation du site <pc id="0" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ legal.domain }}" /></pc>. Le parcourir fait de vous un utilisateur et implique que vous acceptez ce qui est exposé ci-dessous. </target></segment>
     </unit>
     <unit id="3931244147910448434">
@@ -2807,7 +3741,7 @@
         <note category="location">src/app/pages/legal/notice/notice.html:17,22</note>
       </notes>
       <segment>
-        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ legal.owners[0].name }}" /> (NIF <ph id="1" equiv="INTERPOLATION_1" disp="{{ legal.owners[0].nif }}" />) y <ph id="2" equiv="INTERPOLATION_2" disp="{{ legal.owners[1].name }}" /> (NIF <ph id="3" equiv="INTERPOLATION_3" disp="{{ legal.owners[1].nif }}" />), que operan conjuntamente bajo la marca <ph id="4" equiv="INTERPOLATION_4" disp="{{ legal.brand }}" />. </source>
+        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ legal.owners[0].name }}"/> (NIF <ph id="1" equiv="INTERPOLATION_1" disp="{{ legal.owners[0].nif }}"/>) y <ph id="2" equiv="INTERPOLATION_2" disp="{{ legal.owners[1].name }}"/> (NIF <ph id="3" equiv="INTERPOLATION_3" disp="{{ legal.owners[1].nif }}"/>), que operan conjuntamente bajo la marca <ph id="4" equiv="INTERPOLATION_4" disp="{{ legal.brand }}"/>. </source>
       <target> <ph id="0" equiv="INTERPOLATION" disp="{{ legal.owners[0].name }}" /> (NIF <ph id="1" equiv="INTERPOLATION_1" disp="{{ legal.owners[0].nif }}" />) et <ph id="2" equiv="INTERPOLATION_2" disp="{{ legal.owners[1].name }}" /> (NIF <ph id="3" equiv="INTERPOLATION_3" disp="{{ legal.owners[1].nif }}" />), qui exercent conjointement sous la marque <ph id="4" equiv="INTERPOLATION_4" disp="{{ legal.brand }}" />. </target></segment>
     </unit>
     <unit id="4570047179096715134">
@@ -2824,7 +3758,7 @@
         <note category="location">src/app/pages/legal/notice/notice.html:24,26</note>
       </notes>
       <segment>
-        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ legal.address }}" />. El estudio trabaja en remoto y no atiende al público en esta dirección; figura por exigencia del artículo 10 de la LSSI-CE. </source>
+        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ legal.address }}"/>. El estudio trabaja en remoto y no atiende al público en esta dirección; figura por exigencia del artículo 10 de la LSSI-CE. </source>
       <target> <ph id="0" equiv="INTERPOLATION" disp="{{ legal.address }}" />. Le studio travaille à distance et ne reçoit pas de public à cette adresse ; elle figure ici car l’article 10 de la LSSI-CE l’exige. </target></segment>
     </unit>
     <unit id="4401057011206112121">
@@ -2857,7 +3791,7 @@
         <note category="location">src/app/pages/legal/notice/notice.html:39,42</note>
       </notes>
       <segment>
-        <source><ph id="0" equiv="INTERPOLATION" disp="{{ legal.host.name }}" />, con servidores en <ph id="1" equiv="INTERPOLATION_1" disp="{{ legal.host.location }}" />.</source>
+        <source><ph id="0" equiv="INTERPOLATION" disp="{{ legal.host.name }}"/>, con servidores en <ph id="1" equiv="INTERPOLATION_1" disp="{{ legal.host.location }}"/>.</source>
       <target><ph id="0" equiv="INTERPOLATION" disp="{{ legal.host.name }}" />, avec des serveurs <ph id="1" equiv="INTERPOLATION_1" disp="{{ legal.host.location }}" />.</target></segment>
     </unit>
     <unit id="9020125072964724948">
@@ -2873,7 +3807,7 @@
         <note category="location">src/app/pages/legal/notice/notice.html:44,47</note>
       </notes>
       <segment>
-        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ legal.brand }}" /> es un estudio de diseño y desarrollo web para negocios locales. Esta web tiene una finalidad informativa y comercial: presentar nuestros servicios, mostrar trabajos realizados y ofrecer un formulario para que puedas pedirnos una propuesta. </source>
+        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ legal.brand }}"/> es un estudio de diseño y desarrollo web para negocios locales. Esta web tiene una finalidad informativa y comercial: presentar nuestros servicios, mostrar trabajos realizados y ofrecer un formulario para que puedas pedirnos una propuesta. </source>
       <target> <ph id="0" equiv="INTERPOLATION" disp="{{ legal.brand }}" /> est un studio de design et de développement web pour les commerces de proximité. Ce site a une finalité informative et commerciale : présenter nos services, montrer nos réalisations et proposer un formulaire pour nous demander une proposition. </target></segment>
     </unit>
     <unit id="8116410642830437471">
@@ -2953,7 +3887,7 @@
         <note category="location">src/app/pages/legal/notice/notice.html:74,78</note>
       </notes>
       <segment>
-        <source> El diseño, el código, los textos, la selección y disposición de contenidos, la marca <ph id="0" equiv="INTERPOLATION" disp="{{ legal.brand }}" /> y el logotipo son titularidad de <ph id="1" equiv="INTERPOLATION_1" disp="{{ legal.company }}" /> o de terceros que han autorizado su uso. Quedan protegidos por la normativa de propiedad intelectual e industrial. </source>
+        <source> El diseño, el código, los textos, la selección y disposición de contenidos, la marca <ph id="0" equiv="INTERPOLATION" disp="{{ legal.brand }}"/> y el logotipo son titularidad de <ph id="1" equiv="INTERPOLATION_1" disp="{{ legal.company }}"/> o de terceros que han autorizado su uso. Quedan protegidos por la normativa de propiedad intelectual e industrial. </source>
       <target> Le design, le code, les textes, la sélection et la disposition des contenus, la marque <ph id="0" equiv="INTERPOLATION" disp="{{ legal.brand }}" /> et le logo appartiennent à <ph id="1" equiv="INTERPOLATION_1" disp="{{ legal.company }}" /> ou à des tiers qui en ont autorisé l’usage. Ils sont protégés par la réglementation sur la propriété intellectuelle et industrielle. </target></segment>
     </unit>
     <unit id="7976210622015835098">
@@ -3009,7 +3943,7 @@
         <note category="location">src/app/pages/legal/notice/notice.html:103,109</note>
       </notes>
       <segment>
-        <source> Esta web puede enlazar a sitios de terceros (por ejemplo, redes sociales). Esos enlaces se ofrecen solo como referencia: no controlamos su contenido ni sus políticas, y no asumimos responsabilidad por ellos. Al seguirlos, sales de <ph id="0" equiv="INTERPOLATION" disp="{{ legal.domain }}" /> y pasas a regirte por las condiciones del sitio de destino. </source>
+        <source> Esta web puede enlazar a sitios de terceros (por ejemplo, redes sociales). Esos enlaces se ofrecen solo como referencia: no controlamos su contenido ni sus políticas, y no asumimos responsabilidad por ellos. Al seguirlos, sales de <ph id="0" equiv="INTERPOLATION" disp="{{ legal.domain }}"/> y pasas a regirte por las condiciones del sitio de destino. </source>
       <target> Ce site peut contenir des liens vers des sites tiers (par exemple, des réseaux sociaux). Ces liens sont fournis à titre indicatif : nous ne contrôlons ni leur contenu ni leurs politiques et n’en assumons pas la responsabilité. En les suivant, vous quittez <ph id="0" equiv="INTERPOLATION" disp="{{ legal.domain }}" /> et êtes soumis aux conditions du site de destination. </target></segment>
     </unit>
     <unit id="5521168767484996827">
@@ -3025,7 +3959,7 @@
         <note category="location">src/app/pages/legal/notice/notice.html:111,116</note>
       </notes>
       <segment>
-        <source> El tratamiento de los datos personales que nos facilites se explica en la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;/privacidad&quot;&gt;" dispEnd="&lt;/a&gt;">política de privacidad</pc>, y el uso de cookies en la <pc id="1" equivStart="START_LINK_1" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;/cookies&quot;&gt;" dispEnd="&lt;/a&gt;">política de cookies</pc>. </source>
+        <source> El tratamiento de los datos personales que nos facilites se explica en la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/privacidad&quot;&gt;" dispEnd="&lt;/a&gt;">política de privacidad</pc>, y el uso de cookies en la <pc id="1" equivStart="START_LINK_1" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/cookies&quot;&gt;" dispEnd="&lt;/a&gt;">política de cookies</pc>. </source>
       <target> Le traitement des données personnelles que vous nous fournissez est expliqué dans la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;/privacidad&quot;&gt;" dispEnd="&lt;/a&gt;">politique de confidentialité</pc>, et l’usage des cookies dans la <pc id="1" equivStart="START_LINK_1" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;/cookies&quot;&gt;" dispEnd="&lt;/a&gt;">politique de cookies</pc>. </target></segment>
     </unit>
     <unit id="3336193568315248391">
@@ -3073,7 +4007,7 @@
         <note category="location">src/app/pages/legal/privacy/privacy.html:3,6</note>
       </notes>
       <segment>
-        <source> Aquí se explica qué datos personales recogemos en <ph id="0" equiv="INTERPOLATION" disp="{{ legal.domain }}" />, para qué los usamos, cuánto tiempo los guardamos y qué puedes exigirnos. Está redactada conforme al Reglamento (UE) 2016/679 (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD). </source>
+        <source> Aquí se explica qué datos personales recogemos en <ph id="0" equiv="INTERPOLATION" disp="{{ legal.domain }}"/>, para qué los usamos, cuánto tiempo los guardamos y qué puedes exigirnos. Está redactada conforme al Reglamento (UE) 2016/679 (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD). </source>
       <target> Cette page explique quelles données personnelles nous collectons sur <ph id="0" equiv="INTERPOLATION" disp="{{ legal.domain }}" />, à quoi elles servent, combien de temps nous les conservons et ce que vous pouvez exiger de nous. Elle est rédigée conformément au Règlement (UE) 2016/679 (RGPD) et à la loi organique espagnole 3/2018 (LOPDGDD). </target></segment>
     </unit>
     <unit id="7617717908900778173">
@@ -3145,7 +4079,7 @@
         <note category="location">src/app/pages/legal/privacy/privacy.html:50,53</note>
       </notes>
       <segment>
-        <source><pc id="0" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">Datos de navegación:</pc> solo si aceptas las cookies analíticas. Se explican en la <pc id="1" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;/cookies&quot;&gt;" dispEnd="&lt;/a&gt;">política de cookies</pc>. </source>
+        <source><pc id="0" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">Datos de navegación:</pc> solo si aceptas las cookies analíticas. Se explican en la <pc id="1" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/cookies&quot;&gt;" dispEnd="&lt;/a&gt;">política de cookies</pc>. </source>
       <target><pc id="0" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">Données de navigation :</pc> uniquement si vous acceptez les cookies statistiques. Elles sont expliquées dans la <pc id="1" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;/cookies&quot;&gt;" dispEnd="&lt;/a&gt;">politique de cookies</pc>. </target></segment>
     </unit>
     <unit id="7972477923523416832">
@@ -3233,7 +4167,7 @@
         <note category="location">src/app/pages/legal/privacy/privacy.html:78,81</note>
       </notes>
       <segment>
-        <source> Base jurídica: tu consentimiento (art. 6.1.a RGPD), que puedes retirar cuando quieras desde la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;/cookies&quot;&gt;" dispEnd="&lt;/a&gt;">política de cookies</pc>. </source>
+        <source> Base jurídica: tu consentimiento (art. 6.1.a RGPD), que puedes retirar cuando quieras desde la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/cookies&quot;&gt;" dispEnd="&lt;/a&gt;">política de cookies</pc>. </source>
       <target> Base juridique : votre consentement (art. 6.1.a RGPD), que vous pouvez retirer à tout moment depuis la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;/cookies&quot;&gt;" dispEnd="&lt;/a&gt;">politique de cookies</pc>. </target></segment>
     </unit>
     <unit id="5079455015994190140">
@@ -3305,7 +4239,7 @@
         <note category="location">src/app/pages/legal/privacy/privacy.html:116,117</note>
       </notes>
       <segment>
-        <source><pc id="0" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">Alojamiento web:</pc> <ph id="1" equiv="INTERPOLATION" disp="{{ legal.host.name }}" /> (<ph id="2" equiv="INTERPOLATION_1" disp="{{ legal.host.location }}" />).</source>
+        <source><pc id="0" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">Alojamiento web:</pc> <ph id="1" equiv="INTERPOLATION" disp="{{ legal.host.name }}"/> (<ph id="2" equiv="INTERPOLATION_1" disp="{{ legal.host.location }}"/>).</source>
       <target><pc id="0" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;">Hébergement web :</pc> <ph id="1" equiv="INTERPOLATION" disp="{{ legal.host.name }}" /> (<ph id="2" equiv="INTERPOLATION_1" disp="{{ legal.host.location }}" />).</target></segment>
     </unit>
     <unit id="212790142638958802">
@@ -3393,7 +4327,7 @@
         <note category="location">src/app/pages/legal/privacy/privacy.html:182,185</note>
       </notes>
       <segment>
-        <source> Puedes pedirnos una copia de las garantías de cualquiera de estas transferencias escribiendo a <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [href]=&quot;'mailto:' + legal.privacyEmail&quot;&gt;" dispEnd="&lt;/a&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ legal.privacyEmail }}" /></pc>. </source>
+        <source> Puedes pedirnos una copia de las garantías de cualquiera de estas transferencias escribiendo a <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [href]=&quot;&apos;mailto:&apos; + legal.privacyEmail&quot;&gt;" dispEnd="&lt;/a&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ legal.privacyEmail }}"/></pc>. </source>
       <target> Vous pouvez nous demander une copie des garanties de l’un de ces transferts en écrivant à <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [href]=&quot;'mailto:' + legal.privacyEmail&quot;&gt;" dispEnd="&lt;/a&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ legal.privacyEmail }}" /></pc>. </target></segment>
     </unit>
     <unit id="4535010803328147608">
@@ -3401,7 +4335,7 @@
         <note category="location">src/app/pages/legal/privacy/privacy.html:186,190</note>
       </notes>
       <segment>
-        <source> Si prefieres que tus datos no salgan del Espacio Económico Europeo, escríbenos directamente a <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [href]=&quot;'mailto:' + legal.privacyEmail&quot;&gt;" dispEnd="&lt;/a&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ legal.privacyEmail }}" /></pc> en lugar de usar el formulario. </source>
+        <source> Si prefieres que tus datos no salgan del Espacio Económico Europeo, escríbenos directamente a <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [href]=&quot;&apos;mailto:&apos; + legal.privacyEmail&quot;&gt;" dispEnd="&lt;/a&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ legal.privacyEmail }}"/></pc> en lugar de usar el formulario. </source>
       <target> Si vous préférez que vos données ne quittent pas l’Espace économique européen, écrivez-nous directement à <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [href]=&quot;'mailto:' + legal.privacyEmail&quot;&gt;" dispEnd="&lt;/a&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ legal.privacyEmail }}" /></pc> plutôt que d’utiliser le formulaire. </target></segment>
     </unit>
     <unit id="6405329638995795018">
@@ -3481,7 +4415,7 @@
         <note category="location">src/app/pages/legal/privacy/privacy.html:206,209</note>
       </notes>
       <segment>
-        <source> Escríbenos a <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [href]=&quot;'mailto:' + legal.privacyEmail&quot;&gt;" dispEnd="&lt;/a&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ legal.privacyEmail }}" /></pc> indicando qué derecho quieres ejercer. Te responderemos en el plazo máximo de un mes. Puede que te pidamos acreditar tu identidad si no podemos identificarte con seguridad. </source>
+        <source> Escríbenos a <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [href]=&quot;&apos;mailto:&apos; + legal.privacyEmail&quot;&gt;" dispEnd="&lt;/a&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ legal.privacyEmail }}"/></pc> indicando qué derecho quieres ejercer. Te responderemos en el plazo máximo de un mes. Puede que te pidamos acreditar tu identidad si no podemos identificarte con seguridad. </source>
       <target> Écrivez-nous à <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [href]=&quot;'mailto:' + legal.privacyEmail&quot;&gt;" dispEnd="&lt;/a&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ legal.privacyEmail }}" /></pc> en indiquant le droit que vous souhaitez exercer. Nous vous répondrons dans un délai d’un mois maximum. Nous pourrons vous demander de justifier votre identité si nous ne pouvons pas vous identifier avec certitude. </target></segment>
     </unit>
     <unit id="2742815537053021695">
@@ -3615,7 +4549,7 @@
     <unit id="430239896517462142">
       <notes>
         <note category="location">src/app/pages/local/local-page.ts:98,100</note>
-        <note category="location">src/app/pages/service/service-page.ts:86,88</note>
+        <note category="location">src/app/pages/service/service-page.ts:93,95</note>
       </notes>
       <segment>
         <source>Tus <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">preguntas.</pc></source>
@@ -3636,7 +4570,7 @@
         <note category="location">src/app/pages/local/local-page.ts:126</note>
         <note category="location">src/app/pages/studio/studio-page.ts:73</note>
         <note category="location">src/app/sections/cta-card/cta-card.ts:56</note>
-        <note category="location">src/app/sections/tabbar/tabbar.ts:46,47</note>
+        <note category="location">src/app/sections/tabbar/tabbar.ts:47,48</note>
       </notes>
       <segment>
         <source>Tres formas de hacerlo, con su horquilla real</source>
@@ -3765,9 +4699,25 @@
         <source>el próximo es el tuyo.</source>
       <target>le prochain, c’est le vôtre.</target></segment>
     </unit>
+    <unit id="1327341672556683201">
+      <notes>
+        <note category="location">src/app/pages/service/service-page.ts:69,70</note>
+      </notes>
+      <segment>
+        <source>Por pasos, <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">sin sorpresas.</pc></source>
+      <target>Étape par étape, <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">sans surprises.</pc></target></segment>
+    </unit>
+    <unit id="4012742832582865364">
+      <notes>
+        <note category="location">src/app/pages/service/service-page.ts:71</note>
+      </notes>
+      <segment>
+        <source> Un solo interlocutor y sin jerga. Siempre sabes en qué punto está tu proyecto. </source>
+      <target> Un seul interlocuteur et pas de jargon. Vous savez toujours où en est votre projet. </target></segment>
+    </unit>
     <unit id="2041646281897784367">
       <notes>
-        <note category="location">src/app/pages/service/service-page.ts:68,69</note>
+        <note category="location">src/app/pages/service/service-page.ts:74,75</note>
       </notes>
       <segment>
         <source>Una semana, <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">del principio al final.</pc></source>
@@ -3775,7 +4725,7 @@
     </unit>
     <unit id="4162424554919184767">
       <notes>
-        <note category="location">src/app/pages/service/service-page.ts:70</note>
+        <note category="location">src/app/pages/service/service-page.ts:76</note>
       </notes>
       <segment>
         <source> Un solo interlocutor y sin jerga. Siempre sabes en qué punto está tu web. </source>
@@ -3995,7 +4945,7 @@
         <note category="location">src/app/sections/contact/contact.html:54,57</note>
       </notes>
       <segment>
-        <source> Guarda esta referencia por si quieres darnos prisa: <pc id="0" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ reference() }}" /></pc></source>
+        <source> Guarda esta referencia por si quieres darnos prisa: <pc id="0" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ reference() }}"/></pc></source>
       <target> Gardez cette référence au cas où vous voudriez nous relancer : <pc id="0" equivStart="START_TAG_STRONG" equivEnd="CLOSE_TAG_STRONG" type="other" dispStart="&lt;strong&gt;" dispEnd="&lt;/strong&gt;"><ph id="1" equiv="INTERPOLATION" disp="{{ reference() }}" /></pc></target></segment>
     </unit>
     <unit id="1339854805536035566">
@@ -4065,13 +5015,13 @@
         <source>Ese número no nos cuadra. Revísalo o déjalo vacío.</source>
       <target>Ce numéro ne semble pas correct. Vérifiez-le ou laissez-le vide.</target></segment>
     </unit>
-    <unit id="5618948675216173004">
+    <unit id="3023297978412508123">
       <notes>
         <note category="location">src/app/sections/contact/contact.html:127</note>
       </notes>
       <segment>
-        <source>Qué plan te encaja</source>
-      <target>Le forfait qui vous convient</target></segment>
+        <source>Qué necesitas</source>
+      <target>Ce dont vous avez besoin</target></segment>
     </unit>
     <unit id="5383091055089295054">
       <notes>
@@ -4110,7 +5060,9 @@
         <note category="location">src/app/sections/contact/contact.html:162,166</note>
       </notes>
       <segment>
-        <source> He leído y acepto la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/privacidad&quot; target=&quot;_blank&quot; (click)=&quot;$event.stopPropagation()&quot;               &gt;" dispEnd="&lt;/a             &gt;">política de privacidad</pc>. Solo usaremos estos datos para responderte. </source>
+        <source> He leído y acepto la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/privacidad&quot; target=&quot;_blank&quot; (click)=&quot;$event.stopPropagation()&quot;
+              &gt;" dispEnd="&lt;/a
+            &gt;">política de privacidad</pc>. Solo usaremos estos datos para responderte. </source>
       <target> J’ai lu et j’accepte la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/privacidad&quot; target=&quot;_blank&quot; (click)=&quot;$event.stopPropagation()&quot;               &gt;" dispEnd="&lt;/a             &gt;">politique de confidentialité</pc>. Nous n’utiliserons ces données que pour vous répondre. </target></segment>
     </unit>
     <unit id="6800189611427267529">
@@ -4200,7 +5152,7 @@
         <note category="location">src/app/sections/cookie-banner/cookie-banner.html:54,55</note>
       </notes>
       <segment>
-        <source>Cookies <ph id="0" equiv="INTERPOLATION" disp="{{ category.name }}" /></source>
+        <source>Cookies <ph id="0" equiv="INTERPOLATION" disp="{{ category.name }}"/></source>
       <target>Cookies <ph id="0" equiv="INTERPOLATION" disp="{{ category.name }}" /></target></segment>
     </unit>
     <unit id="5096604195633266353">
@@ -4355,13 +5307,13 @@
         <source>Empecemos por tu <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">primera impresión.</pc></source>
       <target>Commençons par votre <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">première impression.</pc></target></segment>
     </unit>
-    <unit id="1272178603578913952">
+    <unit id="5218716835838267579">
       <notes>
         <note category="location">src/app/sections/footer/footer.html:31</note>
       </notes>
       <segment>
-        <source> Estudio de diseño y desarrollo web en Mutxamel (Alicante). Webs para negocios locales de Alicante y de toda España. </source>
-      <target> Studio de création et de développement web à Mutxamel (Alicante). Des sites pour les commerces d’Alicante et de toute l’Espagne. </target></segment>
+        <source> Estudio de diseño, desarrollo web y software en Mutxamel (Alicante). Webs, tiendas online, software a medida e IA para negocios de Alicante y de toda España. </source>
+      <target> Studio de design, de développement web et de logiciels à Mutxamel (Alicante). Sites web, boutiques en ligne, logiciels sur mesure et IA pour les entreprises d’Alicante et de toute l’Espagne. </target></segment>
     </unit>
     <unit id="4852105493424967193">
       <notes>
@@ -4385,7 +5337,7 @@
         <note category="location">src/app/sections/footer/footer.html:95,97</note>
       </notes>
       <segment>
-        <source>© <ph id="0" equiv="INTERPOLATION" disp="{{ year }}" /> MakeWeb. Hecho en España.</source>
+        <source>© <ph id="0" equiv="INTERPOLATION" disp="{{ year }}"/> MakeWeb. Hecho en España.</source>
       <target>© <ph id="0" equiv="INTERPOLATION" disp="{{ year }}" /> MakeWeb. Fait en Espagne.</target></segment>
     </unit>
     <unit id="5526752367349394463">
@@ -4460,13 +5412,13 @@
         <source> Webs que te traen <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">clientes, no solo visitas.</pc></source>
       <target> Des sites qui vous apportent <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">des clients, pas juste des visites.</pc></target></segment>
     </unit>
-    <unit id="4306644216495648940">
+    <unit id="7637895670639368698">
       <notes>
         <note category="location">src/app/sections/hero/hero.html:23,24</note>
       </notes>
       <segment>
-        <source> Diseño y desarrollo web en Alicante y toda España: webs a medida que cargan al instante y salen en Google. </source>
-      <target> Création et développement web à Alicante et dans toute l’Espagne : des sites sur mesure qui se chargent instantanément et apparaissent sur Google. </target></segment>
+        <source> Diseño web, tiendas online, software e IA en Alicante y toda España: a medida, rápidos y pensados para salir en Google. </source>
+      <target> Sites web, boutiques en ligne, logiciels et IA à Alicante et dans toute l’Espagne : sur mesure, rapides et pensés pour apparaître sur Google. </target></segment>
     </unit>
     <unit id="8988995352274164771">
       <notes>
@@ -4494,7 +5446,7 @@
     </unit>
     <unit id="2570995603778436548">
       <notes>
-        <note category="location">src/app/sections/lang-switch/lang-switch.ts:41,42</note>
+        <note category="location">src/app/sections/lang-switch/lang-switch.ts:42,43</note>
       </notes>
       <segment>
         <source>Cambiar de idioma</source>
@@ -4502,7 +5454,7 @@
     </unit>
     <unit id="1500181871307171807">
       <notes>
-        <note category="location">src/app/sections/lang-switch/lang-switch.ts:44</note>
+        <note category="location">src/app/sections/lang-switch/lang-switch.ts:45</note>
       </notes>
       <segment>
         <source>Idioma</source>
@@ -4650,7 +5602,7 @@
         <note category="location">src/app/sections/projects/projects.html:39,40</note>
       </notes>
       <segment>
-        <source>Web de <ph id="0" equiv="INTERPOLATION" disp="{{ project.name }}" /></source>
+        <source>Web de <ph id="0" equiv="INTERPOLATION" disp="{{ project.name }}"/></source>
       <target>Site de <ph id="0" equiv="INTERPOLATION" disp="{{ project.name }}" /></target></segment>
     </unit>
     <unit id="5894366400859221843">
@@ -4697,7 +5649,7 @@
       <notes>
         <note category="location">src/app/sections/quick-contact/quick-contact.html:25</note>
         <note category="location">src/app/sections/quick-contact/quick-contact.html:40,41</note>
-        <note category="location">src/app/sections/tabbar/tabbar.ts:31</note>
+        <note category="location">src/app/sections/tabbar/tabbar.ts:32</note>
       </notes>
       <segment>
         <source>Cerrar</source>
@@ -4772,7 +5724,9 @@
         <note category="location">src/app/sections/quick-contact/quick-contact.html:105,109</note>
       </notes>
       <segment>
-        <source> Acepto la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/privacidad&quot; target=&quot;_blank&quot; (click)=&quot;$event.stopPropagation()&quot;             &gt;" dispEnd="&lt;/a           &gt;">política de privacidad</pc>. </source>
+        <source> Acepto la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/privacidad&quot; target=&quot;_blank&quot; (click)=&quot;$event.stopPropagation()&quot;
+            &gt;" dispEnd="&lt;/a
+          &gt;">política de privacidad</pc>. </source>
       <target> J’accepte la <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/privacidad&quot; target=&quot;_blank&quot; (click)=&quot;$event.stopPropagation()&quot;             &gt;" dispEnd="&lt;/a           &gt;">politique de confidentialité</pc>. </target></segment>
     </unit>
     <unit id="1896093879997026163">
@@ -4807,25 +5761,49 @@
         <source> No vendemos una web. <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">Vendemos un sistema que funciona.</pc></source>
       <target> Nous ne vendons pas un site. <pc id="0" equivStart="START_EMPHASISED_TEXT" equivEnd="CLOSE_EMPHASISED_TEXT" type="fmt" dispStart="&lt;em&gt;" dispEnd="&lt;/em&gt;">Nous vendons un système qui fonctionne.</pc></target></segment>
     </unit>
-    <unit id="2174895802821802411">
+    <unit id="2519006898669493969">
       <notes>
         <note category="location">src/app/sections/services/services.html:8,9</note>
       </notes>
       <segment>
-        <source> Diseño, velocidad, SEO, reservas y mantenimiento, todo en un mismo proyecto, listo para traerte clientes desde el día uno. </source>
-      <target> Design, vitesse, SEO, réservations et maintenance, le tout dans un même projet, prêt à vous amener des clients dès le premier jour. </target></segment>
+        <source> Webs, tiendas online, software a medida e inteligencia artificial, hechos por el mismo equipo y pensados para traerte clientes desde el día uno. </source>
+      <target> Sites web, boutiques en ligne, logiciels sur mesure et intelligence artificielle, réalisés par la même équipe et pensés pour vous amener des clients dès le premier jour. </target></segment>
     </unit>
     <unit id="8485456916536846337">
       <notes>
         <note category="location">src/app/sections/services/services.html:47,48</note>
       </notes>
       <segment>
-        <source>Ver <ph id="0" equiv="INTERPOLATION" disp="{{ page ? page.name.toLowerCase() : '' }}" /></source>
+        <source>Ver <ph id="0" equiv="INTERPOLATION" disp="{{ page ? page.name.toLowerCase() : &apos;&apos; }}"/></source>
       <target>Voir <ph id="0" equiv="INTERPOLATION" disp="{{ page ? page.name.toLowerCase() : '' }}" /></target></segment>
+    </unit>
+    <unit id="202300056997474924">
+      <notes>
+        <note category="location">src/app/sections/services/services.html:64,65</note>
+      </notes>
+      <segment>
+        <source>¿Necesitas otra cosa?</source>
+      <target>Besoin d’autre chose ?</target></segment>
+    </unit>
+    <unit id="5082947814688115568">
+      <notes>
+        <note category="location">src/app/sections/services/services.html:66,67</note>
+      </notes>
+      <segment>
+        <source> Hacemos todo tipo de soluciones informáticas: aplicaciones, automatizaciones, integraciones, migraciones o lo que tu negocio necesite. Cuéntanoslo y te decimos cómo lo haríamos. </source>
+      <target> Nous réalisons tout type de solution informatique : applications, automatisations, intégrations, migrations ou tout ce dont votre entreprise a besoin. Parlez-nous-en et nous vous expliquerons comment nous nous y prendrions. </target></segment>
+    </unit>
+    <unit id="5664818833573459658">
+      <notes>
+        <note category="location">src/app/sections/services/services.html:71,72</note>
+      </notes>
+      <segment>
+        <source>Cuéntanos tu idea</source>
+      <target>Parlez-nous de votre idée</target></segment>
     </unit>
     <unit id="2867163438113566372">
       <notes>
-        <note category="location">src/app/sections/tabbar/tabbar.ts:53</note>
+        <note category="location">src/app/sections/tabbar/tabbar.ts:54</note>
       </notes>
       <segment>
         <source>Navegación principal</source>
@@ -4903,9 +5881,25 @@
         <source>El negocio abre pronto y aún no hay nada</source>
       <target>Le commerce ouvre bientôt et il n’y a encore rien</target></segment>
     </unit>
+    <unit id="62977268994099124">
+      <notes>
+        <note category="location">src/app/state/lead/lead.model.ts:52</note>
+      </notes>
+      <segment>
+        <source>Tienda online</source>
+      <target>Boutique en ligne</target></segment>
+    </unit>
+    <unit id="2388026889792987882">
+      <notes>
+        <note category="location">src/app/state/lead/lead.model.ts:55</note>
+      </notes>
+      <segment>
+        <source>Otra solución informática</source>
+      <target>Autre solution informatique</target></segment>
+    </unit>
     <unit id="1887964690967157245">
       <notes>
-        <note category="location">src/app/state/lead/lead.model.ts:50</note>
+        <note category="location">src/app/state/lead/lead.model.ts:61</note>
       </notes>
       <segment>
         <source>Aún no lo sé</source>
@@ -4913,7 +5907,7 @@
     </unit>
     <unit id="8783632333921893834">
       <notes>
-        <note category="location">src/app/state/lead/lead.service.ts:114</note>
+        <note category="location">src/app/state/lead/lead.service.ts:116</note>
       </notes>
       <segment>
         <source>El formulario todavía no está conectado a ningún correo. Escríbenos directamente mientras tanto.</source>
@@ -4921,7 +5915,7 @@
     </unit>
     <unit id="3512455100695107079">
       <notes>
-        <note category="location">src/app/state/lead/lead.service.ts:128</note>
+        <note category="location">src/app/state/lead/lead.service.ts:130</note>
       </notes>
       <segment>
         <source>No hemos podido enviar el mensaje. Inténtalo otra vez en un minuto o escríbenos directamente.</source>
