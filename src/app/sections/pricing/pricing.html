@@ -29,6 +29,7 @@
               {{ formatPrice(plan.to) }}<span class="prz__currency">€</span>
             </span>
             <span class="prz__term">@if (plan.note) {{{ plan.note }} · }<span i18n>IVA no incluido</span></span>
+            <span class="prz__vat" i18n>Con IVA: {{ withVat(plan.from) }} – {{ withVat(plan.to) }} €</span>
           </p>
 
           <ul class="prz__features">
@@ -50,9 +51,21 @@
     </ul>
 
     <p class="prz__foot" i18n>
-      Todos los presupuestos incluyen dominio, certificado de seguridad, aviso legal y política de
-      cookies. Se paga 50 % al empezar y 50 % al publicar. El mantenimiento es aparte y opcional:
-      solo si lo quieres.
+      Todos los presupuestos incluyen dominio y alojamiento el primer año, certificado de seguridad,
+      aviso legal y política de cookies. A partir del segundo año, el dominio y el alojamiento los
+      pagas tú directamente al proveedor, a tu nombre y sin margen nuestro. Se paga 50 % al empezar
+      y 50 % al publicar. El mantenimiento es aparte y opcional: un pack desde 49 €/mes, solo si lo
+      quieres.
+    </p>
+
+    <!-- Lo que no es una web de plan, con su precio de partida para que nadie
+         tenga que pedir presupuesto solo para saber el orden de magnitud. -->
+    <p class="prz__foot" i18n>
+      ¿Necesitas algo más que una web?
+      <a routerLink="/servicios/tiendas-online">Tiendas online</a> desde 1.200 €,
+      <a routerLink="/servicios/inteligencia-artificial">inteligencia artificial</a> desde 300 € y
+      <a routerLink="/servicios/software-a-medida">software a medida</a> con presupuesto cerrado.
+      IVA aparte.
     </p>
   </div>
 </section>

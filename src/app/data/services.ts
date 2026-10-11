@@ -106,13 +106,13 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
     lead: $localize`Ser el mejor no sirve de nada si no te encuentran. Trabajamos tu ficha de Google, los datos de la web y las páginas por zona para que aparezcas cuando alguien busca lo que haces.`,
     stats: [
       { value: $localize`Google`, title: $localize`Ficha de empresa`, body: $localize`Completa y optimizada: horarios, fotos, categorías y enlace a tu web.` },
-      { value: $localize`Schema`, title: $localize`Datos estructurados`, body: $localize`Para que Google entienda qué haces, dónde y en qué horario.` },
+      { value: $localize`Datos`, title: $localize`Para que Google te entienda`, body: $localize`Para que Google entienda qué haces, dónde y en qué horario.` },
       { value: $localize`Por zona`, title: $localize`Páginas locales`, body: $localize`Una página por barrio o ciudad donde trabajas, con contenido propio.` },
     ],
     offersTitle: [$localize`Lo que hacemos `, $localize`para que `, $localize`te encuentren.`],
     offers: [
       { title: $localize`Google Business`, body: $localize`Tu ficha de Google, completa y conectada con la web.` },
-      { title: $localize`Schema local`, body: $localize`Datos estructurados de negocio local, horario y servicios.` },
+      { title: $localize`Datos para Google`, body: $localize`Tu horario, tu zona y tus servicios, escritos en la web de forma que Google los entiende.` },
       { title: $localize`Páginas por zona`, body: $localize`Contenido para cada zona donde das servicio, sin páginas copiadas.` },
       { title: $localize`Reseñas integradas`, body: $localize`Tus reseñas de Google, visibles en la web donde ayudan a decidir.` },
     ],
@@ -137,7 +137,7 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
     offers: [
       { title: $localize`Reserva online`, body: $localize`Citas y reservas desde la web, sin llamadas ni mensajes de ida y vuelta.` },
       { title: $localize`WhatsApp Business`, body: $localize`Conectado a la web para responder desde un solo sitio.`, monthly: $localize`desde 50 €/mes` },
-      { title: $localize`Pedidos y pagos`, body: $localize`Pedidos y cobros desde la web cuando tu negocio los necesita.` },
+      { title: $localize`Encargos y pagos`, body: $localize`Encargos con fecha y hora de recogida, y pago o señal desde la web: de la tarta de cumpleaños a la mesa para diez.` },
       { title: $localize`Avisos automáticos`, body: $localize`Confirmaciones y recordatorios sin que tengas que escribirlos tú.` },
     ],
     faqs: faqs(7, 2, 1),
@@ -154,20 +154,20 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
     lead: $localize`Diseñamos y programamos tu tienda online a medida: catálogo, carrito, pagos seguros y envíos, con un panel sencillo para que gestiones pedidos y existencias sin ayuda.`,
     stats: [
       { value: $localize`24 h`, title: $localize`Abierta siempre`, body: $localize`Tus clientes compran cuando les viene bien, no solo en horario de tienda.` },
-      { value: $localize`Móvil`, title: $localize`Comprar desde el teléfono`, body: $localize`Carrito y pago cómodos en pantalla pequeña, probados en móviles reales.` },
+      { value: $localize`desde 1.200 €`, title: $localize`Precio cerrado`, body: $localize`Por escrito antes de empezar, según los productos, los pagos y los envíos. IVA no incluido.` },
       { value: $localize`Panel`, title: $localize`Pedidos y existencias`, body: $localize`Cada pedido, su estado y lo que queda en el almacén, en un solo sitio.` },
     ],
     offersTitle: [$localize`Lo que `, $localize`montamos `, $localize`en tu tienda.`],
     offers: [
       { title: $localize`Catálogo a medida`, body: $localize`Fichas de producto con fotos, variantes de talla o color y buscador, pensadas para que se entienda qué compras.` },
       { title: $localize`Carrito y pagos seguros`, body: $localize`Pago con tarjeta y otros métodos habituales, a través de pasarelas de pago reconocidas.` },
-      { title: $localize`Envíos y devoluciones`, body: $localize`Gastos de envío por zona o por peso, seguimiento del pedido y avisos automáticos al cliente.` },
+      { title: $localize`Envío o recogida en tienda`, body: $localize`Envío a domicilio con gastos por zona o por peso, o recogida en tu local a la hora que elija el cliente, con avisos automáticos.` },
       { title: $localize`Panel de gestión`, body: $localize`Pedidos, clientes y existencias en un panel sencillo, con vídeos cortos que te enseñan a usarlo.` },
     ],
     faqs: [
       {
         q: $localize`¿Cuánto cuesta una tienda online?`,
-        a: $localize`Depende del número de productos, de los métodos de pago y de cómo gestionas los envíos. Te enviamos una propuesta con el precio cerrado antes de empezar, y el presupuesto que firmas es el que pagas.`,
+        a: $localize`Desde 1.200 € (IVA no incluido). El precio final depende del número de productos, de los métodos de pago y de cómo gestionas los envíos, y te lo damos cerrado antes de empezar: el presupuesto que firmas es el que pagas.`,
       },
       {
         q: $localize`¿Podré añadir productos yo mismo?`,
@@ -221,20 +221,24 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
     service: service('ia'),
     name: $localize`Inteligencia artificial`,
     title: [$localize`Inteligencia artificial `, $localize`que te quita trabajo, `, $localize`no que te lo da.`],
-    lead: $localize`Asistentes que responden a tus clientes con la información de tu negocio, automatizaciones que leen y ordenan correos y documentos, y herramientas de IA conectadas con lo que ya usas.`,
+    lead: $localize`Asistentes que responden a tus clientes en la web o por WhatsApp con la información de tu negocio, automatizaciones que leen y ordenan correos y documentos, y herramientas de IA conectadas con lo que ya usas.`,
     stats: [
-      { value: $localize`24 h`, title: $localize`Asistente siempre activo`, body: $localize`Resuelve las dudas frecuentes en tu web a cualquier hora, y te pasa lo que no sabe resolver.` },
+      { value: $localize`24 h`, title: $localize`Asistente siempre activo`, body: $localize`Resuelve las dudas frecuentes en tu web o por WhatsApp a cualquier hora, y te pasa lo que no sabe resolver.` },
       { value: $localize`Tus datos`, title: $localize`Respuestas con tu información`, body: $localize`Contesta con tus horarios, precios y servicios, no con respuestas genéricas.` },
-      { value: $localize`A medida`, title: $localize`Donde ya trabajas`, body: $localize`Correo, hojas de cálculo, agenda o la web: la IA se conecta a lo que ya usas.` },
+      { value: $localize`desde 300 €`, title: $localize`Para empezar`, body: $localize`Un primer asistente o una automatización concreta, con precio cerrado antes de empezar. IVA no incluido.` },
     ],
     offersTitle: [$localize`Lo que `, $localize`hacemos `, $localize`con IA.`],
     offers: [
-      { title: $localize`Asistente para tu web`, body: $localize`Un chat que resuelve las dudas de tus clientes con la información de tu negocio y te avisa cuando hace falta una persona.` },
+      { title: $localize`Asistente para web y WhatsApp`, body: $localize`Contesta a tus clientes en la web o por WhatsApp con la información de tu negocio, y te pasa la conversación cuando hace falta una persona.` },
       { title: $localize`Automatización con IA`, body: $localize`Correos clasificados, respuestas sugeridas y tareas que se ponen en marcha solas cuando llega algo nuevo.` },
       { title: $localize`Correos y documentos`, body: $localize`Sacar los datos de facturas, albaranes o formularios y llevarlos a donde los necesitas.` },
       { title: $localize`Formación para tu equipo`, body: $localize`Te enseñamos a sacarle partido a la IA en el día a día, con ejemplos de tu propio negocio.` },
     ],
     faqs: [
+      {
+        q: $localize`¿Cómo sería en mi negocio?`,
+        a: $localize`Por ejemplo, en una pastelería: un cliente escribe por WhatsApp a las once de la noche preguntando si hay tarta de chocolate para doce el sábado. El asistente le dice los tamaños y precios de tu carta, toma el encargo con la hora de recogida y te lo deja apuntado. Si pide algo fuera de carta, te avisa para que contestes tú.`,
+      },
       {
         q: $localize`¿Qué pasa con mis datos y los de mis clientes?`,
         a: $localize`Usamos solo los datos que hacen falta para cada tarea y te explicamos por escrito qué servicio los trata y dónde. Si algún dato no debe salir de tu empresa, la solución se diseña para que no salga.`,
@@ -243,7 +247,7 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
         q: $localize`¿Y si la IA se equivoca?`,
         a: $localize`Puede pasar, y por eso la usamos en tareas acotadas, con tu información y con una persona revisando lo importante. Antes de ponerla en marcha la probamos con casos reales de tu negocio.`,
       },
-      ...faqs(3, 2),
+      ...faqs(2),
     ],
     closing: $localize`hablemos de tu idea.`,
     bespoke: true,
@@ -256,23 +260,23 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
     service: service('cuidado'),
     name: $localize`Mantenimiento`,
     title: [$localize`No te dejamos `, $localize`con la web `, $localize`y adiós.`],
-    lead: $localize`Actualizaciones, copias de seguridad y un informe mensual en castellano donde se entiende qué ha pasado. Opcional, y se cancela con un mes de aviso.`,
+    lead: $localize`Actualizaciones, copias de seguridad, los cambios pequeños del mes y un informe en castellano donde se entiende qué ha pasado. Todo en un pack desde 49 €/mes, opcional y sin permanencia.`,
     stats: [
-      { value: $localize`Diarias`, title: $localize`Copias de seguridad`, body: $localize`Si algo se rompe, la web vuelve a como estaba el día anterior.` },
+      { value: $localize`desde 49 €`, title: $localize`Al mes, todo incluido`, body: $localize`Copias, cambios pequeños e informe en una sola cuota. IVA no incluido.` },
       { value: $localize`Mensual`, title: $localize`Informe en castellano`, body: $localize`Visitas, contactos y velocidad, explicados sin jerga.` },
       { value: $localize`1 mes`, title: $localize`De aviso para cancelar`, body: $localize`Sin permanencia: el mantenimiento es opcional.` },
     ],
     offersTitle: [$localize`Lo que `, $localize`cuidamos `, $localize`cada mes.`],
     offers: [
-      { title: $localize`Copias diarias`, body: $localize`Copias de seguridad automáticas de toda la web.`, monthly: $localize`desde 50 €/mes` },
-      { title: $localize`Cambios mensuales`, body: $localize`Textos, precios, horarios o fotos que quieras cambiar, hechos por nosotros.`, monthly: $localize`desde 30 €/mes` },
-      { title: $localize`Informe de resultados`, body: $localize`Qué ha pasado en tu web este mes, en un informe que se entiende.`, monthly: $localize`desde 20 €/mes` },
+      { title: $localize`Copias diarias`, body: $localize`Copias de seguridad automáticas de toda la web: si algo se rompe, vuelve a como estaba el día anterior.` },
+      { title: $localize`Cambios mensuales`, body: $localize`Textos, precios, horarios o fotos que quieras cambiar, hechos por nosotros.` },
+      { title: $localize`Informe de resultados`, body: $localize`Qué ha pasado en tu web este mes, en un informe que se entiende.` },
     ],
     faqs: faqs(5, 7, 2),
     closing: $localize`hablemos de tu web.`,
     seoTitle: $localize`Mantenimiento web en Alicante, sin permanencia — MakeWeb`,
     seoDescription:
-      $localize`Mantenimiento web opcional: copias de seguridad diarias, cambios mensuales e informe de resultados en castellano. Se cancela con un mes de aviso.`,
+      $localize`Mantenimiento web desde 49 €/mes: copias de seguridad diarias, cambios mensuales e informe de resultados en castellano. Sin permanencia, con un mes de aviso.`,
   },
 ];
 

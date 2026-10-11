@@ -182,6 +182,18 @@
   color: var(--text-mute);
 }
 
+.prz__vat {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+.prz__foot a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .prz__features {
   display: grid;
   gap: 0.65rem;

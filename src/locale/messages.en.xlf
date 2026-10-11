@@ -301,9 +301,17 @@
         <source>peluquería cerca de mí</source>
       <target>hairdresser near me</target></segment>
     </unit>
-    <unit id="6501549792131449318">
+    <unit id="650378320446493066">
       <notes>
         <note category="location">src/app/data/content.ts:31</note>
+      </notes>
+      <segment>
+        <source>pastelería con tartas por encargo</source>
+      <target>cake shop taking custom orders</target></segment>
+    </unit>
+    <unit id="6501549792131449318">
+      <notes>
+        <note category="location">src/app/data/content.ts:32</note>
       </notes>
       <segment>
         <source>dentista urgencias hoy</source>
@@ -311,7 +319,7 @@
     </unit>
     <unit id="5840011559957260803">
       <notes>
-        <note category="location">src/app/data/content.ts:32</note>
+        <note category="location">src/app/data/content.ts:33</note>
       </notes>
       <segment>
         <source>taller de coches abierto ahora</source>
@@ -319,7 +327,7 @@
     </unit>
     <unit id="4022130681023190111">
       <notes>
-        <note category="location">src/app/data/content.ts:33</note>
+        <note category="location">src/app/data/content.ts:34</note>
       </notes>
       <segment>
         <source>restaurante para cenar esta noche</source>
@@ -327,7 +335,7 @@
     </unit>
     <unit id="8813989348433779582">
       <notes>
-        <note category="location">src/app/data/content.ts:34</note>
+        <note category="location">src/app/data/content.ts:35</note>
       </notes>
       <segment>
         <source>gimnasio con clases por la mañana</source>
@@ -335,7 +343,7 @@
     </unit>
     <unit id="6745959124625463029">
       <notes>
-        <note category="location">src/app/data/content.ts:64</note>
+        <note category="location">src/app/data/content.ts:65</note>
       </notes>
       <segment>
         <source>Diseño</source>
@@ -343,7 +351,7 @@
     </unit>
     <unit id="6947483959741495696">
       <notes>
-        <note category="location">src/app/data/content.ts:65</note>
+        <note category="location">src/app/data/content.ts:66</note>
       </notes>
       <segment>
         <source>La primera impresión que te gana clientes</source>
@@ -351,41 +359,39 @@
     </unit>
     <unit id="5911847248844371369">
       <notes>
-        <note category="location">src/app/data/content.ts:67</note>
+        <note category="location">src/app/data/content.ts:68</note>
       </notes>
       <segment>
         <source>No diseñamos webs. Diseñamos la primera impresión que te va a ganar clientes. Cada color, cada detalle, pensado para tu negocio, no copiado de una plantilla.</source>
       <target>We don’t design websites. We design the first impression that will win you customers. Every colour, every detail, thought out for your business, not copied from a template.</target></segment>
     </unit>
-    <unit id="5345718061161715392">
+    <unit id="5840512388060490414">
       <notes>
-        <note category="location">src/app/data/content.ts:69</note>
-        <note category="location">src/app/data/services.ts:66</note>
+        <note category="location">src/app/data/content.ts:70</note>
       </notes>
       <segment>
-        <source>Dirección de arte</source>
-      <target>Art direction</target></segment>
+        <source>Estilo propio para tu marca</source>
+      <target>A style of your own for your brand</target></segment>
     </unit>
     <unit id="5395834870965134756">
       <notes>
-        <note category="location">src/app/data/content.ts:70</note>
+        <note category="location">src/app/data/content.ts:71</note>
       </notes>
       <segment>
         <source>Demo de la web antes de empezar</source>
       <target>Website demo before we start</target></segment>
     </unit>
-    <unit id="3435808904471455951">
+    <unit id="5510663555159980220">
       <notes>
-        <note category="location">src/app/data/content.ts:71</note>
-        <note category="location">src/app/data/services.ts:68</note>
+        <note category="location">src/app/data/content.ts:72</note>
       </notes>
       <segment>
-        <source>Sistema de componentes</source>
-      <target>Component system</target></segment>
+        <source>Igual de cuidada en todas las páginas</source>
+      <target>Just as polished on every page</target></segment>
     </unit>
     <unit id="2297065185594526652">
       <notes>
-        <note category="location">src/app/data/content.ts:72</note>
+        <note category="location">src/app/data/content.ts:73</note>
         <note category="location">src/app/data/services.ts:69</note>
       </notes>
       <segment>
@@ -394,7 +400,7 @@
     </unit>
     <unit id="8653124242894602376">
       <notes>
-        <note category="location">src/app/data/content.ts:77</note>
+        <note category="location">src/app/data/content.ts:78</note>
       </notes>
       <segment>
         <source>Desarrollo</source>
@@ -402,7 +408,7 @@
     </unit>
     <unit id="6922268170395675864">
       <notes>
-        <note category="location">src/app/data/content.ts:78</note>
+        <note category="location">src/app/data/content.ts:79</note>
       </notes>
       <segment>
         <source>Rápida de verdad, no rápida en el portátil del diseñador</source>
@@ -410,58 +416,55 @@
     </unit>
     <unit id="607098248264942304">
       <notes>
-        <note category="location">src/app/data/content.ts:80</note>
+        <note category="location">src/app/data/content.ts:81</note>
       </notes>
       <segment>
         <source>Construimos tu web para que cargue rápido de verdad en todos los dispositivos, comprobado en condiciones reales, tal y como lo va a usar tu cliente.</source>
       <target>We build your website to load truly fast on every device, tested in real conditions, exactly the way your customers will use it.</target></segment>
     </unit>
-    <unit id="2824152956518406040">
-      <notes>
-        <note category="location">src/app/data/content.ts:85</note>
-        <note category="location">src/app/data/services.ts:84</note>
-        <note category="location">src/app/data/services.ts:90</note>
-      </notes>
-      <segment>
-        <source>HTML, CSS y JavaScript</source>
-      <target>HTML, CSS and JavaScript</target></segment>
-    </unit>
-    <unit id="5861896834541999547">
+    <unit id="4493447773105535832">
       <notes>
         <note category="location">src/app/data/content.ts:86</note>
       </notes>
       <segment>
-        <source>PHP, MySQL y phpMyAdmin si lleva base de datos</source>
-      <target>PHP, MySQL and phpMyAdmin if it needs a database</target></segment>
+        <source>Carga rápido en cualquier móvil</source>
+      <target>Loads fast on any phone</target></segment>
+    </unit>
+    <unit id="3137940933367558856">
+      <notes>
+        <note category="location">src/app/data/content.ts:87</note>
+      </notes>
+      <segment>
+        <source>Base de datos si la necesitas</source>
+      <target>A database if you need one</target></segment>
     </unit>
     <unit id="5769339007569720236">
       <notes>
-        <note category="location">src/app/data/content.ts:87</note>
+        <note category="location">src/app/data/content.ts:88</note>
       </notes>
       <segment>
         <source>Sin plantillas ni WordPress</source>
       <target>No templates, no WordPress</target></segment>
     </unit>
-    <unit id="1050525036582135553">
-      <notes>
-        <note category="location">src/app/data/content.ts:88</note>
-      </notes>
-      <segment>
-        <source>Accesible AA</source>
-      <target>AA accessible</target></segment>
-    </unit>
-    <unit id="2498597053901479136">
+    <unit id="5978201463272411128">
       <notes>
         <note category="location">src/app/data/content.ts:89</note>
-        <note category="location">src/app/data/services.ts:93</note>
       </notes>
       <segment>
-        <source>Hosting configurado</source>
-      <target>Hosting set up</target></segment>
+        <source>Fácil de usar para todo el mundo</source>
+      <target>Easy for everyone to use</target></segment>
+    </unit>
+    <unit id="1231297169204171457">
+      <notes>
+        <note category="location">src/app/data/content.ts:90</note>
+      </notes>
+      <segment>
+        <source>Publicada y funcionando</source>
+      <target>Live and working</target></segment>
     </unit>
     <unit id="8402215316598137110">
       <notes>
-        <note category="location">src/app/data/content.ts:94</note>
+        <note category="location">src/app/data/content.ts:95</note>
       </notes>
       <segment>
         <source>SEO</source>
@@ -469,41 +472,40 @@
     </unit>
     <unit id="4760672531028228214">
       <notes>
-        <note category="location">src/app/data/content.ts:95</note>
+        <note category="location">src/app/data/content.ts:96</note>
       </notes>
       <segment>
         <source>Ser el mejor no sirve de nada si no te encuentran</source>
       <target>Being the best is no use if nobody finds you</target></segment>
     </unit>
-    <unit id="770083189182843710">
+    <unit id="4214683717101432765">
       <notes>
-        <note category="location">src/app/data/content.ts:97</note>
+        <note category="location">src/app/data/content.ts:98</note>
       </notes>
       <segment>
-        <source>Nos encargamos de que aparezcas primero cuando alguien busca cerca: ficha de Google, datos estructurados y páginas por zona.</source>
-      <target>We make sure you show up first when someone searches nearby: Google Business Profile, structured data and area pages.</target></segment>
+        <source>Trabajamos tu ficha de Google, los datos de la web y las páginas por zona para que te encuentren cuando buscan cerca. Sin prometer posiciones: dependen también de tus reseñas y del tiempo.</source>
+      <target>We work on your Google profile, your website’s data and your area pages so people find you when they search nearby. No promises about rankings: they also depend on your reviews and on time.</target></segment>
     </unit>
     <unit id="1333430717598530946">
       <notes>
-        <note category="location">src/app/data/content.ts:99</note>
+        <note category="location">src/app/data/content.ts:100</note>
         <note category="location">src/app/data/services.ts:114</note>
       </notes>
       <segment>
         <source>Google Business</source>
       <target>Google Business</target></segment>
     </unit>
-    <unit id="3634756512316559800">
+    <unit id="6566547662086481586">
       <notes>
-        <note category="location">src/app/data/content.ts:100</note>
-        <note category="location">src/app/data/services.ts:115</note>
+        <note category="location">src/app/data/content.ts:101</note>
       </notes>
       <segment>
-        <source>Schema local</source>
-      <target>Local schema</target></segment>
+        <source>Google entiende tu horario y tu zona</source>
+      <target>Google understands your hours and your area</target></segment>
     </unit>
     <unit id="4193636561419938636">
       <notes>
-        <note category="location">src/app/data/content.ts:101</note>
+        <note category="location">src/app/data/content.ts:102</note>
         <note category="location">src/app/data/services.ts:116</note>
       </notes>
       <segment>
@@ -512,7 +514,7 @@
     </unit>
     <unit id="3847326720773681684">
       <notes>
-        <note category="location">src/app/data/content.ts:102</note>
+        <note category="location">src/app/data/content.ts:103</note>
         <note category="location">src/app/data/services.ts:117</note>
       </notes>
       <segment>
@@ -521,7 +523,7 @@
     </unit>
     <unit id="3787882446970210798">
       <notes>
-        <note category="location">src/app/data/content.ts:107</note>
+        <note category="location">src/app/data/content.ts:108</note>
       </notes>
       <segment>
         <source>Reservas</source>
@@ -529,7 +531,7 @@
     </unit>
     <unit id="7706253828976995987">
       <notes>
-        <note category="location">src/app/data/content.ts:108</note>
+        <note category="location">src/app/data/content.ts:109</note>
       </notes>
       <segment>
         <source>Convertimos visitas en clientes</source>
@@ -537,7 +539,7 @@
     </unit>
     <unit id="7010230040030902606">
       <notes>
-        <note category="location">src/app/data/content.ts:110</note>
+        <note category="location">src/app/data/content.ts:111</note>
       </notes>
       <segment>
         <source>Montamos y cuidamos todo el sistema de reservas, citas y pedidos de tu web, conectado con las herramientas que ya usas, para que cada visita tenga un camino claro hasta convertirse en cliente.</source>
@@ -545,7 +547,7 @@
     </unit>
     <unit id="1311348391102692372">
       <notes>
-        <note category="location">src/app/data/content.ts:112</note>
+        <note category="location">src/app/data/content.ts:113</note>
         <note category="location">src/app/data/services.ts:132</note>
         <note category="location">src/app/data/services.ts:138</note>
       </notes>
@@ -555,7 +557,7 @@
     </unit>
     <unit id="2867947571385421524">
       <notes>
-        <note category="location">src/app/data/content.ts:113</note>
+        <note category="location">src/app/data/content.ts:114</note>
         <note category="location">src/app/data/services.ts:134</note>
         <note category="location">src/app/data/services.ts:139</note>
       </notes>
@@ -565,10 +567,8 @@
     </unit>
     <unit id="4803583371113949506">
       <notes>
-        <note category="location">src/app/data/content.ts:113</note>
-        <note category="location">src/app/data/content.ts:166</note>
+        <note category="location">src/app/data/content.ts:114</note>
         <note category="location">src/app/data/services.ts:139</note>
-        <note category="location">src/app/data/services.ts:267</note>
       </notes>
       <segment>
         <source>desde 50 €/mes</source>
@@ -576,8 +576,7 @@
     </unit>
     <unit id="2137894968067977459">
       <notes>
-        <note category="location">src/app/data/content.ts:114</note>
-        <note category="location">src/app/data/services.ts:140</note>
+        <note category="location">src/app/data/content.ts:115</note>
       </notes>
       <segment>
         <source>Pedidos y pagos</source>
@@ -585,7 +584,7 @@
     </unit>
     <unit id="7952382524863204037">
       <notes>
-        <note category="location">src/app/data/content.ts:115</note>
+        <note category="location">src/app/data/content.ts:116</note>
         <note category="location">src/app/data/services.ts:141</note>
       </notes>
       <segment>
@@ -594,7 +593,7 @@
     </unit>
     <unit id="7446091211918460631">
       <notes>
-        <note category="location">src/app/data/content.ts:122</note>
+        <note category="location">src/app/data/content.ts:123</note>
       </notes>
       <segment>
         <source>Tiendas</source>
@@ -602,7 +601,7 @@
     </unit>
     <unit id="9023230642353490516">
       <notes>
-        <note category="location">src/app/data/content.ts:123</note>
+        <note category="location">src/app/data/content.ts:124</note>
       </notes>
       <segment>
         <source>Tu tienda, abierta las 24 horas</source>
@@ -610,7 +609,7 @@
     </unit>
     <unit id="7879294104930566466">
       <notes>
-        <note category="location">src/app/data/content.ts:125</note>
+        <note category="location">src/app/data/content.ts:126</note>
       </notes>
       <segment>
         <source>Tiendas online a medida para vender tus productos: catálogo, carrito, pagos seguros y envíos, con un panel sencillo para gestionar pedidos y existencias.</source>
@@ -618,7 +617,7 @@
     </unit>
     <unit id="1692810452719089888">
       <notes>
-        <note category="location">src/app/data/content.ts:127</note>
+        <note category="location">src/app/data/content.ts:128</note>
       </notes>
       <segment>
         <source>Catálogo y carrito</source>
@@ -626,24 +625,24 @@
     </unit>
     <unit id="4138459960924803353">
       <notes>
-        <note category="location">src/app/data/content.ts:128</note>
+        <note category="location">src/app/data/content.ts:129</note>
       </notes>
       <segment>
         <source>Pagos seguros</source>
       <target>Secure payments</target></segment>
     </unit>
-    <unit id="3011661329323264229">
+    <unit id="6653629856393335893">
       <notes>
-        <note category="location">src/app/data/content.ts:129</note>
+        <note category="location">src/app/data/content.ts:130</note>
         <note category="location">src/app/data/services.ts:164</note>
       </notes>
       <segment>
-        <source>Envíos y devoluciones</source>
-      <target>Shipping and returns</target></segment>
+        <source>Envío o recogida en tienda</source>
+      <target>Delivery or in-store pickup</target></segment>
     </unit>
     <unit id="7449169140624540977">
       <notes>
-        <note category="location">src/app/data/content.ts:130</note>
+        <note category="location">src/app/data/content.ts:131</note>
       </notes>
       <segment>
         <source>Panel de pedidos y stock</source>
@@ -651,7 +650,7 @@
     </unit>
     <unit id="5093701986340458388">
       <notes>
-        <note category="location">src/app/data/content.ts:135</note>
+        <note category="location">src/app/data/content.ts:136</note>
       </notes>
       <segment>
         <source>Software</source>
@@ -659,7 +658,7 @@
     </unit>
     <unit id="5597338089992545668">
       <notes>
-        <note category="location">src/app/data/content.ts:136</note>
+        <note category="location">src/app/data/content.ts:137</note>
       </notes>
       <segment>
         <source>Programas hechos para cómo trabajas</source>
@@ -667,7 +666,7 @@
     </unit>
     <unit id="890967213123539165">
       <notes>
-        <note category="location">src/app/data/content.ts:138</note>
+        <note category="location">src/app/data/content.ts:139</note>
       </notes>
       <segment>
         <source>Aplicaciones web, paneles de gestión e integraciones a medida. Lo que hoy haces a mano o repartido en varias hojas de cálculo, en una sola herramienta.</source>
@@ -675,7 +674,7 @@
     </unit>
     <unit id="5909817778078273728">
       <notes>
-        <note category="location">src/app/data/content.ts:140</note>
+        <note category="location">src/app/data/content.ts:141</note>
         <note category="location">src/app/data/services.ts:197</note>
       </notes>
       <segment>
@@ -684,7 +683,7 @@
     </unit>
     <unit id="5845547649357024349">
       <notes>
-        <note category="location">src/app/data/content.ts:141</note>
+        <note category="location">src/app/data/content.ts:142</note>
         <note category="location">src/app/data/services.ts:198</note>
       </notes>
       <segment>
@@ -693,7 +692,7 @@
     </unit>
     <unit id="6173678464979217295">
       <notes>
-        <note category="location">src/app/data/content.ts:142</note>
+        <note category="location">src/app/data/content.ts:143</note>
         <note category="location">src/app/data/services.ts:199</note>
       </notes>
       <segment>
@@ -702,7 +701,7 @@
     </unit>
     <unit id="7129786568850860286">
       <notes>
-        <note category="location">src/app/data/content.ts:143</note>
+        <note category="location">src/app/data/content.ts:144</note>
         <note category="location">src/app/data/services.ts:200</note>
       </notes>
       <segment>
@@ -711,7 +710,7 @@
     </unit>
     <unit id="2338142270033064022">
       <notes>
-        <note category="location">src/app/data/content.ts:148</note>
+        <note category="location">src/app/data/content.ts:149</note>
       </notes>
       <segment>
         <source>IA</source>
@@ -719,32 +718,32 @@
     </unit>
     <unit id="4867656386969570219">
       <notes>
-        <note category="location">src/app/data/content.ts:149</note>
+        <note category="location">src/app/data/content.ts:150</note>
       </notes>
       <segment>
         <source>Inteligencia artificial que te quita trabajo</source>
       <target>Artificial intelligence that takes work off your plate</target></segment>
     </unit>
-    <unit id="2163716818446026392">
+    <unit id="8758394779111212131">
       <notes>
-        <note category="location">src/app/data/content.ts:151</note>
+        <note category="location">src/app/data/content.ts:152</note>
       </notes>
       <segment>
-        <source>Asistentes que responden a tus clientes con la información de tu negocio, y automatizaciones que leen y ordenan correos y documentos por ti.</source>
-      <target>Assistants that answer your customers with your business’s information, and automations that read and sort emails and documents for you.</target></segment>
+        <source>Asistentes que responden a tus clientes en la web o por WhatsApp con la información de tu negocio, y automatizaciones que leen y ordenan correos y documentos por ti.</source>
+      <target>Assistants that answer your customers on your website or on WhatsApp with your business’s information, and automations that read and sort emails and documents for you.</target></segment>
     </unit>
-    <unit id="382062957562858732">
+    <unit id="4219540942881232358">
       <notes>
-        <note category="location">src/app/data/content.ts:153</note>
+        <note category="location">src/app/data/content.ts:154</note>
         <note category="location">src/app/data/services.ts:232</note>
       </notes>
       <segment>
-        <source>Asistente para tu web</source>
-      <target>An assistant for your website</target></segment>
+        <source>Asistente para web y WhatsApp</source>
+      <target>Assistant for website and WhatsApp</target></segment>
     </unit>
     <unit id="6887990270862702771">
       <notes>
-        <note category="location">src/app/data/content.ts:154</note>
+        <note category="location">src/app/data/content.ts:155</note>
         <note category="location">src/app/data/services.ts:233</note>
       </notes>
       <segment>
@@ -753,7 +752,7 @@
     </unit>
     <unit id="4677425771131564189">
       <notes>
-        <note category="location">src/app/data/content.ts:155</note>
+        <note category="location">src/app/data/content.ts:156</note>
         <note category="location">src/app/data/services.ts:234</note>
       </notes>
       <segment>
@@ -762,7 +761,7 @@
     </unit>
     <unit id="7670607106437610040">
       <notes>
-        <note category="location">src/app/data/content.ts:156</note>
+        <note category="location">src/app/data/content.ts:157</note>
         <note category="location">src/app/data/services.ts:235</note>
       </notes>
       <segment>
@@ -771,7 +770,7 @@
     </unit>
     <unit id="7090105594191896114">
       <notes>
-        <note category="location">src/app/data/content.ts:161</note>
+        <note category="location">src/app/data/content.ts:162</note>
       </notes>
       <segment>
         <source>Cuidado</source>
@@ -779,24 +778,24 @@
     </unit>
     <unit id="3509076547790435532">
       <notes>
-        <note category="location">src/app/data/content.ts:162</note>
+        <note category="location">src/app/data/content.ts:163</note>
       </notes>
       <segment>
         <source>No te dejamos con la web y adiós</source>
       <target>We don’t hand over the website and vanish</target></segment>
     </unit>
-    <unit id="5708693729635232996">
+    <unit id="1115220738782156398">
       <notes>
-        <note category="location">src/app/data/content.ts:164</note>
+        <note category="location">src/app/data/content.ts:165</note>
       </notes>
       <segment>
-        <source>Actualizaciones, copias de seguridad y un informe mensual en castellano donde se entiende qué ha pasado.</source>
-      <target>Updates, backups and a plain-language monthly report that tells you what has happened.</target></segment>
+        <source>Actualizaciones, copias de seguridad, los cambios pequeños del mes y un informe en castellano donde se entiende qué ha pasado. Todo en una sola cuota.</source>
+      <target>Updates, backups, the month’s small changes and a plain-language report that explains what happened. All in a single fee.</target></segment>
     </unit>
     <unit id="2564130660318936998">
       <notes>
-        <note category="location">src/app/data/content.ts:166</note>
-        <note category="location">src/app/data/services.ts:267</note>
+        <note category="location">src/app/data/content.ts:169</note>
+        <note category="location">src/app/data/services.ts:271</note>
       </notes>
       <segment>
         <source>Copias diarias</source>
@@ -804,43 +803,41 @@
     </unit>
     <unit id="8182404804509957608">
       <notes>
-        <note category="location">src/app/data/content.ts:167</note>
-        <note category="location">src/app/data/services.ts:268</note>
+        <note category="location">src/app/data/content.ts:170</note>
+        <note category="location">src/app/data/services.ts:272</note>
       </notes>
       <segment>
         <source>Cambios mensuales</source>
       <target>Monthly changes</target></segment>
     </unit>
-    <unit id="1131822559464407095">
-      <notes>
-        <note category="location">src/app/data/content.ts:167</note>
-        <note category="location">src/app/data/services.ts:268</note>
-      </notes>
-      <segment>
-        <source>desde 30 €/mes</source>
-      <target>from €30/month</target></segment>
-    </unit>
     <unit id="565581346857518703">
       <notes>
-        <note category="location">src/app/data/content.ts:168</note>
-        <note category="location">src/app/data/services.ts:269</note>
+        <note category="location">src/app/data/content.ts:171</note>
+        <note category="location">src/app/data/services.ts:273</note>
       </notes>
       <segment>
         <source>Informe de resultados</source>
       <target>Results report</target></segment>
     </unit>
-    <unit id="6419699370308123487">
+    <unit id="2781915487928052668">
       <notes>
-        <note category="location">src/app/data/content.ts:168</note>
-        <note category="location">src/app/data/services.ts:269</note>
+        <note category="location">src/app/data/content.ts:172</note>
       </notes>
       <segment>
-        <source>desde 20 €/mes</source>
-      <target>from €20/month</target></segment>
+        <source>Todo en un pack</source>
+      <target>All in one package</target></segment>
+    </unit>
+    <unit id="1950033609730943801">
+      <notes>
+        <note category="location">src/app/data/content.ts:172</note>
+      </notes>
+      <segment>
+        <source>desde 49 €/mes</source>
+      <target>from €49/month</target></segment>
     </unit>
     <unit id="3325359512868338189">
       <notes>
-        <note category="location">src/app/data/content.ts:214</note>
+        <note category="location">src/app/data/content.ts:218</note>
       </notes>
       <segment>
         <source>Día 1</source>
@@ -848,8 +845,8 @@
     </unit>
     <unit id="4501142151419301772">
       <notes>
-        <note category="location">src/app/data/content.ts:217</note>
-        <note category="location">src/app/data/content.ts:256</note>
+        <note category="location">src/app/data/content.ts:221</note>
+        <note category="location">src/app/data/content.ts:260</note>
       </notes>
       <segment>
         <source>Escuchamos</source>
@@ -857,7 +854,7 @@
     </unit>
     <unit id="751243832496731426">
       <notes>
-        <note category="location">src/app/data/content.ts:218</note>
+        <note category="location">src/app/data/content.ts:222</note>
       </notes>
       <segment>
         <source>Una videollamada contigo. Salimos sabiendo a quién quieres atraer y qué te está frenando ahora.</source>
@@ -865,7 +862,7 @@
     </unit>
     <unit id="90201602413567229">
       <notes>
-        <note category="location">src/app/data/content.ts:219</note>
+        <note category="location">src/app/data/content.ts:223</note>
       </notes>
       <segment>
         <source>Sesión de arranque</source>
@@ -873,7 +870,7 @@
     </unit>
     <unit id="7502586199902689743">
       <notes>
-        <note category="location">src/app/data/content.ts:219</note>
+        <note category="location">src/app/data/content.ts:223</note>
       </notes>
       <segment>
         <source>Mapa de clientes</source>
@@ -881,7 +878,7 @@
     </unit>
     <unit id="4184874928013333535">
       <notes>
-        <note category="location">src/app/data/content.ts:219</note>
+        <note category="location">src/app/data/content.ts:223</note>
       </notes>
       <segment>
         <source>Auditoría de la web actual</source>
@@ -889,7 +886,7 @@
     </unit>
     <unit id="6175702781573801128">
       <notes>
-        <note category="location">src/app/data/content.ts:222</note>
+        <note category="location">src/app/data/content.ts:226</note>
       </notes>
       <segment>
         <source>Días 2 – 4</source>
@@ -897,7 +894,7 @@
     </unit>
     <unit id="2540456154136438278">
       <notes>
-        <note category="location">src/app/data/content.ts:225</note>
+        <note category="location">src/app/data/content.ts:229</note>
       </notes>
       <segment>
         <source>Diseñamos</source>
@@ -905,7 +902,7 @@
     </unit>
     <unit id="1668423677422824268">
       <notes>
-        <note category="location">src/app/data/content.ts:226</note>
+        <note category="location">src/app/data/content.ts:230</note>
       </notes>
       <segment>
         <source>Ves la web antes de que exista: una demo navegable, con tus fotos y tus textos. Ajustamos hasta que la reconoces como tuya.</source>
@@ -913,7 +910,7 @@
     </unit>
     <unit id="1255810238007233884">
       <notes>
-        <note category="location">src/app/data/content.ts:227</note>
+        <note category="location">src/app/data/content.ts:231</note>
       </notes>
       <segment>
         <source>Demo de la web</source>
@@ -921,7 +918,7 @@
     </unit>
     <unit id="8573732248518648236">
       <notes>
-        <note category="location">src/app/data/content.ts:227</note>
+        <note category="location">src/app/data/content.ts:231</note>
       </notes>
       <segment>
         <source>Textos redactados</source>
@@ -929,7 +926,7 @@
     </unit>
     <unit id="8386474015995757483">
       <notes>
-        <note category="location">src/app/data/content.ts:227</note>
+        <note category="location">src/app/data/content.ts:231</note>
       </notes>
       <segment>
         <source>Dos rondas de cambios</source>
@@ -937,7 +934,7 @@
     </unit>
     <unit id="5915804563223645654">
       <notes>
-        <note category="location">src/app/data/content.ts:230</note>
+        <note category="location">src/app/data/content.ts:234</note>
       </notes>
       <segment>
         <source>Días 5 – 6</source>
@@ -945,7 +942,7 @@
     </unit>
     <unit id="2432195120100773612">
       <notes>
-        <note category="location">src/app/data/content.ts:233</note>
+        <note category="location">src/app/data/content.ts:237</note>
       </notes>
       <segment>
         <source>Desarrollamos</source>
@@ -953,7 +950,7 @@
     </unit>
     <unit id="6468757211819400845">
       <notes>
-        <note category="location">src/app/data/content.ts:234</note>
+        <note category="location">src/app/data/content.ts:238</note>
       </notes>
       <segment>
         <source>Programamos, conectamos reservas y analítica, y lo probamos en móviles de verdad antes de enseñártelo.</source>
@@ -961,7 +958,7 @@
     </unit>
     <unit id="5518784567671075447">
       <notes>
-        <note category="location">src/app/data/content.ts:235</note>
+        <note category="location">src/app/data/content.ts:239</note>
       </notes>
       <segment>
         <source>Web a medida</source>
@@ -969,23 +966,23 @@
     </unit>
     <unit id="5546977923045086001">
       <notes>
-        <note category="location">src/app/data/content.ts:235</note>
+        <note category="location">src/app/data/content.ts:239</note>
       </notes>
       <segment>
         <source>Reservas conectadas</source>
       <target>Bookings connected</target></segment>
     </unit>
-    <unit id="1605543524150093017">
+    <unit id="2940426254062049685">
       <notes>
-        <note category="location">src/app/data/content.ts:235</note>
+        <note category="location">src/app/data/content.ts:239</note>
       </notes>
       <segment>
-        <source>Analítica y eventos</source>
-      <target>Analytics and events</target></segment>
+        <source>Medición de visitas y contactos</source>
+      <target>Visit and enquiry tracking</target></segment>
     </unit>
     <unit id="1205918651341346349">
       <notes>
-        <note category="location">src/app/data/content.ts:238</note>
+        <note category="location">src/app/data/content.ts:242</note>
       </notes>
       <segment>
         <source>Día 7</source>
@@ -993,7 +990,7 @@
     </unit>
     <unit id="914582869222401438">
       <notes>
-        <note category="location">src/app/data/content.ts:241</note>
+        <note category="location">src/app/data/content.ts:245</note>
       </notes>
       <segment>
         <source>Lanzamos</source>
@@ -1001,7 +998,7 @@
     </unit>
     <unit id="8524658763813284073">
       <notes>
-        <note category="location">src/app/data/content.ts:242</note>
+        <note category="location">src/app/data/content.ts:246</note>
       </notes>
       <segment>
         <source>Publicamos, avisamos a Google y te enseñamos a moverla.</source>
@@ -1009,7 +1006,7 @@
     </unit>
     <unit id="864734266536137303">
       <notes>
-        <note category="location">src/app/data/content.ts:243</note>
+        <note category="location">src/app/data/content.ts:247</note>
       </notes>
       <segment>
         <source>Puesta en marcha</source>
@@ -1017,7 +1014,7 @@
     </unit>
     <unit id="3193712425152035208">
       <notes>
-        <note category="location">src/app/data/content.ts:243</note>
+        <note category="location">src/app/data/content.ts:247</note>
       </notes>
       <segment>
         <source>Formación en vídeo</source>
@@ -1025,7 +1022,7 @@
     </unit>
     <unit id="737870524365291542">
       <notes>
-        <note category="location">src/app/data/content.ts:243</note>
+        <note category="location">src/app/data/content.ts:247</note>
       </notes>
       <segment>
         <source>Alta en Google</source>
@@ -1033,7 +1030,7 @@
     </unit>
     <unit id="3443568032658596996">
       <notes>
-        <note category="location">src/app/data/content.ts:253</note>
+        <note category="location">src/app/data/content.ts:257</note>
       </notes>
       <segment>
         <source>Paso 1</source>
@@ -1041,7 +1038,7 @@
     </unit>
     <unit id="5432956389258015947">
       <notes>
-        <note category="location">src/app/data/content.ts:257</note>
+        <note category="location">src/app/data/content.ts:261</note>
       </notes>
       <segment>
         <source>Una videollamada para entender cómo trabajas hoy, qué te quita tiempo y qué quieres conseguir.</source>
@@ -1049,7 +1046,7 @@
     </unit>
     <unit id="358705358144980874">
       <notes>
-        <note category="location">src/app/data/content.ts:261</note>
+        <note category="location">src/app/data/content.ts:265</note>
       </notes>
       <segment>
         <source>Paso 2</source>
@@ -1057,7 +1054,7 @@
     </unit>
     <unit id="9137781283351941817">
       <notes>
-        <note category="location">src/app/data/content.ts:264</note>
+        <note category="location">src/app/data/content.ts:268</note>
       </notes>
       <segment>
         <source>Proponemos</source>
@@ -1065,7 +1062,7 @@
     </unit>
     <unit id="543910229297092119">
       <notes>
-        <note category="location">src/app/data/content.ts:265</note>
+        <note category="location">src/app/data/content.ts:269</note>
       </notes>
       <segment>
         <source>Te enviamos por escrito qué vamos a hacer, el precio cerrado y la fecha de entrega. Decides tú.</source>
@@ -1073,7 +1070,7 @@
     </unit>
     <unit id="1906514168502507738">
       <notes>
-        <note category="location">src/app/data/content.ts:269</note>
+        <note category="location">src/app/data/content.ts:273</note>
       </notes>
       <segment>
         <source>Paso 3</source>
@@ -1081,7 +1078,7 @@
     </unit>
     <unit id="8422475935378741637">
       <notes>
-        <note category="location">src/app/data/content.ts:272</note>
+        <note category="location">src/app/data/content.ts:276</note>
       </notes>
       <segment>
         <source>Construimos</source>
@@ -1089,7 +1086,7 @@
     </unit>
     <unit id="4482641864456915460">
       <notes>
-        <note category="location">src/app/data/content.ts:273</note>
+        <note category="location">src/app/data/content.ts:277</note>
       </notes>
       <segment>
         <source>Por fases, para que lo pruebes desde pronto y lo ajustemos con tu uso real.</source>
@@ -1097,7 +1094,7 @@
     </unit>
     <unit id="7113160661181099748">
       <notes>
-        <note category="location">src/app/data/content.ts:277</note>
+        <note category="location">src/app/data/content.ts:281</note>
       </notes>
       <segment>
         <source>Paso 4</source>
@@ -1105,7 +1102,7 @@
     </unit>
     <unit id="7779223300469003531">
       <notes>
-        <note category="location">src/app/data/content.ts:280</note>
+        <note category="location">src/app/data/content.ts:284</note>
       </notes>
       <segment>
         <source>Entregamos</source>
@@ -1113,7 +1110,7 @@
     </unit>
     <unit id="5376508315820683322">
       <notes>
-        <note category="location">src/app/data/content.ts:281</note>
+        <note category="location">src/app/data/content.ts:285</note>
       </notes>
       <segment>
         <source>Lo ponemos en marcha, te enseñamos a usarlo y te entregamos el código y los accesos.</source>
@@ -1121,7 +1118,7 @@
     </unit>
     <unit id="4515178277281189365">
       <notes>
-        <note category="location">src/app/data/content.ts:307</note>
+        <note category="location">src/app/data/content.ts:311</note>
       </notes>
       <segment>
         <source>Esencial</source>
@@ -1129,7 +1126,7 @@
     </unit>
     <unit id="2624152428944423645">
       <notes>
-        <note category="location">src/app/data/content.ts:308</note>
+        <note category="location">src/app/data/content.ts:312</note>
       </notes>
       <segment>
         <source>Web estática</source>
@@ -1137,7 +1134,7 @@
     </unit>
     <unit id="264101233418000258">
       <notes>
-        <note category="location">src/app/data/content.ts:311</note>
+        <note category="location">src/app/data/content.ts:315</note>
       </notes>
       <segment>
         <source>Negociable</source>
@@ -1145,7 +1142,7 @@
     </unit>
     <unit id="851157957112734875">
       <notes>
-        <note category="location">src/app/data/content.ts:312</note>
+        <note category="location">src/app/data/content.ts:316</note>
       </notes>
       <segment>
         <source>Una página bien contada y tu ficha de Google, listas en una semana.</source>
@@ -1153,7 +1150,7 @@
     </unit>
     <unit id="6188493279854430865">
       <notes>
-        <note category="location">src/app/data/content.ts:315</note>
+        <note category="location">src/app/data/content.ts:319</note>
       </notes>
       <segment>
         <source>Web de una página, larga y bien contada</source>
@@ -1161,7 +1158,7 @@
     </unit>
     <unit id="6526667028585719568">
       <notes>
-        <note category="location">src/app/data/content.ts:316</note>
+        <note category="location">src/app/data/content.ts:320</note>
       </notes>
       <segment>
         <source>Diseño a medida, no plantilla</source>
@@ -1169,7 +1166,7 @@
     </unit>
     <unit id="1213793795866756753">
       <notes>
-        <note category="location">src/app/data/content.ts:317</note>
+        <note category="location">src/app/data/content.ts:321</note>
       </notes>
       <segment>
         <source>Ficha de Google optimizada</source>
@@ -1177,7 +1174,7 @@
     </unit>
     <unit id="8976020525951791536">
       <notes>
-        <note category="location">src/app/data/content.ts:318</note>
+        <note category="location">src/app/data/content.ts:322</note>
       </notes>
       <segment>
         <source>Botón de WhatsApp y llamada</source>
@@ -1185,7 +1182,7 @@
     </unit>
     <unit id="3822053402260955640">
       <notes>
-        <note category="location">src/app/data/content.ts:319</note>
+        <note category="location">src/app/data/content.ts:323</note>
       </notes>
       <segment>
         <source>Lista en una semana</source>
@@ -1193,7 +1190,7 @@
     </unit>
     <unit id="4602645774383178977">
       <notes>
-        <note category="location">src/app/data/content.ts:321</note>
+        <note category="location">src/app/data/content.ts:325</note>
       </notes>
       <segment>
         <source>Empezar por aquí</source>
@@ -1201,7 +1198,7 @@
     </unit>
     <unit id="6730348805420511260">
       <notes>
-        <note category="location">src/app/data/content.ts:325</note>
+        <note category="location">src/app/data/content.ts:329</note>
       </notes>
       <segment>
         <source>Profesional</source>
@@ -1209,7 +1206,7 @@
     </unit>
     <unit id="6688918131600026379">
       <notes>
-        <note category="location">src/app/data/content.ts:326</note>
+        <note category="location">src/app/data/content.ts:330</note>
       </notes>
       <segment>
         <source>Web con animaciones</source>
@@ -1217,7 +1214,7 @@
     </unit>
     <unit id="9060525681920931973">
       <notes>
-        <note category="location">src/app/data/content.ts:329</note>
+        <note category="location">src/app/data/content.ts:333</note>
       </notes>
       <segment>
         <source>Diseño a medida y movimiento al servicio de la lectura, sin perder velocidad.</source>
@@ -1225,7 +1222,7 @@
     </unit>
     <unit id="2222477381019959165">
       <notes>
-        <note category="location">src/app/data/content.ts:332</note>
+        <note category="location">src/app/data/content.ts:336</note>
       </notes>
       <segment>
         <source>Todo lo del plan Esencial</source>
@@ -1233,7 +1230,7 @@
     </unit>
     <unit id="3548751831179145948">
       <notes>
-        <note category="location">src/app/data/content.ts:333</note>
+        <note category="location">src/app/data/content.ts:337</note>
       </notes>
       <segment>
         <source>Panel de administrador</source>
@@ -1241,7 +1238,7 @@
     </unit>
     <unit id="1209581350844017925">
       <notes>
-        <note category="location">src/app/data/content.ts:334</note>
+        <note category="location">src/app/data/content.ts:338</note>
       </notes>
       <segment>
         <source>Varias páginas o secciones</source>
@@ -1249,7 +1246,7 @@
     </unit>
     <unit id="2007825997473732649">
       <notes>
-        <note category="location">src/app/data/content.ts:335</note>
+        <note category="location">src/app/data/content.ts:339</note>
       </notes>
       <segment>
         <source>SEO local por servicio y por zona</source>
@@ -1257,7 +1254,7 @@
     </unit>
     <unit id="3037545047601190293">
       <notes>
-        <note category="location">src/app/data/content.ts:336</note>
+        <note category="location">src/app/data/content.ts:340</note>
       </notes>
       <segment>
         <source>Analítica con objetivos medibles</source>
@@ -1265,7 +1262,7 @@
     </unit>
     <unit id="178466016352366720">
       <notes>
-        <note category="location">src/app/data/content.ts:338</note>
+        <note category="location">src/app/data/content.ts:342</note>
       </notes>
       <segment>
         <source>Quiero esta</source>
@@ -1273,7 +1270,7 @@
     </unit>
     <unit id="2868806520479887044">
       <notes>
-        <note category="location">src/app/data/content.ts:342</note>
+        <note category="location">src/app/data/content.ts:346</note>
       </notes>
       <segment>
         <source>Integral</source>
@@ -1281,7 +1278,7 @@
     </unit>
     <unit id="5756969565311790782">
       <notes>
-        <note category="location">src/app/data/content.ts:343</note>
+        <note category="location">src/app/data/content.ts:347</note>
       </notes>
       <segment>
         <source>Animaciones y sistema de citas</source>
@@ -1289,7 +1286,7 @@
     </unit>
     <unit id="3200827777468725751">
       <notes>
-        <note category="location">src/app/data/content.ts:346</note>
+        <note category="location">src/app/data/content.ts:350</note>
       </notes>
       <segment>
         <source>Reservas integradas en la web, con avisos automáticos y panel de gestión.</source>
@@ -1297,7 +1294,7 @@
     </unit>
     <unit id="5458504228331982184">
       <notes>
-        <note category="location">src/app/data/content.ts:349</note>
+        <note category="location">src/app/data/content.ts:353</note>
       </notes>
       <segment>
         <source>Todo lo del plan Profesional</source>
@@ -1305,7 +1302,7 @@
     </unit>
     <unit id="3666482900184420282">
       <notes>
-        <note category="location">src/app/data/content.ts:350</note>
+        <note category="location">src/app/data/content.ts:354</note>
       </notes>
       <segment>
         <source>Sistema de reservas y citas integrado</source>
@@ -1313,7 +1310,7 @@
     </unit>
     <unit id="2653618232016448816">
       <notes>
-        <note category="location">src/app/data/content.ts:351</note>
+        <note category="location">src/app/data/content.ts:355</note>
       </notes>
       <segment>
         <source>Avisos automáticos al cliente y a ti</source>
@@ -1321,7 +1318,7 @@
     </unit>
     <unit id="2547997082225948137">
       <notes>
-        <note category="location">src/app/data/content.ts:352</note>
+        <note category="location">src/app/data/content.ts:356</note>
       </notes>
       <segment>
         <source>Conectado con tus herramientas</source>
@@ -1329,7 +1326,7 @@
     </unit>
     <unit id="1384742522541094433">
       <notes>
-        <note category="location">src/app/data/content.ts:353</note>
+        <note category="location">src/app/data/content.ts:357</note>
       </notes>
       <segment>
         <source>Panel para gestionar la agenda</source>
@@ -1337,7 +1334,7 @@
     </unit>
     <unit id="4607593845816218391">
       <notes>
-        <note category="location">src/app/data/content.ts:355</note>
+        <note category="location">src/app/data/content.ts:359</note>
       </notes>
       <segment>
         <source>Hablemos del proyecto</source>
@@ -1345,7 +1342,7 @@
     </unit>
     <unit id="6160099160380082020">
       <notes>
-        <note category="location">src/app/data/content.ts:379</note>
+        <note category="location">src/app/data/content.ts:383</note>
       </notes>
       <segment>
         <source>Precio cerrado antes de empezar</source>
@@ -1353,7 +1350,7 @@
     </unit>
     <unit id="1915726351233833700">
       <notes>
-        <note category="location">src/app/data/content.ts:380</note>
+        <note category="location">src/app/data/content.ts:384</note>
       </notes>
       <segment>
         <source>El presupuesto que firmas es el que pagas. Si aparece algo fuera de alcance, se te dice y decides tú; no llega como sorpresa en la factura.</source>
@@ -1361,7 +1358,7 @@
     </unit>
     <unit id="1682843603759339183">
       <notes>
-        <note category="location">src/app/data/content.ts:384</note>
+        <note category="location">src/app/data/content.ts:388</note>
       </notes>
       <segment>
         <source>La web es tuya, toda</source>
@@ -1369,7 +1366,7 @@
     </unit>
     <unit id="3174111139800561154">
       <notes>
-        <note category="location">src/app/data/content.ts:385</note>
+        <note category="location">src/app/data/content.ts:389</note>
       </notes>
       <segment>
         <source>Dominio a tu nombre, código entregado y accesos en tu poder. Puedes llevártela a otro estudio cuando quieras y no te pediremos explicaciones.</source>
@@ -1377,23 +1374,23 @@
     </unit>
     <unit id="2439673895820570682">
       <notes>
-        <note category="location">src/app/data/content.ts:389</note>
+        <note category="location">src/app/data/content.ts:393</note>
       </notes>
       <segment>
         <source>Plazo con fecha, no “pronto”</source>
       <target>A date, not “soon”</target></segment>
     </unit>
-    <unit id="5055457294676469880">
+    <unit id="955148800619437330">
       <notes>
-        <note category="location">src/app/data/content.ts:390</note>
+        <note category="location">src/app/data/content.ts:394</note>
       </notes>
       <segment>
-        <source>Te damos día de entrega desde el principio. Si se mueve por nuestra culpa, descontamos; si se mueve porque faltan tus fotos, te avisamos el mismo día.</source>
-      <target>We give you a delivery date from the start. If it slips because of us, we take it off the bill; if it slips because your photos are missing, we tell you the same day.</target></segment>
+        <source>Te damos día de entrega desde el principio. Si se mueve por nuestra culpa, te descontamos un 5 % por cada día laborable de retraso, hasta un 25 %; si se mueve porque faltan tus fotos, te avisamos el mismo día.</source>
+      <target>We give you a delivery date from the start. If it slips because of us, we take 5% off for every working day of delay, up to 25%; if it slips because your photos are missing, we let you know the same day.</target></segment>
     </unit>
     <unit id="4401046524274650008">
       <notes>
-        <note category="location">src/app/data/content.ts:394</note>
+        <note category="location">src/app/data/content.ts:398</note>
       </notes>
       <segment>
         <source>Te enseñamos a manejarla</source>
@@ -1401,7 +1398,7 @@
     </unit>
     <unit id="4935391523500578724">
       <notes>
-        <note category="location">src/app/data/content.ts:395</note>
+        <note category="location">src/app/data/content.ts:399</note>
       </notes>
       <segment>
         <source>Al publicar te grabamos vídeos cortos con lo que vas a tocar tú, y durante el primer mes nos escribes por WhatsApp cuando te atasques. No dependes de nadie para cambiar un horario.</source>
@@ -1409,23 +1406,23 @@
     </unit>
     <unit id="1250074672727095421">
       <notes>
-        <note category="location">src/app/data/content.ts:399</note>
+        <note category="location">src/app/data/content.ts:403</note>
       </notes>
       <segment>
         <source>Lo medimos y te lo enseñamos</source>
       <target>We measure it and show you</target></segment>
     </unit>
-    <unit id="6015458765791797577">
+    <unit id="6500719890022929797">
       <notes>
-        <note category="location">src/app/data/content.ts:400</note>
+        <note category="location">src/app/data/content.ts:404</note>
       </notes>
       <segment>
-        <source>Velocidad, visitas y contactos, en un informe en castellano. Empezando por esta misma página: pásala por PageSpeed Insights y compruébalo tú.</source>
-      <target>Speed, visits and enquiries, in a plain-language report. Starting with this very page: run it through PageSpeed Insights and see for yourself.</target></segment>
+        <source>Velocidad, visitas y contactos, en un informe en castellano. Empezando por esta misma página: mide su velocidad con la herramienta gratuita de Google y compruébalo tú.</source>
+      <target>Speed, visits and enquiries, in a plain-language report. Starting with this very page: measure its speed with Google’s free tool and see for yourself.</target></segment>
     </unit>
     <unit id="57260814749461090">
       <notes>
-        <note category="location">src/app/data/content.ts:404</note>
+        <note category="location">src/app/data/content.ts:408</note>
       </notes>
       <segment>
         <source>Te contesta quien la hace</source>
@@ -1433,7 +1430,7 @@
     </unit>
     <unit id="5439135987289364856">
       <notes>
-        <note category="location">src/app/data/content.ts:405</note>
+        <note category="location">src/app/data/content.ts:409</note>
       </notes>
       <segment>
         <source>No hay cuenta ni centralita. Escribes y responde la persona que tiene el proyecto en las manos.</source>
@@ -1441,7 +1438,7 @@
     </unit>
     <unit id="303093105924656014">
       <notes>
-        <note category="location">src/app/data/content.ts:418</note>
+        <note category="location">src/app/data/content.ts:422</note>
       </notes>
       <segment>
         <source>¿Cuánto se tarda en tener la web funcionando?</source>
@@ -1449,7 +1446,7 @@
     </unit>
     <unit id="237091051796997040">
       <notes>
-        <note category="location">src/app/data/content.ts:419</note>
+        <note category="location">src/app/data/content.ts:423</note>
       </notes>
       <segment>
         <source>Una semana. El día 1 hablamos, del 2 al 4 diseñamos, el 5 y el 6 desarrollamos y el día 7 se publica. El plazo solo se alarga si faltan fotos o textos por tu parte, y te avisamos en cuanto ocurre.</source>
@@ -1457,7 +1454,7 @@
     </unit>
     <unit id="2541844937214087065">
       <notes>
-        <note category="location">src/app/data/content.ts:422</note>
+        <note category="location">src/app/data/content.ts:426</note>
       </notes>
       <segment>
         <source>¿Cuánto cuesta y de qué depende el precio?</source>
@@ -1465,7 +1462,7 @@
     </unit>
     <unit id="3781382450961418516">
       <notes>
-        <note category="location">src/app/data/content.ts:423</note>
+        <note category="location">src/app/data/content.ts:427</note>
       </notes>
       <segment>
         <source>Una web estática va de 350 € a 400 € y es negociable. Con animaciones, de 450 € a 700 €. Con animaciones y sistema de citas, de 1.000 € a 1.100 €. Dentro de cada horquilla el precio depende del número de páginas y de las integraciones, y se cierra por escrito antes de empezar: el presupuesto que firmas es el que pagas.</source>
@@ -1473,7 +1470,7 @@
     </unit>
     <unit id="6622344477911930843">
       <notes>
-        <note category="location">src/app/data/content.ts:426</note>
+        <note category="location">src/app/data/content.ts:430</note>
       </notes>
       <segment>
         <source>¿Cómo se paga?</source>
@@ -1481,7 +1478,7 @@
     </unit>
     <unit id="637954793537538293">
       <notes>
-        <note category="location">src/app/data/content.ts:427</note>
+        <note category="location">src/app/data/content.ts:431</note>
       </notes>
       <segment>
         <source>La mitad al empezar y la mitad al publicar. Sin cuotas escondidas: el mantenimiento es aparte, opcional, y solo si lo quieres.</source>
@@ -1489,7 +1486,7 @@
     </unit>
     <unit id="4512461883506114814">
       <notes>
-        <note category="location">src/app/data/content.ts:430</note>
+        <note category="location">src/app/data/content.ts:434</note>
       </notes>
       <segment>
         <source>Trabajáis en remoto. ¿Eso me afecta en algo?</source>
@@ -1497,7 +1494,7 @@
     </unit>
     <unit id="6599662753226985093">
       <notes>
-        <note category="location">src/app/data/content.ts:431</note>
+        <note category="location">src/app/data/content.ts:435</note>
       </notes>
       <segment>
         <source>En el precio, para bien: sin oficina que mantener, el presupuesto se va entero a tu proyecto. El trabajo se hace por videollamada y con un documento compartido donde ves el avance cada día. Si prefieres vernos en persona para arrancar, se organiza.</source>
@@ -1505,7 +1502,7 @@
     </unit>
     <unit id="6553680478543374843">
       <notes>
-        <note category="location">src/app/data/content.ts:434</note>
+        <note category="location">src/app/data/content.ts:438</note>
       </notes>
       <segment>
         <source>No tengo fotos buenas de mi negocio. ¿Es un problema?</source>
@@ -1513,7 +1510,7 @@
     </unit>
     <unit id="8211040416514588025">
       <notes>
-        <note category="location">src/app/data/content.ts:435</note>
+        <note category="location">src/app/data/content.ts:439</note>
       </notes>
       <segment>
         <source>No. Te enviamos una guía para hacerlas tú con el móvil, y si prefieres, coordinamos a un fotógrafo en tu ciudad. Mientras tanto usamos recursos de calidad para que la web pueda salir a tiempo.</source>
@@ -1521,7 +1518,7 @@
     </unit>
     <unit id="9136966412035724451">
       <notes>
-        <note category="location">src/app/data/content.ts:438</note>
+        <note category="location">src/app/data/content.ts:442</note>
       </notes>
       <segment>
         <source>¿La web es mía o me quedo atado a vosotros?</source>
@@ -1529,7 +1526,7 @@
     </unit>
     <unit id="1056918267131594080">
       <notes>
-        <note category="location">src/app/data/content.ts:439</note>
+        <note category="location">src/app/data/content.ts:443</note>
       </notes>
       <segment>
         <source>Es tuya. El dominio se registra a tu nombre, te entregamos el código y los accesos, y puedes llevártela cuando quieras. El mantenimiento es opcional y se cancela con un mes de aviso.</source>
@@ -1537,7 +1534,7 @@
     </unit>
     <unit id="5900307240898890011">
       <notes>
-        <note category="location">src/app/data/content.ts:442</note>
+        <note category="location">src/app/data/content.ts:446</note>
       </notes>
       <segment>
         <source>¿Y si a mitad del proyecto quiero cambiar cosas?</source>
@@ -1545,7 +1542,7 @@
     </unit>
     <unit id="8339275469700936533">
       <notes>
-        <note category="location">src/app/data/content.ts:443</note>
+        <note category="location">src/app/data/content.ts:447</note>
       </notes>
       <segment>
         <source>Durante el diseño hay dos rondas de cambios incluidas, que es donde salen casi todos. Si el cambio llega después y toca el alcance, te decimos qué cuesta y decides tú; nunca aparece de sorpresa en la factura.</source>
@@ -1553,7 +1550,7 @@
     </unit>
     <unit id="4036632370427093570">
       <notes>
-        <note category="location">src/app/data/content.ts:446</note>
+        <note category="location">src/app/data/content.ts:450</note>
       </notes>
       <segment>
         <source>¿Podré cambiar textos o precios yo mismo?</source>
@@ -1561,7 +1558,7 @@
     </unit>
     <unit id="4734311729007584690">
       <notes>
-        <note category="location">src/app/data/content.ts:447</note>
+        <note category="location">src/app/data/content.ts:451</note>
       </notes>
       <segment>
         <source>Sí. Dejamos editable lo que se toca a menudo (carta, horarios, precios, ofertas) y te grabamos un vídeo corto explicando cómo. Si prefieres no tocar nada, lo hacemos nosotros dentro del mantenimiento.</source>
@@ -1569,7 +1566,7 @@
     </unit>
     <unit id="7541680752120326246">
       <notes>
-        <note category="location">src/app/data/content.ts:450</note>
+        <note category="location">src/app/data/content.ts:454</note>
       </notes>
       <segment>
         <source>¿Qué pasa si ya tengo una web hecha?</source>
@@ -1577,7 +1574,7 @@
     </unit>
     <unit id="132339149200678706">
       <notes>
-        <note category="location">src/app/data/content.ts:451</note>
+        <note category="location">src/app/data/content.ts:455</note>
       </notes>
       <segment>
         <source>La auditamos gratis. A veces sale más a cuenta arreglar lo que tienes que rehacerlo, y te lo diremos aunque nos convenga lo contrario. Si la rehacemos, mantenemos las direcciones que ya posicionan.</source>
@@ -1585,7 +1582,7 @@
     </unit>
     <unit id="3983715433278350739">
       <notes>
-        <note category="location">src/app/data/content.ts:456</note>
+        <note category="location">src/app/data/content.ts:460</note>
       </notes>
       <segment>
         <source>¿Dónde estáis? ¿Solo hacéis webs en Alicante?</source>
@@ -1593,7 +1590,7 @@
     </unit>
     <unit id="4162056906688610502">
       <notes>
-        <note category="location">src/app/data/content.ts:457</note>
+        <note category="location">src/app/data/content.ts:461</note>
       </notes>
       <segment>
         <source>Estamos en Mutxamel, junto a Alicante, y hacemos webs para negocios de toda España. Con los de la provincia de Alicante podemos vernos en persona para arrancar; con el resto, todo funciona igual de bien por videollamada.</source>
@@ -1601,7 +1598,7 @@
     </unit>
     <unit id="8448695347212594898">
       <notes>
-        <note category="location">src/app/data/content.ts:460</note>
+        <note category="location">src/app/data/content.ts:464</note>
       </notes>
       <segment>
         <source>¿Solo hacéis páginas web?</source>
@@ -1609,11 +1606,27 @@
     </unit>
     <unit id="3814238615608439673">
       <notes>
-        <note category="location">src/app/data/content.ts:461</note>
+        <note category="location">src/app/data/content.ts:465</note>
       </notes>
       <segment>
         <source>No. También hacemos tiendas online, software a medida, soluciones con inteligencia artificial y, en general, cualquier proyecto informático que necesite tu negocio. Cuéntanos qué te hace falta y te decimos con sinceridad si podemos hacerlo, cuánto cuesta y cuánto tarda.</source>
       <target>No. We also build online shops, bespoke software, artificial intelligence solutions and, in general, any IT project your business needs. Tell us what you need and we’ll tell you honestly whether we can do it, what it costs and how long it takes.</target></segment>
+    </unit>
+    <unit id="5839297039861065534">
+      <notes>
+        <note category="location">src/app/data/content.ts:468</note>
+      </notes>
+      <segment>
+        <source>¿Por qué no me la hago yo con Wix o algo parecido?</source>
+      <target>Why not build it myself with Wix or something similar?</target></segment>
+    </unit>
+    <unit id="2070458096772656710">
+      <notes>
+        <note category="location">src/app/data/content.ts:469</note>
+      </notes>
+      <segment>
+        <source>Puedes, y a veces para empezar basta. La diferencia es que no la montas tú: trabajamos tu ficha de Google y las páginas por zona para que te encuentren, la web carga rápido en el móvil, es tuya y no dependes de la cuota de una plataforma. Si con lo que necesitas te basta una plantilla, te lo diremos.</source>
+      <target>You can, and sometimes that’s enough to get started. The difference is that you don’t have to build it: we work on your Google profile and area pages so people find you, the website loads fast on phones, it’s yours and you don’t depend on a platform’s subscription. If a template is enough for what you need, we’ll tell you.</target></segment>
     </unit>
     <unit id="6168025029375206528">
       <notes>
@@ -1805,6 +1818,7 @@
     <unit id="6288119942575606064">
       <notes>
         <note category="location">src/app/data/local.ts:35</note>
+        <note category="location">src/app/data/services.ts:157</note>
       </notes>
       <segment>
         <source>Precio cerrado</source>
@@ -1926,7 +1940,6 @@
       <notes>
         <note category="location">src/app/data/services.ts:60</note>
         <note category="location">src/app/data/services.ts:191</note>
-        <note category="location">src/app/data/services.ts:228</note>
       </notes>
       <segment>
         <source>A medida</source>
@@ -1996,7 +2009,7 @@
         <note category="location">src/app/data/services.ts:160</note>
         <note category="location">src/app/data/services.ts:195</note>
         <note category="location">src/app/data/services.ts:230</note>
-        <note category="location">src/app/data/services.ts:265</note>
+        <note category="location">src/app/data/services.ts:269</note>
       </notes>
       <segment>
         <source>Lo que </source>
@@ -2019,6 +2032,14 @@
       <segment>
         <source>para ti.</source>
       <target>for you.</target></segment>
+    </unit>
+    <unit id="5345718061161715392">
+      <notes>
+        <note category="location">src/app/data/services.ts:66</note>
+      </notes>
+      <segment>
+        <source>Dirección de arte</source>
+      <target>Art direction</target></segment>
     </unit>
     <unit id="4011692821645355453">
       <notes>
@@ -2044,6 +2065,14 @@
         <source>Una versión navegable para que la pruebes y opines antes de escribir código.</source>
       <target>A clickable version for you to try and give feedback on before any code is written.</target></segment>
     </unit>
+    <unit id="3435808904471455951">
+      <notes>
+        <note category="location">src/app/data/services.ts:68</note>
+      </notes>
+      <segment>
+        <source>Sistema de componentes</source>
+      <target>Component system</target></segment>
+    </unit>
     <unit id="120748197763041457">
       <notes>
         <note category="location">src/app/data/services.ts:68</note>
@@ -2064,7 +2093,7 @@
       <notes>
         <note category="location">src/app/data/services.ts:72</note>
         <note category="location">src/app/data/services.ts:96</note>
-        <note category="location">src/app/data/services.ts:272</note>
+        <note category="location">src/app/data/services.ts:276</note>
         <note category="location">src/app/pages/local/local-page.ts:113</note>
         <note category="location">src/app/sections/cta-card/cta-card.ts:54</note>
       </notes>
@@ -2135,6 +2164,15 @@
       <segment>
         <source>A mano</source>
       <target>Hand-coded</target></segment>
+    </unit>
+    <unit id="2824152956518406040">
+      <notes>
+        <note category="location">src/app/data/services.ts:84</note>
+        <note category="location">src/app/data/services.ts:90</note>
+      </notes>
+      <segment>
+        <source>HTML, CSS y JavaScript</source>
+      <target>HTML, CSS and JavaScript</target></segment>
     </unit>
     <unit id="4299637836927340697">
       <notes>
@@ -2248,6 +2286,14 @@
         <source>Contraste, teclado y lectores de pantalla, comprobados antes de publicar.</source>
       <target>Contrast, keyboard and screen readers, checked before going live.</target></segment>
     </unit>
+    <unit id="2498597053901479136">
+      <notes>
+        <note category="location">src/app/data/services.ts:93</note>
+      </notes>
+      <segment>
+        <source>Hosting configurado</source>
+      <target>Hosting set up</target></segment>
+    </unit>
     <unit id="357352099291335810">
       <notes>
         <note category="location">src/app/data/services.ts:93</note>
@@ -2337,21 +2383,21 @@
         <source>Completa y optimizada: horarios, fotos, categorías y enlace a tu web.</source>
       <target>Complete and optimised: opening hours, photos, categories and a link to your website.</target></segment>
     </unit>
-    <unit id="1721827980245086554">
+    <unit id="12541135793590170">
       <notes>
         <note category="location">src/app/data/services.ts:109</note>
       </notes>
       <segment>
-        <source>Schema</source>
-      <target>Schema</target></segment>
+        <source>Datos</source>
+      <target>Data</target></segment>
     </unit>
-    <unit id="9111253306687059280">
+    <unit id="8715626289741461913">
       <notes>
         <note category="location">src/app/data/services.ts:109</note>
       </notes>
       <segment>
-        <source>Datos estructurados</source>
-      <target>Structured data</target></segment>
+        <source>Para que Google te entienda</source>
+      <target>So Google understands you</target></segment>
     </unit>
     <unit id="5505775196665686492">
       <notes>
@@ -2417,13 +2463,21 @@
         <source>Tu ficha de Google, completa y conectada con la web.</source>
       <target>Your Google Business Profile, complete and linked to your website.</target></segment>
     </unit>
-    <unit id="6471240023468985632">
+    <unit id="3745493340451856195">
       <notes>
         <note category="location">src/app/data/services.ts:115</note>
       </notes>
       <segment>
-        <source>Datos estructurados de negocio local, horario y servicios.</source>
-      <target>Structured data for local business, opening hours and services.</target></segment>
+        <source>Datos para Google</source>
+      <target>Data for Google</target></segment>
+    </unit>
+    <unit id="8212991133407287725">
+      <notes>
+        <note category="location">src/app/data/services.ts:115</note>
+      </notes>
+      <segment>
+        <source>Tu horario, tu zona y tus servicios, escritos en la web de forma que Google los entiende.</source>
+      <target>Your hours, your area and your services, written into the website in a way Google understands.</target></segment>
     </unit>
     <unit id="447500067447099604">
       <notes>
@@ -2588,13 +2642,21 @@
         <source>Conectado a la web para responder desde un solo sitio.</source>
       <target>Connected to the website so you can reply from one place.</target></segment>
     </unit>
-    <unit id="5902325770778052840">
+    <unit id="4677297501223702946">
       <notes>
         <note category="location">src/app/data/services.ts:140</note>
       </notes>
       <segment>
-        <source>Pedidos y cobros desde la web cuando tu negocio los necesita.</source>
-      <target>Orders and payments from the website when your business needs them.</target></segment>
+        <source>Encargos y pagos</source>
+      <target>Orders and payments</target></segment>
+    </unit>
+    <unit id="276821680949046038">
+      <notes>
+        <note category="location">src/app/data/services.ts:140</note>
+      </notes>
+      <segment>
+        <source>Encargos con fecha y hora de recogida, y pago o señal desde la web: de la tarta de cumpleaños a la mesa para diez.</source>
+      <target>Orders with a pickup date and time, and payment or a deposit online: from a birthday cake to a table for ten.</target></segment>
     </unit>
     <unit id="632125269895536422">
       <notes>
@@ -2684,29 +2746,21 @@
         <source>Tus clientes compran cuando les viene bien, no solo en horario de tienda.</source>
       <target>Your customers buy when it suits them, not only during opening hours.</target></segment>
     </unit>
-    <unit id="5658879720974586855">
+    <unit id="1648272311319276195">
       <notes>
         <note category="location">src/app/data/services.ts:157</note>
       </notes>
       <segment>
-        <source>Móvil</source>
-      <target>Mobile</target></segment>
+        <source>desde 1.200 €</source>
+      <target>from €1,200</target></segment>
     </unit>
-    <unit id="360497087320889503">
+    <unit id="2612475705174846242">
       <notes>
         <note category="location">src/app/data/services.ts:157</note>
       </notes>
       <segment>
-        <source>Comprar desde el teléfono</source>
-      <target>Shopping from the phone</target></segment>
-    </unit>
-    <unit id="3286756784066544369">
-      <notes>
-        <note category="location">src/app/data/services.ts:157</note>
-      </notes>
-      <segment>
-        <source>Carrito y pago cómodos en pantalla pequeña, probados en móviles reales.</source>
-      <target>A basket and checkout that are easy on a small screen, tested on real phones.</target></segment>
+        <source>Por escrito antes de empezar, según los productos, los pagos y los envíos. IVA no incluido.</source>
+      <target>In writing before we start, based on your products, payments and shipping. VAT not included.</target></segment>
     </unit>
     <unit id="5767446336938113608">
       <notes>
@@ -2772,13 +2826,13 @@
         <source>Pago con tarjeta y otros métodos habituales, a través de pasarelas de pago reconocidas.</source>
       <target>Card payments and other common methods, through well-known payment gateways.</target></segment>
     </unit>
-    <unit id="182768850049827984">
+    <unit id="7534894818412019170">
       <notes>
         <note category="location">src/app/data/services.ts:164</note>
       </notes>
       <segment>
-        <source>Gastos de envío por zona o por peso, seguimiento del pedido y avisos automáticos al cliente.</source>
-      <target>Shipping costs by zone or weight, order tracking and automatic notifications for the customer.</target></segment>
+        <source>Envío a domicilio con gastos por zona o por peso, o recogida en tu local a la hora que elija el cliente, con avisos automáticos.</source>
+      <target>Home delivery with costs by zone or weight, or pickup at your shop at a time the customer chooses, with automatic notifications.</target></segment>
     </unit>
     <unit id="4760236168441364279">
       <notes>
@@ -2804,13 +2858,13 @@
         <source>¿Cuánto cuesta una tienda online?</source>
       <target>How much does an online shop cost?</target></segment>
     </unit>
-    <unit id="5563325026277231324">
+    <unit id="2646515898101086589">
       <notes>
         <note category="location">src/app/data/services.ts:170</note>
       </notes>
       <segment>
-        <source>Depende del número de productos, de los métodos de pago y de cómo gestionas los envíos. Te enviamos una propuesta con el precio cerrado antes de empezar, y el presupuesto que firmas es el que pagas.</source>
-      <target>It depends on the number of products, the payment methods and how you handle shipping. We send you a proposal with a fixed price before we start, and the quote you sign is what you pay.</target></segment>
+        <source>Desde 1.200 € (IVA no incluido). El precio final depende del número de productos, de los métodos de pago y de cómo gestionas los envíos, y te lo damos cerrado antes de empezar: el presupuesto que firmas es el que pagas.</source>
+      <target>From €1,200 (VAT not included). The final price depends on the number of products, the payment methods and how you handle shipping, and we give it to you fixed before we start: the quote you sign is what you pay.</target></segment>
     </unit>
     <unit id="7714550784704551555">
       <notes>
@@ -3086,13 +3140,13 @@
         <source>no que te lo da.</source>
       <target>not onto it.</target></segment>
     </unit>
-    <unit id="3348210628565061130">
+    <unit id="1504493465440903356">
       <notes>
         <note category="location">src/app/data/services.ts:224</note>
       </notes>
       <segment>
-        <source>Asistentes que responden a tus clientes con la información de tu negocio, automatizaciones que leen y ordenan correos y documentos, y herramientas de IA conectadas con lo que ya usas.</source>
-      <target>Assistants that answer your customers with your business’s information, automations that read and sort emails and documents, and AI tools connected to what you already use.</target></segment>
+        <source>Asistentes que responden a tus clientes en la web o por WhatsApp con la información de tu negocio, automatizaciones que leen y ordenan correos y documentos, y herramientas de IA conectadas con lo que ya usas.</source>
+      <target>Assistants that answer your customers on your website or on WhatsApp with your business’s information, automations that read and sort emails and documents, and AI tools connected to what you already use.</target></segment>
     </unit>
     <unit id="3680027819554360327">
       <notes>
@@ -3102,13 +3156,13 @@
         <source>Asistente siempre activo</source>
       <target>Assistant always on</target></segment>
     </unit>
-    <unit id="6807821056052641895">
+    <unit id="5066516688874491550">
       <notes>
         <note category="location">src/app/data/services.ts:226</note>
       </notes>
       <segment>
-        <source>Resuelve las dudas frecuentes en tu web a cualquier hora, y te pasa lo que no sabe resolver.</source>
-      <target>It answers frequent questions on your website at any hour, and passes on to you what it can’t solve.</target></segment>
+        <source>Resuelve las dudas frecuentes en tu web o por WhatsApp a cualquier hora, y te pasa lo que no sabe resolver.</source>
+      <target>It answers frequent questions on your website or on WhatsApp at any hour, and passes on to you what it can’t solve.</target></segment>
     </unit>
     <unit id="2254023812019584949">
       <notes>
@@ -3134,21 +3188,29 @@
         <source>Contesta con tus horarios, precios y servicios, no con respuestas genéricas.</source>
       <target>It replies with your opening hours, prices and services, not with generic answers.</target></segment>
     </unit>
-    <unit id="2897393241238807823">
+    <unit id="6898560593198121392">
       <notes>
         <note category="location">src/app/data/services.ts:228</note>
       </notes>
       <segment>
-        <source>Donde ya trabajas</source>
-      <target>Where you already work</target></segment>
+        <source>desde 300 €</source>
+      <target>from €300</target></segment>
     </unit>
-    <unit id="1078196157154735295">
+    <unit id="1318345617138352321">
       <notes>
         <note category="location">src/app/data/services.ts:228</note>
       </notes>
       <segment>
-        <source>Correo, hojas de cálculo, agenda o la web: la IA se conecta a lo que ya usas.</source>
-      <target>Email, spreadsheets, calendar or your website: the AI connects to what you already use.</target></segment>
+        <source>Para empezar</source>
+      <target>To get started</target></segment>
+    </unit>
+    <unit id="7454035530261382674">
+      <notes>
+        <note category="location">src/app/data/services.ts:228</note>
+      </notes>
+      <segment>
+        <source>Un primer asistente o una automatización concreta, con precio cerrado antes de empezar. IVA no incluido.</source>
+      <target>A first assistant or one specific automation, with a fixed price before we start. VAT not included.</target></segment>
     </unit>
     <unit id="7807683054330052099">
       <notes>
@@ -3166,13 +3228,13 @@
         <source>con IA.</source>
       <target>with AI.</target></segment>
     </unit>
-    <unit id="4288657243304543446">
+    <unit id="3956739274798009148">
       <notes>
         <note category="location">src/app/data/services.ts:232</note>
       </notes>
       <segment>
-        <source>Un chat que resuelve las dudas de tus clientes con la información de tu negocio y te avisa cuando hace falta una persona.</source>
-      <target>A chat that answers your customers’ questions with your business’s information and lets you know when a person is needed.</target></segment>
+        <source>Contesta a tus clientes en la web o por WhatsApp con la información de tu negocio, y te pasa la conversación cuando hace falta una persona.</source>
+      <target>It answers your customers on your website or on WhatsApp with your business’s information, and hands the conversation over to you when a person is needed.</target></segment>
     </unit>
     <unit id="1030680793526438074">
       <notes>
@@ -3198,9 +3260,25 @@
         <source>Te enseñamos a sacarle partido a la IA en el día a día, con ejemplos de tu propio negocio.</source>
       <target>We show you how to get the most out of AI day to day, with examples from your own business.</target></segment>
     </unit>
-    <unit id="7700009732477464879">
+    <unit id="8963035113637122482">
       <notes>
         <note category="location">src/app/data/services.ts:239</note>
+      </notes>
+      <segment>
+        <source>¿Cómo sería en mi negocio?</source>
+      <target>What would it look like in my business?</target></segment>
+    </unit>
+    <unit id="6833707944935745489">
+      <notes>
+        <note category="location">src/app/data/services.ts:240</note>
+      </notes>
+      <segment>
+        <source>Por ejemplo, en una pastelería: un cliente escribe por WhatsApp a las once de la noche preguntando si hay tarta de chocolate para doce el sábado. El asistente le dice los tamaños y precios de tu carta, toma el encargo con la hora de recogida y te lo deja apuntado. Si pide algo fuera de carta, te avisa para que contestes tú.</source>
+      <target>Take a cake shop: at eleven at night a customer messages on WhatsApp asking if there’s a chocolate cake for twelve on Saturday. The assistant gives them the sizes and prices from your menu, takes the order with the pickup time and leaves it noted for you. If they ask for something off the menu, it lets you know so you can reply yourself.</target></segment>
+    </unit>
+    <unit id="7700009732477464879">
+      <notes>
+        <note category="location">src/app/data/services.ts:243</note>
       </notes>
       <segment>
         <source>¿Qué pasa con mis datos y los de mis clientes?</source>
@@ -3208,7 +3286,7 @@
     </unit>
     <unit id="7079426320027766716">
       <notes>
-        <note category="location">src/app/data/services.ts:240</note>
+        <note category="location">src/app/data/services.ts:244</note>
       </notes>
       <segment>
         <source>Usamos solo los datos que hacen falta para cada tarea y te explicamos por escrito qué servicio los trata y dónde. Si algún dato no debe salir de tu empresa, la solución se diseña para que no salga.</source>
@@ -3216,7 +3294,7 @@
     </unit>
     <unit id="1835929944015129323">
       <notes>
-        <note category="location">src/app/data/services.ts:243</note>
+        <note category="location">src/app/data/services.ts:247</note>
       </notes>
       <segment>
         <source>¿Y si la IA se equivoca?</source>
@@ -3224,7 +3302,7 @@
     </unit>
     <unit id="1474793278015961166">
       <notes>
-        <note category="location">src/app/data/services.ts:244</note>
+        <note category="location">src/app/data/services.ts:248</note>
       </notes>
       <segment>
         <source>Puede pasar, y por eso la usamos en tareas acotadas, con tu información y con una persona revisando lo importante. Antes de ponerla en marcha la probamos con casos reales de tu negocio.</source>
@@ -3232,7 +3310,7 @@
     </unit>
     <unit id="2538172112933273622">
       <notes>
-        <note category="location">src/app/data/services.ts:248</note>
+        <note category="location">src/app/data/services.ts:252</note>
       </notes>
       <segment>
         <source>hablemos de tu idea.</source>
@@ -3240,7 +3318,7 @@
     </unit>
     <unit id="8719858444926384982">
       <notes>
-        <note category="location">src/app/data/services.ts:250</note>
+        <note category="location">src/app/data/services.ts:254</note>
       </notes>
       <segment>
         <source>Inteligencia artificial para empresas en Alicante — MakeWeb</source>
@@ -3248,7 +3326,7 @@
     </unit>
     <unit id="866880576692933158">
       <notes>
-        <note category="location">src/app/data/services.ts:252</note>
+        <note category="location">src/app/data/services.ts:256</note>
       </notes>
       <segment>
         <source>Soluciones de inteligencia artificial para negocios de Alicante y toda España: asistentes para tu web, automatización de correos y documentos, y formación.</source>
@@ -3256,7 +3334,7 @@
     </unit>
     <unit id="9150014301684643670">
       <notes>
-        <note category="location">src/app/data/services.ts:257</note>
+        <note category="location">src/app/data/services.ts:261</note>
       </notes>
       <segment>
         <source>Mantenimiento</source>
@@ -3264,7 +3342,7 @@
     </unit>
     <unit id="6377664857123874457">
       <notes>
-        <note category="location">src/app/data/services.ts:258</note>
+        <note category="location">src/app/data/services.ts:262</note>
       </notes>
       <segment>
         <source>No te dejamos </source>
@@ -3272,7 +3350,7 @@
     </unit>
     <unit id="9106358075172307761">
       <notes>
-        <note category="location">src/app/data/services.ts:258</note>
+        <note category="location">src/app/data/services.ts:262</note>
       </notes>
       <segment>
         <source>con la web </source>
@@ -3280,47 +3358,47 @@
     </unit>
     <unit id="4708955175701138145">
       <notes>
-        <note category="location">src/app/data/services.ts:258</note>
+        <note category="location">src/app/data/services.ts:262</note>
       </notes>
       <segment>
         <source>y adiós.</source>
       <target>and vanish.</target></segment>
     </unit>
-    <unit id="6285562581399447393">
+    <unit id="2555047218658766882">
       <notes>
-        <note category="location">src/app/data/services.ts:259</note>
+        <note category="location">src/app/data/services.ts:263</note>
       </notes>
       <segment>
-        <source>Actualizaciones, copias de seguridad y un informe mensual en castellano donde se entiende qué ha pasado. Opcional, y se cancela con un mes de aviso.</source>
-      <target>Updates, backups and a plain-language monthly report that tells you what has happened. Optional, and cancellable with one month’s notice.</target></segment>
+        <source>Actualizaciones, copias de seguridad, los cambios pequeños del mes y un informe en castellano donde se entiende qué ha pasado. Todo en un pack desde 49 €/mes, opcional y sin permanencia.</source>
+      <target>Updates, backups, the month’s small changes and a plain-language report that explains what happened. All in a package from €49/month, optional and with no lock-in.</target></segment>
     </unit>
-    <unit id="6536528119606165672">
+    <unit id="1779573071459169769">
       <notes>
-        <note category="location">src/app/data/services.ts:261</note>
+        <note category="location">src/app/data/services.ts:265</note>
       </notes>
       <segment>
-        <source>Diarias</source>
-      <target>Daily</target></segment>
+        <source>desde 49 €</source>
+      <target>from €49</target></segment>
     </unit>
-    <unit id="8177233061025072469">
+    <unit id="1047189551059185686">
       <notes>
-        <note category="location">src/app/data/services.ts:261</note>
+        <note category="location">src/app/data/services.ts:265</note>
       </notes>
       <segment>
-        <source>Copias de seguridad</source>
-      <target>Backups</target></segment>
+        <source>Al mes, todo incluido</source>
+      <target>A month, all included</target></segment>
     </unit>
-    <unit id="1186175201879062717">
+    <unit id="3889751951107801795">
       <notes>
-        <note category="location">src/app/data/services.ts:261</note>
+        <note category="location">src/app/data/services.ts:265</note>
       </notes>
       <segment>
-        <source>Si algo se rompe, la web vuelve a como estaba el día anterior.</source>
-      <target>If something breaks, the website goes back to how it was the day before.</target></segment>
+        <source>Copias, cambios pequeños e informe en una sola cuota. IVA no incluido.</source>
+      <target>Backups, small changes and a report in a single fee. VAT not included.</target></segment>
     </unit>
     <unit id="7875714114514922443">
       <notes>
-        <note category="location">src/app/data/services.ts:262</note>
+        <note category="location">src/app/data/services.ts:266</note>
       </notes>
       <segment>
         <source>Mensual</source>
@@ -3328,7 +3406,7 @@
     </unit>
     <unit id="490404663035154348">
       <notes>
-        <note category="location">src/app/data/services.ts:262</note>
+        <note category="location">src/app/data/services.ts:266</note>
       </notes>
       <segment>
         <source>Informe en castellano</source>
@@ -3336,7 +3414,7 @@
     </unit>
     <unit id="6807232557290607295">
       <notes>
-        <note category="location">src/app/data/services.ts:262</note>
+        <note category="location">src/app/data/services.ts:266</note>
       </notes>
       <segment>
         <source>Visitas, contactos y velocidad, explicados sin jerga.</source>
@@ -3344,7 +3422,7 @@
     </unit>
     <unit id="4039974669970914245">
       <notes>
-        <note category="location">src/app/data/services.ts:263</note>
+        <note category="location">src/app/data/services.ts:267</note>
       </notes>
       <segment>
         <source>1 mes</source>
@@ -3352,7 +3430,7 @@
     </unit>
     <unit id="8536110060610938628">
       <notes>
-        <note category="location">src/app/data/services.ts:263</note>
+        <note category="location">src/app/data/services.ts:267</note>
       </notes>
       <segment>
         <source>De aviso para cancelar</source>
@@ -3360,7 +3438,7 @@
     </unit>
     <unit id="7654694520326985018">
       <notes>
-        <note category="location">src/app/data/services.ts:263</note>
+        <note category="location">src/app/data/services.ts:267</note>
       </notes>
       <segment>
         <source>Sin permanencia: el mantenimiento es opcional.</source>
@@ -3368,7 +3446,7 @@
     </unit>
     <unit id="5929074882245606597">
       <notes>
-        <note category="location">src/app/data/services.ts:265</note>
+        <note category="location">src/app/data/services.ts:269</note>
       </notes>
       <segment>
         <source>cuidamos </source>
@@ -3376,23 +3454,23 @@
     </unit>
     <unit id="2771462099128994240">
       <notes>
-        <note category="location">src/app/data/services.ts:265</note>
+        <note category="location">src/app/data/services.ts:269</note>
       </notes>
       <segment>
         <source>cada mes.</source>
       <target>every month.</target></segment>
     </unit>
-    <unit id="884463721031876655">
+    <unit id="3007114051952427291">
       <notes>
-        <note category="location">src/app/data/services.ts:267</note>
+        <note category="location">src/app/data/services.ts:271</note>
       </notes>
       <segment>
-        <source>Copias de seguridad automáticas de toda la web.</source>
-      <target>Automatic backups of the whole website.</target></segment>
+        <source>Copias de seguridad automáticas de toda la web: si algo se rompe, vuelve a como estaba el día anterior.</source>
+      <target>Automatic backups of the whole website: if something breaks, it goes back to how it was the day before.</target></segment>
     </unit>
     <unit id="6847162634904684331">
       <notes>
-        <note category="location">src/app/data/services.ts:268</note>
+        <note category="location">src/app/data/services.ts:272</note>
       </notes>
       <segment>
         <source>Textos, precios, horarios o fotos que quieras cambiar, hechos por nosotros.</source>
@@ -3400,7 +3478,7 @@
     </unit>
     <unit id="4431407311903907928">
       <notes>
-        <note category="location">src/app/data/services.ts:269</note>
+        <note category="location">src/app/data/services.ts:273</note>
       </notes>
       <segment>
         <source>Qué ha pasado en tu web este mes, en un informe que se entiende.</source>
@@ -3408,19 +3486,19 @@
     </unit>
     <unit id="5312956958130162800">
       <notes>
-        <note category="location">src/app/data/services.ts:273</note>
+        <note category="location">src/app/data/services.ts:277</note>
       </notes>
       <segment>
         <source>Mantenimiento web en Alicante, sin permanencia — MakeWeb</source>
       <target>Website maintenance in Alicante, no lock-in — MakeWeb</target></segment>
     </unit>
-    <unit id="530154148236351758">
+    <unit id="1026096371524296475">
       <notes>
-        <note category="location">src/app/data/services.ts:275</note>
+        <note category="location">src/app/data/services.ts:279</note>
       </notes>
       <segment>
-        <source>Mantenimiento web opcional: copias de seguridad diarias, cambios mensuales e informe de resultados en castellano. Se cancela con un mes de aviso.</source>
-      <target>Optional website maintenance: daily backups, monthly changes and a plain-language results report. Cancellable with one month’s notice.</target></segment>
+        <source>Mantenimiento web desde 49 €/mes: copias de seguridad diarias, cambios mensuales e informe de resultados en castellano. Sin permanencia, con un mes de aviso.</source>
+      <target>Website maintenance from €49/month: daily backups, monthly changes and a plain-language results report. No lock-in, one month’s notice.</target></segment>
     </unit>
     <unit id="5025265513965441929">
       <notes>
@@ -4907,14 +4985,14 @@
         <source>Horario</source>
       <target>Hours</target></segment>
     </unit>
-    <unit id="8816902001331644614">
+    <unit id="3416693207973498031">
       <notes>
         <note category="location">src/app/sections/contact/contact.html:38,39</note>
         <note category="location">src/app/sections/header/header.html:140,141</note>
       </notes>
       <segment>
-        <source>Lunes a sábado, 10:00 – 00:00</source>
-      <target>Monday to Saturday, 10:00 – 00:00 (Spain)</target></segment>
+        <source>Lunes a sábado · respondemos en menos de 24 h</source>
+      <target>Monday to Saturday · we reply within 24 h</target></segment>
     </unit>
     <unit id="5515921217027721455">
       <notes>
@@ -5525,13 +5603,29 @@
         <source>IVA no incluido</source>
       <target>VAT not included</target></segment>
     </unit>
-    <unit id="3264252765778284704">
+    <unit id="9090454248837269196">
       <notes>
-        <note category="location">src/app/sections/pricing/pricing.html:53,55</note>
+        <note category="location">src/app/sections/pricing/pricing.html:32,33</note>
       </notes>
       <segment>
-        <source> Todos los presupuestos incluyen dominio, certificado de seguridad, aviso legal y política de cookies. Se paga 50 % al empezar y 50 % al publicar. El mantenimiento es aparte y opcional: solo si lo quieres. </source>
-      <target> Every quote includes domain, security certificate, legal notice and cookie policy. You pay 50% when we start and 50% when it goes live. Maintenance is separate and optional: only if you want it. </target></segment>
+        <source>Con IVA: <ph id="0" equiv="INTERPOLATION" disp="{{ withVat(plan.from) }}"/> – <ph id="1" equiv="INTERPOLATION_1" disp="{{ withVat(plan.to) }}"/> €</source>
+      <target>Incl. VAT: <ph id="0" equiv="INTERPOLATION" disp="{{ withVat(plan.from) }}"/> – <ph id="1" equiv="INTERPOLATION_1" disp="{{ withVat(plan.to) }}"/> €</target></segment>
+    </unit>
+    <unit id="7482287859930937459">
+      <notes>
+        <note category="location">src/app/sections/pricing/pricing.html:54,57</note>
+      </notes>
+      <segment>
+        <source> Todos los presupuestos incluyen dominio y alojamiento el primer año, certificado de seguridad, aviso legal y política de cookies. A partir del segundo año, el dominio y el alojamiento los pagas tú directamente al proveedor, a tu nombre y sin margen nuestro. Se paga 50 % al empezar y 50 % al publicar. El mantenimiento es aparte y opcional: un pack desde 49 €/mes, solo si lo quieres. </source>
+      <target> Every quote includes the domain and hosting for the first year, the security certificate, legal notice and cookie policy. From the second year on, you pay for the domain and hosting directly to the provider, in your name and with no markup from us. You pay 50% when we start and 50% when we go live. Maintenance is separate and optional: a package from €9/month, only if you want it. </target></segment>
+    </unit>
+    <unit id="611536944245518015">
+      <notes>
+        <note category="location">src/app/sections/pricing/pricing.html:64,69</note>
+      </notes>
+      <segment>
+        <source> ¿Necesitas algo más que una web? <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/servicios/tiendas-online&quot;&gt;" dispEnd="&lt;/a&gt;">Tiendas online</pc> desde 1.200 €, <pc id="1" equivStart="START_LINK_1" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/servicios/inteligencia-artificial&quot;&gt;" dispEnd="&lt;/a&gt;">inteligencia artificial</pc> desde 300 € y <pc id="2" equivStart="START_LINK_2" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/servicios/software-a-medida&quot;&gt;" dispEnd="&lt;/a&gt;">software a medida</pc> con presupuesto cerrado. IVA aparte. </source>
+      <target> Need more than a website? <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/servicios/tiendas-online&quot;&gt;" dispEnd="&lt;/a&gt;">Online shops</pc> from €,200, <pc id="1" equivStart="START_LINK_1" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/servicios/inteligencia-artificial&quot;&gt;" dispEnd="&lt;/a&gt;">artificial intelligence</pc> from €00 and <pc id="2" equivStart="START_LINK_2" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a routerLink=&quot;/servicios/software-a-medida&quot;&gt;" dispEnd="&lt;/a&gt;">bespoke software</pc> with a fixed quote. VAT not included. </target></segment>
     </unit>
     <unit id="7286846173925835699">
       <notes>
@@ -5817,13 +5911,13 @@
         <source>Hablamos por WhatsApp</source>
       <target>Let’s chat on WhatsApp</target></segment>
     </unit>
-    <unit id="2296268095449457822">
+    <unit id="4372297081380265880">
       <notes>
         <note category="location">src/app/sections/whatsapp/whatsapp-lines.ts:18,20</note>
       </notes>
       <segment>
-        <source>Elige una de las dos líneas. Respondemos de 10:00 a 00:00.</source>
-      <target>Choose one of the two lines. We reply from 10:00 to 00:00 (Spain).</target></segment>
+        <source>Elige una de las dos líneas. Respondemos en menos de 24 horas, de lunes a sábado.</source>
+      <target>Choose either of the two lines. We reply within 24 hours, Monday to Saturday.</target></segment>
     </unit>
     <unit id="2337639091918645418">
       <notes>

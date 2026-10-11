@@ -15,7 +15,7 @@ import { UiActions } from '../../state/ui/ui.actions';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <p class="wal__title" i18n>Hablamos por WhatsApp</p>
-    <p class="wal__note" i18n>Elige una de las dos líneas. Respondemos de 10:00 a 00:00.</p>
+    <p class="wal__note" i18n>Elige una de las dos líneas. Respondemos en menos de 24 horas, de lunes a sábado.</p>
 
     <ul class="wal__list">
       @for (phone of phones; track phone.e164) {

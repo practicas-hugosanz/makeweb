@@ -28,6 +28,7 @@ export const NAV_LINKS: readonly NavLink[] = [
 /** Búsquedas que se van tecleando en el buscador de la portada. */
 export const HERO_QUERIES: readonly string[] = [
   $localize`peluquería cerca de mí`,
+  $localize`pastelería con tartas por encargo`,
   $localize`dentista urgencias hoy`,
   $localize`taller de coches abierto ahora`,
   $localize`restaurante para cenar esta noche`,
@@ -66,9 +67,9 @@ export const SERVICES: readonly Service[] = [
     summary:
       $localize`No diseñamos webs. Diseñamos la primera impresión que te va a ganar clientes. Cada color, cada detalle, pensado para tu negocio, no copiado de una plantilla.`,
     includes: [
-      { label: $localize`Dirección de arte` },
+      { label: $localize`Estilo propio para tu marca` },
       { label: $localize`Demo de la web antes de empezar` },
-      { label: $localize`Sistema de componentes` },
+      { label: $localize`Igual de cuidada en todas las páginas` },
       { label: $localize`Textos incluidos` },
     ],
   },
@@ -78,15 +79,15 @@ export const SERVICES: readonly Service[] = [
     title: $localize`Rápida de verdad, no rápida en el portátil del diseñador`,
     summary:
       $localize`Construimos tu web para que cargue rápido de verdad en todos los dispositivos, comprobado en condiciones reales, tal y como lo va a usar tu cliente.`,
-    // La pila que se entrega al cliente, dicha sin rodeos: HTML, CSS y
-    // JavaScript escritos a mano, y PHP con MySQL solo cuando el negocio
-    // necesita guardar datos. Ni plantillas ni gestores que engordan la web.
+    // Dicho como lo diría el dueño del negocio: la pila técnica (HTML, CSS y
+    // JavaScript a mano, PHP y MySQL si hay datos) vive en la página del
+    // servicio, para quien la busque; en la tarjeta asustaba más que ayudaba.
     includes: [
-      { label: $localize`HTML, CSS y JavaScript` },
-      { label: $localize`PHP, MySQL y phpMyAdmin si lleva base de datos` },
+      { label: $localize`Carga rápido en cualquier móvil` },
+      { label: $localize`Base de datos si la necesitas` },
       { label: $localize`Sin plantillas ni WordPress` },
-      { label: $localize`Accesible AA` },
-      { label: $localize`Hosting configurado` },
+      { label: $localize`Fácil de usar para todo el mundo` },
+      { label: $localize`Publicada y funcionando` },
     ],
   },
   {
@@ -94,10 +95,10 @@ export const SERVICES: readonly Service[] = [
     index: $localize`SEO`,
     title: $localize`Ser el mejor no sirve de nada si no te encuentran`,
     summary:
-      $localize`Nos encargamos de que aparezcas primero cuando alguien busca cerca: ficha de Google, datos estructurados y páginas por zona.`,
+      $localize`Trabajamos tu ficha de Google, los datos de la web y las páginas por zona para que te encuentren cuando buscan cerca. Sin prometer posiciones: dependen también de tus reseñas y del tiempo.`,
     includes: [
       { label: $localize`Google Business` },
-      { label: $localize`Schema local` },
+      { label: $localize`Google entiende tu horario y tu zona` },
       { label: $localize`Páginas por zona` },
       { label: $localize`Reseñas integradas` },
     ],
@@ -126,7 +127,7 @@ export const SERVICES: readonly Service[] = [
     includes: [
       { label: $localize`Catálogo y carrito` },
       { label: $localize`Pagos seguros` },
-      { label: $localize`Envíos y devoluciones` },
+      { label: $localize`Envío o recogida en tienda` },
       { label: $localize`Panel de pedidos y stock` },
     ],
   },
@@ -148,9 +149,9 @@ export const SERVICES: readonly Service[] = [
     index: $localize`IA`,
     title: $localize`Inteligencia artificial que te quita trabajo`,
     summary:
-      $localize`Asistentes que responden a tus clientes con la información de tu negocio, y automatizaciones que leen y ordenan correos y documentos por ti.`,
+      $localize`Asistentes que responden a tus clientes en la web o por WhatsApp con la información de tu negocio, y automatizaciones que leen y ordenan correos y documentos por ti.`,
     includes: [
-      { label: $localize`Asistente para tu web` },
+      { label: $localize`Asistente para web y WhatsApp` },
       { label: $localize`Automatización con IA` },
       { label: $localize`Correos y documentos` },
       { label: $localize`Formación para tu equipo` },
@@ -161,11 +162,14 @@ export const SERVICES: readonly Service[] = [
     index: $localize`Cuidado`,
     title: $localize`No te dejamos con la web y adiós`,
     summary:
-      $localize`Actualizaciones, copias de seguridad y un informe mensual en castellano donde se entiende qué ha pasado.`,
+      $localize`Actualizaciones, copias de seguridad, los cambios pequeños del mes y un informe en castellano donde se entiende qué ha pasado. Todo en una sola cuota.`,
+    // Una cuota y no tres: sueltas sumaban 100 €/mes y espantaban justo al
+    // comercio pequeño que más las necesita.
     includes: [
-      { label: $localize`Copias diarias`, monthly: $localize`desde 50 €/mes` },
-      { label: $localize`Cambios mensuales`, monthly: $localize`desde 30 €/mes` },
-      { label: $localize`Informe de resultados`, monthly: $localize`desde 20 €/mes` },
+      { label: $localize`Copias diarias` },
+      { label: $localize`Cambios mensuales` },
+      { label: $localize`Informe de resultados` },
+      { label: $localize`Todo en un pack`, monthly: $localize`desde 49 €/mes` },
     ],
   },
 ];
@@ -232,7 +236,7 @@ export const PROCESS: readonly ProcessPhase[] = [
     to: 6,
     title: $localize`Desarrollamos`,
     body: $localize`Programamos, conectamos reservas y analítica, y lo probamos en móviles de verdad antes de enseñártelo.`,
-    outputs: [$localize`Web a medida`, $localize`Reservas conectadas`, $localize`Analítica y eventos`],
+    outputs: [$localize`Web a medida`, $localize`Reservas conectadas`, $localize`Medición de visitas y contactos`],
   },
   {
     window: $localize`Día 7`,
@@ -387,7 +391,7 @@ export const COMMITMENTS: readonly Commitment[] = [
   {
     icon: 'calendar',
     title: $localize`Plazo con fecha, no “pronto”`,
-    body: $localize`Te damos día de entrega desde el principio. Si se mueve por nuestra culpa, descontamos; si se mueve porque faltan tus fotos, te avisamos el mismo día.`,
+    body: $localize`Te damos día de entrega desde el principio. Si se mueve por nuestra culpa, te descontamos un 5 % por cada día laborable de retraso, hasta un 25 %; si se mueve porque faltan tus fotos, te avisamos el mismo día.`,
   },
   {
     icon: 'play',
@@ -397,7 +401,7 @@ export const COMMITMENTS: readonly Commitment[] = [
   {
     icon: 'chart',
     title: $localize`Lo medimos y te lo enseñamos`,
-    body: $localize`Velocidad, visitas y contactos, en un informe en castellano. Empezando por esta misma página: pásala por PageSpeed Insights y compruébalo tú.`,
+    body: $localize`Velocidad, visitas y contactos, en un informe en castellano. Empezando por esta misma página: mide su velocidad con la herramienta gratuita de Google y compruébalo tú.`,
   },
   {
     icon: 'chat',
@@ -459,5 +463,9 @@ export const FAQS: readonly Faq[] = [
   {
     q: $localize`¿Solo hacéis páginas web?`,
     a: $localize`No. También hacemos tiendas online, software a medida, soluciones con inteligencia artificial y, en general, cualquier proyecto informático que necesite tu negocio. Cuéntanos qué te hace falta y te decimos con sinceridad si podemos hacerlo, cuánto cuesta y cuánto tarda.`,
+  },
+  {
+    q: $localize`¿Por qué no me la hago yo con Wix o algo parecido?`,
+    a: $localize`Puedes, y a veces para empezar basta. La diferencia es que no la montas tú: trabajamos tu ficha de Google y las páginas por zona para que te encuentren, la web carga rápido en el móvil, es tuya y no dependes de la cuota de una plataforma. Si con lo que necesitas te basta una plantilla, te lo diremos.`,
   },
 ];
