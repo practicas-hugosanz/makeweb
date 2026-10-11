@@ -131,12 +131,12 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
     stats: [
       { value: $localize`24 h`, title: $localize`Reserva online`, body: $localize`Tus clientes reservan a la hora que les conviene, no a la tuya.` },
       { value: $localize`Avisos`, title: $localize`Automáticos`, body: $localize`Confirmación y recordatorio al cliente, y aviso para ti en cada cita.` },
-      { value: $localize`desde 50 €`, title: $localize`WhatsApp Business`, body: $localize`Conectado a la web, con cuota mensual desde 50 €.` },
+      { value: $localize`desde 50 €`, title: $localize`WhatsApp Business`, body: $localize`Al mes, opcional: conexión con la web, avisos automáticos y soporte. La app sigue siendo gratis.` },
     ],
     offersTitle: [$localize`Lo que `, $localize`montamos `, $localize`para ti.`],
     offers: [
       { title: $localize`Reserva online`, body: $localize`Citas y reservas desde la web, sin llamadas ni mensajes de ida y vuelta.` },
-      { title: $localize`WhatsApp Business`, body: $localize`Conectado a la web para responder desde un solo sitio.`, monthly: $localize`desde 50 €/mes` },
+      { title: $localize`WhatsApp Business`, body: $localize`La app es gratis; la cuota cubre la conexión oficial con la web, los avisos y confirmaciones automáticos, las respuestas guardadas, el catálogo y el soporte.`, monthly: $localize`desde 50 €/mes` },
       { title: $localize`Encargos y pagos`, body: $localize`Encargos con fecha y hora de recogida, y pago o señal desde la web: de la tarta de cumpleaños a la mesa para diez.` },
       { title: $localize`Avisos automáticos`, body: $localize`Confirmaciones y recordatorios sin que tengas que escribirlos tú.` },
     ],
@@ -154,13 +154,13 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
     lead: $localize`Diseñamos y programamos tu tienda online a medida: catálogo, carrito, pagos seguros y envíos, con un panel sencillo para que gestiones pedidos y existencias sin ayuda.`,
     stats: [
       { value: $localize`24 h`, title: $localize`Abierta siempre`, body: $localize`Tus clientes compran cuando les viene bien, no solo en horario de tienda.` },
-      { value: $localize`desde 1.200 €`, title: $localize`Precio cerrado`, body: $localize`Por escrito antes de empezar, según los productos, los pagos y los envíos. IVA no incluido.` },
-      { value: $localize`Panel`, title: $localize`Pedidos y existencias`, body: $localize`Cada pedido, su estado y lo que queda en el almacén, en un solo sitio.` },
+      { value: $localize`desde 1.200 €`, title: $localize`Web y tienda, todo junto`, body: $localize`La web completa con su tienda, no algo que se suma a un plan. Precio cerrado antes de empezar, IVA no incluido.` },
+      { value: $localize`2–4 semanas`, title: $localize`Hasta abrirla`, body: $localize`Según el tamaño del catálogo. Te damos la fecha por escrito en la propuesta.` },
     ],
     offersTitle: [$localize`Lo que `, $localize`montamos `, $localize`en tu tienda.`],
     offers: [
       { title: $localize`Catálogo a medida`, body: $localize`Fichas de producto con fotos, variantes de talla o color y buscador, pensadas para que se entienda qué compras.` },
-      { title: $localize`Carrito y pagos seguros`, body: $localize`Pago con tarjeta y otros métodos habituales, a través de pasarelas de pago reconocidas.` },
+      { title: $localize`Carrito y pagos seguros`, body: $localize`Pago con tarjeta y otros métodos habituales, con plataformas de cobro conocidas y seguras.` },
       { title: $localize`Envío o recogida en tienda`, body: $localize`Envío a domicilio con gastos por zona o por peso, o recogida en tu local a la hora que elija el cliente, con avisos automáticos.` },
       { title: $localize`Panel de gestión`, body: $localize`Pedidos, clientes y existencias en un panel sencillo, con vídeos cortos que te enseñan a usarlo.` },
     ],
@@ -170,10 +170,14 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
         a: $localize`Desde 1.200 € (IVA no incluido). El precio final depende del número de productos, de los métodos de pago y de cómo gestionas los envíos, y te lo damos cerrado antes de empezar: el presupuesto que firmas es el que pagas.`,
       },
       {
+        q: $localize`¿La tienda incluye la web? ¿Cuánto se tarda?`,
+        a: $localize`Sí: los 1.200 € son la web completa con su tienda, no algo que se suma a un plan. Suele estar lista en 2 a 4 semanas según el tamaño del catálogo, y la fecha va por escrito en la propuesta. Después solo pagas la comisión de cobro de cada venta y, desde el segundo año, el dominio y el alojamiento.`,
+      },
+      {
         q: $localize`¿Podré añadir productos yo mismo?`,
         a: $localize`Sí. Te dejamos un panel para dar de alta productos, cambiar precios y ver pedidos, y te grabamos vídeos cortos explicando cómo se hace.`,
       },
-      ...faqs(5, 2),
+      ...faqs(5),
     ],
     closing: $localize`hablemos de tu tienda.`,
     bespoke: true,
@@ -225,7 +229,7 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
     stats: [
       { value: $localize`24 h`, title: $localize`Asistente siempre activo`, body: $localize`Resuelve las dudas frecuentes en tu web o por WhatsApp a cualquier hora, y te pasa lo que no sabe resolver.` },
       { value: $localize`Tus datos`, title: $localize`Respuestas con tu información`, body: $localize`Contesta con tus horarios, precios y servicios, no con respuestas genéricas.` },
-      { value: $localize`desde 300 €`, title: $localize`Para empezar`, body: $localize`Un primer asistente o una automatización concreta, con precio cerrado antes de empezar. IVA no incluido.` },
+      { value: $localize`desde 300 €`, title: $localize`Sin cuota nuestra`, body: $localize`Pago único, IVA no incluido. El uso de la IA lo pagas tú al proveedor, a tu nombre: en un negocio pequeño, normalmente unos pocos euros al mes.` },
     ],
     offersTitle: [$localize`Lo que `, $localize`hacemos `, $localize`con IA.`],
     offers: [

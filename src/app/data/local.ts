@@ -33,7 +33,7 @@ export const LOCAL_STATS: readonly LocalStat[] = [
   {
     value: $localize`desde 350 €`,
     title: $localize`Precio cerrado`,
-    body: $localize`Por escrito antes de empezar: el presupuesto que firmas es el que pagas.`,
+    body: $localize`Más IVA, y por escrito antes de empezar: el presupuesto que firmas es el que pagas.`,
   },
 ];
 
@@ -65,7 +65,7 @@ export const LOCAL_FAQS: readonly Faq[] = [
   },
   {
     q: $localize`¿Cuánto cuesta una página web en Alicante?`,
-    a: $localize`Con nosotros, lo mismo que en cualquier otro sitio: desde 350 € una web estática, desde 450 € con animaciones y desde 1.000 € con sistema de citas. El precio se cierra por escrito antes de empezar.`,
+    a: $localize`Con nosotros, lo mismo que en cualquier otro sitio: desde 350 € una web estática, desde 450 € con animaciones y desde 1.000 € con citas o encargos. El precio se cierra por escrito antes de empezar.`,
   },
   {
     q: $localize`¿Me ayudáis a salir en Google Maps?`,

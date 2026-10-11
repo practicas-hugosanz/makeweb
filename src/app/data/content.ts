@@ -108,7 +108,7 @@ export const SERVICES: readonly Service[] = [
     index: $localize`Reservas`,
     title: $localize`Convertimos visitas en clientes`,
     summary:
-      $localize`Montamos y cuidamos todo el sistema de reservas, citas y pedidos de tu web, conectado con las herramientas que ya usas, para que cada visita tenga un camino claro hasta convertirse en cliente.`,
+      $localize`Reservas, citas y encargos desde tu web, conectados con lo que ya usas. Por ejemplo, una pastelería que recibe las tartas por encargo con fecha de recogida y señal pagada, en vez de perseguir mensajes de WhatsApp.`,
     includes: [
       { label: $localize`Reserva online` },
       { label: $localize`WhatsApp Business`, monthly: $localize`desde 50 €/mes` },
@@ -149,7 +149,7 @@ export const SERVICES: readonly Service[] = [
     index: $localize`IA`,
     title: $localize`Inteligencia artificial que te quita trabajo`,
     summary:
-      $localize`Asistentes que responden a tus clientes en la web o por WhatsApp con la información de tu negocio, y automatizaciones que leen y ordenan correos y documentos por ti.`,
+      $localize`Asistentes que responden a tus clientes en la web o por WhatsApp con la información de tu negocio: si a las once de la noche te preguntan por una tarta de chocolate para el sábado, contesta él y te deja el encargo apuntado.`,
     includes: [
       { label: $localize`Asistente para web y WhatsApp` },
       { label: $localize`Automatización con IA` },
@@ -220,7 +220,7 @@ export const PROCESS: readonly ProcessPhase[] = [
     to: 1,
     title: $localize`Escuchamos`,
     body: $localize`Una videollamada contigo. Salimos sabiendo a quién quieres atraer y qué te está frenando ahora.`,
-    outputs: [$localize`Sesión de arranque`, $localize`Mapa de clientes`, $localize`Auditoría de la web actual`],
+    outputs: [$localize`Primera reunión`, $localize`A quién quieres atraer`, $localize`Revisión de lo que ya tienes`],
   },
   {
     window: $localize`Días 2 – 4`,
@@ -334,27 +334,27 @@ export const PLANS: readonly Plan[] = [
     best: true,
     features: [
       $localize`Todo lo del plan Esencial`,
-      $localize`Panel de administrador`,
+      $localize`Cambias tú precios, fotos y horarios`,
       $localize`Varias páginas o secciones`,
-      $localize`SEO local por servicio y por zona`,
-      $localize`Analítica con objetivos medibles`,
+      $localize`Páginas para salir en Google en cada zona`,
+      $localize`Sabes cuántos te llaman o escriben desde la web`,
     ],
     cta: $localize`Quiero esta`,
   },
   {
     id: 'citas',
     name: $localize`Integral`,
-    kind: $localize`Animaciones y sistema de citas`,
+    kind: $localize`Animaciones, citas y encargos`,
     from: 1000,
     to: 1100,
-    pitch: $localize`Reservas integradas en la web, con avisos automáticos y panel de gestión.`,
+    pitch: $localize`Citas, reservas o encargos con señal desde la web, con avisos automáticos.`,
     best: false,
     features: [
       $localize`Todo lo del plan Profesional`,
-      $localize`Sistema de reservas y citas integrado`,
+      $localize`Citas, reservas o encargos con hora de recogida`,
       $localize`Avisos automáticos al cliente y a ti`,
-      $localize`Conectado con tus herramientas`,
-      $localize`Panel para gestionar la agenda`,
+      $localize`Pago o señal desde la web`,
+      $localize`Tu agenda y tus encargos, desde el móvil`,
     ],
     cta: $localize`Hablemos del proyecto`,
   },
@@ -396,7 +396,7 @@ export const COMMITMENTS: readonly Commitment[] = [
   {
     icon: 'play',
     title: $localize`Te enseñamos a manejarla`,
-    body: $localize`Al publicar te grabamos vídeos cortos con lo que vas a tocar tú, y durante el primer mes nos escribes por WhatsApp cuando te atasques. No dependes de nadie para cambiar un horario.`,
+    body: $localize`Al publicar te grabamos vídeos cortos con lo que vas a tocar tú, y durante el primer mes nos escribes por WhatsApp cuando te atasques; después, si tienes el mantenimiento, seguimos ahí. No dependes de nadie para cambiar un horario.`,
   },
   {
     icon: 'chart',
@@ -424,7 +424,7 @@ export const FAQS: readonly Faq[] = [
   },
   {
     q: $localize`¿Cuánto cuesta y de qué depende el precio?`,
-    a: $localize`Una web estática va de 350 € a 400 € y es negociable. Con animaciones, de 450 € a 700 €. Con animaciones y sistema de citas, de 1.000 € a 1.100 €. Dentro de cada horquilla el precio depende del número de páginas y de las integraciones, y se cierra por escrito antes de empezar: el presupuesto que firmas es el que pagas.`,
+    a: $localize`Una web estática va de 350 € a 400 € y es negociable. Con animaciones, de 450 € a 700 €. Con animaciones y citas o encargos con señal, de 1.000 € a 1.100 €. Dentro de cada horquilla el precio depende del número de páginas y de las integraciones, y se cierra por escrito antes de empezar: el presupuesto que firmas es el que pagas.`,
   },
   {
     q: $localize`¿Cómo se paga?`,
@@ -466,6 +466,6 @@ export const FAQS: readonly Faq[] = [
   },
   {
     q: $localize`¿Por qué no me la hago yo con Wix o algo parecido?`,
-    a: $localize`Puedes, y a veces para empezar basta. La diferencia es que no la montas tú: trabajamos tu ficha de Google y las páginas por zona para que te encuentren, la web carga rápido en el móvil, es tuya y no dependes de la cuota de una plataforma. Si con lo que necesitas te basta una plantilla, te lo diremos.`,
+    a: $localize`Puedes, y a veces para empezar basta. La diferencia es que no la montas tú: trabajamos tu ficha de Google y las páginas por zona para que te encuentren, la web carga rápido en el móvil, es tuya y no dependes de la cuota de una plataforma. Haz la cuenta a tres años: una plataforma de unos 20 € al mes son más de 700 €, y la web nunca llega a ser tuya. Con nosotros pagas la web una vez y después solo el dominio y el alojamiento, entre 50 y 120 € al año. Si con lo que necesitas te basta una plantilla, te lo diremos.`,
   },
 ];

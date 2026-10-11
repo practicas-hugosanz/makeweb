@@ -261,3 +261,45 @@
   color: var(--text-mute);
   line-height: 1.6;
 }
+
+// --- quién va con cada plan --------------------------------------------------------
+.prz__guide {
+  max-width: 68ch;
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+// --- lo que se paga después ---------------------------------------------------------
+.prz__monthly {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+
+  dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: 1.25rem 2rem;
+    margin: 1.25rem 0 0;
+  }
+
+  dt {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  dd {
+    margin: 0.3rem 0 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text-mute);
+  }
+}
+
+.prz__monthly-title {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.15;
+}

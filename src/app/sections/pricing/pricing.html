@@ -8,6 +8,14 @@
          añadir nada a la pantalla. -->
     <h2 class="visually-hidden" i18n>Planes y precios</h2>
 
+    <!-- Quién va con cada plan, dicho por tipo de negocio: con solo la lista de
+         lo que incluye, una pastelería no sabía si lo suyo eran «citas». -->
+    <p class="prz__guide" i18n>
+      ¿Cuál es el tuyo? Si solo quieres que te encuentren y te llamen, el Esencial. Si das citas o
+      aceptas encargos con hora de recogida (peluquería, clínica, pastelería, restaurante), el
+      Integral. Si quieres vender productos con carrito, la tienda online, que ya incluye la web.
+    </p>
+
     <p class="prz__swipe" aria-hidden="true" i18n>Desliza para comparar los tres</p>
 
     <ul class="prz__plans" data-plans>
@@ -53,7 +61,7 @@
     <p class="prz__foot" i18n>
       Todos los presupuestos incluyen dominio y alojamiento el primer año, certificado de seguridad,
       aviso legal y política de cookies. A partir del segundo año, el dominio y el alojamiento los
-      pagas tú directamente al proveedor, a tu nombre y sin margen nuestro. Se paga 50 % al empezar
+      pagas tú directamente al proveedor, a tu nombre y sin margen nuestro: entre 50 y 120 € al año. Se paga 50 % al empezar
       y 50 % al publicar. El mantenimiento es aparte y opcional: un pack desde 49 €/mes, solo si lo
       quieres.
     </p>
@@ -62,10 +70,47 @@
          tenga que pedir presupuesto solo para saber el orden de magnitud. -->
     <p class="prz__foot" i18n>
       ¿Necesitas algo más que una web?
-      <a routerLink="/servicios/tiendas-online">Tiendas online</a> desde 1.200 €,
+      <a routerLink="/servicios/tiendas-online">Tiendas online</a> desde 1.200 € con la web incluida,
       <a routerLink="/servicios/inteligencia-artificial">inteligencia artificial</a> desde 300 € y
       <a routerLink="/servicios/software-a-medida">software a medida</a> con presupuesto cerrado.
       IVA aparte.
     </p>
+
+    <!-- Lo que se paga después, todo junto y con cifra: sin esto, quien tiene
+         un tope mensual se imagina una cuenta peor que la real. -->
+    <div class="prz__monthly">
+      <h3 class="prz__monthly-title" i18n>Lo que pagarás después</h3>
+      <dl>
+        <div>
+          <dt i18n>Mantenimiento, si lo quieres</dt>
+          <dd i18n>Desde 49 € al mes: copias diarias, los cambios pequeños del mes y un informe.</dd>
+        </div>
+        <div>
+          <dt i18n>WhatsApp Business conectado, si lo quieres</dt>
+          <dd i18n>
+            Desde 50 € al mes. La app es gratis; la cuota cubre la conexión con la web, los avisos
+            automáticos, las respuestas guardadas y el soporte.
+          </dd>
+        </div>
+        <div>
+          <dt i18n>Asistente de inteligencia artificial</dt>
+          <dd i18n>
+            Sin cuota nuestra. El uso lo pagas tú al proveedor, a tu nombre: en un negocio pequeño,
+            normalmente unos pocos euros al mes.
+          </dd>
+        </div>
+        <div>
+          <dt i18n>Cobros con tarjeta</dt>
+          <dd i18n>
+            Solo si vendes o cobras señal en la web: la comisión de la plataforma de cobro, en torno al
+            1,5 % + 0,25 € por pago con tarjeta europea.
+          </dd>
+        </div>
+        <div>
+          <dt i18n>Dominio y alojamiento</dt>
+          <dd i18n>Incluidos el primer año. Después, entre 50 y 120 € al año, al proveedor y a tu nombre.</dd>
+        </div>
+      </dl>
+    </div>
   </div>
 </section>
